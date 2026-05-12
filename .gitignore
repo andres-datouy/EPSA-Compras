@@ -1,0 +1,18 @@
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+
+# Power BI temporary files
+*.pbix.tmp
+
+# Scripts output
+pbix/*.json
+pbix/*.txt
+pbix/*.ps1
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/

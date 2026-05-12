@@ -1,0 +1,202 @@
+======================================================================
+FILE: EPSA - Control Stock Minimo - 2025-10-15.xlsx
+======================================================================
+
+--- Sheet: EPSA - Control Stock Minimo ---
+Used range: 10644 rows x 9 cols
+Row 1: Artículo | Descripción | Existencia EPSA | Existencia ETAFPA | Compras Proyectadas | Compras 2  | ver si hay error  | valor valido para los casos de eror | VALOR A TOMAR COMPRAS PROYECTADAS 
+Row 2: 5050801 | Semi - SONDA MERCIER CH 8                                                                            | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 3: 5051001 | Semi - SONDA MERCIER CH 10                                                                           | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 4: 5051201 | Semi - SONDA MERCIER CH 12                                                                           | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 5: 5051401 | Semi - SONDA MERCIER CH 14                                                                           | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 6: 5051601 | Semi - SONDA MERCIER CH 16                                                                           | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 7: 5051801 | Semi - SONDA MERCIER CH 18                                                                           | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 8: 5052001 | Semi - SONDA MERCIER CH 20                                                                           | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 9: 5052201 | SEMI - SONDA MERCIER CH 22                                                                           | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 10: 5052401 | Semi - SONDA MERCIER CH 24                                                                           | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 11: 6210601 | Semi - CATETER UMBILICAL RADIOPACO GRADUADO 40CM 6CH                                                 | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 12: 6210701 | Semi - CATETER UMBILICAL RADIOPACO GRADUADO 40CM 7CH                                                 | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 13: 6300501 | SEMI - C.UMBILICAL PUR CH5                                                                           | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 14: 6303501 | SEMI - C.UMBILICAL PUR CH3.5                                                                         | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 15: 6413201 | SEMI-SELDIN.DUO CATH.PUR(M2)CH9                                                                      | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 16: 11101601 | Semi - EQUIPO TRANSFUSOR C/AGUJA G18                                                                 | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 17: 59241801 | SEMI-S.FOLEY 3VIAS STD C/B 30 C.C. CH18                                                              | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 18: 59430401 | Semi - EXT.DE CALCULOS (4H) CH4 (90CM)                                                               | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 19: 59503600 | FRASCO PEDIATRICO AVANCE RAPIDO                                                                      | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+Row 20: 92060601 | Semi - T. ANGULADO C/B ORAL 3.0 MM                                                                   | 0.00 | 0 | 0.00 | 0 | 0 | [empty] | 0
+
+======================================================================
+FILE: Pedidos a exterior 2026.04.09.xlsx
+======================================================================
+
+--- Sheet: actual ---
+Used range: 329 rows x 133 cols
+Row 1: Proveedor  | Codigo  | Descripcion | comentarios  | [empty] | Presentacion y minimos de compra | lead time | consumo mensual 2019 | consumo mensual 2020 | consumo mensual 2021 | consumo mensual 2022 | Consumo mensual 
+2023 | consumo mensual 2024 | Consumo  | [empty]
+Row 2: Tecnica del plata ( es plaza pero llevarlo como exterior porque ellos lo piden al exterior ) | 931005100000 | Caseina | [empty] | gramos | [empty] | [empty] | 20.83 | 35.42 | 27.08 | 22.92 | [empty] | [empty] | 27 | [empty]
+Row 3: Borla (Italia) | 258011000000 | Portador micro PF 0422 (va a quedar en desuso -se sustituye por proveedor chino ) | Se usaba en pieza B + micro  | Unitario  | [empty] | 5 | 1933.5 | 250 | 2815.17 | 0.00 | 1192.00 | [empty] | 600 | [empty]
+Row 4: [empty] | 258013000000 | IV filter 5110 ( transparente )  | el proveedor no tenia del otro y nos ofrecio este otro
+ES IGUAL AL CODIGO 258012000000 IV FILTER 5083 PERO TRANSPARENTE. EL 5083 ES CELESTE  | Unitario | [empty] | 6 | 0 | 0 | 0.00 | 0.00 | 213.00 | [empty] | 100 | [empty]
+Row 5: Alpingomma  | 270912000000 | Succidares -LatexFree RR (en desuso , se sustituira por los chinos) | [empty] | Unitario  | [empty] | 4 | 4462 | 2395.92 | 3433.92 | 3147.00 | 2052.00 | [empty] | 2900 | [empty]
+Row 6: Martech  | 841168000000 | Temporary pacing cath ref AC2026  | ver branulas y branulas ensobradas con aletas  | Unitario | [empty] | 5 | 0 | 346.83 | 5693.67 | 4531.00 | 3750.00 | [empty] | 4658 | [empty]
+Row 7: [empty] | 84100160800000 | branula ensobrada  | [empty] | [empty] | [empty] | [empty] | 0 | 0 | 5862.08 | 333.25 | 0.00 | [empty] | 0.00 | [empty]
+Row 8: [empty] | 84100160900000 | CANULA MARTECH C/ALAS (ENSOBRADA) | [empty] | [empty] | [empty] | [empty] | 0 | 0 | 41.67 | 3524.00 | 3885.00 | [empty] | 3704.50 | [empty]
+Row 9: Promepla  | 267056000000 | Clamp p/alas Seldinger | [empty] | Unitario  | [empty] | 5 | 3202 | 2037.33 | 3472.92 | 2273.00 | 2273.00 | [empty] | 2652 | [empty]
+Row 10: KDL | 260013000000 | Male luer  | [empty] | Unitario  | [empty] | 5 | 18611 | 9426 | 16059.50 | 30,198.75 | 24820.00 | [empty] | 27509 | [empty]
+Row 11: SAKIRA  | 251001000000 | llave 3 vias sakira lipidoresistentes  | [empty] | Unitario | [empty] | [empty] | 0 | 7201 | 12387.75 | 15130.00 | 14127.00 | [empty] | 13882 | [empty]
+Row 12: [empty] | 801838000000 | Ag. G 18x1½   | Se le pide a Sakira directamente (A veces por medio de GSSA) | Unitario | [empty] | [empty] | 8558 | 4657 | 8765.00 | 9020.00 | 5875.00 | [empty] | 7375.00 | [empty]
+Row 13: SHANGHAI HEALTH MEDICAL CO  | 264080000000 | tapon p /sonda | Tapon para sonda ( el que haciamos nosotros por inyeccion) 
+05/02/2024 el proveedor avisa que se va a discontinuar, por lo que se decide volver a inyectar hasta conseguir otro proveedor 
+ 03/2024 Se hace pedido a Haiyan kangyuan medical para probar unos tapones que tiene como opcion , se piden con el mismo codigo para no seguir creando mas codigos  , como igual el proveedor original ya no los va a fabricar mas
+07/2025  calidad define que no se van a comprar mas    | [empty] | [empty] | 4 | 0 | 0 | 0.00 | 0.00 | 3252.00 | [empty] | 3200.00 | [empty]
+Row 14: [empty] | 22400100000000 | TAPON P/SONDA 84425   ( el que inyectamos nosotros) | [empty] | [empty] | [empty] | [empty] | [empty] | 3779 | 5667.00 | 4447.00 | 3206.00 | [empty] | 4274.75 | [empty]
+Row 15: [empty] | 260060100000 | Roller carrito clamb (ABS)  | se usa para el articulo 010104401 Set infusor macrogotero con filtro y ruedita  | [empty] | [empty] | 4 | 10 | 833 | 275.00 | 550.00 | 952.00 | [empty] | 1200.00 | [empty]
+Row 16: [empty] | 264075000000 | Female Needle free conector SHANGAI  | Sustituye el NEEDLE FREE CONNECTOR NF 1006 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | 1040.00 | [empty]
+Row 17: CHANGZHOU LONGYIN PLASTIC CO LTD | 262016000000 | Regulador de succion c/conexión plana | 
+solo se usa para velvet 099521501 
+sustituye al 22200300600000 : REGULADOR DE SUCC.EN PVC (BLANCO)    (de inyeccion)  | [empty] | [empty] | 6 | 0 | [empty] | 0.00 | 10500.00 | 32200.00 | [empty] | 26000.00 | [empty]
+Row 18: [empty] | 262017000000 | Regulador de succion azul CH 8 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | 5000.00 | [empty]
+Row 19: [empty] | 262018000000 | Regulador de succion negra CH 10  | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | 300.00 | [empty]
+Row 20: [empty] | 251024200000 | Llave  1 via (nosotros le llamamos 2 vias ) | [empty] | [empty] | [empty] | 4 | 0 | 0 | 0.00 | 78.00 | 87.00 | [empty] | 82.50 | [empty]
+
+--- Sheet: Hoja1 ---
+Used range: 9 rows x 20 cols
+Row 1: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | consumo | [empty] | [empty]
+Row 2: 501018000000 | Film ML PE 100 medi | [empty] | Metros  | [empty] | 6 | 0 | # | [empty] | [empty] | [empty] | [empty] | 25200.00 | [empty] | [empty]
+Row 3: 502004000000 | Papel 315mm 60g HS | [empty] | Metros  | [empty] | 6 | # | # | [empty] | [empty] | [empty] | [empty] | 22000.00 | [empty] | [empty]
+Row 4: 502002100000 | Papel 315mm AURINCO | [empty] | Metros  | [empty] | 6 | # | # | [empty] | [empty] | [empty] | [empty] | 7000.00 | [empty] | [empty]
+Row 5: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 6: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 7: [empty] | [empty] | [empty] | 30% | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | 32700.00 | [empty] | [empty]
+Row 8: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | 28600.00 | [empty] | [empty]
+Row 9: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | 9100.00 | [empty] | [empty]
+
+--- Sheet: Obsoleto no eliminar 2  ---
+Used range: 478 rows x 61 cols
+Row 1: Proveedor  | Codigo  | Descripción  | [empty] | Unidad  | [empty] | Lead time ( meses)  | Consumo mensual 2019 | Consumo mensual 2020 | Consumo mensual 2021 | Consumo mensual 2022  | [empty] | Consumo utilizado para el calculo de cobertura  | Consumos
+ comprometidos  | Pedidos 
+implicados 
+Row 2: [empty] | [empty] | [empty] | comentarios  | [empty] | Presentacion y minimos de compra | [empty] | [empty] | [empty] | [empty] | [empty] | Consumo mensual 
+2023 | [empty] | [empty] | [empty]
+Row 3: Tecnica del plata ( es plaza pero llevarlo como exterior porque ellos lo piden al exterior ) | 931005100000 | Caseina | [empty] | gramos | [empty] | [empty] | 20.83 | 35.42 | 27.08 | 22.92 | [empty] | 27.00 | [empty] | [empty]
+Row 4: Borla (Italia) | 258011000000 | Portador micro PF 0422 (va a quedar en desuso -se sustituye por proveedor chino ) | Se usaba en pieza B + micro  | Unitario  | [empty] | 5 | 1933.5 | 250 | 2815.17 | 0.00 | 1192.00 | 1238.13 | [empty] | [empty]
+Row 5: [empty] | 258013000000 | IV filter 5110 ( transparente )  | el proveedor no tenia del otro y nos ofrecio este otro
+ES IGUAL AL CODIGO 258012000000 IV FILTER 5083 PERO TRANSPARENTE. EL 5083 ES CELESTE  | Unitario | [empty] | 6 | 0 | 0 | 0.00 | 0.00 | 213.00 | 500.00 | [empty] | [empty]
+Row 6: Alpingomma  | 270912000000 | Succidares -LatexFree RR (en desuso , se sustituira por los chinos) | [empty] | Unitario  | [empty] | 4 | 4462 | 2395.92 | 3433.92 | 3147.00 | 2052.00 | 3098.17 | [empty] | [empty]
+Row 7: Martech  | 841168000000 | Temporary pacing cath ref AC2026  | ver branulas y branulas ensobradas con aletas  | Unitario | [empty] | 5 | 0 | 346.83 | 5693.67 | 4531.00 | 3750.00 | 4658.22 | [empty] | [empty]
+Row 8: [empty] | 84100160800000 | branula ensobrada  | [empty] | [empty] | [empty] | [empty] | 0 | 0 | 5862.08 | 333.25 | 0.00 | 0.00 | [empty] | [empty]
+Row 9: [empty] | 84100160900000 | CANULA MARTECH C/ALAS (ENSOBRADA) | [empty] | [empty] | [empty] | [empty] | 0 | 0 | 41.67 | 3524.00 | 3885.00 | 3704.50 | [empty] | [empty]
+Row 10: Promepla  | 267056000000 | Clamp p/alas Seldinger | [empty] | Unitario  | [empty] | 5 | 3202 | 2037.33 | 3472.92 | 2273.00 | 2273.00 | 2651.65 | [empty] | [empty]
+Row 11: KDL | 260013000000 | Male luer  | [empty] | Unitario  | [empty] | 5 | 18611 | 9426 | 16059.50 | 30,198.75 | 24820.00 | 27509.38 | [empty] | [empty]
+Row 12: [empty] | 264070000000 | KDL - NEEDLE FREE CONNECTOR (FEMALE-MALE)  | se le paso a Leo consulta por correo el  dia 13/05/2024  | [empty] | [empty] | [empty] | 78 | 0 | 0.00 | 83.00 | 58.00 | 70.50 | [empty] | [empty]
+Row 13: SAKIRA  | 251001000000 | llave 3 vias sakira lipidoresistentes  | [empty] | Unitario | [empty] | [empty] | 0 | 7201 | 12387.75 | 15130.00 | 14127.00 | 13881.58 | [empty] | [empty]
+Row 14: [empty] | 801838000000 | Ag. G 18x1½   | Se le pide a Sakira directamente (A veces por medio de GSSA) | Unitario | [empty] | [empty] | 8558 | 4657 | 8765.00 | 9020.00 | 5875.00 | 7375.00 | [empty] | [empty]
+Row 15: SHANGHAI HEALTH MEDICAL CO  | 264080000000 | [empty] | Tapon para sonda ( el que haciamos nosotros por inyeccion) 
+05/02/2024 el proveedor avisa que se va a discontinuar, por lo que se decide volver a inyectar hasta conseguir otro proveedor 
+ 03/2024 Se hace pedido a Haiyan kangyuan medical para probar unos tapones que tiene como opcion , se piden con el mismo codigo para no seguir creando mas codigos  , como igual el proveedor original ya no los va a fabricar mas | [empty] | [empty] | 4 | 0 | 0 | 0.00 | 0.00 | 3252.00 | 3200.00 | [empty] | [empty]
+Row 16: [empty] | 22400100000000 | TAPON P/SONDA 84425   ( el que inyectamos nosotros) | [empty] | [empty] | [empty] | [empty] | [empty] | 3779 | 5667.00 | 4447.00 | 3206.00 | 4274.75 | [empty] | [empty]
+Row 17: [empty] | 260060100000 | Roller carrito clamb (ABS)  | se usa para el articulo 010104401 Set infusor macrogotero con filtro y ruedita  | [empty] | [empty] | 4 | 10 | 833 | 275.00 | 550.00 | 952.00 | 652.50 | [empty] | [empty]
+Row 18: [empty] | 262016000000 | Regulador de succion c/conexión plana | 
+solo se usa para velvet 099521501 
+sustituye al 22200300600000 : REGULADOR DE SUCC.EN PVC (BLANCO)    (de inyeccion)  | [empty] | [empty] | 4 | 0 | [empty] | 0.00 | 10500.00 | 32200.00 | 25000.00 | [empty] | [empty]
+Row 19: [empty] | 251024200000 | Llave  1 via (nosotros le llamamos 2 vias ) | [empty] | [empty] | [empty] | 4 | 0 | 0 | 0.00 | 78.00 | 87.00 | 82.50 | [empty] | [empty]
+Row 20: BQ PLUS MEDICAL CO  | 247554000000 | CONECT.MACHO ALIMENTAC.ENTERAL P/TUBOS øEXT. 3MM | Se usa para el Alargue enteral enfit 1.5 m   codigo: 012600701 | [empty] | [empty] | [empty] | 0 | 0 | 0.00 | 0.00 | 428.00 | 428.00 | [empty] | [empty]
+
+--- Sheet: polizen  ---
+Used range: 30 rows x 37 cols
+Row 1: POLIZEN  | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 2: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 3: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 4: 31-Ago | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 5: Proveedor  | Codigo  | Descripción  | Unidad  | Presentacion y minimos de compra | Lead time  | Unidad | Consumo promedio
+ mensual ( anual ) (oct 2019 a oct 2020) | Consumo promedio
+ mensual ( ultimo semestre)  | Consumo promedio
+ mensual ( ultimo trimestre) | Consumo mensual 2018 | Consumo mensual 2019  | consumo mensual 2020 | consumo 1er trimestre 2021  | Consumo marzo - mayo 2021
+Row 6: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 7: POLIZEN
+(Pedir certificado de conformidad por lote) | 159236355020 | Pur pellet 2363-55D-BA20 | Kg  | [empty] | 5 | MESES  | 1 | 0.5 | 0.3 | 2 | 0.52 | 1.32 | 1.4 | 1.4
+Row 8: [empty] | 159236365020 | Pur pellet 2363-65D-BA20 | Kg  | [empty] | 5 | MESES  | 24 | 22 | 14 | 17.5 | 17.5 | 24 | 22.3 | 14
+Row 9: [empty] | 159236365040 | Pur pellet 2363-65D-BA40 | Kg  | [empty] | 5 | MESES  | 0.25 | 0.5 | 0 | 0 | 0.52 | 0.2 | 0 | 0
+Row 10: [empty] | 159236375020 | Pur pellet 2363-75D-BA20 | Kg  | [empty] | 5 | MESES  | 6 | 5 | 9 | 38.5 | 4.1 | 5 | 6 | 4
+Row 11: [empty] | 159236380000 | Pur pellet 2363-80AE virg. | Kg  | [empty] | 5 | MESES  | 1 | 2 | 0 | 0 | 1.60 | 1 | 0 | 0
+Row 12: [empty] | 159236380040 | Pur pellet 2363-80AE-BA40 | Kg  | [empty] | 5 | MESES  | 0.25 | 0.50 | 0 | 0.5 | 0.7 | 0.25 | 1.6 | 0
+Row 13: [empty] | 159236390000 | Pur pellet 2363-90AE virg. | Kg  | [empty] | 5 | MESES  | 5.5 | 4 | 3 | 3.7 | 3.65 | 5.43 | 7.2 | 3.5
+Row 14: [empty] | 159236390020 | Pur pellet 2363-90AE-BA20 | Kg  | [empty] | 5 | MESES  | 1.4 | 0 | 0 | 0.6 | 4.61 | 0.67 | 1 | 1
+Row 15: [empty] | 159236390040 | Pur pellet 2363-90AE-BA40 | Kg  | [empty] | 5 | MESES  | 0.17 | 0.34 | 0 | 1 | 0.7 | 0.2 | 1.8 | 1.8
+Row 16: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 17: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 18: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 19: Proveedor  | Codigo  | Descripción  | Unidad  | Presentacion y minimos de compra | Lead time  | Unidad | Consumo promedio
+ mensual ( anual ) (oct 2019 a oct 2020) | Consumo promedio
+ mensual ( ultimo semestre)  | Consumo promedio
+ mensual ( ultimo trimestre) | Consumo mensual 2018 | Consumo mensual 2019  | consumo mensual 2020 | consumo mensual 2021 | consumo mensual 2022 (enero a agosto )
+Row 20: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+
+--- Sheet: TOTM  ---
+Used range: 17 rows x 11 cols
+Row 1:  1580306750100 PVC E6/75 (TOTM) | STOCK 129 al 10/09 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 2: El PVC que se fabrica aca para sustituir al  PVC EXT. RB 5 M natur NO DOP (SH 52) | consumo mensual  | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 3: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 4: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 5: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 6: Para fabricar 175 kg se precisa  | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 7: [empty] | [empty] | kg  | STOCK  11/08 | VECES PARA USAR FORMULA  | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 8: Plastomoll DOA | 158200300000 | 28.5 | 816 | 28.63157895 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 9: Mark CZ 113 | 158200600000 | 0.95 | 288 | 303.1578947 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 10: TOTM (Plastificante) (Consultar con Rossana cuando baje stock) | 158201000000 | 33.25 | 107 | 3.218045113 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 11: Mark CZ 11 (EN DESUSO ) | 158200800000 | 1.9 | 438 | 230.5263158 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 12: Marklube 280 (EN DESUSO ) | 800000000357 | 0.29 | 107 | 368.9655172 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 13: Vinnolit S 4170 (Consultar a Rossana cuando baje stock) | 158200900000 | 100 | 350 | 3.5 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 14: Edenol D81 | 158200400000 | 10 | 234 | 23.4 | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 15: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 16: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 17: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+
+--- Sheet: ALAMBRES ---
+Used range: 20 rows x 8 cols
+Row 1: EPFLEX | [empty] | [empty] | DAY ENGEENERING  | [empty] | [empty] | Uso  | [empty]
+Row 2: Codigo  | Descripcion  | [empty] | Codigo  | Descripcion  | [empty] | Codigo  | Descripcion 
+Row 3: 267092001988 | ALAMBRE  0,3 x 709 ACERO 4310 - EPFLEX 92001988                                                      | [empty] | 267092001995 | ALAMBRE  0,3 x 709 ACERO 4310       
+se usa para mandril cat ureteral N 1  : 
+12940100000000           | [empty] | 1.29401E+13 | MANDRIL CAT. URET. N_1
+Row 4: 267092001989 | ALAMBRE  0,4 x 709 ACERO 4310 - EPFLEX 92001989                                                      | [empty] | 267025000000 | ALAMBRE  0,4 x 709 ACERO 4310      
+Se usa para el mandril cat ureteral Nº 2 :    12940200000000                                       | [empty] | 1.29402E+13 | MANDRIL CAT. URET. N_2
+Row 5: 267092001990 | ALAMBRE  0,5 x 709 ACERO 4310 - EPFLEX 92001990                                                      | [empty] | 267092730005 | ALAMBRE acero 0.5X709                                                                    | [empty] | [empty] | [empty]
+Row 6: 267092001991 | ALAMBRE  0,2 x 850 ACERO 4310 - EPFLEX 92001991                                                      | [empty] | [empty] | ALAMBRE  0,2 x 850 ACERO 4310                                                  | [empty] | [empty] | [empty]
+Row 7: 267092730130 | ALAMBRE 0.3X850  92730130                                                                            | [empty] | 267092002000 | ALAMBRE acero 0.3X850                                                                     | [empty] | [empty] | [empty]
+Row 8: 267092730140 | ALAMBRE 0.4X850  92730140                                                                            | [empty] | 267092002100 | ALAMB. Acero 0.4X850                                                              | [empty] | [empty] | [empty]
+Row 9: 267927300150 | ALAMB.0.5X850 9273-000150                                                                            | [empty] | 267092002200 | ALAMB. Acero 0.5X850                                                              | [empty] | [empty] | [empty]
+Row 10: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 11: 267092770010 | ALAMBRE 1.0X370  92770010  (Quedara en desuso, se le pasa a comprar a Day Engineering )                                                                          | [empty] | [empty] | ALAMBRE 1.0X370  92770010 | [empty] | [empty] | [empty]
+Row 12: 267092770030 | ALAMBRE 1.5X470  92770030   (Quedara en desuso, se le pasa a comprar a Day Engineering )     | [empty] | 267092770031 | ALAMBRE 1.5X470  92770030    | [empty] | [empty] | [empty]
+Row 13: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 14: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 15: 267062000000 | ALAMBRE ALUM.2.6MM(+0.05)X525MM(±3) (Quedara en desuso, se le pasa a comprar a Day Engineering )                                                                      | [empty] | 267062001000 | ALAMBRE ALUM.2.6MM(+0.05)X525MM(±3)                                                                  | [empty] | [empty] | [empty]
+Row 16: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 17: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 18: [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty] | [empty]
+Row 19: [empty] | [empty] | [empty] | 267092002300 | ALAMBRE acero 1.5X470                                               | [empty] | [empty] | [empty]
+Row 20: [empty] | [empty] | [empty] | 267065001000 | ALAMBRE ALUM.2.6MM(+0.05)X600MM(±3) | [empty] | [empty] | [empty]
+
+--- Sheet: lupa  ---
+Used range: 17 rows x 5 cols
+Row 1: [empty] | [empty] | 14-set | 14-set | [empty]
+Row 2: CODIGO  | DESCRIPCION  | STOCK  | STOCK ACONDICIONADO | TOTAL 
+Row 3: 267003001002 | Espiral 3,0mm (L1=210 ID=3,5 S=1,0) | 0 | 951 | 951
+Row 4: 267003501110 | Espiral 3,5mm (L1=210 ID=4,0 S=1,1) | 2300 | 0 | 2300
+Row 5: 267004001120 | Espiral 4,0mm (L1=210 ID=4,5 S=1,1) | 6000 | 3 | 6003
+Row 6: 267004501130 | Espiral 4,5mm (L1=230 ID=5,0 S=1,1) | 7500 | 0 | 7500
+Row 7: 267005001210 | Espiral 5,0mm (L1=230 ID=5,5 S=1,2) | 1500 | 1980 | 3480
+Row 8: 267005501220 | Espiral 5,5mm (L1=230 ID=6,0 S=1,2) | 0 | 3501 | 3501
+Row 9: 267006001230 | Espiral 6,0mm (L1=290 ID=6,5 S=1,2) | 4500 | 1244 | 5744
+Row 10: 267006501240 | Espiral 6,5mm (L1=290 ID=7,0 S=1,2) | 7700 | 1534 | 9234
+Row 11: 267007001250 | Espiral 7,0mm (L1=295 ID=7,5 S=1,2) | 21500 | 2012 | 23512
+Row 12: 267007501260 | Espiral 7,5mm (L1=295 ID=8,0 S=1,2) | 24500 | 960 | 25460
+Row 13: 267008001270 | Espiral 8,0mm (L1=295 ID=8,5 S=1,2) | 20000 | 3913 | 23913
+Row 14: 267008501280 | Espiral 8,5mm (L1=300 ID=9,0 S=1,2) | 9000 | 0 | 9000
+Row 15: 267009001490 | Espiral 9,0mm (L1=300 ID=9,5 S=1,4) | 1100 | 804 | 1904
+Row 16: 267009501411 | Espiral 9,5mm (L1=300 ID=10,0 S=1,4)
+ | 1500 | 385 | 1885
+Row 17: 267010001412 | Espiral 10,0mm (L1=300 ID=10,5 S=1,4)
+ | 1500 | 958 | 2458
+
