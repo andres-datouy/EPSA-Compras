@@ -278,10 +278,78 @@ RETURN
 | **Compras al exterior** | Definidas como articulos cuyo proveedor tiene `dimProveedor[País Nombre] != 'Uruguay'`. |
 | **Paginas del reporte** | Se construiran paso a paso segun lo requiera el departamento de compras. Page 2 (Mercurius) no es necesaria por ahora. |
 
+## Diseno propuesto: Page 1 — Decision Panel (Compras al Exterior)
+
+### Filtros (barra superior)
+| Filtro | Campo |
+|--------|-------|
+| Pais Origen | `dimProveedor[País Nombre]` (multi-select) |
+| Proveedor | `dimProveedor[Proveedor Nombre]` (multi-select) |
+| Tipo de Articulo | `dimArticulo` hierarchy |
+
+**Estado por defecto:** `País Nombre != "Uruguay"`
+
+### Seccion A: KPI Cards (fila superior)
+| KPI | Medida | Formato condicional |
+|-----|--------|---------------------|
+| Total Articulos | `DISTINCTCOUNT(dimArticulo[Artículo Código])` | — |
+| Articulos con Cobertura < Lead Time | `Alerta Cobertura` con filtro "PEDIR" | Rojo si > 0 |
+| Stock Proyectado Total | `Stock Proyectado` | — |
+| Consumo Mensual Total | `Consumo Promedio por Mes Activo` | — |
+
+### Seccion B: Tabla principal — "Panel de Decision Rosana"
+
+| # | Columna | Fuente / Medida | Estado |
+|---|---------|-----------------|--------|
+| 1 | Codigo | `dimArticulo[Artículo Código]` | Existe |
+| 2 | Descripcion | `dimArticulo[Artículo Descripción]` | Existe |
+| 3 | Proveedor | `dimProveedor[Proveedor Nombre]` | Existe |
+| 4 | Pais | `dimProveedor[País Nombre]` | Existe |
+| 5 | Consumo Mensual Promedio | `Consumo Promedio por Mes Activo` | Existe |
+| 6 | Stock Existencia | `Stock Existencia` | Existe |
+| 7 | Stock Proyectado | `Stock Proyectado` | Existe |
+| 8 | Cobertura (meses) | `Cobertura Meses sobre Existencia` | Existe |
+| 9 | Lead Time Historico (dias) | `Lead Time Promedio Dias` | Existe |
+| 10 | **Diferencia Cobertura – Lead Time** | **NUEVO: `Diferencia Cobertura Lead Time`** | Pendiente aprobacion |
+| 11 | **Alerta** | **NUEVO: `Alerta Cobertura`** | Pendiente aprobacion |
+| 12 | Compras en Proceso | `Stock Compras` | Existe |
+
+### Seccion C: Panel de detalle / contexto
+Al hacer click en un articulo:
+- Tendencia de consumo ultimos 12 meses (grafico de linea)
+- Historia de recepciones desde `factRecepcionesHistoria`
+- Ordenes de compra activas desde `factComprasEnProceso`
+
+## Nuevas medidas DAX propuestas (pendientes de aprobacion)
+
+### Medida A: `Diferencia Cobertura Lead Time`
+```dax
+Diferencia Cobertura Lead Time = 
+VAR CoberturaMeses = [Cobertura Meses sobre Existencia]
+VAR LeadTimeMeses = DIVIDE([Lead Time Promedio Dias], 30)
+RETURN
+    CoberturaMeses - LeadTimeMeses
+```
+**Logica:** Positivo = cobertura excede lead time (seguro). Negativo = cobertura baja lead time (debe ordenar).
+
+### Medida B: `Alerta Cobertura`
+```dax
+Alerta Cobertura = 
+VAR Diferencia = [Diferencia Cobertura Lead Time]
+RETURN
+    SWITCH(
+        TRUE(),
+        ISBLANK(Diferencia), "Sin datos",
+        Diferencia < 0, "PEDIR",
+        Diferencia < 1, "Atencion",
+        "OK"
+    )
+```
+
 ## Proximos pasos aprobados
 
-1. **Validar criterio "Compras al Exterior"** - Consultar modelo live para verificar que proveedores no-uruguayos existen y cuantos articulos cubren
-2. **Disenar wireframe Page 1: Decision Panel** - Presentar para aprobacion antes de construir
-3. **Construir Page 1 paso a paso** - Implementar solo despues de aprobacion del diseno
+1. **Validar criterio "Compras al Exterior"** — Criterio aprobado: proveedores con `País Nombre != "Uruguay"`
+2. **Disenar wireframe Page 1: Decision Panel** — ✅ Presentado, esperando aprobacion de medidas A y B
+3. **Construir Page 1 paso a paso** — Implementar solo despues de aprobacion del diseno
 4. **Trabajar casos de uso con Rosana** para definir calculo "A pedir"
 5. **Evaluar nuevas medidas DAX** una por una con aprobacion previa
