@@ -161,12 +161,15 @@ Ejemplos encontrados:
 ### Medidas ya disponibles y relevantes
 | Medida | Formula actual | Estado |
 |--------|---------------|--------|
-| `Stock Existencia` | SUM de factStockEPSA donde Stock Estado in {"existencia", "stkaf"} | OK |
-| `Stock Compras` | SUM(factComprasEnProceso[CompraEP Cantidad]) | OK |
-| `Stock Proyectado` | Stock Existencia + Stock Compras | OK |
-| `Consumo Promedio por Mes Activo` | Promedio de consumo en meses con movimiento | OK |
-| `Cobertura Meses sobre Existencia` | Stock Existencia / Consumo Promedio por Mes Activo | OK |
-| `Lead Time Promedio Dias` | AVERAGE de lead time historico de recepciones | **Limitado** - es global, no por proveedor |
+| `Stock Existencia` | COALESCE(CALCULATE(SUM(factStockEPSA[Stock Cantidad]), factStockEPSA[Stock Estado] in {"existencia", "stkaf"}), 0) | ✅ Modificado (COALESCE) |
+| `Stock Compras` | COALESCE(SUM(factComprasEnProceso[CompraEP Cantidad]), 0) | ✅ Modificado (COALESCE) |
+| `Stock Proyectado` | COALESCE([Stock Existencia] + [Stock Compras], 0) | ✅ Modificado (COALESCE) |
+| `Consumo Promedio por Mes Activo` | COALESCE(DIVIDE([Sumatoria Movs Consumo Sin Recepciones], [Meses con Consumo]), 0) | ✅ Modificado (COALESCE) |
+| `Cobertura Meses sobre Existencia` | COALESCE(DIVIDE([Stock Existencia], [Consumo Promedio por Mes Activo]), 0) | ✅ Modificado (COALESCE) |
+| `Cobertura Meses sobre Existencia + Proyectado` | DIVIDE([Stock Existencia] + [Stock Proyectado], [Consumo Promedio por Mes Activo]) | ✅ Nueva medida |
+| `Lead Time Promedio Dias` | AVERAGE(factRecepcionesHistoria[Lead Time Dias]) | ⚠️ Limitado - es global, no por proveedor |
+| `Diferencia Cobertura Lead Time` | [Cobertura Meses sobre Existencia] - DIVIDE([Lead Time Promedio Dias], 30) | ✅ Implementada |
+| `Alerta Cobertura` | SWITCH(TRUE(), ISBLANK([Diferencia]), "Sin datos", [Diferencia] < 0, "PEDIR", [Diferencia] < 1, "Atencion", "OK") | ✅ Implementada |
 
 ### Gaps actualizados (post-entrevista)
 | Dato necesario | Disponible en PBIX | Prioridad |
@@ -180,159 +183,84 @@ Ejemplos encontrados:
 | Alerta cobertura < lead time aware | PARCIAL | **MEDIA** - Usar Cobertura vs Lead Time por proveedor |
 | Consolidacion por origen (Mercurius) | NO | **MEDIA** - Reporte debe agrupar por pais/proveedor |
 
-## Diseno propuesto del reporte "Compras al Exterior"
+## Cambios tecnicos realizados al modelo
 
-### Pagina 1: Panel de decision (Rosana)
-**Objetivo:** Reemplazar la hoja "actual" del Excel
+### 1. Denormalizacion de proveedor en dimArticulo
+**Problema:** Auto-exist entre `factRecepcionesHistoria` y `factConsumoHistoria` causaba que medidas desaparecieran de la matriz al incluir `dimProveedor`.
 
-**Filtros:**
-- Proveedor / Pais de origen
-- Articulo
-- Tipo de embarque (barco/aereo) - cuando tengamos lead time por modalidad
+**Solucion:** Se modifico la vista SQL `vw_Compras_DimArticuloEPSA` para incluir 4 campos del proveedor por defecto:
+- `ProveedorArticulo` (codigo del proveedor)
+- `ProveedorArticuloNombre` (nombre del proveedor)
+- `ProveedorPais` (codigo de pais)
+- `ProveedorPaisNombre` (nombre del pais)
 
-**Tabla principal:**
-| Columna | Origen |
-|---------|--------|
-| Codigo | dimArticulo |
-| Descripcion | dimArticulo |
-| Proveedor | dimProveedor |
-| Pais Origen | dimProveedor[País Nombre] |
-| Consumo Promedio Mensual | Medida `Consumo Promedio por Mes Activo` |
-| Stock Existencia | Medida `Stock Existencia` |
-| Stock Proyectado | Medida `Stock Proyectado` |
-| Cobertura Meses (Existencia) | Medida `Cobertura Meses sobre Existencia` |
-| Lead Time (dias) | NUEVO: Lead time por proveedor/modalidad |
-| Diferencia Cobertura - Lead Time | NUEVO: `Cobertura - Lead Time` |
-| **A pedir (sugerido)** | **NUEVO: Medida DAX** |
-| **A pedir (ajustado)** | **NUEVO: Campo editable** |
-| Alerta | NUEVO: Visual conditional formatting si Diferencia < 0 |
+**Impacto:** La tabla de reporte ahora usa solo columnas de `dimArticulo`, eliminando el conflicto de auto-exist.
 
-**Visualizaciones adicionales:**
-- KPI: Cantidad de articulos con alerta de compra
-- Grafico: Stock proyectado vs Necesidad por proveedor
-- Timeline: Fechas estimadas de llegada de compras en proceso
+### 2. Supresion de BLANK en medidas numericas
+**Problema:** Medidas que devolvian BLANK ocultaban filas de la tabla y rompian el formato condicional.
 
-### Pagina 2: Consolidacion Europa (Mercurius)
-**Objetivo:** Optimizar cargas desde Alemania/Europa
+**Solucion:** Se aplico `COALESCE(..., 0)` a las medidas originales:
+- `Stock Existencia`
+- `Stock Compras`
+- `Stock Proyectado`
+- `Sumatoria Movs Consumo Sin Recepciones`
+- `Consumo Promedio por Mes Activo`
+- `Cobertura Meses sobre Existencia`
 
-- Tabla filtrada a proveedores europeos (Alemania, Italia, etc.)
-- Agrupacion por proveedor
-- Suma de "A pedir" por proveedor
-- Indicador de viabilidad de consolidacion (volumen/peso estimado)
+**Impacto:** Todas las filas se muestran con `0,00` en lugar de celdas vacias. El formato condicional funciona correctamente.
 
-### Pagina 3: Analisis de consumo y cobertura
-**Objetivo:** Tendencias y proyecciones
+## Diseno implementado: Page 1 — Compras al Exterior
 
-- Evolucion mensual de consumo (ultimos 24 meses)
-- Proyeccion de stock con y sin compras en curso
-- Ranking de criticidad (articulos con menor cobertura)
+### Filtros
+| Filtro | Campo | Estado |
+|--------|-------|--------|
+| Pais Origen | `dimArticulo[ProveedorPaisNombre]` (excluir Uruguay) | ✅ Implementado |
+| Tipo Componente | `dimArticulo[TipoComponente] = "Obligatorio"` | ✅ Implementado |
+| Proveedor | `dimArticulo[ProveedorArticuloNombre]` | ✅ Implementado |
+| Articulo | `dimArticulo[Artículo]` | ✅ Implementado |
 
-## Medidas DAX necesarias
-
-### 1. Lead Time por Proveedor (dias)
-```dax
-Lead Time Proveedor Dias = 
-AVERAGEX(
-    VALUES(factRecepcionesHistoria[OC Proveedor]),
-    CALCULATE([Lead Time Promedio Dias])
-)
-```
-*Nota: Esto es una aproximacion. Idealmente necesitamos una tabla maestra con lead time por proveedor y modalidad.*
-
-### 2. Cobertura sobre Stock Proyectado
-```dax
-Cobertura Meses Proyectado = 
-DIVIDE(
-    [Stock Proyectado],
-    [Consumo Promedio por Mes Activo]
-)
-```
-
-### 3. Diferencia Cobertura vs Lead Time
-```dax
-Diferencia Cobertura Lead Time = 
-[Cobertura Meses Proyectado] - DIVIDE([Lead Time Proveedor Dias], 30)
-```
-
-### 4. Cantidad Recomendada a Pedir (base)
-```dax
-A Pedir Sugerido = 
-VAR ConsumoMensual = [Consumo Promedio por Mes Activo]
-VAR CoberturaObjetivo = DIVIDE([Lead Time Proveedor Dias], 30) + 1 // +1 mes seguridad
-VAR Necesidad = ConsumoMensual * CoberturaObjetivo
-VAR StockProy = [Stock Proyectado]
-VAR Resultado = Necesidad - StockProy
-RETURN
-    MAX(0, Resultado)
-```
-*Nota: La formula exacta debe validarse con Rosana. El "+1 mes seguridad" es hipotetico.*
-
-## Decisiones de alcance aprobadas
-
-| Decision | Estado |
-|----------|--------|
-| **Lead time** | Usar medida historica del modelo PBIX (`Lead Time Promedio Dias`). Mas fiable que el Excel. Si hay mucha diferencia, se evaluara inicializar atributo en dimProveedor desde Excel para medir diferencia. |
-| **Consolidacion Mercurius** | **FUERA DE ALCANCE** por ahora. Enfoque en planificar compras por proveedor. |
-| **"A pedir"** | Se trabajara sobre casos de uso con Rosana para definir y validar el calculo. No se crea medida DAX sin aprobacion previa. |
-| **Cambios al modelo PBIX** | Cada cambio requiere aprobacion explicita del usuario antes de implementarse. |
-| **Compras al exterior** | Definidas como articulos cuyo proveedor tiene `dimProveedor[País Nombre] != 'Uruguay'`. |
-| **Paginas del reporte** | Se construiran paso a paso segun lo requiera el departamento de compras. Page 2 (Mercurius) no es necesaria por ahora. |
-
-## Diseno propuesto: Page 1 — Decision Panel (Compras al Exterior)
-
-### Filtros (barra superior)
-| Filtro | Campo |
-|--------|-------|
-| Pais Origen | `dimProveedor[País Nombre]` (multi-select) |
-| Proveedor | `dimProveedor[Proveedor Nombre]` (multi-select) |
-| Tipo de Articulo | `dimArticulo` hierarchy |
-
-**Estado por defecto:** `País Nombre != "Uruguay"`
-
-### Seccion A: KPI Cards (fila superior)
-| KPI | Medida | Formato condicional |
-|-----|--------|---------------------|
-| Total Articulos | `DISTINCTCOUNT(dimArticulo[Artículo Código])` | — |
-| Articulos con Cobertura < Lead Time | `Alerta Cobertura` con filtro "PEDIR" | Rojo si > 0 |
-| Stock Proyectado Total | `Stock Proyectado` | — |
-| Consumo Mensual Total | `Consumo Promedio por Mes Activo` | — |
-
-### Seccion B: Tabla principal — "Panel de Decision Rosana"
+### Tabla principal: "C.Ext. Proveedor - Articulo"
 
 | # | Columna | Fuente / Medida | Estado |
 |---|---------|-----------------|--------|
-| 1 | Codigo | `dimArticulo[Artículo Código]` | Existe |
-| 2 | Descripcion | `dimArticulo[Artículo Descripción]` | Existe |
-| 3 | Proveedor | `dimProveedor[Proveedor Nombre]` | Existe |
-| 4 | Pais | `dimProveedor[País Nombre]` | Existe |
-| 5 | Consumo Mensual Promedio | `Consumo Promedio por Mes Activo` | Existe |
-| 6 | Stock Existencia | `Stock Existencia` | Existe |
-| 7 | Stock Proyectado | `Stock Proyectado` | Existe |
-| 8 | Cobertura (meses) | `Cobertura Meses sobre Existencia` | Existe |
-| 9 | Lead Time Historico (dias) | `Lead Time Promedio Dias` | Existe |
-| 10 | **Diferencia Cobertura – Lead Time** | **NUEVO: `Diferencia Cobertura Lead Time`** | Pendiente aprobacion |
-| 11 | **Alerta** | **NUEVO: `Alerta Cobertura`** | Pendiente aprobacion |
-| 12 | Compras en Proceso | `Stock Compras` | Existe |
+| 1 | Proveedor Codigo | `dimArticulo[Proveedor Articulo]` | ✅ |
+| 2 | Proveedor Nombre | `dimArticulo[ProveedorArticuloNombre]` | ✅ |
+| 3 | Clase | `dimArticulo[Clase Nombre]` | ✅ |
+| 4 | Articulo Codigo | `dimArticulo[Artículo Código]` | ✅ |
+| 5 | Articulo | `dimArticulo[Artículo Nombre]` | ✅ |
+| 6 | Ultima Recepcion Fecha | `[Ultima Recepcion Fecha]` | ✅ |
+| 7 | Cantidad Recepciones | `[Cantidad Recepciones]` | ✅ |
+| 8 | Lote Minimo Compra | `dimArticulo[Lote Mínimo Compra]` | ✅ |
+| 9 | Lead Time Promedio Dias | `[Lead Time Promedio Dias]` | ✅ |
+| 10 | Lead Time Promedio Meses | `DIVIDE([Lead Time Promedio Dias], 30)` | ✅ |
+| 11 | Consumo Promedio por Mes Activo | `[Consumo Promedio por Mes Activo]` | ✅ |
+| 12 | **Diferencia Cobertura Lead Time** | `[Diferencia Cobertura Lead Time]` | ✅ Con formato condicional (rojo/verde) |
+| 13 | **Alerta Cobertura** | `[Alerta Cobertura]` | ✅ Con formato condicional (PEDIR=rojo, Atencion=amarillo, OK=verde) |
+| 14 | Unidad Stock | `dimArticulo[Unidad Stock]` | ✅ |
+| 15 | Stock Minimo | `dimArticulo[Artículo Stock Mínimo]` | ✅ |
+| 16 | Stock Existencia | `[Stock Existencia]` | ✅ |
+| 17 | Stock Proyectado | `[Stock Proyectado]` | ✅ |
+| 18 | Cobertura Meses sobre Existencia | `[Cobertura Meses sobre Existencia]` | ✅ |
+| 19 | Cobertura Meses sobre Existencia + Proyectado | `[Cobertura Meses sobre Existencia + Proyectado]` | ✅ |
 
-### Seccion C: Panel de detalle / contexto
-Al hacer click en un articulo:
-- Tendencia de consumo ultimos 12 meses (grafico de linea)
-- Historia de recepciones desde `factRecepcionesHistoria`
-- Ordenes de compra activas desde `factComprasEnProceso`
+### Formato condicional aplicado
+| Medida | Regla | Color |
+|--------|-------|-------|
+| `Alerta Cobertura` | = "PEDIR" | Rojo |
+| `Alerta Cobertura` | = "Atencion" | Amarillo |
+| `Alerta Cobertura` | = "OK" | Verde |
+| `Diferencia Cobertura Lead Time` | < 0 | Rojo |
+| `Diferencia Cobertura Lead Time` | >= 0 | Verde |
 
-## Nuevas medidas DAX propuestas (pendientes de aprobacion)
+## Medidas DAX implementadas
 
-### Medida A: `Diferencia Cobertura Lead Time`
+### 1. Diferencia Cobertura Lead Time
 ```dax
 Diferencia Cobertura Lead Time = 
-VAR CoberturaMeses = [Cobertura Meses sobre Existencia]
-VAR LeadTimeMeses = DIVIDE([Lead Time Promedio Dias], 30)
-RETURN
-    CoberturaMeses - LeadTimeMeses
+[Cobertura Meses sobre Existencia] - DIVIDE([Lead Time Promedio Dias], 30)
 ```
-**Logica:** Positivo = cobertura excede lead time (seguro). Negativo = cobertura baja lead time (debe ordenar).
 
-### Medida B: `Alerta Cobertura`
+### 2. Alerta Cobertura
 ```dax
 Alerta Cobertura = 
 VAR Diferencia = [Diferencia Cobertura Lead Time]
@@ -346,10 +274,41 @@ RETURN
     )
 ```
 
-## Proximos pasos aprobados
+### 3. Cobertura Meses sobre Existencia + Proyectado
+```dax
+Cobertura Meses sobre Existencia + Proyectado = 
+DIVIDE(
+    [Stock Existencia] + [Stock Proyectado],
+    [Consumo Promedio por Mes Activo]
+)
+```
 
-1. **Validar criterio "Compras al Exterior"** — Criterio aprobado: proveedores con `País Nombre != "Uruguay"`
-2. **Disenar wireframe Page 1: Decision Panel** — ✅ Presentado, esperando aprobacion de medidas A y B
-3. **Construir Page 1 paso a paso** — Implementar solo despues de aprobacion del diseno
-4. **Trabajar casos de uso con Rosana** para definir calculo "A pedir"
-5. **Evaluar nuevas medidas DAX** una por una con aprobacion previa
+## Decisiones de alcance aprobadas
+
+| Decision | Estado |
+|----------|--------|
+| **Lead time** | Usar medida historica del modelo PBIX (`Lead Time Promedio Dias`). Mas fiable que el Excel. Si hay mucha diferencia, se evaluara inicializar atributo en dimProveedor desde Excel para medir diferencia. |
+| **Consolidacion Mercurius** | **FUERA DE ALCANCE** por ahora. Enfoque en planificar compras por proveedor. |
+| **"A pedir"** | Se trabajara sobre casos de uso con Rosana para definir y validar el calculo. No se crea medida DAX sin aprobacion previa. |
+| **Cambios al modelo PBIX** | Cada cambio requiere aprobacion explicita del usuario antes de implementarse. |
+| **Compras al exterior** | Definidas como articulos cuyo proveedor tiene `dimProveedor[País Nombre] != 'Uruguay'`. |
+| **Paginas del reporte** | Se construiran paso a paso segun lo requiera el departamento de compras. Page 2 (Mercurius) no es necesaria por ahora. |
+
+## Proximos pasos
+
+### Inmediatos (esta semana)
+1. [ ] **Validar numeros con Rosana** — Comparar 5-10 articulos del Excel vs el reporte PBIX
+2. [ ] **Ajustar umbrales de Alerta Cobertura** — Confirmar con Rosana si `< 0` para "PEDIR" y `< 1` para "Atencion" son los correctos
+3. [ ] **Agregar KPI cards** — Total articulos, articulos con alerta PEDIR, stock proyectado total
+4. [ ] **Revisar articulos con "Sin datos de Proveedor"** — El proveedor por defecto es "S/P" o falta en la vista
+
+### Corto plazo (proximas 2 semanas)
+5. [ ] **Trabajar casos de uso "A pedir" con Rosana** — Definir formula exacta y validar con ejemplos reales
+6. [ ] **Implementar medida "A pedir"** — Una vez validada la formula con Rosana
+7. [ ] **Agregar grafico de tendencia de consumo** — Ultimos 12 meses por articulo (drill-through)
+8. [ ] **Agregar detalle de ordenes de compra en curso** — Expandir fila para ver OC activas
+
+### Medio plazo
+9. [ ] **Evaluar migracion a SSAS Tabular** — Centralizar modelo, automatizar refresh, evitar distribucion de PBIX
+10. [ ] **Agregar comentarios/alertas manuales** — Campo de texto libre para notas de desuso/discontinuacion
+11. [ ] **Page 2: Consolidacion Europa (Mercurius)** — Cuando Rosana lo requiera
