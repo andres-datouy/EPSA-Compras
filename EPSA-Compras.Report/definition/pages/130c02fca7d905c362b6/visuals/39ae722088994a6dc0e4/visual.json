@@ -1,0 +1,172 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "39ae722088994a6dc0e4",
+  "position": {
+    "x": 21.428571428571431,
+    "y": 754.28571428571433,
+    "z": 1000,
+    "height": 394.28571428571433,
+    "width": 1290,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Formulario"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Formulario",
+              "nativeQueryRef": "Consumo Formulario"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Transacción"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Transacción",
+              "nativeQueryRef": "Consumo Transacción"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Documento"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Documento",
+              "nativeQueryRef": "Consumo Documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Nº Documento"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Nº Documento",
+              "nativeQueryRef": "Consumo Nº Documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Fecha"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Fecha",
+              "nativeQueryRef": "Consumo Fecha"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Artículo Código"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Artículo",
+              "nativeQueryRef": "Consumo Artículo"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "factConsumoHistoria"
+                        }
+                      },
+                      "Property": "Consumo Cantidad"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(factConsumo.Consumo Cantidad)",
+              "nativeQueryRef": "Suma de Consumo Cantidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Depósito"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Depósito",
+              "nativeQueryRef": "Consumo Depósito"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Estado"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Estado",
+              "nativeQueryRef": "Consumo Estado"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "factConsumoHistoria"
+                  }
+                },
+                "Property": "Consumo Fecha"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,771 @@
+﻿{
+  "name": "dimArticulo",
+  "lineageTag": "1292757b-bf07-48fd-9d3b-5eeba313799c",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2026-05-25T15:53:52.896667",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      }
+    },
+    {
+      "name": "Artículo Código",
+      "dataType": "string",
+      "sourceColumn": "Artículo Código",
+      "lineageTag": "feca9020-86b0-4ff2-8ab7-746a61ffc6ca",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Artículo Nombre",
+      "dataType": "string",
+      "sourceColumn": "Artículo Nombre",
+      "lineageTag": "57df8e42-55c1-4ea2-abd1-6616e03093d4",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.686667",
+        "refreshedTime": "2026-05-28T17:26:57.686667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Artículo Catalogo",
+      "dataType": "string",
+      "sourceColumn": "Artículo Catalogo",
+      "lineageTag": "c77d5507-e809-4f66-86b0-96a018bd4f73",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.683333",
+        "refreshedTime": "2026-05-28T17:26:57.683333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Tipo Artículo Código",
+      "dataType": "string",
+      "sourceColumn": "Tipo Artículo Código",
+      "lineageTag": "0b5e31bf-dc8f-4032-9678-f119df6be094",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.693333",
+        "refreshedTime": "2026-05-28T17:26:57.693333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Tipo de Artículo Nombre",
+      "dataType": "string",
+      "sourceColumn": "Tipo de Artículo Nombre",
+      "lineageTag": "6728405e-6102-451c-946a-9f7e764b5824",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Tipo Artículo",
+      "dataType": "string",
+      "sourceColumn": "Tipo Artículo",
+      "lineageTag": "49018117-e328-4e73-83ff-0f29e1591c1d",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.67",
+        "refreshedTime": "2026-05-28T17:26:57.67"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Marca Código",
+      "dataType": "string",
+      "sourceColumn": "Marca Código",
+      "lineageTag": "7b0b9365-8aa5-4778-9635-92960309b3a2",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Marca Descripción",
+      "dataType": "string",
+      "sourceColumn": "Marca Descripción",
+      "lineageTag": "1ca9273a-a609-4ed6-8183-c8f3b34f83af",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Clase Código",
+      "dataType": "string",
+      "sourceColumn": "Clase Código",
+      "lineageTag": "3cf1bdef-bd30-45c2-bda2-746e868c092e",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.673333",
+        "refreshedTime": "2026-05-28T17:26:57.673333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Clase Nombre",
+      "dataType": "string",
+      "sourceColumn": "Clase Nombre",
+      "lineageTag": "3cb869a7-7125-4b44-8d61-159f7b56502c",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Familia Código",
+      "dataType": "string",
+      "sourceColumn": "Familia Código",
+      "lineageTag": "5e0b1739-3bc6-4b92-9abc-e7d4b650f35f",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Familia Nombre",
+      "dataType": "string",
+      "sourceColumn": "Familia Nombre",
+      "lineageTag": "4f76483f-eac9-43fc-b3c0-d793133879fa",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.693333",
+        "refreshedTime": "2026-05-28T17:26:57.693333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Subfamilia Código",
+      "dataType": "string",
+      "sourceColumn": "Subfamilia Código",
+      "lineageTag": "216040b8-0dab-45fb-8062-938dda888aaa",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "SubFamilia Nombre",
+      "dataType": "string",
+      "sourceColumn": "SubFamilia Nombre",
+      "lineageTag": "27a565c6-c1de-442c-a1f9-2b02282fafa7",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Unidad Stock",
+      "dataType": "string",
+      "sourceColumn": "Unidad Stock",
+      "lineageTag": "499121e5-b2c7-4616-bf5f-1f557a928e75",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Grupo Contable de Venta Código",
+      "dataType": "string",
+      "sourceColumn": "Grupo Contable de Venta Código",
+      "lineageTag": "e8b67ff1-f9b9-44ec-ac13-7e2c89a93287",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Grupo",
+      "dataType": "string",
+      "sourceColumn": "Grupo",
+      "lineageTag": "e08325ce-d46d-460c-805e-5a94854acd4b",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Grupo Artículo Nombre",
+      "dataType": "string",
+      "sourceColumn": "Grupo Artículo Nombre",
+      "lineageTag": "e57f1831-6e0e-4852-9cf8-d376183055ba",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Uso Código",
+      "dataType": "string",
+      "sourceColumn": "Uso Código",
+      "lineageTag": "645a8c15-038b-4eaa-9736-d2a08f7bb59d",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.693333",
+        "refreshedTime": "2026-05-28T17:26:57.693333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Uso Nombre",
+      "dataType": "string",
+      "sourceColumn": "Uso Nombre",
+      "lineageTag": "bb812ef3-7cf2-4c36-9945-15e7fae2e4b8",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Artículo Stock Mínimo",
+      "dataType": "double",
+      "sourceColumn": "Artículo Stock Mínimo",
+      "lineageTag": "a71520d3-2c9f-441a-adc0-41c0d41df564",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "plazo",
+      "dataType": "int64",
+      "sourceColumn": "plazo",
+      "formatString": "0",
+      "lineageTag": "b48c1e2d-7752-4305-88dc-8836db1a8c18",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Lote Mínimo Compra",
+      "dataType": "double",
+      "sourceColumn": "Lote Mínimo Compra",
+      "lineageTag": "d4f947ab-fde4-4563-9abf-c6784aba083e",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-13T12:22:46.1",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2026-05-13T12:22:46.1"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Codigo",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Codigo",
+      "lineageTag": "a703ec88-565a-4ebe-8cda-94cef5e74b89",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-13T19:39:44.36",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "TipoComponente",
+      "dataType": "string",
+      "sourceColumn": "TipoComponente",
+      "lineageTag": "3ca82c5d-601e-4f84-a044-039eb2aea9cc",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "Clase",
+      "dataType": "string",
+      "isDataTypeInferred": true,
+      "expression": "dimArticulo[Clase Código] & \" - \"& dimArticulo[Clase Nombre]",
+      "lineageTag": "132223e6-6362-444e-aaaf-13f7e6901c98",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-28T17:26:57.673333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.673333",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "Artículo",
+      "dataType": "string",
+      "isDataTypeInferred": true,
+      "expression": "dimArticulo[Artículo Código] & \"- \"& dimArticulo[Artículo Nombre]",
+      "lineageTag": "99489607-6b9e-47f0-848d-60d0a9a6de95",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-28T17:26:57.693333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.693333",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.7",
+        "refreshedTime": "2026-05-28T17:26:57.7"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Nombre",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Nombre",
+      "lineageTag": "a95d8762-9c83-4127-b0eb-1896727f58d7",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-13T19:39:44.41",
+      "structureModifiedTime": "2025-12-03T19:59:50.19",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T19:59:50.19"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "Proveedor Artículo Full",
+      "dataType": "string",
+      "isDataTypeInferred": true,
+      "expression": "dimArticulo[Proveedor Codigo] & \"- \"& dimArticulo[Proveedor Nombre]",
+      "lineageTag": "89228f0c-658c-4264-b4cc-1024f54b8e0c",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-28T17:26:57.663333",
+      "structureModifiedTime": "2025-12-03T20:00:28",
+      "refreshedTime": "2026-05-28T17:26:57.663333",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T20:00:28.056667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedores",
+      "dataType": "string",
+      "sourceColumn": "Proveedores",
+      "lineageTag": "7b5678f9-69fa-486f-8562-6266790fac90",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-12-04T11:05:28.36",
+      "structureModifiedTime": "2025-12-04T11:05:28.36",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-04T11:05:28.36"
+        }
+      ]
+    },
+    {
+      "name": "ProveedorPais",
+      "dataType": "string",
+      "sourceColumn": "ProveedorPais",
+      "lineageTag": "6d6783c9-2322-49a1-ab4f-421cd30356ba",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-13T19:35:47.356667",
+      "structureModifiedTime": "2026-05-13T19:35:47.356667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2026-05-13T19:35:47.36"
+        }
+      ]
+    },
+    {
+      "name": "ProveedorPaisNombre",
+      "dataType": "string",
+      "sourceColumn": "ProveedorPaisNombre",
+      "lineageTag": "76093c18-68f2-44f2-8942-7456db3dfe16",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-25T15:53:52.896667",
+      "structureModifiedTime": "2026-05-25T15:53:52.896667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2026-05-25T15:53:52.896667"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "dimArticulo",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-27T17:59:05.993333",
+      "refreshedTime": "2026-05-28T17:26:02.743333",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"EPSA_BI\"),\n    dbo_vw_Compras_DimArticuloEPSA = Origen{[Schema=\"dbo\",Item=\"vw_Compras_DimArticuloEPSA\"]}[Data],\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(dbo_vw_Compras_DimArticuloEPSA,{{\"catalogo\", \"Artículo Catalogo\"}, {\"cod_articulo\", \"Artículo Código\"}, {\"cod_clasifart\", \"Clase Código\"}, {\"cod_familia_art\", \"Familia Código\"}, {\"cod_grcontvta\", \"Grupo Contable de Venta Código\"}, {\"cod_marca\", \"Marca Código\"}, {\"cod_subfam_art\", \"Subfamilia Código\"}, {\"cod_tipoart\", \"Tipo Artículo Código\"}, {\"cod_uni_stk\", \"Unidad Stock\"}, {\"cod_uso\", \"Uso Código\"}, {\"lote_min_cpra\", \"Lote Mínimo Compra\"}, {\"marca_dsc\", \"Marca Descripción\"}, {\"nom_articulo\", \"Artículo Nombre\"}, {\"nom_clasifart\", \"Clase Nombre\"}, {\"nom_familia_art\", \"Familia Nombre\"}, {\"nom_grupoart\", \"Grupo Artículo Nombre\"}, {\"nom_subfam_art\", \"SubFamilia Nombre\"}, {\"nom_usofinal\", \"Uso Nombre\"}, {\"nom_tipoart\", \"Tipo de Artículo Nombre\"}, {\"ProveedorArticulo\", \"Proveedor Codigo\"}, {\"stock_minimo\", \"Artículo Stock Mínimo\"}, {\"ProveedorArticuloNombre\", \"Proveedor Nombre\"}})\nin\n    #\"Columnas con nombre cambiado\""
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2026-05-28T17:25:54.276667"
+    }
+  ]
+}

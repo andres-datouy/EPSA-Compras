@@ -1,0 +1,262 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "3d3756f1ad1e049d6945",
+  "position": {
+    "x": 984.44444444444434,
+    "y": 1574.5555555555609,
+    "z": 4000,
+    "height": 393.33333333333331,
+    "width": 727.77777777777771,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoPlanificado"
+                    }
+                  },
+                  "Property": "Consumo Planificado Orden"
+                }
+              },
+              "queryRef": "factConsumoPlanificado.Consumo Planificado Orden",
+              "nativeQueryRef": "Consumo Planificado Orden"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoPlanificado"
+                    }
+                  },
+                  "Property": "Consumo Planificado Tipo Orden"
+                }
+              },
+              "queryRef": "factConsumoPlanificado.Consumo Planificado Tipo Orden",
+              "nativeQueryRef": "Consumo Planificado Tipo Orden"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoPlanificado"
+                    }
+                  },
+                  "Property": "Consumo Planificado Fecha Planificacion"
+                }
+              },
+              "queryRef": "factConsumoPlanificado.Consumo Planificado Fecha Planificacion",
+              "nativeQueryRef": "Consumo Planificado Fecha Planificacion"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoPlanificado"
+                    }
+                  },
+                  "Property": "Consumo Planificado Nº Paso Orden"
+                }
+              },
+              "queryRef": "factConsumoPlanificado.Consumo Planificado Nº Paso Orden",
+              "nativeQueryRef": "Consumo Planificado Nº Paso Orden"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoPlanificado"
+                    }
+                  },
+                  "Property": "Consumo Planificado Artículo"
+                }
+              },
+              "queryRef": "factConsumoPlanificado.Consumo Planificado Artículo",
+              "nativeQueryRef": "Consumo Planificado Artículo"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "factConsumoPlanificado"
+                        }
+                      },
+                      "Property": "Consumo Planificado Cantidad"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(factConsumoPlanificado.Consumo Planificado Cantidad)",
+              "nativeQueryRef": "Suma de Consumo Planificado Cantidad"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "factConsumoPlanificado"
+                      }
+                    },
+                    "Property": "Consumo Planificado Cantidad"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumoPlanificado.Consumo Planificado Orden"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumoPlanificado.Consumo Planificado Tipo Orden"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumoPlanificado.Consumo Planificado Fecha Planificacion"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumoPlanificado.Consumo Planificado Nº Paso Orden"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumoPlanificado.Consumo Planificado Artículo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(factConsumoPlanificado.Consumo Planificado Cantidad)"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CONSUMO PLANIFICADO'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

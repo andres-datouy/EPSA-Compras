@@ -1,0 +1,524 @@
+﻿{
+  "name": "factDemandaPendientePlanificacion",
+  "lineageTag": "3386f286-34c1-4574-a2fb-183c044c1d82",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2025-11-26T11:32:13.733333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      }
+    },
+    {
+      "name": "Demanda Pendiente Formula",
+      "dataType": "int64",
+      "sourceColumn": "Demanda Pendiente Formula",
+      "formatString": "0",
+      "lineageTag": "b1db2481-97d4-4d36-bf65-c086f11b50b8",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Producto",
+      "dataType": "string",
+      "sourceColumn": "Producto",
+      "lineageTag": "0fe4aab8-8e0a-4480-96c2-778f3a75dbf1",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Demanda Pendiente Artículo Nombre",
+      "dataType": "string",
+      "sourceColumn": "Demanda Pendiente Artículo Nombre",
+      "lineageTag": "c90d13bc-e653-4342-aa63-768c8434c2b3",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.67",
+        "refreshedTime": "2026-05-28T17:26:57.67"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Demanda Pendiente Componente Formula",
+      "dataType": "int64",
+      "sourceColumn": "Demanda Pendiente Componente Formula",
+      "formatString": "0",
+      "lineageTag": "d6687bf2-6289-45de-9c95-2b028a0a087e",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Demanda Pendiente Componente Código",
+      "dataType": "string",
+      "sourceColumn": "Demanda Pendiente Componente Código",
+      "lineageTag": "fb9f6f62-5907-49fb-93ea-14fab83e1eeb",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "NomComponente",
+      "dataType": "string",
+      "sourceColumn": "NomComponente",
+      "lineageTag": "29d54c47-1de3-4308-b052-11cbbb5c54f6",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.67",
+        "refreshedTime": "2026-05-28T17:26:57.67"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Demanda Pendiente Componente Tipo",
+      "dataType": "string",
+      "sourceColumn": "Demanda Pendiente Componente Tipo",
+      "lineageTag": "a0a94d4c-2928-4b34-af2b-28d5980506e8",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Demanda Pendiente Componente Tipo Ficha",
+      "dataType": "string",
+      "sourceColumn": "Demanda Pendiente Componente Tipo Ficha",
+      "lineageTag": "b934a0e3-7a0c-4b71-850f-1ec4dda25e2c",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "LoteMinFabricacion",
+      "dataType": "int64",
+      "sourceColumn": "LoteMinFabricacion",
+      "formatString": "0",
+      "lineageTag": "9e6e480c-e205-4822-bcb4-99376dd70b7a",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Demanda Pendiente Componente Nivel",
+      "dataType": "int64",
+      "sourceColumn": "Demanda Pendiente Componente Nivel",
+      "formatString": "0",
+      "lineageTag": "6ced3ba7-bc50-403f-9861-8bd958e7aa69",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Obligatorio",
+      "dataType": "string",
+      "sourceColumn": "Obligatorio",
+      "lineageTag": "eb653936-e49d-465c-9931-42ab4a223103",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Demanda Pendiente Componente Cantidad Requerida",
+      "dataType": "double",
+      "sourceColumn": "Demanda Pendiente Componente Cantidad Requerida",
+      "lineageTag": "bbdd01e4-7494-47fd-a5fa-4b43991dfd6a",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "PedOrigen_documento",
+      "dataType": "string",
+      "sourceColumn": "PedOrigen_documento",
+      "lineageTag": "97bf417b-e0fb-4ff7-8783-4ddbe06bed88",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "PedOrigen_serie",
+      "dataType": "string",
+      "sourceColumn": "PedOrigen_serie",
+      "lineageTag": "d1d88d1e-ecda-47c4-b75d-a1926d31eae9",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "PedOrigen_numero",
+      "dataType": "string",
+      "sourceColumn": "PedOrigen_numero",
+      "lineageTag": "8b0b47d4-8620-4dff-b38e-ea76a90c8a20",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Demanda Pendiente Artículo Formula Origen",
+      "dataType": "int64",
+      "sourceColumn": "Demanda Pendiente Artículo Formula Origen",
+      "formatString": "0",
+      "lineageTag": "2913142e-0940-4ed5-8ebc-3917d4946254",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Demanda Pendiente Articulo Pedido x Cliente",
+      "dataType": "string",
+      "sourceColumn": "Demanda Pendiente Articulo Pedido x Cliente",
+      "lineageTag": "67a9d0da-6f2e-41ce-8bd7-2de516666a78",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "TrazaComposicion",
+      "dataType": "string",
+      "sourceColumn": "TrazaComposicion",
+      "lineageTag": "b33dc63d-37c4-405f-91ae-d0586eefafa7",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:58.39",
+        "refreshedTime": "2026-05-28T17:26:58.39"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "NodoID_Hex",
+      "dataType": "string",
+      "sourceColumn": "NodoID_Hex",
+      "lineageTag": "9630dc3b-a68d-4516-8597-44b0cc011261",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "NodoPadreID_Hex",
+      "dataType": "string",
+      "sourceColumn": "NodoPadreID_Hex",
+      "lineageTag": "48002c35-81ad-4dd8-ac72-be6685919786",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.673333",
+        "refreshedTime": "2026-05-28T17:26:57.673333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "Pedido",
+      "dataType": "string",
+      "isDataTypeInferred": true,
+      "expression": "factDemandaPendientePlanificacion[PedOrigen_serie] & \" | \" & factDemandaPendientePlanificacion[PedOrigen_numero]",
+      "lineageTag": "66139630-8216-41db-be79-3cbcbea6719f",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-28T17:26:57.673333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.673333",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.673333",
+        "refreshedTime": "2026-05-28T17:26:57.673333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "factDemandaPendientePlanificacion",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "2026-05-28T17:26:21.513333",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"Nodum\", [Query=\"SELECT Formula, Producto, NomProducto, FormulaComp, Componente, NomComponente, TipoComp, Componente_TipoFicha, LoteMinFabricacion, [Level], Obligatorio, Cantidad_Requerida, PedOrigen_documento, PedOrigen_serie, PedOrigen_numero, FormulaOrigen, ArticuloPedido, TrazaComposicion, NodoID, NodoPadreID, NodoID_Hex, NodoPadreID_Hex#(lf)FROM  EPSA_BI.dbo.stg_RequerimientosSobreDemandaPendientePlanificacion\"]),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(Origen,{{\"TipoComp\", \"Demanda Pendiente Componente Tipo\"}, {\"ArticuloPedido\", \"Demanda Pendiente Articulo Pedido x Cliente\"}, {\"Componente\", \"Demanda Pendiente Componente Código\"}, {\"Componente_TipoFicha\", \"Demanda Pendiente Componente Tipo Ficha\"}, {\"Cantidad_Requerida\", \"Demanda Pendiente Componente Cantidad Requerida\"}, {\"Formula\", \"Demanda Pendiente Formula\"}, {\"FormulaComp\", \"Demanda Pendiente Componente Formula\"}, {\"FormulaOrigen\", \"Demanda Pendiente Artículo Formula Origen\"}, {\"Level\", \"Demanda Pendiente Componente Nivel\"}, {\"NomProducto\", \"Demanda Pendiente Artículo Nombre\"}})\nin\n    #\"Columnas con nombre cambiado\""
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    }
+  ]
+}

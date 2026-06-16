@@ -1,0 +1,518 @@
+﻿{
+  "name": "dimProveedor",
+  "lineageTag": "53c66c41-efae-40b4-9aac-3ded45355d55",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2025-11-26T11:32:13.733333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      }
+    },
+    {
+      "name": "Proveedor Id",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Id",
+      "lineageTag": "3f41ca96-f06f-4674-8159-e318ae03a322",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Nombre",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Nombre",
+      "lineageTag": "0785cc66-c1f3-4e08-8d75-f3f7c64666e5",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Dirección",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Dirección",
+      "lineageTag": "bba7917c-2964-4efe-8be7-13529dd77556",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.68",
+        "refreshedTime": "2026-05-28T17:26:57.68"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Ciudad",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Ciudad",
+      "lineageTag": "833ef7b4-93b6-468d-84e5-1cfd7099ccdd",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Ciudad Nombre",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Ciudad Nombre",
+      "lineageTag": "b7d97784-2a1a-4071-86bb-3df25f424ab2",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Departamento",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Departamento",
+      "lineageTag": "6478fb38-e0f0-4543-beea-23c183d8653b",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Nombre Departamento",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Nombre Departamento",
+      "lineageTag": "0e2042c0-37ff-48fd-a4f8-a375979b4044",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.693333",
+        "refreshedTime": "2026-05-28T17:26:57.693333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "País Código",
+      "dataType": "string",
+      "sourceColumn": "País Código",
+      "lineageTag": "6c2af067-ac4a-45c0-b8f3-4233eb1a01c3",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.72",
+        "refreshedTime": "2026-05-28T17:26:57.72"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "País Nombre",
+      "dataType": "string",
+      "sourceColumn": "País Nombre",
+      "lineageTag": "27e24ab8-a60a-47bf-97e5-6b647e93f0c2",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.72",
+        "refreshedTime": "2026-05-28T17:26:57.72"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Teléfono",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Teléfono",
+      "lineageTag": "d7ccce8d-e172-4d4c-bb89-51ae505dc4b8",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Email",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Email",
+      "lineageTag": "86bddf65-0214-4979-ac88-a3410e9a0963",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Origen",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Origen",
+      "lineageTag": "278a2ecc-5476-4109-9b46-5ca499766dad",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Clase Id",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Clase Id",
+      "lineageTag": "e7559107-bf7c-45fa-bbf4-051c99d52679",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Clase Nombre",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Clase Nombre",
+      "lineageTag": "6a45e9bf-beab-4438-9038-08183b2a34dd",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Forma de Pago",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Forma de Pago",
+      "lineageTag": "d70e4225-fffb-4ffa-9918-fc93025c099c",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Forma de Pago Nombre",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Forma de Pago Nombre",
+      "lineageTag": "09572de8-99ca-487b-b10d-7d70738c404f",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.65",
+        "refreshedTime": "2026-05-28T17:26:57.65"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor RUT",
+      "dataType": "string",
+      "sourceColumn": "Proveedor RUT",
+      "lineageTag": "39560702-74a4-453d-8877-923790bbf97a",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Proveedor Status",
+      "dataType": "string",
+      "sourceColumn": "Proveedor Status",
+      "lineageTag": "eee3654a-631d-44f3-93d2-9491f84d2c74",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "Proveedor",
+      "dataType": "string",
+      "isDataTypeInferred": true,
+      "expression": "upper(dimProveedor[Proveedor Nombre]) & \" - (\"&dimProveedor[Proveedor Id]&\")\"",
+      "lineageTag": "3a579a23-0e78-4bf2-976b-d7380e29d669",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-28T17:26:57.656667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.656667",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "Proveedor Clase",
+      "dataType": "string",
+      "isDataTypeInferred": true,
+      "expression": "upper(dimProveedor[Proveedor Clase Nombre]) & \" - (\"& upper(dimProveedor[Proveedor Clase Id]) &\")\"",
+      "lineageTag": "d12362d0-a857-4e24-a101-8d433d44a457",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-28T17:26:57.696667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.696667",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.696667",
+        "refreshedTime": "2026-05-28T17:26:57.696667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "Proveedor Forma de Pago1",
+      "dataType": "string",
+      "isDataTypeInferred": true,
+      "expression": "upper(dimProveedor[Proveedor Forma de Pago Nombre]) & \" - (\"&  dimProveedor[Proveedor Forma de Pago] & \")\"",
+      "lineageTag": "93b88bd0-5812-410c-bdba-3c2f65d126ed",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-28T17:26:57.656667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.656667",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "dimProveedor",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "2026-05-28T17:25:58.33",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"Nodum\", [Query=\"select p.cod_tit, p.nom_tit, p.dir_tit, p.ciudad_tit, ciu.nom_ciudad,#(lf)p.cod_provincia, prov.nom_provincia, #(lf)p.cod_pais, pais.nom_pais,#(lf)p.tel_tit, p.email_tit, p.origen_tit,#(lf)p.cod_clase_prov, cp.nom_clase_prov,#(lf)p.cod_fpago, fp.nom_fpago, #(lf)p.nro_dgi, p.status_prov#(lf)from ct_proveedores p#(lf)left join ct_paises pais on pais.cod_pais=p.cod_pais#(lf)left join ct_provincias prov on prov.cod_provincia = p.cod_provincia and prov.cod_pais = p.cod_pais#(lf)left join ct_ciudades ciu on ciu.ciudad_tit=p.ciudad_tit and ciu.cod_provincia=p.cod_provincia and ciu.cod_pais=p.cod_pais#(lf)left join ct_clasesprov cp on cp.cod_clase_prov=p.cod_clase_prov#(lf)left join ct_fpagos fp on fp.cod_fpago=p.cod_fpago#(lf)where  exists (select 1, * from epsa_bi.dbo.vw_ComprasBI_RecepcionesHistoria h where h.OCProveedor = p.cod_tit)\"]),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(Origen,{{\"cod_tit\", \"Proveedor Id\"}, {\"nom_tit\", \"Proveedor Nombre\"}, {\"dir_tit\", \"Proveedor Dirección\"}, {\"ciudad_tit\", \"Proveedor Ciudad\"}, {\"nom_ciudad\", \"Proveedor Ciudad Nombre\"}, {\"cod_provincia\", \"Proveedor Departamento\"}, {\"nom_provincia\", \"Proveedor Nombre Departamento\"}, {\"cod_pais\", \"País Código\"}, {\"nom_pais\", \"País Nombre\"}, {\"tel_tit\", \"Proveedor Teléfono\"}, {\"email_tit\", \"Proveedor Email\"}, {\"origen_tit\", \"Proveedor Origen\"}, {\"cod_clase_prov\", \"Proveedor Clase Id\"}, {\"nom_clase_prov\", \"Proveedor Clase Nombre\"}, {\"cod_fpago\", \"Proveedor Forma de Pago\"}, {\"nom_fpago\", \"Proveedor Forma de Pago Nombre\"}, {\"nro_dgi\", \"Proveedor RUT\"}, {\"status_prov\", \"Proveedor Status\"}})\nin\n    #\"Columnas con nombre cambiado\""
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    }
+  ]
+}

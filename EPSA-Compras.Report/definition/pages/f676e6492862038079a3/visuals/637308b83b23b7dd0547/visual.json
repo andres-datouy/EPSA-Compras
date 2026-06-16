@@ -1,0 +1,254 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "637308b83b23b7dd0547",
+  "position": {
+    "x": 1873.3333333333333,
+    "y": 128.88888888888889,
+    "z": 7000,
+    "height": 337.77777777777777,
+    "width": 1024.4444444444443,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario"
+                        }
+                      },
+                      "Hierarchy": "Jerarquía Calendario"
+                    }
+                  },
+                  "Level": "Año Fiscal"
+                }
+              },
+              "queryRef": "Calendario.Jerarquía Calendario.Año Fiscal",
+              "nativeQueryRef": "Jerarquía Calendario Año Fiscal",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario"
+                        }
+                      },
+                      "Hierarchy": "Jerarquía Calendario"
+                    }
+                  },
+                  "Level": "Fiscal Month"
+                }
+              },
+              "queryRef": "Calendario.Jerarquía Calendario.Fiscal Month",
+              "nativeQueryRef": "Jerarquía Calendario Fiscal Month",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo",
+              "nativeQueryRef": "Recuento de Artículo"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Consumo Promedio por Mes Activo"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Consumo Promedio por Mes Activo",
+              "nativeQueryRef": "Consumo Promedio por Mes Activo"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Calendario"
+                      }
+                    },
+                    "Hierarchy": "Jerarquía Calendario"
+                  }
+                },
+                "Level": "Año Fiscal"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Calendario"
+                      }
+                    },
+                    "Hierarchy": "Jerarquía Calendario"
+                  }
+                },
+                "Level": "Fiscal Month"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Consumo Promedio -  Artículo'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c134501463034b5d5683",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Consumo"
+              }
+            },
+            "Property": "Consumo Promedio por Mes Activo"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fe328608d0c274115614",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Artículo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "61a9c17b9b5e32404436",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendario"
+                  }
+                },
+                "Hierarchy": "Jerarquía Calendario"
+              }
+            },
+            "Level": "Año Fiscal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "234dd8c0126a21a39e7d",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendario"
+                  }
+                },
+                "Hierarchy": "Jerarquía Calendario"
+              }
+            },
+            "Level": "Fiscal Month"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

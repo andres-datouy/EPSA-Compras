@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "57dcd1beb51c81751b29",
+  "displayName": "Proveedor - Artículo",
+  "displayOption": "ActualSize",
+  "height": 2500,
+  "width": 3000
+}

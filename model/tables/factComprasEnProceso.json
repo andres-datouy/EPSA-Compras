@@ -1,0 +1,312 @@
+﻿{
+  "name": "factComprasEnProceso",
+  "lineageTag": "268aff51-5245-40fc-8777-3f4afdd29ceb",
+  "modifiedTime": "2025-12-03T14:17:34.18",
+  "structureModifiedTime": "2025-12-03T18:01:47.98",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-12-03T14:17:34.183333",
+      "structureModifiedTime": "2025-12-03T14:17:34.18",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      }
+    },
+    {
+      "name": "CompraEP Tipo",
+      "dataType": "string",
+      "sourceColumn": "CompraEP Tipo",
+      "lineageTag": "363fae0b-f779-4e8e-ae9b-ede23e60201f",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-12-03T14:19:00.75",
+      "structureModifiedTime": "2025-12-03T14:17:34.183333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        }
+      ]
+    },
+    {
+      "name": "CompraEP Proveedor",
+      "dataType": "string",
+      "sourceColumn": "CompraEP Proveedor",
+      "lineageTag": "e530a8af-1b7d-4b02-b7eb-dd97c6ce5ce0",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-12-03T14:19:17.18",
+      "structureModifiedTime": "2025-12-03T14:17:34.183333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.693333",
+        "refreshedTime": "2026-05-28T17:26:57.693333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        }
+      ]
+    },
+    {
+      "name": "CompraEP Doc",
+      "dataType": "string",
+      "sourceColumn": "CompraEP Doc",
+      "lineageTag": "9d030a03-8607-41b8-82c0-7e473d4c28b6",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-12-03T14:19:28.326667",
+      "structureModifiedTime": "2025-12-03T14:17:34.183333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        }
+      ]
+    },
+    {
+      "name": "CompraEP Serie",
+      "dataType": "string",
+      "sourceColumn": "CompraEP Serie",
+      "lineageTag": "8fd47815-7269-43f0-a47d-6932d7fa5b27",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-12-03T14:19:37.473333",
+      "structureModifiedTime": "2025-12-03T14:17:34.183333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.736667",
+        "refreshedTime": "2026-05-28T17:26:57.736667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        }
+      ]
+    },
+    {
+      "name": "CompraEP Numero",
+      "dataType": "int64",
+      "sourceColumn": "CompraEP Numero",
+      "formatString": "0",
+      "lineageTag": "71c424a6-5e87-4a48-9add-0c895e3663bb",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-12-03T14:19:45.526667",
+      "structureModifiedTime": "2025-12-03T14:17:34.183333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        }
+      ]
+    },
+    {
+      "name": "CompraEP Articulo Codigo",
+      "dataType": "string",
+      "sourceColumn": "CompraEP Articulo Codigo",
+      "lineageTag": "502bb53c-cebd-4e93-b55d-ebfb8e5e4d0c",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-12-03T14:20:00.053333",
+      "structureModifiedTime": "2025-12-03T14:17:34.183333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.693333",
+        "refreshedTime": "2026-05-28T17:26:57.693333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        }
+      ]
+    },
+    {
+      "name": "CompraEP Cantidad",
+      "dataType": "double",
+      "sourceColumn": "CompraEP Cantidad",
+      "lineageTag": "ad689fee-2662-4da6-a77d-e17c304286da",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-12-03T14:20:13.826667",
+      "structureModifiedTime": "2025-12-03T14:17:34.183333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        }
+      ]
+    },
+    {
+      "name": "CompraEP Fecha Ultima Modificacion",
+      "dataType": "dateTime",
+      "sourceColumn": "CompraEP Fecha Ultima Modificacion",
+      "formatString": "General Date",
+      "lineageTag": "0a874803-4adc-4c5f-a0f7-25a4b039aae1",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-12-03T14:20:41.306667",
+      "structureModifiedTime": "2025-12-03T14:21:54.28",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.693333",
+        "refreshedTime": "2026-05-28T17:26:57.693333"
+      },
+      "changedProperties": [
+        {
+          "property": "SortByColumn"
+        }
+      ],
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        }
+      ]
+    },
+    {
+      "name": "CompraEP Ultima Fecha Entrega",
+      "dataType": "dateTime",
+      "sourceColumn": "CompraEP Ultima Fecha Entrega",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "d26e3ad5-d0ef-43ed-a304-d39be5baa93b",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-12-03T14:21:38.536667",
+      "structureModifiedTime": "2025-12-03T14:17:34.183333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:17:34.183333"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-12-03T14:21:38.536667"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "CompraEP Documento",
+      "dataType": "string",
+      "isDataTypeInferred": true,
+      "expression": "factComprasEnProceso[CompraEP Doc] & \": \" & factComprasEnProceso[CompraEP Serie] & \" | \" & factComprasEnProceso[CompraEP Numero]",
+      "lineageTag": "1cc8aa37-bc29-466b-b15b-29e126b957f4",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-28T17:26:57.753333",
+      "structureModifiedTime": "2025-12-03T14:38:15.436667",
+      "refreshedTime": "2026-05-28T17:26:57.753333",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.753333",
+        "refreshedTime": "2026-05-28T17:26:57.753333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T14:38:15.5"
+        }
+      ]
+    },
+    {
+      "name": "cod_tipoart",
+      "dataType": "string",
+      "sourceColumn": "cod_tipoart",
+      "lineageTag": "4d41cd2c-9ad9-4fdc-98bc-a2cd31f5059b",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-12-03T18:01:47.98",
+      "structureModifiedTime": "2025-12-03T18:01:47.98",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.65",
+        "refreshedTime": "2026-05-28T17:26:57.65"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-12-03T18:01:47.98"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "factComprasEnProceso",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "2026-05-28T17:26:14.57",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"Nodum\", [Query=\"#(tab)select 'Solicitud' as Tipo, s.cod_tit, s.cod_doca, s.serie_doca, s.nro_doca, s.cod_articulo, a.cod_tipoart, sum(cantidad*signo) as Cant, max(s.fecha_mod) as FechaUltimaMod, max(s.fec_entrega) as FechaEntregaMax#(lf)#(tab)from cps_solicitudes s#(lf)#(tab)join ct_articulos a on a.cod_articulo = s.cod_articulo#(lf)#(tab)where s.cod_emp = 'epsa'#(lf)#(tab)and a.cod_tipoart not in ('pt', 'prvta', 'semi', 'tubos', 'servta')#(lf)#(tab)group by s.cod_tit,  s.cod_doca, s.serie_doca, s.nro_doca, s.cod_articulo, a.cod_tipoart#(lf)#(tab)having sum(cantidad*signo)>0 and year(max(s.fecha_mod) )>= year(getdate())-5#(lf)#(tab)union#(lf)#(tab)select 'Orden de Compra' as Tipo, o.cod_tit, o.cod_doca, o.serie_doca, o.nro_doca, o.cod_articulo, a.cod_tipoart, sum(cantidad*signo) as Cant, max(o.fecha_mod) as FechaUltimaMod, max(o.fec_entrega) as FechaEntregaMax#(lf)#(tab)from cps_ocompras o#(lf)#(tab)join ct_articulos a on a.cod_articulo = o.cod_articulo#(lf)#(tab)where o.cod_emp = 'epsa'#(lf)#(tab)and a.cod_tipoart not in ('pt', 'prvta', 'semi', 'tubos', 'servta')#(lf)#(tab)group by o.cod_tit, o.cod_doca, o.serie_doca, o.nro_doca, o.cod_articulo, a.cod_tipoart#(lf)#(tab)having sum(cantidad*signo)>0 and year(max(o.fecha_mod) )>= year(getdate())-5#(lf)#(tab)union#(lf)#(tab)select 'Carpeta Import' as Tipo, o.cod_tit, o.cod_doca, o.serie_doca, o.nro_doca, o.cod_articulo, a.cod_tipoart, sum(cantidad*signo) as Cant, max(o.fecha_mod) as FechaUltimaMod, max(ent.fec_entrega) as fec_entrega#(lf)#(tab)from cpf_stockaux o#(lf)#(tab)join ct_articulos a on a.cod_articulo = o.cod_articulo#(lf)#(tab)outer apply (select max(fec_entrega) as fec_entrega#(lf)#(tab)#(tab)#(tab)#(tab)#(tab)from cpp_importacione i #(lf)#(tab)#(tab)#(tab)#(tab)#(tab)where i.cod_docum=o.cod_doca and i.nro_docum=o.nro_doca and i.cod_articulo=o.cod_articulo) as ent#(lf)#(tab)where o.cod_emp = 'epsa'#(lf)#(tab)and a.cod_tipoart not in ('pt', 'prvta', 'semi', 'tubos', 'servta')#(lf)#(tab)and cod_estado in ('compras')#(lf)#(tab)and not exists (#(lf)#(tab)#(tab)select 1#(lf)#(tab)#(tab)from cps_ocompras oc#(lf)#(tab)#(tab)join ct_articulos a on a.cod_articulo = oc.cod_articulo#(lf)#(tab)#(tab)where oc.cod_emp = o.cod_emp#(lf)#(tab)#(tab)and a.cod_tipoart not in ('pt', 'prvta', 'semi', 'tubos', 'servta')#(lf)#(tab)#(tab)and a.cod_articulo = o.cod_articulo#(lf)#(tab)#(tab)and oc.cod_tit = o.cod_tit and oc.cod_doca = o.cod_doca and oc.serie_doca = o.serie_doca#(lf)#(tab)#(tab)and oc.nro_doca = o.nro_doca#(lf)#(tab)#(tab)group by oc.cod_tit, oc.cod_doca, oc.serie_doca, oc.nro_doca, oc.cod_articulo, a.cod_tipoart#(lf)#(tab)#(tab)having sum(cantidad*signo)>0#(lf)#(tab))#(lf)#(tab)group by o.cod_tit, o.cod_doca, o.serie_doca, o.nro_doca, o.cod_articulo, a.cod_tipoart#(lf)#(tab)having sum(cantidad*signo)>0 and year(max(o.fecha_mod) )>= year(getdate())-5\"]),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(Origen,{{\"Tipo\", \"CompraEP Tipo\"}, {\"cod_tit\", \"CompraEP Proveedor\"}, {\"cod_doca\", \"CompraEP Doc\"}, {\"serie_doca\", \"CompraEP Serie\"}, {\"nro_doca\", \"CompraEP Numero\"}, {\"cod_articulo\", \"CompraEP Articulo Codigo\"}, {\"Cant\", \"CompraEP Cantidad\"}, {\"FechaUltimaMod\", \"CompraEP Fecha Ultima Modificacion\"}, {\"FechaEntregaMax\", \"CompraEP Ultima Fecha Entrega\"}})\nin\n    #\"Columnas con nombre cambiado\""
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-12-03T14:17:34.183333"
+    },
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2026-05-28T17:25:54.276667"
+    }
+  ]
+}

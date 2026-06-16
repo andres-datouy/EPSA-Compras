@@ -1,0 +1,10 @@
+﻿{
+  "name": "cba03313-c075-6ef1-ddf4-e20937190f02",
+  "fromTable": "factStockEPSA",
+  "fromColumn": "Stock Artículo Código",
+  "toTable": "dimArticulo",
+  "toColumn": "Artículo Código",
+  "state": "ready",
+  "modifiedTime": "2026-05-28T17:26:57.673333",
+  "refreshedTime": "2026-05-28T17:26:57.673333"
+}

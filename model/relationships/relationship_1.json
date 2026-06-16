@@ -1,0 +1,10 @@
+﻿{
+  "name": "9422797b-2ca7-fde5-05b3-751574d45799",
+  "fromTable": "factConsumoHistoria",
+  "fromColumn": "Consumo Artículo Código",
+  "toTable": "dimArticulo",
+  "toColumn": "Artículo Código",
+  "state": "ready",
+  "modifiedTime": "2026-05-28T17:26:57.67",
+  "refreshedTime": "2026-05-28T17:26:57.67"
+}

@@ -4,23 +4,46 @@
 
 | Propiedad | Valor |
 |-----------|-------|
-| Archivo | Compras EPSA - Stock.pbix |
-| Version PBIX | 1.28 |
-| Origen | Cloud (Power BI Service) |
-| Release | 2026.04 |
-| Compatibilidad | 1600 |
-| Database ID | 96a1dcae-a2cd-468c-9e4d-7134493b91c7 |
+| Proyecto | EPSA-Compras.pbip (PBIR format) |
+| Version | 2026.06 |
+| Arquitectura | SSAS Tabular (Live Connection) + Power BI Report |
+| SSAS Server | 192.168.2.47:2383 |
+| SSAS Database | Compras_EPSA |
+| Staging DB | staging_compras (192.168.2.47:1435) |
+| Compatibilidad | 1600 (SQL Server 2025) |
+
+## Arquitectura
+
+```
+Fuentes (192.168.2.7)
+  ├── EPSA_BI (vistas BI)
+  └── Nodum (ERP)
+       │
+       ▼
+Staging Layer (192.168.2.47:1435 / staging_compras)
+  ├── 8 tablas stg_* (SQL Agent daily refresh)
+  │
+       ▼
+SSAS Tabular (192.168.2.47:2383 / Compras_EPSA)
+  ├── 2 dimensiones + 6 hechos + Calendario
+  ├── 25+ medidas DAX
+  │
+       ▼
+Power BI Report (EPSA-Compras.pbip / Live Connection)
+```
 
 ## Fuentes de Datos
 
 | Servidor | Base de Datos | Uso |
 |----------|---------------|-----|
-| 192.168.2.7 | Nodum | ERP principal (consumos, proveedores, compras en proceso, demanda pendiente) |
+| 192.168.2.7 | Nodum | ERP principal (consumos, proveedores, compras en proceso) |
 | 192.168.2.7 | EPSA_BI | Data Warehouse / vistas BI (dimensiones, stock, consumo planificado, recepciones) |
+| 192.168.2.47:1435 | staging_compras | Capa intermedia (tablas stg_* con refresh via SQL Agent) |
+| 192.168.2.47:2383 | Compras_EPSA | SSAS Tabular (modelo semantico) |
 
-## Tablas del Modelo (17)
+## Tablas del Modelo (9)
 
-### Dimensiones
+### Dimensiones (2 + Calendario)
 
 #### Calendario
 - **Tipo:** Calculada (basada en DateAutoTemplate)
@@ -128,25 +151,20 @@
   - LoteMinFabricacion (Int64)
 
 #### factRecepcionesHistoria
-- **Fuente:** `Sql.Database("192.168.2.7", "EPSA_BI")` → `dbo.vw_ComprasBI_HistoriaRecepciones`
+- **Fuente:** `staging_compras.dbo.stg_factRecepcionesHistoria` ← `EPSA_BI.dbo.vw_ComprasBI_HistoriaRecepciones`
+- **Refresco:** INCREMENTAL (diario 08:30) / FULL (carga completa desde 2009)
 - **Objetivo:** 1.5.2 Ordenes de compra - fecha de llegada / Historial de recepciones
 - **Columnas clave:**
+  - Empresa (String)
+  - RecepcionFecha (DateTime)
   - RecepcionArticulo (String)
   - RecepcionCantidad (Double)
-  - RecepcionFecha (DateTime)
-  - RecepcionOCDocumento / RecepcionOCNumero (String/Int64)
-  - OC Proveedor (String)
-  - OC Articulo Codigo (String)
-  - OC Documento / OC Numero (String/Int64)
-  - OC Fecha (DateTime)
-  - OC Moneda (String)
-  - OC PrecioMO / OC PrecioUSD (Double)
-  - OC Total MO / OC Total TR (Double)
-  - Compra Documento / Compra Numero (String)
-  - Compra Fecha (DateTime)
+  - RecepcionOCDocumento / RecepcionOCNumero (String/Int)
+  - RecepcionArticuloTipo (String)
+  - OCProveedor / OCArticuloCodigo / OCDocumento / OCNumero (String/Int)
+  - OCFecha / OCMoneda / OCPrecioMO / OCPrecioUSD / OCTotalMO / OCTotalTR
   - SolicitudDocumento / SolicitudNumero / SolicitudFecha
-  - Lead Time Dias (Int64)
-  - Compra Fecha Inicio Proceso (DateTime)
+  - CompraDocumento / CompraNumero / CompraFecha / CompraOCDoc / CompraOCNumero
 
 #### factComprasEnProceso
 - **Fuente:** `Sql.Database("192.168.2.7", "Nodum")` - Query SQL directo (Union de 3 tablas)
@@ -197,7 +215,7 @@
 |--------|---------------|
 | Cantidad Recepciones | `COUNTROWS(factRecepcionesHistoria)` |
 | Cobertura Meses sobre Existencia | `DIVIDE([Stock Existencia], [Consumo Promedio por Mes Activo])` |
-| Lead Time Promedio Dias | `AVERAGE(factRecepcionesHistoria[Lead Time Dias])` |
+| Lead Time Promedio Dias | Calculado desde RecepcionFecha - OCFecha |
 | Ultima Recepcion Fecha | `MAX(factRecepcionesHistoria[RecepcionFecha])` |
 
 #### Medidas_Consumo_Planificado
@@ -271,3 +289,20 @@ graph LR
 | 1.5.1 Solicitudes de compra | factComprasEnProceso[CompraEP Tipo] = "Solicitud" |
 | 1.5.2 Ordenes de compra | factComprasEnProceso[CompraEP Tipo] = "Orden de Compra" |
 | 1.5.3 Carpetas de importacion | factComprasEnProceso[CompraEP Tipo] = "Carpeta Import" + factRecepcionesHistoria |
+
+## Staging Layer (staging_compras)
+
+| Tabla Staging | Fuente Original | Refresco | Filas aprox |
+|---------------|-----------------|----------|-------------|
+| stg_dimArticulo | EPSA_BI.dbo.vw_Compras_DimArticuloEPSA | FULL diario 08:00 | ~3,400 |
+| stg_dimProveedor | Nodum.dbo.ct_proveedores (filtrado) | FULL diario 08:05 | ~450 |
+| stg_factStockEPSA | EPSA_BI.dbo.vw_ComprasBI_factStockEPSA | FULL diario 08:10 | ~1,800 |
+| stg_factConsumo | Nodum.dbo.cpf_stockaux | INCREMENTAL 08:20/16:00 | ~1,700,000 |
+| stg_factRecepcionesHistoria | EPSA_BI.dbo.vw_ComprasBI_HistoriaRecepciones | INCREMENTAL diario 08:30 | ~50,000 |
+| stg_factConsumoPlanificado | EPSA_BI.dbo.vw_ComprasBI_factConsumoPlanificadoEPSA | FULL diario 08:40 | ~1,400 |
+| stg_factComprasEnProceso | Nodum (multi-tabla UNION) | FULL diario 08:50/16:10 | ~350 |
+| stg_factDemandaPendiente | EPSA_BI.dbo.stg_RequerimientosSobreDemandaPendientePlanificacion | FULL diario 05:00 | ~37,000 |
+
+**Linked Server:** `[192.168.2.7]` (SQL Agent service account tiene acceso)
+
+**SQL Agent Jobs:** Corren 2 veces por d\u00eda (ma\u00f1ana y tarde) para tablas de alta volatilidad (ComprasEnProceso, Consumo)

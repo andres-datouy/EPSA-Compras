@@ -1,0 +1,199 @@
+﻿{
+  "name": "factConsumoPlanificado",
+  "lineageTag": "aa61ec4e-fa46-4a2b-97fd-80b07436dd0e",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2025-11-26T11:32:13.733333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      }
+    },
+    {
+      "name": "Consumo Planificado Orden",
+      "dataType": "string",
+      "sourceColumn": "Consumo Planificado Orden",
+      "lineageTag": "1155d8bb-e65f-43e2-860b-6110ed7f19a1",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Planificado Fecha Planificacion",
+      "dataType": "dateTime",
+      "sourceColumn": "Consumo Planificado Fecha Planificacion",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "822dc68b-9b77-4de5-9f3a-c6b58d467459",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.693333",
+        "refreshedTime": "2026-05-28T17:26:57.693333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "UnderlyingDateTimeDataType",
+          "value": "Date",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Planificado Tipo Orden",
+      "dataType": "string",
+      "sourceColumn": "Consumo Planificado Tipo Orden",
+      "lineageTag": "3c8b644b-017e-4eae-b399-701aacdc0c49",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Planificado Nº Paso Orden",
+      "dataType": "int64",
+      "sourceColumn": "Consumo Planificado Nº Paso Orden",
+      "formatString": "0",
+      "lineageTag": "3af78920-e16f-4d23-9a58-4c232579cc11",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Planificado Artículo",
+      "dataType": "string",
+      "sourceColumn": "Consumo Planificado Artículo",
+      "lineageTag": "2eff28f5-30d4-446c-9404-e0bf01a2dc42",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Planificado Cantidad",
+      "dataType": "double",
+      "sourceColumn": "Consumo Planificado Cantidad",
+      "lineageTag": "b70184eb-5d21-4845-ba11-412a5dd7ad03",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "factConsumoPlanificado",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "2026-05-28T17:25:58.803333",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"EPSA_BI\"),\n    dbo_vw_ComprasBI_factConsumoPlanificadoEPSA = Origen{[Schema=\"dbo\",Item=\"vw_ComprasBI_factConsumoPlanificadoEPSA\"]}[Data],\n    #\"Fecha extraída\" = Table.TransformColumns(dbo_vw_ComprasBI_factConsumoPlanificadoEPSA,{{\"Fecha_Planificacion\", DateTime.Date, type date}}),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(#\"Fecha extraída\",{{\"Cantidad_Requerida\", \"Consumo Planificado Cantidad\"}, {\"cod_articulo\", \"Consumo Planificado Artículo\"}, {\"Fecha_Planificacion\", \"Consumo Planificado Fecha Planificacion\"}, {\"nro_orden\", \"Consumo Planificado Orden\"}, {\"nro_pasoprod\", \"Consumo Planificado Nº Paso Orden\"}, {\"OrdenTipo\", \"Consumo Planificado Tipo Orden\"}})\nin\n    #\"Columnas con nombre cambiado\""
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    }
+  ]
+}

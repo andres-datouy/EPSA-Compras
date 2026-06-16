@@ -1,0 +1,10 @@
+﻿{
+  "name": "70f0b954-74fb-ffd2-52ba-76e109c5e549",
+  "fromTable": "factConsumoHistoria",
+  "fromColumn": "Consumo Fecha",
+  "toTable": "Calendario",
+  "toColumn": "Fecha",
+  "state": "ready",
+  "modifiedTime": "2026-05-28T17:26:57.726667",
+  "refreshedTime": "2026-05-28T17:26:57.726667"
+}

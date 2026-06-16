@@ -1,0 +1,198 @@
+﻿{
+  "name": "factStockEPSA",
+  "lineageTag": "d34c0d80-cdde-4762-acac-055b63c2379c",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2025-11-26T11:32:13.733333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      }
+    },
+    {
+      "name": "Stock Depósito",
+      "dataType": "string",
+      "sourceColumn": "Stock Depósito",
+      "lineageTag": "9e6b6692-2bbf-47f7-8aef-7657fdb71f74",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Stock Estado",
+      "dataType": "string",
+      "sourceColumn": "Stock Estado",
+      "lineageTag": "d8e8e9d9-d401-44a4-ae92-fc2a1039bbd2",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Stock Estado Tipo",
+      "dataType": "string",
+      "sourceColumn": "Stock Estado Tipo",
+      "lineageTag": "26912055-bfb9-413d-aa84-974d3f7bb5e8",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Stock Artículo Código",
+      "dataType": "string",
+      "sourceColumn": "Stock Artículo Código",
+      "lineageTag": "89e28116-0a42-4806-b7e9-9cf6ece501f0",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Stock Cantidad",
+      "dataType": "double",
+      "sourceColumn": "Stock Cantidad",
+      "lineageTag": "51257e39-96aa-4ec6-b214-1a058e9fef88",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Stock Fecha_Corte",
+      "dataType": "dateTime",
+      "sourceColumn": "Stock Fecha_Corte",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "3836e877-20af-49b0-af9a-c51b3627f423",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "UnderlyingDateTimeDataType",
+          "value": "Date",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "factStockEPSA",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "2026-05-28T17:26:16.02",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"EPSA_BI\"),\n    dbo_vw_ComprasBI_factStockEPSA = Origen{[Schema=\"dbo\",Item=\"vw_ComprasBI_factStockEPSA\"]}[Data],\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(dbo_vw_ComprasBI_factStockEPSA,{{\"Cantidad\", \"Stock Cantidad\"}, {\"cod_articulo\", \"Stock Artículo Código\"}, {\"Deposito\", \"Stock Depósito\"}, {\"Estado\", \"Stock Estado\"}, {\"EstadoTipo\", \"Stock Estado Tipo\"}, {\"Fecha_Corte\", \"Stock Fecha_Corte\"}})\nin\n    #\"Columnas con nombre cambiado\""
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_ResultType",
+      "value": "Exception",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    }
+  ]
+}

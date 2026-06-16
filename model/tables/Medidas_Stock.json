@@ -1,0 +1,145 @@
+﻿{
+  "name": "Medidas_Stock",
+  "lineageTag": "589a63c6-6fad-4d90-a997-b9700f0b51ed",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2025-12-03T19:36:49.05",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      }
+    }
+  ],
+  "partitions": [
+    {
+      "name": "Medidas_Stock",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(Origen,{{\"Columna1\", type text}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Columna1\"})\nin\n    #\"Columnas quitadas\""
+      }
+    }
+  ],
+  "measures": [
+    {
+      "name": "Stock Existencia",
+      "expression": "\nCALCULATE(\n    SUM ( factStockEPSA[Stock Cantidad] ),\n    factStockEPSA[Stock Estado] in { \"existencia\", \"stkaf\"}\n)\n",
+      "lineageTag": "e1115734-fe04-47a1-a215-9087f2ec6ffd",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Stock Compras",
+      "expression": "\n\n    SUM ( factComprasEnProceso[CompraEP Cantidad])\n",
+      "lineageTag": "fa9fd93d-979f-4612-8954-8a6ba79e1f51",
+      "dataType": "double",
+      "modifiedTime": "2025-12-03T15:50:26.293333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Stock Mínimo",
+      "expression": "SUM ( dimArticulo[Artículo Stock Mínimo] )",
+      "lineageTag": "6a45e97a-17fa-484b-afa6-0f09004347b7",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Gap Stock",
+      "expression": "[Stock Existencia] - [Stock Mínimo]\n",
+      "lineageTag": "05fb0987-175e-48d4-b8b2-4ff7c5a4aca1",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Stock Debajo Mínimo",
+      "expression": "\nIF ( [Gap Stock] < 0, \"CRÍTICO\", \"OK\" )\n",
+      "lineageTag": "19f4f3d8-9864-4b03-b3ab-2148c62b41ed",
+      "dataType": "string",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "Stock Proyectado",
+      "expression": "\n[Stock Existencia] + [Stock Compras]\n",
+      "lineageTag": "1bdb3d02-6ffd-4f72-a06c-f84e44aa3982",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "E + C - CP - CD - SM",
+      "expression": "Medidas_Stock[Stock Existencia]+ Medidas_Stock[Stock Compras] - Medidas_Consumo_Planificado[Consumo Planificado Cantidad] - [Cantidad Requerida por Demanda Pendiente] - Medidas_Stock[Stock Mínimo]",
+      "lineageTag": "e42fb737-b89e-4151-b11b-e36c7430a64d",
+      "dataType": "double",
+      "modifiedTime": "2025-12-03T19:40:43.393333",
+      "structureModifiedTime": "2025-12-03T19:36:49.05",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-12-03T19:40:43.403333"
+        }
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+﻿{
+  "name": "8d755c64-ce13-5ed7-5049-308034177c2f",
+  "fromTable": "factDemandaPendientePlanificacion",
+  "fromColumn": "Demanda Pendiente Componente Código",
+  "toTable": "dimArticulo",
+  "toColumn": "Artículo Código",
+  "state": "ready",
+  "modifiedTime": "2026-05-28T17:26:57.68",
+  "refreshedTime": "2026-05-28T17:26:57.68"
+}

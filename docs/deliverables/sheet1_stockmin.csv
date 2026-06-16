@@ -1,0 +1,730 @@
+﻿"Codigo","Nombre","TipoArticulo","Clase","TipoComponente","Proveedor","ProveedorPais","StockMinimo","Plazo","UnidadStock","ConsumoPromedio","StockExistencia","AlertaCobertura","CoberturaMeses"
+"150003000000","ABS NOVODUR HD M203FC","matpri","ABS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","300","0","Kg","57.35","770.6","OK","13.4"
+"248980060100","RACOR LL SEP. CH 3-6 AZUL","matpri","ADAPTADOR","Obligatorio","ELECTROPLAST S.A.","UY","1","0","und","33.73",,"Atencion",
+"801838000000","AG GRA G 18X1 1/2 (SHANDONG/SAKIRA)","matpri","AGUJA","Obligatorio","Weigao Medical International Co., Ltd","CN","30000","0","und","9089.86","122793","OK","13.5"
+"267300050300","AL.ACERO 0.5X300","matpri","ALAMBRE (DIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","500","0","und","1200",,"Atencion",
+"267022000000","ALAM.ACERO(PUNTA SELD.)1.3X400 4310","consu","ALAMBRE (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","100","0","und","12.5","142","OK","11.4"
+"267431005036","AL. ACERO 0.50X365 4310","consu","ALAMBRE (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","29","0","und","100",,"PEDIR",
+"267431005425","AL. ACERO 0.5X425 4310","consu","ALAMBRE (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","400","0","und","608",,"PEDIR",
+"267021000000","ALAMBRE ACERO SELDIN- 0.49X400 4310","matpri","ALAMBRE P/MANDRIL","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","25000","0","und","5347.33","8660","Atencion","1.6"
+"267092001988","ALAMBRE  0,3 x 709 ACERO 4310 - EPFLEX 92001988","matpri","ALAMBRE P/MANDRIL","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","1000","0","und","315.8",,"PEDIR",
+"267092001989","ALAMBRE  0,4 x 709 ACERO 4310 - EPFLEX 92001989","matpri","ALAMBRE P/MANDRIL","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","1000","0","und","887.5",,"PEDIR",
+"267092001990","ALAMBRE  0,5 x 709 ACERO 4310 - EPFLEX 92001990","matpri","ALAMBRE P/MANDRIL","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","1000","0","und","264",,"PEDIR",
+"267092001991","ALAMBRE  0,2 x 850 ACERO 4310 - EPFLEX 92001991","matpri","ALAMBRE P/MANDRIL","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","1000","0","und","275","40","PEDIR","0.1"
+"267092730130","ALAMBRE 0.3X850  92730130","matpri","ALAMBRE P/MANDRIL","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","7000","0","und","4000",,"PEDIR",
+"267092730140","ALAMBRE 0.4X850  92730140","matpri","ALAMBRE P/MANDRIL","Obligatorio","GIESSER","DE","2000","0","und",,,"PEDIR",
+"267092770010","ALAMBRE 1.0X370  92770010","matpri","ALAMBRE P/MANDRIL","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","600","0","und","97.79",,"PEDIR",
+"267092770020","ALAMBRE 1.5X420  92770020","matpri","ALAMBRE P/MANDRIL","Obligatorio","ELECTROPLAST S.A.","UY","500","0","und","10",,"PEDIR",
+"267092770030","ALAMBRE 1.5X470  92770030","matpri","ALAMBRE P/MANDRIL","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","1000","0","und","176",,"PEDIR",
+"640009000000","ALCOHOL ETILICO (L) - RECTIFICADO","matpri","ALCOHOL","No Obligatorio","NORTESUR S.A.","UY","400","0","l","224.53","310","OK","1.4"
+"640013000000","ALCOHOL ISOPROPILICO","matpri","ALCOHOL","No Obligatorio","DROGUERIA IND. URUGUAYA","UY","10","0","l","5.46","20.02","OK","3.7"
+"267431040411","ALAM.0.4X975  4310-040411","matpri","Alma","No es Componente","ELECTROPLAST S.A.","UY","150","0","und",,,"Atencion",
+"267680102810","ALMA (.028"") X 100CM - 21004431","matpri","Alma","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","500","0","und","456.56","2395","OK","5.2"
+"267680103510","ALMA (.035"") X 100CM - 28003041","matpri","Alma","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","600","0","und","450.07","3135","OK","7"
+"267680103515","ALMA (.035"") X 150CM - 27002724","matpri","Alma","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","4000","0","und","926.75","5251","OK","5.7"
+"267680103810","ALMA (.038"") X100CM - 29003370","matpri","Alma","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","120","0","und","185.7","10","PEDIR","0.1"
+"267680103815","ALMA (.038"") X150CM","matpri","Alma","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","300","0","und","194.2","3779","OK","19.5"
+"267682102810","ALMA (.028"") X 150CM (Ø:0,35MM) - 28 00 30 42","matpri","Alma","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","600","0","und","535.53","1465","Atencion","2.7"
+"232001000000","BAN. ALUM. 0.35X55MM (KG)   B00180","matpri","ALUMINIO","Obligatorio","ALUMINIO DEL URUGUAY SA","UY","150","0","Kg","46.94","146.5","OK","3.1"
+"640020000000","PREPARADO LIMP. CORATEX (P/EXTRUD.)","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1","4","OK","4"
+"650001000000","LIMPIADOR EN CREMA CIF","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","4","0","und","3.7","2","Atencion","0.5"
+"651001000000","HIPOCLORITO DE SODIO  40G/L COMERC.","consu","ART. LIMPIEZA","No Obligatorio","SPARTAN DE  URUGUAY","UY","20","0","l","25.02","70.5","OK","2.8"
+"651002000000","JABON LIQUIDO   (DEXTROL)     (L)","consu","ART. LIMPIEZA","No es Componente","CONTROL´S LTDA.","UY","10","0","l","9.62","10","Atencion","1"
+"651003000000","JABON P/MANOS (AROMA COCO)","consu","ART. LIMPIEZA","No es Componente","DROGUERIA IND. URUGUAYA","UY","12","0","l","14.23","19","OK","1.3"
+"651004000000","JABON ROSADO (p/manos)","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","l","1.04",,"PEDIR",
+"651005000000","JABON DE COCO (BARRA)250G","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","2.08","4","OK","1.9"
+"651015010000","DETERGENTE T P","matpri","ART. LIMPIEZA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","0.5","0","l","0.32","1","OK","3.1"
+"651015020000","LIMPIADOR FABULOSO","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,,"PEDIR",
+"651015040000","MARINE FRESCH (DESINFECTANTE)","matpri","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","20","0","l","19.52","50","OK","2.6"
+"651018000000","LIMPIADOR VIDRIOS OK (REPUESTO)","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1.73","3","OK","1.7"
+"651019000000","CLEAN BY PEROXY (ML)","matpri","ART. LIMPIEZA","No Obligatorio","SPARTAN DE  URUGUAY","UY","5","0","ml","5555.56","15000","OK","2.7"
+"651019100000","PEROXY REMOVEL","matpri","ART. LIMPIEZA","No Obligatorio","SPARTAN DE  URUGUAY","UY","40000","0","ml","35546.88","20000","Atencion","0.6"
+"651020000000","ALVFRESH (ALVEJANTE) (ML)","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","5000","0","ml","8727.27","10000","Atencion","1.1"
+"651021000000","SOFTFRESH (APRESTO) (ML)","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","5000","0","ml","6122.45","15000","OK","2.4"
+"651022000000","BLDFRESH (DETERGENTE) (ML)","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","5000","0","ml","6960.78","35000","OK","5"
+"652001000000","ESCOBAS               (U)","consu","ART. LIMPIEZA","No es Componente","FERRETERIA ""LITO""","UY","2","0","und","1.76","1","Atencion","0.6"
+"652002000000","LAMPAZO C/MANGO  (U)","consu","ART. LIMPIEZA","No es Componente","FERRETERIA ""LITO""","UY","1","0","und","1",,"PEDIR",
+"652006000000","BOLSA NEGRA P/RESIDUOS (rollo.)","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","rol","2.25","14","OK","6.2"
+"652006100000","BOLSA BLANCA P/RESIDUOS","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,,"PEDIR",
+"652006200000","BOLSA NEGRA P/RESIDUOS 1x1,20m","matpri","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","10","0","Kg","14.49","13.52","Atencion","0.9"
+"653003000000","REJILLAS P/LIMPIEZA   (U)","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1","5","OK","5"
+"653004000000","TRAPOS DE PISO BLANCOS (U)","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","4","0","und","5.05","20","OK","4"
+"653006000000","PALAS PLAST.LIMP.","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1.22","1","Atencion","0.8"
+"653008000000","PAÑOS REGULAR ROLL 3021012","consu","ART. LIMPIEZA","No es Componente","D´ALENE S.A.","UY","4","0","rol","3.95","8","OK","2"
+"653009000000","TRAPOS DE TELA BLANCOS","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","25","0","Kg","19.17","86","OK","4.5"
+"653013000000","TRAPOS TELA-PAPEL TNT","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","10","0","Kg","16.86","13","Atencion","0.8"
+"653017000000","JUMBO ROLL-BOBINA X 890 PAÑOS DE 25X34 30177836","consu","ART. LIMPIEZA","No es Componente","D´ALENE S.A.","UY","3","0","rol","4","5","OK","1.2"
+"655001000000","PAPEL HIGIENICO       (U)","consu","ART. LIMPIEZA","No es Componente","CIC S.R.L.","UY","10","0","und","3.33","51","OK","15.3"
+"655001010000","PAPEL HIGIÉNICO ROLÓN","consu","ART. LIMPIEZA","No es Componente","IPL LTDA","UY","20","0","und","22.45","48","OK","2.1"
+"655002000000","TOALLAS HIGIEN. PAPEL (U)","consu","ART. LIMPIEZA","No es Componente","CIC S.R.L.","UY","5000","0","und","9360","8960","Atencion","1"
+"655002010000","TOALLAS 20 x 26 BLANCAS","consu","ART. LIMPIEZA","No es Componente","IPL LTDA","UY","80000","0","und","67871.09","38000","Atencion","0.6"
+"662004000000","GUANTES USO DOMEST. N 7.5 AZUL-AMARILLO","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.42",,"PEDIR",
+"662004100000","GUANTES GOMA 7,5 ROSADO","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.38",,"PEDIR",
+"662005000000","GUANTES USO DOMEST. N. 8 AZUL-AMARILLO","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.43",,"PEDIR",
+"662006000000","GUANTES USO DOMEST.8.5 AZUL-AMARILLO","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.41",,"PEDIR",
+"662007000000","GUANTES USO DOMES. N. 9.5 AZUL-AMARILLO","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.45",,"PEDIR",
+"662008000000","GUANTES USO DOMES. N 10 AZUL-AMARILLO","consu","ART. LIMPIEZA","No es Componente","ELECTROPLAST S.A.","UY","2","0","par","1.67",,"PEDIR",
+"509022003103","BOLSAS PE 220X310X60µ","matpri","BOLSA DE POLIETILENO","Obligatorio","IGOR PLAST S.A.","UY","1000","0","und","2382.09","21046","OK","8.8"
+"509022004003","BOLSAS PE 220X400 X60µ","matpri","BOLSA DE POLIETILENO","No Obligatorio","IGOR PLAST S.A.","UY","3000","0","und","2376.11","805","PEDIR","0.3"
+"509028005003","BOLSAS PE 280X500X60","matpri","BOLSA DE POLIETILENO","No Obligatorio","IGOR PLAST S.A.","UY","4000","0","und","1869.9","4250","OK","2.3"
+"509035005003","BOLSAS PE 350X500X60","matpri","BOLSA DE POLIETILENO","No Obligatorio","IGOR PLAST S.A.","UY","4500","0","und","2693.56","12021","OK","4.5"
+"509035006003","BOLSA PE 350X600X60µm","matpri","BOLSA DE POLIETILENO","No es Componente","Sin datos de Proveedor",,"1000","0","und","524","4500","OK","8.6"
+"509037007503","BOLSAS PE  370X 750X  60µm","matpri","BOLSA DE POLIETILENO","No es Componente","ELECTROPLAST S.A.","UY","1000","0","und","380.53","2000","OK","5.3"
+"509050008009","BOLSAS PE  500X 800X 200","consu","BOLSA DE POLIETILENO","No es Componente","IGOR PLAST S.A.","UY","150","0","und","91.82","300","OK","3.3"
+"509080012504","BOLSAS PE  800X1250X 80","matpri","BOLSA DE POLIETILENO","No Obligatorio","IGOR PLAST S.A.","UY","800","0","und","443.72","1697","OK","3.8"
+"509081012504","BOLSAS PE 500X 800X 60","matpri","BOLSA DE POLIETILENO","Obligatorio","IGOR PLAST S.A.","UY","1000","0","und","776.87","3016","OK","3.9"
+"509095008003","BOLSAS PE  1000X 800X   40","matpri","BOLSA DE POLIETILENO","No Obligatorio","IGOR PLAST S.A.","UY","2000","0","und","1321.95","4200","OK","3.2"
+"509104001002","SOBRE PE 40X110X50 µm TROQUELADO TRANSVERSAL (TIP CORP)","matpri","BOLSA DE POLIETILENO","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","30000","0","und","26456.5","292994","OK","11.1"
+"509104001702","SOBRE PE 40X170X50 µm TROQUELADO TRANSVERSAL (TIP CORP)","matpri","BOLSA DE POLIETILENO","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","10000","0","und","1000","70","PEDIR","0.1"
+"509104002002","SOBRE PE 40X200X50 µm TROQUELADO TRANSVERSAL (TIP CORP)","matpri","BOLSA DE POLIETILENO","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","13000","0","und","4470.06","43219","OK","9.7"
+"509104004901","SOBRE PE 40X500(+5)X40 µm TROQUELADO TRANSVERSAL (TIP CORP)","matpri","BOLSA DE POLIETILENO","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","25000","0","und","4815.88","35427","OK","7.4"
+"509107504803","SOBRE PE 75X480X60 µm TROQUELADO TRANSVERSAL (TIP CORP)","matpri","BOLSA DE POLIETILENO","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","3500","0","und","961.55","1568","PEDIR","1.6"
+"572000000000","CAJA 405X260X300  89172/6","matpri","CAJA DE CARTON","No Obligatorio","CICSSA","UY","360","0","und","223.68","928","OK","4.1"
+"572010000000","CAJA 600X300X300  89172/5","matpri","CAJA DE CARTON","No Obligatorio","CICSSA","UY","260","0","und","268.08","839","OK","3.1"
+"572020000000","CAJA 600X300X370  89172/4","matpri","CAJA DE CARTON","No Obligatorio","CICSSA","UY","1400","0","und","616.09","701","Atencion","1.1"
+"572041000000","CAJA 924X210X137  DI07484","matpri","CAJA DE CARTON","No Obligatorio","CICSSA","UY","140","0","und","56","61","PEDIR","1.1"
+"572050010000","CAJA 675X230X457 DI06403","matpri","CAJA DE CARTON","No Obligatorio","CICSSA","UY","130","0","und","189.2","1697","OK","9"
+"572050020000","CAJA 675X420X390 DI08365","matpri","CAJA DE CARTON","No Obligatorio","CICSSA","UY","60","0","und","155.3","449","OK","2.9"
+"573030000000","CAJA 836X164X116    99172","matpri","CAJA DE CARTON","Obligatorio","CICSSA","UY","10","0","und","3.52","284","OK","80.7"
+"573041000000","CAJA MICRO. 20X145X810 (S/I)DI01256","matpri","CAJA DE CARTON","Obligatorio","LAGOMARSINO","UY","50","0","und","18.27","69","OK","3.8"
+"576050000000","C. 910X100X65 EPSA 01022 AZ.","matpri","CAJA DE CARTON","Obligatorio","IMPRESORA SOL -  Ciliurczuk ltda","UY","50","0","und","79.43","1159","OK","14.6"
+"577011000000","CAJA 554X462X457 S/IMP. DI01416/136","matpri","CAJA DE CARTON","No Obligatorio","CICSSA","UY","1000","0","und","170.29","243","Atencion","1.4"
+"576030000000","C. 150X150X105 EPSA 00424/18 AZ","matpri","CAJA DE CARTULINA","Obligatorio","GERMAN CORTES - CALCO","UY","300","0","und","309.48","1247","OK","4"
+"576035000000","CAJA AZUL EPSA P/ALARGUES","matpri","CAJA DE CARTULINA","Obligatorio","IMPRENTA MOSCA & CIA.","UY","30","0","und",,"56","Atencion",
+"576040000000","C. 540X147X43 EPSA 01016 AZ.","matpri","CAJA DE CARTULINA","Obligatorio","IMPRESORA SOL -  Ciliurczuk ltda","UY","1200","0","und","990.48","1458","Atencion","1.5"
+"576110000000","C.323X273X26 EPSA 01267/2 AZ.","matpri","CAJA DE CARTULINA","Obligatorio","IMPRESORA SOL -  Ciliurczuk ltda","UY","200","0","und","336.64","1367","OK","4.1"
+"576160000000","C. 240X90X65 EPSA 01476/4 AZ.","matpri","CAJA DE CARTULINA","Obligatorio","IMPRESORA GRIFELMAN","UY","100","0","und","14.95","704","OK","47.1"
+"576170000000","C. 320X108X65 EPSA 01476/6 AZ.","matpri","CAJA DE CARTULINA","Obligatorio","GERMAN CORTES - CALCO","UY","300","0","und","71.62","508","OK","7.1"
+"576190000000","C. 333X150X100 EPSA 01476/10 AZ.","matpri","CAJA DE CARTULINA","Obligatorio","IMPRESORA SOL -  Ciliurczuk ltda","UY","250","0","und","124.4","1361","OK","10.9"
+"810070000220","CAN. PUNC. 22G 202B070220 GRADUADA","matpri","CANULA","No es Componente","PAJUNK","DE","100","0","und","180",,"Atencion",
+"811752000000","CAN.PUNC. 17.5G 1000-0161","matpri","CANULA","No es Componente","PAJUNK","DE","10","0","und","83",,"Atencion",
+"811753000000","CAN.PUNC. 2P 17.5G 257B130200 GRAD.","matpri","CANULA","Obligatorio","PAJUNK","DE","20","0","und",,"190","PEDIR",
+"811754000200","CAN. PUN. C/ECOTIP 17.5X200","matpri","CANULA","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","15",,"Atencion",
+"841167000000","BRANULA MT G16 7CM  04206274","matpri","CANULA","Obligatorio","BRAUN MEDIC.DIVISION","DE","33000","0","und","749.24","6405","OK","8.5"
+"557002000000","C.ADHESIVA TRANSP.24MM(R)","consu","CINTA ADHESIVA","No es Componente","DIPLOMAT S.A.","UY","40","0","rol","59.54","58","Atencion","1"
+"557003000000","CINTA DOBLE FAZ 58MM","consu","CINTA ADHESIVA","No es Componente","PORTO LTDA","UY","1","0","rol","1.06","1","Atencion","0.9"
+"558001000000","CINTA 50X50MM      (R)","matpri","CINTA ADHESIVA","No Obligatorio","MG PRECINTOS SRL","UY","25","0","rol","40.19","55","OK","1.4"
+"558004000000","CINTA 3M 48MM X914M ( 311","matpri","CINTA ADHESIVA","No Obligatorio","PORTO LTDA","UY","2","0","rol",,"14","PEDIR",
+"267999800001","ALAMBRE SEGUR.9998-115991","matpri","CINTA DE SEGURIDAD","No es Componente","ELECTROPLAST S.A.","UY","2","0","Kg",,"5.36","PEDIR",
+"267999800002","ALAMBRE SEGUR.9998-115992","matpri","CINTA DE SEGURIDAD","No Obligatorio","FORT WAYNE METALS","US","2","0","Kg","1.44","6.3","PEDIR","4.4"
+"227501000000","CINTA P/TRAQUEOS.101DH07","matpri","CINTA DE TELA","Obligatorio","CORDONES Y COMPANIA S.A.","UY","1500","0","m","3770.83","2000","Atencion","0.5"
+"227502600000","VELCRO ABROJO 50 MM (M)","matpri","CINTA VELCRO","Obligatorio","VELCROINDUSTRIAL DEL URUGUAY S.A.","UY","9000","0","m","1507.5","12725","OK","8.4"
+"245010000000","MINI CLAMPS N140082","matpri","CLAMP","Obligatorio","QOSINA CORPORATION","US","4500","0","und","1434.94","20923","OK","14.6"
+"245012000000","CLAMPS PP30 (AZUL)","matpri","CLAMP","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","4500","0","und","656.84","31663","OK","48.2"
+"267056000000","CLAMP P/ALAS DE SELDINGER","matpri","CLAMP","Obligatorio","PROMEPLA S.A.","FR","17000","0","und","2669.35","16754","OK","6.3"
+"680001000000","KEROSENE              (L)","consu","COMBUSTIBLES","No es Componente","ELECTROPLAST S.A.","UY","5","0","l","8",,"PEDIR",
+"680003000000","GAS OIL P/MOTORES (Especial)","consu","COMBUSTIBLES","No es Componente","ELECTROPLAST S.A.","UY","30","0","l","135",,"PEDIR",
+"158200200000","EDENOL DBS","matpri","COMPUESTOS PVC","Obligatorio","INTER-HARZ GmbH","DE","200","0","Kg","23.18","368.04","OK","15.9"
+"158200300000","PLASTOMOLL DOA","matpri","COMPUESTOS PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","200","0","Kg","27.85","740.48","OK","26.6"
+"158200400000","EDENOL D81","matpri","COMPUESTOS PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","200","0","Kg","10.76","37.37","OK","3.5"
+"158200600000","MARK CZ 113","matpri","COMPUESTOS PVC","Obligatorio","ELECTROPLAST S.A.","UY","25","0","Kg","3.05","174.23","OK","57.1"
+"158200800000","MARK CZ 11","matpri","COMPUESTOS PVC","Obligatorio","ELECTROPLAST S.A.","UY","50","0","Kg","1.42","433.8","OK","306.6"
+"800000000357","MARKLUBE 280","matpri","COMPUESTOS PVC","Obligatorio","ELECTROPLAST S.A.","UY","10","0","Kg","0.4","106.78","OK","264.3"
+"247552000000","CONECTOR LUER HAEMOTRON. 8100210000","matpri","CONECTOR","Obligatorio","HAEMOTRONIC S.P.A.","IT","35000","0","und","5752.19","82351","OK","14.3"
+"255000000000","PIEZA EN ANGULO 22M/15F-15M FEM80V","matpri","CONECTOR","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","18000","0","und","5718.12","41766","OK","7.3"
+"267003001001","ESPIRAL 3.0MM (L1-43 ID-3.5 S-1.0)","matpri","ESPIRAL DE ACERO","Obligatorio","TEMEPRO","NL","100","0","und",,"414","PEDIR",
+"267003001002","ESPIRAL 3.0MM (L1-210 ID-3.5 S-1.0)","matpri","ESPIRAL DE ACERO","Obligatorio","APF-LUPA","DE","350","0","und","666.67",,"PEDIR",
+"267003501110","ESPIRAL 3.5MM (L1-210 ID-4.0 S-1.1)","matpri","ESPIRAL DE ACERO","Obligatorio","APF-LUPA","DE","350","0","und","1114.29",,"PEDIR",
+"267004001000","ESPIRAL 4.0MM (L1-46 ID-4.5 S-1.0)","matpri","ESPIRAL DE ACERO","Obligatorio","TEMEPRO","NL","100","0","und",,"438","PEDIR",
+"267004001120","ESPIRAL 4.0MM (L1-210 ID-4.5 S-1.1)","matpri","ESPIRAL DE ACERO","Obligatorio","APF-LUPA","DE","600","0","und","2166.67",,"PEDIR",
+"267004501130","ESPIRAL 4.5MM (L1-230 ID-5.0 S-1.1)","matpri","ESPIRAL DE ACERO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","400","0","und","2750",,"PEDIR",
+"267005001100","ESPIRAL 5.0MM (L1-50 ID-5.5 S-1.1)","matpri","ESPIRAL DE ACERO","Obligatorio","TEMEPRO","NL","100","0","und",,"445","PEDIR",
+"267005001210","ESPIRAL 5.0MM (L1-230 ID-5.5 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","APF-LUPA","DE","1000","0","und","1550","2700","PEDIR","1.7"
+"267005501220","ESPIRAL 5.5MM (L1-230 ID-6.0 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","APF-LUPA","DE","1000","0","und","1750","2000","PEDIR","1.1"
+"267006001100","ESPIRAL 6.0MM (L1-55 ID-6.5 S-1.1)","matpri","ESPIRAL DE ACERO","Obligatorio","TEMEPRO","NL","150","0","und",,"340","PEDIR",
+"267006001230","ESPIRAL 6.0MM (L1-290 ID-6.5 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","APF-LUPA","DE","1200","0","und","1437.5","3500","PEDIR","2.4"
+"267006501240","ESPIRAL 6.5MM (L1-290 ID-7.0 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","APF-LUPA","DE","1500","0","und","2077.78","4000","PEDIR","1.9"
+"267007001250","ESPIRAL 7,0MM (L1-295 ID-7,5 S-1,2)","matpri","ESPIRAL DE ACERO","Obligatorio","APF-LUPA","DE","2000","0","und","3657.89","19000","OK","5.2"
+"267007041250","ESPIRAL 7.0MM/LO-39 (ID-7.5 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","50","0","und",,"962","PEDIR",
+"267007041251","ESPIRAL 7.0MM/LO-17 (ID-7.5 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","50","0","und",,"963","PEDIR",
+"267007501260","ESPIRAL 7.5MM (L1-295 ID-8.0 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","APF-LUPA","DE","2500","0","und","4687.5","27830","OK","5.9"
+"267008001216","ESPIRAL 8.0MM (L1-100 ID-8.5 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","500","0","und","631.25","500","Atencion","0.8"
+"267008001270","ESPIRAL 8.0MM (L1-295 ID-8.5 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","2500","0","und","3727.27",,"PEDIR",
+"267008041360","ESPIRAL 8.0MM/LO-42 (ID-8.5 S-1.3)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","50","0","und","19.33","985","OK","50.9"
+"267008041361","ESPIRAL 8.0MM/LO-18 (ID-8.5 S-1.3)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","50","0","und","18","974","OK","54.1"
+"267008501280","ESPIRAL 8.5MM (L1-300 ID-9.0 S-1.2)","matpri","ESPIRAL DE ACERO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","2800","0","und","4500","2995","PEDIR","0.7"
+"267009001490","ESPIRAL 9.0MM (L1-330 ID-9.5 S-1.4)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","600","0","und","1100","1000","PEDIR","0.9"
+"267009041570","ESPIRAL 9.0MM/LO-45 (ID-9.5 S-1.5)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","50","0","und",,"919","PEDIR",
+"267009041571","ESPIRAL 9.0MM/LO-20 (ID-9.5 S-1.5)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","50","0","und",,"908","PEDIR",
+"267009501411","ESPIRAL 9.5MM(L1-330 ID-10.0 S-1.4)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","100","0","und","233.33","1800","OK","7.7"
+"267010001412","ESPIRAL 10.0MM(L1-330 ID-10.5 S-1.4","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","100","0","und",,"1500","PEDIR",
+"267010001500","ESPIRAL 10.0MM(L1-130 ID-10.5 S-1.4","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","200","0","und","600","6500","OK","10.8"
+"267010041880","ESPIRAL 10.0MM/LO-48(ID-10.5 S-1.8)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","50","0","und",,"1168","PEDIR",
+"267010041881","ESPIRAL 10.0MM/LO-22(ID-10.5 S-1.8)","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","50","0","und",,"1045","PEDIR",
+"267010501413","ESPIRAL 10.5MM(L1-330 ID-11.0 S-1.4","matpri","ESPIRAL DE ACERO","No es Componente","ELECTROPLAST S.A.","UY","100","0","und",,"851","PEDIR",
+"267011001414","ESPIRAL 11.0MM(L1-130 ID-11.5 S-1.4","matpri","ESPIRAL DE ACERO","Obligatorio","GIESSER","DE","100","0","und",,"4500","PEDIR",
+"590187034000","PLANILLAS DIARIAS","consu","ETIQUETA","No es Componente","IMP. MERCUR","UY","5000","0","und","1539.34","1000","PEDIR","0.6"
+"592096476500","ETI.""RECHAZADO""","consu","ETIQUETA","No es Componente","GAOR SRL (IMPRESORA CONTINENTAL)","UY","1500","0","und","796.88","1880","OK","2.4"
+"592096476600","ETI.""EN CUARENTENA""","consu","ETIQUETA","No es Componente","GAOR SRL (IMPRESORA CONTINENTAL)","UY","3000","0","und","1129.41","4500","OK","4"
+"592097262500","ETI. IDENTIFIC. ARTIC. SEMITERMIN.","matpri","ETIQUETA","No Obligatorio","GERMAN CORTES - CALCO","UY","10000","0","und","3857.38","10340","OK","2.7"
+"595006000000","ETI.AUTO.100X50 SIMILCOTE con calle","matpri","ETIQUETA","No Obligatorio","MIL ROLLOS - LIPINER S.A.","UY","10000","0","und","7145.16","20000","OK","2.8"
+"595007000000","ETI.AUTO. 40X70 SIMILCOTE con calle","matpri","ETIQUETA","No Obligatorio","MIL ROLLOS - LIPINER S.A.","UY","5000","0","und","3560","16000","OK","4.5"
+"595013000000","ETI.AUTOAD. 102X61 (COD.BARRAS)","matpri","ETIQUETA","No Obligatorio","MIL ROLLOS - LIPINER S.A.","UY","14400","0","und","9900","21600","OK","2.2"
+"595014000000","ETI.AUTOAD. 25X50 (COD.BARRAS)","matpri","ETIQUETA","No Obligatorio","MIL ROLLOS - LIPINER S.A.","UY","1000","0","und","1000","2000","OK","2"
+"595015000000","ETI.AUTOAD. VERDE 50X40","consu","ETIQUETA","No es Componente","DIGICARD","UY","5000","0","und","2666.67","20000","OK","7.5"
+"595017000000","ETI.AUTOAD. NARANJA 50X25","consu","ETIQUETA","No es Componente","DIGICARD","UY","10000","0","und","5533.33","3000","PEDIR","0.5"
+"595019000000","ETI. AUTOADHESIVA 100MMX50MM FRANJA VERDE","consu","ETIQUETA","No es Componente","ELECTROPLAST S.A.","UY","20000","0","und","8093.75","3000","PEDIR","0.4"
+"164050040003","EXT.CALC.4H(75CM) M.BLANCO CH3","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","70","0","und","41","244","OK","6"
+"164050040004","EXT.CALC.4H(75CM) M.BLANCO CH4","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","65","0","und","40.26","110","Atencion","2.7"
+"164050040005","EXT.CALC.4H(75CM) M.BLANCO CH5","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","65","0","und","32.7","179","OK","5.5"
+"164050050003","EXT.CALC.5H(75CM) M.BLANCO CH3","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","13","0","und","12.91","121","OK","9.4"
+"164050050004","EXT.CALC.5H(75CM) M.BLANCO CH4","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","25","0","und","11.68","92","OK","7.9"
+"164050050005","EXT.CALC.5H(75CM) M.BLANCO CH5","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","40","0","und","15.41","219","OK","14.2"
+"164050060004","EXT.CALC.6H(75CM) M.BLANCO CH4","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","10","0","und","9.82","67","OK","6.8"
+"164050060005","EXT.CALC.6H(75CM) M.BLANCO CH5","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","15","0","und","7.86","55","OK","7"
+"164070004003","EXT.CALC.4H(110 CM)M.BLANCO CH3","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","10","0","und","3","33","OK","11"
+"164070040004","EXT.CALC. 4H (110 CM) M.BLANCO CH4","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","15","0","und","2","31","OK","15.5"
+"164070040005","EXT.CALC. 4H (110 CM) M.BLANCO CH5","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und","5","9","PEDIR","1.8"
+"164070050004","EXT.CALC. 5H (110 CM) M.BLANCO CH4","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","GIESSER","DE","5","0","und","5","7","PEDIR","1.4"
+"164070050005","EXT.CALC. 5H (110 CM) M.BLANCO CH5","matpri","EXTRACTOR DE EMBOLOS","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und","6","12","Atencion","2"
+"509004005001","FAJA PE 40X50X40µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","100000","0","und","110.73","149744","OK","1352.3"
+"509007505002","FAJA PE 75X500X50µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","50000","0","und","911.76","38500","OK","42.2"
+"509007509002","FAJA PE 75X90X50µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","80000","0","und","18602.72","92345","PEDIR","5"
+"509008509003","FAJA PE 85X90X60µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","440000","0","und","20587.48","122766","Atencion","6"
+"530040010003","PE TUB. 40MM X60µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","50","0","Kg","3.81","12.5","PEDIR","3.3"
+"530075010003","PE TUB. 75MM X60µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","100","0","Kg","15.43","96","Atencion","6.2"
+"530080010003","PE TUB. 80MM X60µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","50","0","Kg","8.5","44","OK","5.2"
+"530110010003","PE TUB. 110MM X60µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","100","0","Kg","24.5",,"PEDIR",
+"530125010003","PE TUB. 125MM X60µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","50","0","Kg","15.67","24","PEDIR","1.5"
+"530165010003","PE TUB. 165MM X60µm (TIP CORP)","matpri","FAJA PE","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","60","0","Kg","16.25","60","PEDIR","3.7"
+"267682103510","FIADOR ESPIRAL TEFLONIZADO (.035"") X100CM 27000322","matpri","Fiador","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","500","0","und","370.76","2905","OK","7.8"
+"267682103515","FIADOR ESP TEFLONIZADO (.035"") X 150CM - 25000146","matpri","Fiador","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","3000","0","und","1032.32","5425","OK","5.3"
+"267682103810","FIADOR ESP TEFLONIZADO (.038"") X100CM - 27000323","matpri","Fiador","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","600","0","und","215.75","11","PEDIR","0.1"
+"267682103815","FIADOR ESPIRAL TEFLONIZADO (.038"")X150 27000252","matpri","Fiador","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","300","0","und","164.88","3117","OK","18.9"
+"267682202810","FIADOR ESP TEFLONIZADO 0.028X150 CM","matpri","Fiador","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","600","0","und","475.91","1753","OK","3.7"
+"267682302810","FIADOR ESPIRAL TEF.(.028"") X100CM","matpri","Fiador","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","500","0","und","527.71","2100","OK","4"
+"268018100000","FIADOR SFC (.018"") /TH X 100CM","matpri","FIADOR ESPIRALADO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","100","0","und","34.45","633","OK","18.4"
+"811300000000","FIADOR HUECO CHIBA 1.30MM 009686-00","matpri","FIADOR HUECO","Obligatorio","PAJUNK","DE","30","0","und","50",,"PEDIR",
+"930001050000","VARILLA TEFLON 10,5","consu","FIBRA DE TEFLON (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","m",,"8","Atencion",
+"930007500000","VARILLA TEFLON 7,5","consu","FIBRA DE TEFLON (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","m",,"5","Atencion",
+"501014000000","FILM PE 322MM 100 S","matpri","FILM DE POLIETILENO","No Obligatorio","WIPAK","FI","140000","0","m","1330","6300","OK","4.7"
+"501015000000","FILM PE 322MM 120 S","matpri","FILM DE POLIETILENO","No Obligatorio","WIPAK","FI","8000","0","m","4223.08",,"PEDIR",
+"501018000000","FILM ML PE 100 MEDI","matpri","FILM DE POLIETILENO","No Obligatorio","WIPAK","FI","140000","0","m","22739.06","134400","OK","5.9"
+"249012000000","GOTERO C/FILTRO P/SANGRE TSL 1","matpri","FILTRO P/SANGRE","Obligatorio","BONINI S.R.L.","IT","35000","0","und","8369.79","52750","OK","6.3"
+"506006000000","FOLIA POLIUR. XAF 36.004 50G/M²(M²)","matpri","FOLIA DE POLIURETANO","Obligatorio","PONTACOL GmbH","DE","50","0","m2","11.76","89.58","OK","7.6"
+"685008000000","GAS CO2               (K)","matpri","GAS CO2","Obligatorio","LINDE URUGUAY LTDA. (PRAXAIR URUGUAY SA)","UY","1800","0","Kg","1193.57","2587","OK","2.2"
+"685011000000","GAS ETO 90/10 (CIL. X 90 KG)","consu","GAS ETO","No Obligatorio","CHEMOGAS NV","BE","2400","0","Kg","275.81","3240","OK","11.7"
+"685002000000","CARTUCHO DE BUTANO 190 GR","consu","GASES VARIOS","No es Componente","FERRETERIA ""LITO""","UY","1","0","und","1.23",,"PEDIR",
+"250308000000","GOTERO DE AIRE AB12","matpri","GOTERO","Obligatorio","BONINI S.R.L.","IT","8000","0","und","702.48","35265","OK","50.2"
+"250313000000","GOTERO TRANSFUSOR (DRIP CH)","matpri","GOTERO","Obligatorio","Sin datos de Proveedor",,"60000","0","und","8762.89","1134","PEDIR","0.1"
+"661014000000","GUANTES DE NITRILO DESCARTABLES (Talle ""S"")","matpri","GUANTES (DIRECTO)","No es Componente","Sin datos de Proveedor",,"300","0","par","105.43","950","OK","9"
+"664008000000","GUANTES EXAMINACION CHICOS","matpri","GUANTES (DIRECTO)","No Obligatorio","GUNTER SCHAAF","UY","300","0","und","389.83",,"PEDIR",
+"662003300000","GUANTES GOMA 7,0 ROJO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.56","3","OK","1.9"
+"662004200000","GUANTES GOMA 7,5 AMARILLO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.07",,"PEDIR",
+"662004300000","GUANTES GOMA 7,5 ROJO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","2.44","14","OK","5.7"
+"662005100000","GUANTES GOMA 8,0 ROSADO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.33",,"PEDIR",
+"662005200000","GUANTES GOMA 8,0 AMARILLO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.28","1","Atencion","0.8"
+"662005300000","GUANTES GOMA 8,0 ROJO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.81","5","OK","2.8"
+"662006100000","GUANTES GOMA 8,5 ROSADO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","0.57","2","OK","3.5"
+"662006200000","GUANTES GOMA 8,5 AMARILLO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.33","1","Atencion","0.8"
+"662006300000","GUANTES GOMA 8,5 ROJO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1.07","2","OK","1.9"
+"662007300000","GUANTES GOMA 95 ROJO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","0.67","2","OK","3"
+"662009200000","GUANTES GOMA 9,0 AMARILLO","consu","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","1","1","Atencion","1"
+"662009300000","GUANTES GOMA 9,0 ROJO","matpri","GUANTES (INDIRECTO)","No es Componente","ELECTROPLAST S.A.","UY","1","0","par","0.83","2","OK","2.4"
+"568010010000","TUBO VIDRIO T. NELATON CH8   48626-48628","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","6.67","10","PEDIR","1.5"
+"568010020000","TUBO VIDRIO T. NELATON CH9  // ALIMENTACION 3.0 48626-03881","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"15","PEDIR",
+"568010030000","TUBO VIDRIO T. NELATON CH10  48626-48629","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5","10","PEDIR","2"
+"568010040000","TUBO VIDRIO T. NELATON CH16   48626-48632","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,,"PEDIR",
+"568010050000","TUBO VIDRIO T. NELATON CH18   48626-48633","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","7.5","10","PEDIR","1.3"
+"568010060000","TUBO VIDRIO T. NELATON CH20 48626-48634","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,,"PEDIR",
+"568010070000","TUBO VIDRIO T. NELATON CH21   48626-03442","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","7.67","12","PEDIR","1.6"
+"568014000000","TUBO VIDRIO P/DILATAD. 1,2/CH6 42822-42823","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","6","33","OK","5.5"
+"568014100000","TUBO VIDRIO P/DILATAD. 1,2/CH9 42822-95399","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","6.67","10","PEDIR","1.5"
+"568015000000","TUBO VIDRIO P/DILATAD. 42822-42824 CH8","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5","5","PEDIR","1"
+"568016000000","TUBO VIDRIO P/DILATAD.1,2/CH10 42822-42825","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","10","15","PEDIR","1.5"
+"568017000000","TUBO VIDRIO P/DILATAD. 1,2/CH12 42822-42826","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","6.67","15","PEDIR","2.2"
+"568026018000","TUBO VIDRIO P/DILAT. NEF. CH 18  42822","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5","11","PEDIR","2.2"
+"568027001100","T.VIDRIO DILATADOR 1,2/CH7 42822-95398","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","1","24","OK","24"
+"568027001200","T.VIDRIO DILATADOR 1,2/CH14 42822-42827","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"14","PEDIR",
+"568028000000","TUBO VIDRIO P/DILATAD. CH16  42822","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5","11","PEDIR","2.2"
+"568030011000","TUBO DE VIDRIO P/MANDRIL SELD. 1,1 33839-33840.1,1","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5","10","PEDIR","2"
+"568030012000","TUBO DE VIDRIO P/MANDRIL SELD. 1,2 48626.1,2","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5.67","18","Atencion","3.2"
+"568030030000","T.VIDRIO P/FUNDIR PUNTA SELD. 1,2/CH6 35761-35770","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","6","0","und","2","7","OK","3.5"
+"568030040000","T.VIDRIO P/FUNDIR PUNTA SELD. 1,0/CH6 35761-80067","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und","2","8","OK","4"
+"568030050000","TUBO DE VIDRIO P/FUNDIR EXTREMO CISTO 1,4/CH7 35761-35763","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","2","15","OK","7.5"
+"568030100000","TUBO VIDRIO (PIPAS) 0,7/CH4,8 41901-59213","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"18","PEDIR",
+"568030110000","TUBO VIDRIO (PIPAS) 1,0/CH7  41901-41905","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","3","0","und",,"11","PEDIR",
+"568030120000","TUBO VIDRIO (PIPAS) 1,1/CH8  41901-41906","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","3","0","und","1","6","OK","6"
+"568035009000","TUBO DE VIDRIO P/DJ REDONDEAR 0,9/CH5 14972-84269","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und",,"12","PEDIR",
+"568035010000","TUBO DE VIDRIO P/DJ REDONDEAR 1,0/CH6 14972-92012","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","6.25","5","PEDIR","0.8"
+"568035012000","TUBO DE VIDRIO P/DJ REDONDEAR 1,2/CH7 14972-92013","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und",,"31","PEDIR",
+"568035013000","TUBO DE VIDRIO P/DJ REDONDEAR 1,1/CH8 14972-54868","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","5","20","OK","4"
+"568040000000","TUBO VIDRIO P/NELATON-RECTAL CH6 48626-48627","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","5","10","PEDIR","2"
+"568043000000","TUBO VIDRIO P/NELATON-RECTAL CH24 (DI48626/4-03449)","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","5",,"PEDIR",
+"568044000000","TUBO VIDRIO P/NELATON-RECTAL CH30 (DI48626/4-03459)","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und",,,"PEDIR",
+"568045000000","TUBO DE VIDRIO P/NELATON-RECTAL CH20 48626.48634","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","6.5","9","PEDIR","1.4"
+"568047012000","TUBO DE VIDRIO P/NELATON-RECTAL CH12 48626.48630","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","4.55",,"PEDIR",
+"568047014000","TUBO DE VIDRIO P/NELATON-RECTAL CH14 48626.48631","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","7.5","10","PEDIR","1.3"
+"568047015000","TUBO DE VIDRIO P/NELATON-RECTAL CH15 48626.03626","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","11","10","PEDIR","0.9"
+"568047016000","TUBO DE VIDRIO P/NELATON-RECTAL CH16 48626.48632","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","10","10","PEDIR","1"
+"568047022000","TUBO DE VIDRIO P/NELATON-RECTAL CH22 48626.48635","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","6","5","PEDIR","0.8"
+"568047026000","TUBO DE VIDRIO P/NELATON-RECTAL CH26 48626.03898","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","15","10","PEDIR","0.7"
+"568047027000","TUBO DE VIDRIO P/NELATON-RECTAL CH27 48626.03456","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","7","10","PEDIR","1.4"
+"568047028000","TUBO DE VIDRIO P/NELATON-RECTAL CH28 48626.03899","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","7.5","10","PEDIR","1.3"
+"568048000000","TUB. VIDRIO P/ D. J. (ORIF) 0,7 CH 4,8 48287.48288","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und","5","10","PEDIR","2"
+"568048287005","TUB.VIDRIO P/D.J(ORIF)1.0/CH5 48287-72214","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"25","PEDIR",
+"568048287006","TUB.VIDRIO P/D.J(ORIF)1.0/CH6 48287-72215","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5.33","5","PEDIR","0.9"
+"568048290100","TUBO VIDRIO P/D.J(ORIF)1,1/CH7 48287-72216","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5","6","PEDIR","1.2"
+"568048290110","TUBO VIDRIO P/D.J(ORIF)1,1/CH8 48287-48291","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","4.33","6","PEDIR","1.4"
+"568048290120","TUBO VIDRIO P/D.J(ORIF)1,1/CH9 48287-80956","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","3","0","und",,"4","Atencion",
+"568070015000","TUBO DE VIDRIO P/ALIMENTACION 1,5 48626.51534","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","5","5","PEDIR","1"
+"568070021000","TUBO DE VIDRIO P/ALIMENTACION 2,1 48626.51535","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","7.5","5","PEDIR","0.7"
+"568070025000","TUBO DE VIDRIO P/ALIMENTACION 2,5 48626.51536","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","5","10","PEDIR","2"
+"568080000000","TUBO VIDRIO P/SELD. M.1 N°2-965 000  (c/alas)","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","10","0","und","5","10","Atencion","2"
+"568081000000","TUBO VIDRIO P/SELD. M.2  (D)","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","10","0","und","8.57",,"PEDIR",
+"568090000000","T.VIDRIO P/D.LUM.CH26 51922-52965 R","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,,"Atencion",
+"568090010000","T. VIDRIO P/ D. LUM. REFORZADO CH 35 52965.35S R","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und","5","5","PEDIR","1"
+"568090020000","T. VIDRIO P/ D. LUM. REFORZADO CH 37 52965.37S R","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und","3.73",,"PEDIR",
+"568090030000","T. VIDRIO P/ D. LUM. REFORZADO CH 39 52965.39S R","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und",,"10","PEDIR",
+"568090040000","T. VIDRIO P/ D. LUM. REFORZADO CH 35 52470.35S L","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und","5","15","Atencion","3"
+"568090050000","T. VIDRIO P/ D. LUM. REFORZADO CH 37 52470.37S L","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und","6","10","PEDIR","1.7"
+"568090060000","T. VIDRIO P/ D. LUM. REFORZADO CH 39 52470.39S L","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und","3","10","Atencion","3.3"
+"568091000000","T.VIDRIO P/D.LUM.CH28 51923-52965 R","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"7","PEDIR",
+"568096000000","T.VIDRIO P/D.LUM.CH26 52482-52470 L","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,,"Atencion",
+"568097000000","T.VIDRIO P/D.LUM.CH28 52483-52470 L","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","3.5",,"Atencion",
+"568101000000","T.VIDRIO P/D.LUM.CH41 52487-52470 L","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"4","Atencion",
+"568170000000","T. VIDRIO PTA. CILINDRICA EMBOLECT. CH3     33059.33882","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"15","PEDIR",
+"568170100000","T. VIDRIO PTA. CILINDRICA EMBOLECT. CH4     33059.33883","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"15","PEDIR",
+"568170200000","T. VIDRIO PTA. CILINDRICA EMBOLECT. CH 5    33059.33060","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"20","PEDIR",
+"568170300000","T. VIDRIO PTA. CILINDRICA EMBOLECT. CH8     33059.33885","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5","10","Atencion","2"
+"568170400000","T. VIDRIO PTA. CILINDRICA EMBOLECT. CH 6 33059.33061","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und",,"16","PEDIR",
+"568180000000","T. VIDRIO PTA. CON. CERR. CH6   35573-46318","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","PEDIR",
+"568180100000","T. VIDRIO PTA. CON. CERR. CH7   35573-35751","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","PEDIR",
+"568180110000","T.VIDRIO PTA.CON.CERR. CH5 35573-35750","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5","6","PEDIR","1.2"
+"568180120000","T.VIDRIO PTA.CON.CERR. CH8 35573-35574","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"6","Atencion",
+"568180130000","T.VIDRIO PTA.CON.CERR. CH9 35573-35752","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","3","0","und",,"8","Atencion",
+"568190000000","T. VIDRIO AFINAR EMBOLECTOMIA CH3   33062-33877","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","PEDIR",
+"568190100000","T. VIDRIO AFINAR EMBOLECTOMIA CH4   33062-33878","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","PEDIR",
+"568190200000","T. VIDRIO AFINAR EMBOLECTOMIA CH5   33062-33063","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","13","10","PEDIR","0.8"
+"568190300000","T. VIDRIO AFINAR EMBOLECTOMIA CH6   33062-33879","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","5","0","und",,"10","PEDIR",
+"568190400000","TUBO DE VIDRIO P/AFINAR EMBOLECTOMIA.CH7 33062-33880","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","10","10","PEDIR","1"
+"568190500000","TUBO DE VIDRIO P/AFINAR EMBOLECTOMIA.CH8 33062-33881","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und",,"6","Atencion",
+"568191000000","TUBO DE VIDRIO P/CILINDRICA EMBOLECTOMIA CH7 33059-33884","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und",,"21","PEDIR",
+"568200000000","T. VIDRIO CURVO MERCIER CH12   48636-48637","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","GIESSER","DE","5","0","und",,"10","PEDIR",
+"568200100000","T.VIDRIO CURVO CH18 48636-48640","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","Atencion",
+"568200110000","T.VIDRIO CURVO CH24 48636-48643","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","Atencion",
+"568300001000","TUBO VIDRIO MALECOT 1,1/CH10 48287-75682","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","3","0","und",,"11","Atencion",
+"568300001100","TUBO VIDRIO MALECOT 1,1/CH12 48287-80958","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","3","0","und",,"5","PEDIR",
+"568300001200","TUBO VIDRIO MALECOT 1,1/CH14 48287-80959","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","3","0","und","5","6","PEDIR","1.2"
+"568400150000","T.VIDRIO MANDRIL INTUBACION 1,5 61170-14936","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"11","PEDIR",
+"568400200000","T.VIDRIO MANDRIL INTUBACION 2,0 61170-70710","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","PEDIR",
+"568400260000","T.VIDRIO MANDRIL INTUBACION 2,6 61170-70711","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","PEDIR",
+"568400330000","T.VIDRIO MANDRIL INTUBACION 3,3 61170-61166","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","PEDIR",
+"568400430000","T.VIDRIO MANDRIL INTUBACION 4,3 61170-61167","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und","5","10","Atencion","2"
+"568400560000","T.VIDRIO MANDRIL INTUBACION 5,6 61170-70712","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","DETLEF ZINSSTAG GLASAPPARARATEAU","DE","5","0","und",,"10","PEDIR",
+"800000000295","MECHA TIPO ¨N¨ HSS 0,30 MM","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","8",,"PEDIR",
+"800000000321","PIEDRA DE AFILAR","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"21","Atencion",
+"800000000657","CUCHILLA DE PLAST.RASPADORA(36OFPD)","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"3","PEDIR",
+"800000000675","SACABOCADO 0.82MM CR0420305N19R4","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","4.86","43","OK","8.9"
+"800000000676","SACABOCADO 1.02MM CR0500375N18R4","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","3.33","25","OK","7.5"
+"800000000677","SACABOCADO 1.21MM CR0580445N17R4","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","4.42","55","OK","12.5"
+"800000000679","SACABOCADO 0.90MM CR0500365N18R4","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","3","33","OK","11"
+"800000000812","MECHA TIPO ""N"" HSS 0,40 MM","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","7","0","und","5","30","OK","6"
+"800000000813","MECHA SERIE 730 CARBURO ø0,5MM","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","Sin datos de Proveedor",,"6","0","und","6.25","15","OK","2.4"
+"800000000814","MECHA SERIE 3899 CARBURO ø0,3MM","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","Sin datos de Proveedor",,"1","0","und","3","20","OK","6.7"
+"800000000816","MECHA TIPO ""N"" HSS 0,90 MM","consu","HERRAMIENTAS P/ PRODUCCION","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,"19","Atencion",
+"800000001625","CAPUCHON P/PULIR SKWR0511NK150","rep","HERRAMIENTAS P/ PRODUCCION","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","100","0","und","33.67","299","OK","8.9"
+"800040024912","MECHA TIPO ""N"" HSS, JOBBER, Ø 0,30MM","matpri","HERRAMIENTAS P/ PRODUCCION","No es Componente","Sin datos de Proveedor",,"5","0","und",,"10","PEDIR",
+"800040024913","MECHA TIPO ""N"", HSS, JOBBER Ø0,40MM","matpri","HERRAMIENTAS P/ PRODUCCION","No es Componente","Sin datos de Proveedor",,"5","0","und",,"10","PEDIR",
+"100001490102","HILO DTEX 49/1X2 30522","matpri","HILO","No Obligatorio","GIESSER","DE","3","0","rol","1","59","OK","59"
+"100001490103","HILO DTEX 78/1X2 BLANCO","matpri","HILO","No Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","3","0","und","1.33","56","OK","42"
+"227507000000","HILO EPIC 80 BLANCO // HILO BLANCO TF040205 102 MONHYL // COATS ASTRA A5000 80 (BLANCO)","matpri","HILO","No Obligatorio","NIRAMOR SAS - URUGUAY COSTURAS","UY","13716","0","m","11530.61","35000","OK","3"
+"227508000000","HILO NEGRO FILUM-P180 FB0100","matpri","HILO","No Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","3","0","rol","1","11","OK","11"
+"809110000000","HOJ. BISTURI N. 11","consu","HOJA DE BISTURI","No es Componente","ELECTROPLAST S.A.","UY","400","0","und","593.71","400","Atencion","0.7"
+"809150000000","HOJ. BISTURI N.15","matpri","HOJA DE BISTURI","Obligatorio","GUNTER SCHAAF","UY","200","0","und","1944.59","48","PEDIR","0"
+"809220000000","HOJ. BISTURI N.22","consu","HOJA DE BISTURI","No es Componente","ELECTROPLAST S.A.","UY","20","0","und","50.5","507","OK","10"
+"556001000000","CINTA P/OX. ETILENO 1/2""X60 YD (R)","matpri","INDICADOR BIOLOGICO","No Obligatorio","NEWSTERI S.R.L.","AR","4","0","rol","2","9","OK","4.5"
+"931001010000","INDI.BIOL.3M 1264 (100CA)","matpri","INDICADOR BIOLOGICO","No es Componente","Sin datos de Proveedor",,"800","0","und","344.36","3136","OK","9.1"
+"507002000000","INSTR. SELD. PUR 2000 04435/8 S/MAR","matpri","INSTRUCTIVO DE USO","Obligatorio","GERMAN CORTES - CALCO","UY","600","0","und","788.58","5371","OK","6.8"
+"507008200000","INSTR.USO CAT.UMBILICAL ESP-PORTUG-INGLES","matpri","INSTRUCTIVO DE USO","Obligatorio","GERMAN CORTES - CALCO","UY","5000","0","und","3201.23","9000","OK","2.8"
+"507010000000","INSTR. USO SELD. (S/MARCA) DI04034","matpri","INSTRUCTIVO DE USO","Obligatorio","IMPRESORA SOL -  Ciliurczuk ltda","UY","6000","0","und","2379.61","6571","OK","2.8"
+"507012000000","INSTR.USO CANULA TRAQUEOSTOMIA C.C.","matpri","INSTRUCTIVO DE USO","Obligatorio","IMP. MERCUR","UY","300","0","und","668","11154","OK","16.7"
+"507013000000","INSTR.USO CANULA TRAQ. NEON./PED.","consu","INSTRUCTIVO DE USO","No es Componente","DE EME PROD.GRAFICAS","UY","300","0","und",,"1302","Atencion",
+"507018000000","INSTR. USO T. BRONQ. DOBLE LUMEN (ESP.ING.PORT.)DI14066","matpri","INSTRUCTIVO DE USO","Obligatorio","GERMAN CORTES - CALCO","UY","1600","0","und","2018.65","4852","OK","2.4"
+"507018020000","INST.USO T. BRONQUIAL DOBLE LUMEN INGLES-ALEMAN (PAPEL AMARILLO) DI05203/6","matpri","INSTRUCTIVO DE USO","Obligatorio","IMPRESORA SOL -  Ciliurczuk ltda","UY","1000","0","und","578.54","948","Atencion","1.6"
+"507021000000","INSTR.USO EQ.DOBLE J - ESP/ING/PORT.","matpri","INSTRUCTIVO DE USO","Obligatorio","IMPRESORA SOL -  Ciliurczuk ltda","UY","250","0","und","194.67","1503","OK","7.7"
+"507023010000","INSTR.USO CAT.EMBOLECTOMIA DI14086","matpri","INSTRUCTIVO DE USO","Obligatorio","IMPRESORA SOL -  Ciliurczuk ltda","UY","3000","0","und","947.47","6026","OK","6.4"
+"507025000000","INSTR.USO TRAQ.C/B Y ASP.SUBGLOT. DI14322","matpri","INSTRUCTIVO DE USO","Obligatorio","IMPRESORA SOL -  Ciliurczuk ltda","UY","1500","0","und","714.2","2868","OK","4"
+"781865200020","MULTIVAC-JUNTA ""T"" 12/4,5x900  T:3  0,8 Rast - 81865200020","consu","Insumo para mantenimiento","No es Componente","GIESSER","DE","2","0","und","2","10","OK","5"
+"781866101481","MULTIVAC-JUNTA ""T"" 6/2,2x900  T:6,3  0,8 Rast - 818666101481 - CUCHILLA TRANSVERSAL","consu","Insumo para mantenimiento","No es Componente","MULTIVAC GMBH","DE","5","0","und",,"17","PEDIR",
+"854020200000","JERINGA LUER LOCK 3ML (SHANDONG/SAKIRA )","matpri","JERINGA","Obligatorio","Weigao Medical International Co., Ltd","CN","10000","0","und","1151.67","13178","OK","11.4"
+"854020300000","JERINGA 10 ML","matpri","JERINGA","No es Componente","Sin datos de Proveedor",,"400","0","und","500","300","Atencion","0.6"
+"859051000000","JER.OMNI 5ML (CHINA)","matpri","JERINGA","Obligatorio","Weigao Medical International Co., Ltd","CN","10000","0","und","8523.57","12493","OK","1.5"
+"161000000000","LATEX PREVULCANIZADO","matpri","LATEX","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","250","0","Kg","41.15","400","OK","9.7"
+"251001000000","LLAVE 3 VIAS (SAKIRA) - LIPIDORESISTENTES","matpri","LLAVE DE TRES VIAS","Obligatorio","Sakira Medical","UY","100000","0","und","14130.78","108850","OK","7.7"
+"800000002180","SWITCH KP90-EC-020 (62711)","consu","MAT.ELECTRICO VARIOS","No es Componente","Sin datos de Proveedor",,"1","0","und","1","1","PEDIR","1"
+"800000000302","ELECTRODOS","consu","MAT.FERRETER. VARIOS","No es Componente","FERRETERIA ""LITO""","UY","5","0","und",,,"PEDIR",
+"800000000683","DISCO DE CORTE P/INOXIDABLE 4½""","consu","MAT.FERRETER. VARIOS","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","6.41","47","OK","7.3"
+"800000000684","DISCO DE CORTE P/METAL 4½""","consu","MAT.FERRETER. VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,,"PEDIR",
+"919093200000","TELA ESMERIL 320 (und)","consu","MAT.FERRETER. VARIOS","No es Componente","ELECTROPLAST S.A.","UY","3","0","und","7.54",,"PEDIR",
+"919099280000","TELA ESMERIL 280 (und)","matpri","MAT.FERRETER. VARIOS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","9.67",,"PEDIR",
+"920003000000","HOJA SIERRA ECLIPSE 6D","consu","MAT.FERRETER. VARIOS","No es Componente","ELECTROPLAST S.A.","UY","3","0","und",,,"PEDIR",
+"921011000000","ELEC.AGA R13 2.5 BL(U)","consu","MAT.FERRETER. VARIOS","No es Componente","AGA S.A.","UY","10","0","und","7.61","4","Atencion","0.5"
+"921012000000","ELEC. R13 3.25 BL(U)","consu","MAT.FERRETER. VARIOS","No es Componente","AGA S.A.","UY","9","0","und","9.78","11","Atencion","1.1"
+"921022000000","ELEC.INOX.R63 2.0 ROS.(U)","consu","MAT.FERRETER. VARIOS","No es Componente","AGA S.A.","UY","10","0","und","5.38","24","OK","4.5"
+"921024000000","ELECTRODOS FUNDICION","consu","MAT.FERRETER. VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"52","Atencion",
+"126400000000","ALGODON (KG)","consu","MAT.LABORAT.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","Kg","1","1","Atencion","1"
+"126400100000","COTONETES","matpri","MAT.LABORAT.VARIOS","No es Componente","FARMASHOP","UY","2","0","cjs","4.55",,"PEDIR",
+"626027020000","SUERO FISIOLOGICO","consu","MAT.LABORAT.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","l",,,"PEDIR",
+"800000000556","TIRAS P H","consu","MAT.LABORAT.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1.11",,"PEDIR",
+"800000001288","AQUADUR 0/5/10/15/20/25 °d 912 01","consu","MAT.LABORAT.VARIOS","No es Componente","ELECO S.A.","UY","100","0","und","115.79","100","Atencion","0.9"
+"800000000212","BELL MARK - CUCHILLA BORDE POST. - P61442","consu","MAT.MANTENIM.VARIOS","No es Componente","BELL-MARK","US","1","0","und","1.18","28","OK","23.8"
+"800000000224","CUCHILLAS P/LIMPIAR CLISES","consu","MAT.MANTENIM.VARIOS","No es Componente","TAMPONCOLOR","DE","1","0","m","1.31",,"PEDIR",
+"800000000260","FILTRO DE AIRE","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","2","5","OK","2.5"
+"800000000346","CINTA TEFLON 0.13 MM","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","96","0","m","13.5","322.2","OK","23.9"
+"800000000906","DISCO DE LIJA ø10X10MM-0543904","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"8","PEDIR",
+"800000000907","DISCO DE LIJA ø10X10MM -0543906","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"8","PEDIR",
+"800000000908","DISCO DE LIJA ø25X10MM -0543996","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"5","PEDIR",
+"800000000909","DISCO DE LIJA ø60X15MM -0542131","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"1","PEDIR",
+"800000000910","DISCO DE LIJA ø60X15MM -0542132","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,,"PEDIR",
+"800000000911","PIEDRAS MONTADAS ø2X5MM -0542133","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"4","PEDIR",
+"800000000912","PIEDRAS MONTADAS ø3X6MM -0542134","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"5","PEDIR",
+"800000000913","PIEDRAS MONTADAS ø4X8MM -0542135","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"6","PEDIR",
+"800000000914","PIEDRAS MONTADAS ø5X10MM -0540932","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"8","PEDIR",
+"800000000915","PIEDRAS MONTADAS ø6X10MM -0544293","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"9","PEDIR",
+"800000000916","PIEDRAS MONTADAS ø8X2MM -0544296","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"9","PEDIR",
+"800000000918","PIEDRAS MONTADAS ø9X3MM -0540902","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"5","PEDIR",
+"800000000919","PIEDRAS MONTADAS ø6X11MM -0540936","consu","MAT.MANTENIM.VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"7","PEDIR",
+"911060000000","LAMPARAS  60W         (U)","consu","MAT.MANTENIM.VARIOS","No es Componente","FIVISA","UY","10","0","und","9.24","11","Atencion","1.2"
+"931017000000","RETENEDOR 501","consu","MAT.MANTENIM.VARIOS","No es Componente","PORTO LTDA","UY","1","0","und","2.8","6","OK","2.1"
+"940003000000","CUCHILLA P/TAMP.COL.22MM","consu","MAT.MANTENIM.VARIOS","No es Componente","TAMPONCOLOR","DE","5","0","m","2.25","16","OK","7.1"
+"940017000000","CUCHILLA CH5 1,7/0,6 R0,3","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","3.25","5","OK","1.5"
+"940018000000","CUCHILLA CH6 2,0/0,6 R0,3","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","4.4","4","PEDIR","0.9"
+"940019000000","CUCHILLA CH8 2,7/0,7 R0,35","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","4.75","10","OK","2.1"
+"940020000000","CUCHILLA CH10 3,3/0,8 R0,4","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","4.5","5","PEDIR","1.1"
+"940021000000","CUCHILLA CH12 4,0/1,0 R0,5","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","5.5","13","OK","2.4"
+"940022000000","CUCHILLA CH14 4,7/1,1 R0,55","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","5.67","16","OK","2.8"
+"940023000000","CUCHILLA CH16 5,3/1,2 R0,6","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","6","9","Atencion","1.5"
+"940024000000","CUCHILLA CH18 6,0/1,3 R0,65","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","1.5","8","OK","5.3"
+"940025000000","CUCHILLA CH20  R0,7","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","5","6","PEDIR","1.2"
+"940026000000","CUCHILLA CH24 R0,8","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","1.33","9","OK","6.8"
+"940027000000","CUCHILLA CH32  R0,9","consu","MAT.MANTENIM.VARIOS","No es Componente","SOEBYGAARD MACHINE DESIGN","DK","10","0","und","3","15","OK","5"
+"255016000000","ADHESIVO HOT-MELT TB - 3/F","matpri","Materia Prima","No Obligatorio","Sin datos de Proveedor",,"50","0","Kg","7.64","636","OK","83.3"
+"800000001330","MAMELUCO DE PROTECCION PERSONAL","consu","Materia Prima","No es Componente","PORTO LTDA","UY","2","0","und","1.76","7","OK","4"
+"800000000614","HASCO-EXPULSOR P/MOLDE Z40/2.2X100","consu","MATRICERIA VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,,"Atencion",
+"800000000617","HASCO-EXPULSOR P/MOLDE Z40/4X80","consu","MATRICERIA VARIOS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,"83","PEDIR",
+"800000000668","HASCO-EXPULSOR Z40/4X200 (711540420000)","consu","MATRICERIA VARIOS","No es Componente","ELECTROPLAST S.A.","UY","10","0","und","4.5",,"PEDIR",
+"800000000669","HASCO-EXPULSOR Z40/12X200 (711540122000)","consu","MATRICERIA VARIOS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1",,"PEDIR",
+"931005000000","TYHOGLYCOLLATE (U X 500GR.)","matpri","MEDIO DE CULTIVO","Obligatorio","ELECO S.A.","UY","500","0","g","455",,"PEDIR",
+"931005100000","CASEINA","matpri","MEDIO DE CULTIVO","Obligatorio","TECNICA DEL PLATA LTDA.","UY","1000","0","g","18.9","368","OK","19.5"
+"931005800000","PETRIFILM YM","consu","MEDIO DE CULTIVO","No es Componente","ELECO S.A.","UY","1","0","cx50","1.39","2","OK","1.4"
+"931005900000","PETRIFILM AC","consu","MEDIO DE CULTIVO","No es Componente","ELECO S.A.","UY","1","0","cx50","1.32","1","Atencion","0.8"
+"931006000000","TRYPTIC SOY BROTH(U X500G)","matpri","MEDIO DE CULTIVO","Obligatorio","ELECO S.A.","UY","50","0","g","203.75",,"PEDIR",
+"931006100000","TRYPTIC SOY AGAR X 500G","matpri","MEDIO DE CULTIVO","Obligatorio","ELECO S.A.","UY","250","0","g","154.18","240","OK","1.6"
+"267700020000","VARILLA DE ACERO Ø 2.0 MM X 1M","consu","METALES VARIOS (BARRAS/CHAPAS/CAÑOS/ALAMBRES)","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","1","0","m","3","54","OK","18"
+"267700060000","VARILLA DE ACERO Ø 6.0 MM X 1M","consu","METALES VARIOS (BARRAS/CHAPAS/CAÑOS/ALAMBRES)","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","1","0","m","4","12","OK","3"
+"267700080000","VARILLA DE ACERO Ø 8.0 MM X 1M","consu","METALES VARIOS (BARRAS/CHAPAS/CAÑOS/ALAMBRES)","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","1","0","m","3.25","11","OK","3.4"
+"267700100000","VARILLA DE ACERO Ø 10.0 MM X 1M","consu","METALES VARIOS (BARRAS/CHAPAS/CAÑOS/ALAMBRES)","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","1","0","m",,"15","PEDIR",
+"800000000217","ESTAÑO","consu","METALES VARIOS (BARRAS/CHAPAS/CAÑOS/ALAMBRES)","No es Componente","GIESSER","DE","1","0","und","1","1","PEDIR","1"
+"800000000352","BARRAS Y VARILLAS DE ACERO INOX","consu","METALES VARIOS (BARRAS/CHAPAS/CAÑOS/ALAMBRES)","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"3","Atencion",
+"502002100000","PAPEL 315MM 60 G HS -AURINCO(M)","matpri","PAPEL","No Obligatorio","WIPAK","FI","38000","0","m","5966.6","227700","OK","38.2"
+"502004000000","PAPEL 315 MM S/I 60 G HS (M)","matpri","PAPEL","No Obligatorio","WIPAK","FI","120000","0","m","19866.08","311400","OK","15.7"
+"670001000000","ARALDIT STAND. RESINA(KG)","matpri","PEGAMENTO","No Obligatorio","ARTEPLAS S.A.","UY","0.9","0","Kg","0.87","0.9","Atencion","1"
+"670002000000","ARALDIT STAND.ENDUR.(KG)","matpri","PEGAMENTO","No Obligatorio","ARTEPLAS S.A.","UY","0.9","0","Kg","0.87","0.9","Atencion","1"
+"670010100000","BOSTIK PA5050E","matpri","PEGAMENTO","No Obligatorio","ADHESIVE BROKERS","UK","7000","0","g","1269.1","9700.27","OK","7.6"
+"670015000000","ADHESIVO INST.LOCTITE 406","matpri","PEGAMENTO","No Obligatorio","R.S. Hughes Company","US","2500","0","g","359.86","2200","OK","6.1"
+"670016100000","ADHESIVO PRIMER 770","matpri","PEGAMENTO","No Obligatorio","R.S. Hughes Company","US","8400","0","ml","1519.72","23177","OK","15.3"
+"130010000000","MAST  0001/60% BLANCO (G)","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","1000","0","g","738.13","916","OK","1.2"
+"130020000000","MAST UN0051 NEGRO  (G) (código anterior 0051/30%)","matpri","PIGMENTO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","1500","0","g","586.83","819","PEDIR","1.4"
+"130030000000","MAST MB UN YELLOW UN125602 //  1008/25% AMARI. (G)","matpri","PIGMENTO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","1000","0","g","151.02","2272","OK","15"
+"130060000000","MAST  4003/20% VIOLETA(G)","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","200","0","g","71.48","7226","OK","101.1"
+"130070000000","MAST MB UN BLUE UN5007 //  5007/25% AZUL   (G)","matpri","PIGMENTO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","2000","0","g","671","11008","OK","16.4"
+"130080000000","MAST  6359/30% VERDE  (G)","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","200","0","g","91.04","927.51","OK","10.2"
+"130090000000","MAST UN67052 VERDE  (G) (código anterior 6558)","matpri","PIGMENTO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","1000","0","g","664.87","166","PEDIR","0.2"
+"130100000000","MAST  7007/40% GRIS   (G)","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","200","0","g","110.92","1161.92","OK","10.5"
+"130110000000","MAST  8055/40% MARRON (G)","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","200","0","g","106","1350","OK","12.7"
+"140022000000","PIG. NARANJA 16543","matpri","PIGMENTO","Obligatorio","GIESSER","DE","800","0","g","517.44","2483.92","OK","4.8"
+"140032000000","PIG. ULTRAMARINBLAU (AZUL)","matpri","PIGMENTO","No Obligatorio","GIESSER","DE","1200","0","g","2.77","5859","OK","2114.5"
+"140038000000","PIG.AZUL TRANS.DEI POW 16993 DEIFEL","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","500","0","g","6.81","2138.84","OK","314"
+"140041000000","PIG. NEOZAPON-SCHWARTZ X51NEGRO (G)","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","100","0","g","1000",,"PEDIR",
+"140045000000","PIG.NEGRO DEI POW 16496 DEIFEL","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","1000","0","g","5.11","2205.54","OK","431.4"
+"140055000000","PIG. AMARILLO DEI POW 17151 DEIFEL(G)","matpri","PIGMENTO","Obligatorio","GIESSER","DE","100","0","g","28.56","8305.74","OK","290.8"
+"140070000000","PIG. P.V.ECHT-BRAUN H.F.R.MARRON(G)","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","100","0","g","4","290.86","OK","72.7"
+"140080000000","PIG. HELIOGEN 8720 VERDE (G)","matpri","PIGMENTO","Obligatorio","ELECTROPLAST S.A.","UY","100","0","g","11.79","369.74","OK","31.4"
+"140090003927","PIG MASTERBATCH - ROT / ROJO  UN 3927","matpri","PIGMENTO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","3","0","Kg","0.24","0.38","PEDIR","1.6"
+"140090055493","PIG MASTERBATCH - VIOLETA UN55493","matpri","PIGMENTO","Obligatorio","COLOR SERVICE GMBH","DE","2","0","g","64","3900","OK","60.9"
+"140090226698","MAST. MB UN ORANGE/NARANJO UN 226698","matpri","PIGMENTO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","6","0","Kg","0.6","10.67","OK","17.8"
+"657400000000","MATA MOSCAS Y MOSQUITOS","consu","PLAGUICIDAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","2.29","2","Atencion","0.9"
+"227406000000","PLANTILLA CARTUL. 70X490","matpri","PLANTILLA CARTON/CARTULINA","Obligatorio","GERMAN CORTES - CALCO","UY","15000","0","und","5333.52","14379","OK","2.7"
+"227410000000","PLANCHA DE CARTON 470X325 MM","matpri","PLANTILLA CARTON/CARTULINA","Obligatorio","CICSSA","UY","300","0","und","855",,"PEDIR",
+"158200100000","VINNOLIT P70","matpri","PLASTIFICANTE","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","500","0","Kg","100.66","600","OK","6"
+"158200900000","VINNOLIT S 4170","matpri","PLASTIFICANTE","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","250","0","Kg","81.25","100","Atencion","1.2"
+"155000000000","MAKROLON","matpri","POLICARBONATO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","500","0","Kg","77.57","735.66","OK","9.5"
+"155015800000","PS 158K CRISTAL (N2560/ 585 B / 1050 / 866N / 861F / 777 / 818K / HF555 )","matpri","POLIESTIRENO","Obligatorio","DAPAMA URUGUAY","UY","1000","0","Kg","209.31","1100","OK","5.3"
+"155044000000","PS 4400 / 825E / TPSC / U8884 / HP9450 / RT44/M/ PSAI R 970","matpri","POLIESTIRENO","Obligatorio","DAPAMA URUGUAY","UY","200","0","Kg","182.76","1231","OK","6.7"
+"152036000000","PE INY. BDL GA 571489 / IF 33","matpri","POLIETILENO","Obligatorio","DAPAMA URUGUAY","UY","50","0","Kg","36.63","125","OK","3.4"
+"152045000000","PE INY. ELTEX HD6070EA-B (PEAD HC7260 /2080 ELTEX)","matpri","POLIETILENO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","400","0","Kg","41.08","281.11","OK","6.8"
+"153051000000","PE EXT. TX 7003","matpri","POLIETILENO","Obligatorio","DAPAMA URUGUAY","UY","250","0","Kg","105.1","877.7","OK","8.4"
+"159082380000","HYTREL POLIESTER 8238","matpri","POLIETILENO","Obligatorio","ELECTROPLAST S.A.","UY","10","0","Kg","169.5",,"PEDIR",
+"530037000003","PE TUBULAR  370MM 60µ     (KG)","matpri","POLIETILENO","No Obligatorio","IGOR PLAST S.A.","UY","5","0","Kg","25.95","25","Atencion","1"
+"530085000005","PE TUB. 90MM X 60 µM (TIP CORP)","matpri","POLIETILENO","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","50","0","Kg","10","56","OK","5.6"
+"154019000000","PP H301/H0952","matpri","POLIPROPILENO","Obligatorio","DAPAMA URUGUAY","UY","100","0","Kg","108.67","662","OK","6.1"
+"159236355020","PUR PELLET. 2363-55D-BA20","matpri","POLIURETANO","Obligatorio","POLYZEN INC.","US","25","0","Kg","4.25","32.68","OK","7.7"
+"159236365020","PUR PELLET. 2363-65D-BA20","matpri","POLIURETANO","Obligatorio","POLYZEN INC.","US","200","0","Kg","20.14","367.04","OK","18.2"
+"159236375020","PUR PELLET. 2363-75D-BA20","matpri","POLIURETANO","Obligatorio","POLYZEN INC.","US","30","0","Kg","6.24","341.01","OK","54.7"
+"159236380000","PUR PELLET 2363-80AE VIR","matpri","POLIURETANO","Obligatorio","POLYZEN INC.","US","10","0","Kg","5.6","59.87","OK","10.7"
+"159236380040","PUR PELLET. 2363-80AE-BA40","matpri","POLIURETANO","Obligatorio","POLYZEN INC.","US","10","0","Kg","1.9","52.29","OK","27.5"
+"159236390000","PUR PELLET. 2363-90AE-VIR","matpri","POLIURETANO","Obligatorio","POLYZEN INC.","US","30","0","Kg","5.12","107.79","OK","21"
+"159236390020","PUR PELLET.2363-90AE-BA20","matpri","POLIURETANO","Obligatorio","POLYZEN INC.","US","30","0","Kg","5.28","38.29","OK","7.3"
+"159236390040","PUR PELLET 90AE-BA40","matpri","POLIURETANO","Obligatorio","POLYZEN INC.","US","5","0","Kg","4.28","44.17","OK","10.3"
+"159240600000","TECOFLEX EG 85A B-60","matpri","POLIURETANO","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","50","0","Kg","4.96","81","OK","16.3"
+"258011000000","PORT. MICRO BORLA PF0422","matpri","PORTADOR MICRO","Obligatorio","INDUSTRIA BORLA S.P.A.","IT","20000","0","und","4376","86704","OK","19.8"
+"260013000000","MALE LUER - KDL","matpri","PUNTERO C/PROTECTOR","Obligatorio","KDL - SHANGHAI KINDLY ENTERPRISE","CN","130000","0","und","26312.29","89116","Atencion","3.4"
+"157040200000","PVC INY RB 1 S 2 natur NO DOP (SH 86)","matpri","PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","3000","0","Kg","192.43","3361.7","OK","17.5"
+"157040300000","PVC INY RB 1 S1 NDG NO DOP (SH 81)","matpri","PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","500","0","Kg","70.24","2888","OK","41.1"
+"157040500000","PVC INY. RB SMR NO DOP (SHA98)","matpri","PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","200","0","Kg","32.69",,"PEDIR",
+"158027000000","PVC EXT. Z7000/C00-01 (ALFAVINIL SH66·FE60)","matpri","PVC","Obligatorio","ESTEBAN LLORENTE - SAS","UY","350","0","Kg","1148.13","1209.5","PEDIR","1.1"
+"158080001000","PVC EXT. Z8000 (ALFAVINIL SH80·FE40)","matpri","PVC","Obligatorio","ESTEBAN LLORENTE - SAS","UY","1500","0","Kg","1206.86","1218","PEDIR","1"
+"158081000000","PVC RADIOPACO NO DOP","matpri","PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","50","0","Kg","11.31","383.2","OK","33.9"
+"158090300000","PVC EXT RB 1DU natur NO DOP (SH 92)","matpri","PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","1000","0","Kg","142","1063.35","OK","7.5"
+"158090400000","PVC EXT RB 1 T 3 M natur NO DOP (SH 84)","matpri","PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","2000","0","Kg","304.21","2006.08","OK","6.6"
+"158090600000","PVC EXT RB 3 natur NO DOP (SH 75)","matpri","PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","500","0","Kg","68.2","1020","OK","15"
+"158090700000","PVC EXT RB 4 natur NO DOP (SH 70)","matpri","PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","1500","0","Kg","164.48","1150.22","OK","7"
+"158090800000","PVC EXT RB 6 natur NO DOP (SH 68)","matpri","PVC","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","300","0","Kg","107.39","790","OK","7.4"
+"158090910000","PVC RB 5 M NATUR NDG (SH 52)","matpri","PVC","Obligatorio","HMExtrusion  GmgH  (Modenplast GmbH)","DE","50","0","Kg","0.85",,"PEDIR",
+"711460097401","JUNTAS 660MM-460097401 - VELVET","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","1.5","3","OK","2"
+"711460135401","JUNTA 550MM-46013540194 - ALIMENTACION","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,"5","PEDIR",
+"711460135402","JUNTAS 550MM-460135402 - SELDINGER","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,"6","PEDIR",
+"711460138401","JUNTAS 460138401 - DOBLE LUMEN","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","1","6","OK","6"
+"711460138402","JUNTAS 470MM-460138402 - ASP. CONTROLADA / NELATON","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","1","7","OK","7"
+"711818650011","JUNTAS T 81865001120 - P/CALEFACCION","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,"12","PEDIR",
+"719009505305","MEMBRANA CPL 50X305 19009505305","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","3","0","und","1","6","OK","6"
+"744615104010","MULTIVAC - JUNTA 345MM  (2CAV.) - 46151040194 - ENDOTRAQUEAL","consu","REP MOTORES&MAQUINAS","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","3","0","und","1","7","OK","7"
+"744615184019","JUNTA 498MM 46151840194 (4CAV.) - FOLEY SILICONA","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","1","7","OK","7"
+"747075814720","MULTIVAC - JUNTA GASA / TRAQUEOSTOMIA - 47075814720","rep","REP MOTORES&MAQUINAS","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","2","0","und","1.33","2","PEDIR","1.5"
+"747142714720","MULTIVAC - JUNTAS (47142714720) - ESOFAGICA","rep","REP MOTORES&MAQUINAS","No es Componente","GIESSER","DE","4","0","und","0.67","8","OK","12"
+"748188634720","MULTIVAC - JUNTA EQUIPOS - 48188634720","rep","REP MOTORES&MAQUINAS","No es Componente","MULTIVAC GMBH","DE","2","0","und","1.43","8","OK","5.6"
+"748197844720","JUNTA JER. 2.5 Y 5 ML  48197844720","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","4","0","und","1","6","OK","6"
+"748197854720","JUNTA JER. 10 Y 20 ML","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","1.5","7","OK","4.7"
+"781861121032","MULTIVAC - JUNTA ""O"" SILICONA  (81861121032)","rep","REP MOTORES&MAQUINAS","No es Componente","MULTIVAC GMBH","DE","2","0","m",,"10","PEDIR",
+"800000000211","BELL MARK - CUCHILLA RASPADORA P6 - 1441","consu","REP MOTORES&MAQUINAS","No es Componente","BELL-MARK","US","1","0","und","1.13","29","OK","25.6"
+"800000000463","SENSOR","consu","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1.5","9","OK","6"
+"800000000519","JUNTA DE SILICONA-CAMARA ESTERILIZ.","consu","REP MOTORES&MAQUINAS","No es Componente","SUPHATEC SUPPLIERS OF PHAR","ES","1","0","und","1","5","OK","5"
+"800000000611","MULTIVAC-CUCHILLA ROTAT.P/MULTIVAC M860 FMC 79.915.2014.00","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","4","0","und","2",,"Atencion",
+"800000000620","AMACO- POLEA PARA LINGA (DV100-308)","consu","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","2","2","OK","1"
+"800000000754","SMOLKA-MOTOR DV 100-922 P/IMP AMACO","consu","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,"1","PEDIR",
+"800000000784","AMACO-MUNICION DE VIDRIO DV100433","consu","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,"8","PEDIR",
+"800000000785","AMACO-LINGA DE ACERO 3,0mm ø DV100-326","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","4","0","und","2","3","Atencion","1.5"
+"800000000841","FILTRO ESTRELLA 150X32X365 MM","consu","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,,"PEDIR",
+"800000000848","CORREA DENTADA 849 ZYNCHROFLEX - 79.6344.2120.91","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,,"Atencion",
+"800000000978","MULTIVAC-CUCHILLA CORTE TRANSVERSAL 79.912.7137.09","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","1","2","PEDIR","2"
+"800000000982","AMACO-CILINDRO NEUMATICO P/IMP MULTIVAC DV100-802","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,,"Atencion",
+"800000000988","MULTIVAC-PARTE P/FRENO DE FOLIA 11.431.9485.40","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,,"Atencion",
+"800000000996","MULTIVAC-KIT REPARACIÓN CILINDRO 80.209.4083.01","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,"3","Atencion",
+"800000000997","MULTIVAC-INTERRUPTOR DE SEGURIDAD 85.463.1015.50","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","1","0","und",,,"Atencion",
+"800000001001","MULTIVAC-CUCHILLA CORTE TRANSVERSAL 79.912.7121.02","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","1","6","OK","6"
+"800000001003","MULTIVAC-RULEMAN 35X55X20 - 78.534.5035.32","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","4","0","und",,"7","Atencion",
+"800000001007","MULTIVAC-CASQUILLO GRAFITADO P/IMP 78.7111.1020.20","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","6","0","und",,"10","Atencion",
+"800000001010","MULTIVAC-INTERRUPTOR DE SEGURIDAD 85.463.1011.02","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","4","0","und",,,"Atencion",
+"800000001011","MULTIVAC-CASQUILLO GRAFITADO 78.711.1035.30","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","6","0","und",,"12","Atencion",
+"800000001013","MULTIVAC-CASQUILLO GRAFITADO 11.411.8470.00","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","6","0","und",,"14","Atencion",
+"800000001016","MULTIVAC-RESORTE DE CADENA 19.781.0809.00","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","30","0","und","14","159","OK","11.4"
+"800000001026","MULTIVAC-VALVULA DE ESCAPE RÁPIDO 3/4 - 11.681.0098.00","rep","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,,"Atencion",
+"800000001068","HASCO-EXPULSORES Z 42/2,5 X 200","rep","REP MOTORES&MAQUINAS","No es Componente","GIESSER","DE","10","0","und",,,"PEDIR",
+"800000001078","HAWO - CORREA P/SELLADORA POLIETILENO HPL500 D - 0,16X16X927 mm","consu","REP MOTORES&MAQUINAS","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","4","0","und","1.86","15","OK","8.1"
+"800000001234","KI&T - RESISTENCIAS TIPO CARTUCHO EP-PDE-A 16D 200mm ET 230V 480 W","rep","REP MOTORES&MAQUINAS","No es Componente","MERCURIUS Handelsgesellschaft mbH","DE","1","0","und",,"6","PEDIR",
+"800000001591","AMACO-CILINDRO NEUMÁTICO DV4003","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,"4","PEDIR",
+"800000001592","AMACO-RUEDA PLÁSTICA DV5048","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,"4","PEDIR",
+"800000001593","AMACO-POLEA DE NYLON DV5310","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und","1","9","OK","9"
+"800000001594","AMACO-LINGA DV5326","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,"6","PEDIR",
+"800000001595","AMACO-PLATINA LATERAL DV100-101","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000001596","AMACO-PLATINA LATERAL MOTOR DV100-108","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000001597","AMACO-ELECTROVÁLVULA 840 DV100-814","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000001598","AMACO-ELECTROVÁLVULA 840 DV100-815","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000001599","AMACO-MANIFOLD PARA ELECTROVÁLVULA 840 DV100-818","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000001643","AMACO-RESERVORIO DE TINTA DV100-199","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000001710","AMACO ENGRANAJE KU Z26 DV120","matpri","REP MOTORES&MAQUINAS","No es Componente","AMACO","AT","3","0","und",,,"Atencion",
+"800000001711","AMACO ENGRANAJE 20 DIENTES DV 120","matpri","REP MOTORES&MAQUINAS","No es Componente","AMACO","AT","1","0","und",,,"Atencion",
+"800000001712","AMACO ENGRANAJE 64 DIENTES DV 120","matpri","REP MOTORES&MAQUINAS","No es Componente","AMACO","AT","1","0","und",,,"Atencion",
+"800000001849","CUCHILLA FESTO","consu","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","5","0","und","4.5","4","Atencion","0.9"
+"800000001902","MANIFOLD INLET SEGMENT R432008411","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000001903","MANIFOLD END SEGMENT R432008412","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000001904","MANIFOLD STATION R432008413","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000001905","MANIFOLD BLANKING PLATE R432008420","rep","REP MOTORES&MAQUINAS","No es Componente","Sin datos de Proveedor",,"1","0","und",,,"Atencion",
+"800000008995","AMACO CREMALLERA DENTADA DV 100-324","consu","REP MOTORES&MAQUINAS","No es Componente","ELECTROPLAST S.A.","UY","2","0","und",,,"Atencion",
+"800000001270","PLANCHA DE ESPUMA AMARILLA 500X500X10mm","rep","Repuestos","No es Componente","ELECTROPLAST S.A.","UY","10","0","und","1.37","23","OK","16.8"
+"800000001395","KIT SOLVENTES P/LIMPIEZA IK2030","matpri","Repuestos","No es Componente","BELL-MARK","US","2","0","und","0.67","12","OK","18"
+"800000000205","SIN FIN COMPLETO 34506624","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","2","0","und","15.5",,"PEDIR",
+"800000000407","CARCAZA SUPERIOR 901550","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","5","0","und","18.33",,"PEDIR",
+"800000000408","PANEL DEL DISPLAY INF.COMP. 901552","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","8","0","und","28.57",,"PEDIR",
+"800000000409","TECLADO P/INFUSOMAT COMPACT 901554","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","70","0","und","70.25",,"PEDIR",
+"800000000411","SENSOR DE AIRE COMPL. 908952","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","4","0","und",,,"PEDIR",
+"800000000412","CARCAZA INFERIOR 901551","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","50","0","und","48.93",,"PEDIR",
+"800000000414","LAMINA DEL SENSOR DE PRESION 901591","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","1","0","und",,,"PEDIR",
+"800000000415","CONECTOR HEMBRA DEL SENSOR 906007","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","5","0","und","6.67",,"PEDIR",
+"800000000417","DISPLAY LCD       (Ex 903903)          903097","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","8","0","und","13.12",,"PEDIR",
+"800000000419","SOPORTE CPU 901553","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","4","0","und","50",,"PEDIR",
+"800000000420","TAPA BOMBA DEDOS 908954","rep","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","4","0","und",,,"PEDIR",
+"800000000421","CONTRATAPA GRIS 901612","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","10","0","und","10",,"PEDIR",
+"800000000422","CONTRATAPA GRIS 901613","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","10","0","und","20",,"PEDIR",
+"800000000423","BOTON DE TAPA 901616","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","3","0","und","10",,"PEDIR",
+"800000000424","CPU RECERTIFICADA 910404R","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","30","0","und",,,"PEDIR",
+"800000000426","ACTIVADOR SENSOR DE PRESION 901638","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","1","0","und","11.67",,"PEDIR",
+"800000000427","SET DE LEDS Y ALARMA 906008","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","5","0","und","5",,"PEDIR",
+"800000000430","CONECTOR DC HEMBRA 906010","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","5","0","und","7.5",,"PEDIR",
+"800000000431","CIERRE DE LINEA 908967","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","30","0","und","19.44",,"PEDIR",
+"800000000433","BUZZER (12V.) 908968","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","4","0","und","7.5",,"PEDIR",
+"800000000434","SET SENSOR PRESION 908969","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","1","0","und",,,"PEDIR",
+"800000000435","SENSOR D POSICION 908970","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","1","0","und",,,"PEDIR",
+"800000000436","SENSOR DE PUERTA 908971","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","10","0","und","5",,"PEDIR",
+"800000000437","BATERIAS 2.5 AH 908979 INFUS.COMPACT","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","86","0","und","71.54",,"PEDIR",
+"800000000439","PLAQUETA INTERCONEX 910405","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","5","0","und","10",,"PEDIR",
+"800000000853","CABLE ALIMENT.AC/DC C/CONEC.P/BOMBA 903098","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","18","0","und","42.5",,"PEDIR",
+"800000000901","DRIVE BUTTON COMPLETE 34501720","rep","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","10","0","und","16.25",,"PEDIR",
+"800000901575","ARTICULACION DE ALZA     901575","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","10","0","und","48",,"PEDIR",
+"800000901576","CLIP DE FIJACION        901576","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","10","0","und","22.5",,"PEDIR",
+"800000901620","PATA DE SILICONA     901620","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","40","0","und","100",,"PEDIR",
+"800000901652","ESTRUCTURA FRONTAL   901652","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","1","0","und","10",,"PEDIR",
+"800000901658","PANEL P/ENTEROMAT     901658","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","3","0","und","7.5",,"PEDIR",
+"800000901659","TECLADO P/ENTEROMAT   901659","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","15","0","und",,,"PEDIR",
+"800000901779","PUNTERA INTERMED.ENTEROMAT   901779","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","2","0","und",,,"Atencion",
+"800000901826","ANILLO DE RETENCION   901826","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","10","0","und",,,"PEDIR",
+"800000901827","SEGURO EJE DE TAPA 901827","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","36","0","und",,,"PEDIR",
+"800000903993","SENSOR DE GOTAS DUAL 903993","rep","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","26","0","und","35",,"PEDIR",
+"800000908957","TAPA GRIS COMPLETA 908957","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","11","0","und","18.18",,"PEDIR",
+"800000908981","CPU P/ENTEROMAT    908981","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","4","0","und","8",,"PEDIR",
+"800000908984","CABEZAL P/ENTEROMAT     908984","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","4","0","und",,,"Atencion",
+"800000908988","FIJACION FUENTE A VASTAGO    908988","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","4","0","und",,,"PEDIR",
+"800000908990","MODULO ELECTRONICO P/INFUSOMAT COMPACT 908990","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","20","0","und","9",,"PEDIR",
+"800000910624","EJE TAPA P/INFUSOM.COMPACT 910624","consu","REPUESTOS BOMBAS","No es Componente","BRAUN BRASIL","BR","18","0","und","55",,"PEDIR",
+"800008714991","BATERIA                (Ex 8714991)   34501690","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","60","0","und","50.91",,"PEDIR",
+"800034502351","ADAPTADOR DE JERINGA       34502351","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","10","0","und",,,"PEDIR",
+"800034502360","MANIJA (EQUIPMENT HOLDER)  34502360","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","2","0","und",,,"PEDIR",
+"800034502440","FUELLE DE GOMA  34502440","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","4","0","und",,,"PEDIR",
+"800034506349","BATERIA P/BOMBA SECURA FT  34506349","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","4","0","und",,,"PEDIR",
+"800034506608","SOPORTE DE JERINGA         34506608","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","9","0","und","13.89",,"PEDIR",
+"800034506632","TAPA DE LA BATERIA         34506632","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","4","0","und","14.17",,"PEDIR",
+"800034506683","MODULO N                          34506683","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","4","0","und","4.25",,"PEDIR",
+"800034520872","Battery compartment cover PSP, cpl.                    34520872","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","1","0","und",,,"PEDIR",
+"800034520910","Housing, upper part PSP                                34520910","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","2","0","und","3",,"PEDIR",
+"800034520929","Housing, bottom part PSP                               34520929","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","3.67",,"PEDIR",
+"800034520945","Syringe holder with piston brake PSP                   34520945","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","10","0","und","7.75",,"PEDIR",
+"800034520988","LC display SP                                          34520988","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","4","0","und","6",,"PEDIR",
+"800034520996","Front cover with keyboard PSP                          34520996","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","8","0","und","4","6","PEDIR","1.5"
+"800034521003","Rear panel, operating unit PSP                         34521003","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","2","0","und","2","1","PEDIR","0.5"
+"800034521037","Drive unit PSP                                         34521037","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","3","0","und","2.4","2","PEDIR","0.8"
+"800034521039","Drive head PSP (incl. claws and tube) Green claws      34521039","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","3","0","und","2.67",,"PEDIR",
+"800034521041","Drive PSP, cpl. Green claws                            34521041","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","1","0","und","1",,"PEDIR",
+"800034521055","Drive head housing PSP                                 34521055","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","3","0","und","2.5",,"PEDIR",
+"800034521305","Housing bottom part ISP                                34521305","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","3",,"PEDIR",
+"800034521313","Housing upper part ISP                                 34521313","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","2","0","und","3",,"PEDIR",
+"800034521321","Battery compartment cover ISP, cpl. (incl. emergency release crank)   34521321","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","1","0","und",,,"PEDIR",
+"800034521440","EMC plate ISP                                          34521440","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","10",,"PEDIR",
+"800034521441","EMC plate PSP                                          34521441","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","2","0","und","2","2","PEDIR","1"
+"800034521470","Operating unit ISPS, cpl.                              34521470","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","4","0","und","6",,"PEDIR",
+"800034521550","Claw mechanism PSP                                     34521550","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","3.33",,"PEDIR",
+"800034521569","Drive head PCB, PSP                                    34521569","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","5","1","PEDIR","0.2"
+"800034522004","Pole Clamp complete 34522004","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","3","0","und","2","1","PEDIR","0.5"
+"800034522018","Display CP multiple pack 34522018","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","20","0","und","22","10","PEDIR","0.5"
+"800034522101","Syringe holder PCP 34522101","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","10",,"PEDIR",
+"800034522103","Housing, Upper part PCP, with Keypad   34522103","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","10","0","und","5.8","1","PEDIR","0.2"
+"800034522104","Housing, lower part PCP 34522104","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","10","0","und","3.5","1","PEDIR","0.3"
+"800034522105","Drive complete PCP 34522105","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","2","0","und","1","1","PEDIR","1"
+"800034522106","Drive mechanism PCP 34522106","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","1","0","und","1",,"PEDIR",
+"800034522108","Drive head housuing PCP 34522108","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","10","0","und","6",,"PEDIR",
+"800034522110","Drive head cover PCP 34522110","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","8","0","und","6",,"PEDIR",
+"800034522114","Sensor board PCP 34522114","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","10","0","und","6.25","3","PEDIR","0.5"
+"800034522122","Claw mechanism PCP 34522122","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","6.2",,"PEDIR",
+"800034522166","METALL CARRIER PCP","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","4.33",,"PEDIR",
+"800034522208","Housing bottom part ICP 34522208","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","12",,"PEDIR",
+"800034522280","Sensor de presion infusomat (Tipo S) 34522280","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","20","0","und","26.67",,"PEDIR",
+"800034522282","Membrana ICP 34522282","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","8","0","und","10",,"PEDIR",
+"800034522285","Pump door ICPS 34522285","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","2","0","und","3",,"PEDIR",
+"800034523142","Spaceplus Perfusor® Drive Head with Claws & Tube 34523142","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","3","0","und",,"3","PEDIR",
+"800034770025","Syringe holder fixation                                34770025","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","7.67",,"PEDIR",
+"800054502424","SIN FIN COMPLETO P/SECURA  34502424","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","1","0","und",,,"PEDIR",
+"980003000000","PIEZA PLASTICA CON TECLADO 34506586","consu","REPUESTOS BOMBAS","No es Componente","BRAUN MEDIC.DIVISION","DE","5","0","und","9.43",,"PEDIR",
+"0400860","PICO APLICADOR PARA LUBRICACIÓN ELAN 4 (GRIS)   GB600860","rep","REPUESTOS REPARACION INSTRUMENTAL","No es Componente","AESCULAP AG & CO.KG","DE","3","0","und","2.18",,"PEDIR",
+"633008000000","AMACO - RIBBON TR-46-110-600-0-SW (TR46012)","matpri","RIBBON","No Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","150","0","rol","30.49","132","OK","4.3"
+"633013000000","RIBBON E4203 110X110 (CERA)","consu","RIBBON","No es Componente","RR ETIQUETAS URUGUAY S.A.","UY","5","0","rol","2.41","9","OK","3.7"
+"633013000001","RIBBON Honeywell PC42t 110X300 (OUT)","matpri","RIBBON","No es Componente","DIGICARD","UY","8","0","rol","5.05","21","OK","4.2"
+"633030000000","RIBBON SMARTDATE X40 55mm x 1100m IN","consu","RIBBON","No es Componente","Sin datos de Proveedor",,"5","0","rol","2.5","15","OK","6"
+"610002000000","SILICONA AK 350       (L)","matpri","SILICONA","No Obligatorio","PATRICIO DRAPER","UY","2","0","l","0.98","3","OK","3"
+"613001000000","SILICONA E2","matpri","SILICONA","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","2","0","l","0.25","27.29","OK","108.4"
+"800000000292","PASTA SILICONA","matpri","SILICONA","No Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","2","0","Kg","1.14","2","Atencion","1.8"
+"509107505804","SOBRE PE 75X580X60µm C/M 80mm TROQ.LONG.(TIP CORP)","matpri","SOBRE DE POLIETILENO","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","8000","0","und","785.08","3096","PEDIR","3.9"
+"509108501903","SOBRE PE 85X190X60µm S/M TROQ.LONG.(TIP CORP)","matpri","SOBRE DE POLIETILENO","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","25000","0","und","9311.88","26363","PEDIR","2.8"
+"509111020003","FAJA PE 110X2000X60µm (TIP CORP)","matpri","SOBRE DE POLIETILENO","Obligatorio","Tip Corporation Sdn Bhd - Plant II","MY","7000","0","und","5022.75","8","PEDIR","0"
+"640000000000","THINNER               (L)","consu","SOLVENTE","No es Componente","FERRETERIA ""LITO""","UY","5","0","l","6.02","7","OK","1.2"
+"640001000000","AGUARRAS              (L)","consu","SOLVENTE","No es Componente","FERRETERIA ""LITO""","UY","1","0","l","1.31","6","OK","4.6"
+"640003000000","ACETONA         [0.79](L)","matpri","SOLVENTE","No Obligatorio","DROGUERIA  MONTEVIDEO","UY","50","0","l","55.88","89","OK","1.6"
+"640012000000","CICLOHEXANONA  [0.948](L)","matpri","SOLVENTE","No Obligatorio","DROGUERIA IND. URUGUAYA","UY","60","0","l","44.81","117","OK","2.6"
+"640016000000","BUTYL LACTATE","matpri","SOLVENTE","No Obligatorio","DEXIN","UY","3","0","l","1.68","11","OK","6.6"
+"640016110000","ETHYL LACTATE 98% 97-64-3","matpri","SOLVENTE","No Obligatorio","ZHENGZHOU YI BANG INDUSTRY & COMMERCE CO. LTD.","CN","20","0","Kg","1.5","195","OK","130"
+"640021000000","BUTHYL CARBITOL","matpri","SOLVENTE","No Obligatorio","DEXIN","UY","10","0","l","2","26","OK","13"
+"620008000000","PEROX.DE HIDROG.200 VOL 1.197","matpri","SUSTANCIA QUIMICA","No Obligatorio","DROGUERIA IND. URUGUAYA","UY","30","0","l","26.56","48","OK","1.8"
+"620011000000","TETRAHIDROFUR. [0.887](L)","matpri","SUSTANCIA QUIMICA","No Obligatorio","GIESSER","DE","10","0","l","3.91","123","OK","31.4"
+"620013000000","AZUL DE METILENO     (GR)","matpri","SUSTANCIA QUIMICA","No Obligatorio","DROGUERIA IND. URUGUAYA","UY","5","0","g","40","30","Atencion","0.8"
+"620014000000","TWEEN 80             (ML)","matpri","SUSTANCIA QUIMICA","Obligatorio","DEXIN","UY","100","0","ml","78.33","910.01","OK","11.6"
+"620016000000","CLORURO DE POTASIO PPA (G)","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","32","0","g","418.5","204.5","Atencion","0.5"
+"620017000000","IODO CALIDAD COMERCIAL","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","5","0","g","6.61","86.03","OK","13"
+"620018000000","IODURO DE POTASIO C. COM.","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","10","0","g","10.23","76","OK","7.4"
+"620023000000","SULFATO DE BARIO (G)","matpri","SUSTANCIA QUIMICA","Obligatorio","DEXIN","UY","1000","0","g","169.91","2192.56","OK","12.9"
+"620024000000","PERMANGANATO DE POTASIO (G)","matpri","SUSTANCIA QUIMICA","Obligatorio","ELECTROPLAST S.A.","UY","6","0","g",,"98.35","Atencion",
+"620027000000","ROJO DE METILO (G)","consu","SUSTANCIA QUIMICA","No es Componente","ELECTROPLAST S.A.","UY","1","0","g",,"4","Atencion",
+"620031000000","AGUA DESTILADA","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","30000","0","ml","15837.5","26399.77","Atencion","1.7"
+"620038000000","TALCO (G)","matpri","SUSTANCIA QUIMICA","No Obligatorio","DROGUERIA IND. URUGUAYA","UY","1000","0","g","678.57","2500","OK","3.7"
+"620039000000","NITRATO DE CALCIO CA(NAO3)2","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA URUGUAYANA","UY","2000","0","g","3083.33",,"PEDIR",
+"621005000000","ACIDO CLORHIDRICO PPA (ML)","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","3000","0","ml","1540","3620","OK","2.4"
+"621007000000","ACIDO OXALICO (GR)","consu","SUSTANCIA QUIMICA","No es Componente","ELECTROPLAST S.A.","UY","200","0","g","289.47","500","OK","1.7"
+"621009000000","ACIDO BORICO (GR)","matpri","SUSTANCIA QUIMICA","No Obligatorio","DROGUERIA IND. URUGUAYA","UY","100","0","g","320","500","OK","1.6"
+"622002000000","CLORURO DE BENZALCONIO80%","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","500","0","ml",,"1000","Atencion",
+"625003000000","CLORURO DE SODIO PPA (G)","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","27","0","g","90","200.03","OK","2.2"
+"625004000000","TIOSULFATO DE SODIO P/ANALISIS NaS203 5H20","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","26","0","g","29.2","922","OK","31.6"
+"625006000000","CARBONATO DE SODIO (GR)","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","8","0","g","25.32","999.4","OK","39.5"
+"625007000000","HIPOCLORITO DE SODIO 100 G/L","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","5","0","l","3.57","16.45","OK","4.6"
+"625012000000","HIDROXIDO DE POTASIO (G)","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","500","0","g","147.35","608","OK","4.1"
+"625015000000","CARBONATO DE CALCIO PRECIPITADO (G)","matpri","SUSTANCIA QUIMICA","Obligatorio","DROGUERIA IND. URUGUAYA","UY","1000","0","g","236.84",,"PEDIR",
+"640011000000","AMONIACO        [0.91](L)","matpri","SUSTANCIA QUIMICA","No Obligatorio","DROGUERIA IND. URUGUAYA","UY","1","0","l","1.12","2","OK","1.8"
+"640015000000","DILUYENTE METYL ETYLKETON (L)","matpri","SUSTANCIA QUIMICA","No Obligatorio","DROGUERIA IND. URUGUAYA","UY","10","0","l","5.52","18.01","OK","3.3"
+"800000001081","AQUINA- SALES P/ABLANDADOR DE AGUA","consu","SUSTANCIA QUIMICA","No es Componente","GIESSER","DE","500","0","Kg","102.14","1650","OK","16.2"
+"931007000000","DIOXIDO DE TITANIO","matpri","SUSTANCIA QUIMICA","No Obligatorio","DROGUERIA IND. URUGUAYA","UY","3000","0","g","1969.39","3000","OK","1.5"
+"244060000000","TAPON LL ABS HAEMOTRONIC 8503361300","matpri","TAPON","Obligatorio","HAEMOTRONIC S.P.A.","IT","170000","0","und","22882.06","419001","OK","18.3"
+"264068000000","CAPUCHON P/VALVULA DE SUCCION SUBGLOTICA I287C","matpri","TAPON","Obligatorio","GLOBALMED INC","CA","10000","0","und","841.94","7628","OK","9.1"
+"230101000000","TAPONES GOMA 5.5 X 5.5","matpri","TAPON DE GOMA","Obligatorio","GOMSIL LTDA","UY","100","0","und","147.17","425","OK","2.9"
+"125060000000","TELA VELOUR-PLUMA OPACA 3MM","matpri","TELA","Obligatorio","MAGMA INDUSTRIA E COMERCIO TEXTIL LTDA.","BR","2800","0","m","321.46","1440","OK","4.5"
+"631031000000","TINT.TAMP. MD 1001 NR 16 BLACK","matpri","TINTA","No Obligatorio","COLORCON, NO-TOX PRODUCTS","US","10","0","Kg","3.59","10.56","OK","2.9"
+"633002100000","TINTA PMS 2945 MARK. INK","matpri","TINTA","No Obligatorio","BELL-MARK","US","20","0","l","10.56","37.85","OK","3.6"
+"124025060500","TUBULADURA SILICONA 2,5X6,0X500","matpri","TUBULADURA","Obligatorio","GOMSIL LTDA","UY","5","0","und","0.26","41","OK","155.8"
+"124029061000","TUBULADURA SILICONA 2,9X6,1","matpri","TUBULADURA","No es Componente","ELECTROPLAST S.A.","UY","1","0","m","0.78","26.32","OK","33.7"
+"293800020132","TUB. TERMOCONT. FF201-32W (BL)","matpri","TUBULADURA","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","90","0","m","10.26","295.2","OK","28.8"
+"293800020148","TUB. TERMOCONT. FF201-48W (BL)","matpri","TUBULADURA","Obligatorio","MERCURIUS Handelsgesellschaft mbH","DE","90","0","m","7.73","102.87","OK","13.3"
+"555001000000","LEUKOPLAST 2,5CM x 8M           (U)","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","DROGUERIA IND. URUGUAYA","UY","10","0","und","8.92","9","Atencion","1"
+"564001000000","TAPA BOCAS DESCARTABLES","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","ELECTROPLAST S.A.","UY","500","0","und","338.75","1350","OK","4"
+"564004010000","ZAPATONES DESCARTABLES","matpri","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","GUNTER SCHAAF","UY","600","0","und","887.5","800","Atencion","0.9"
+"564006000000","COFIAS DESCARTABLES N 21","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","ELECTROPLAST S.A.","UY","500","0","und","1287",,"PEDIR",
+"564007000000","LENTES DE SEGURIDAD - Anteojo 920 AF (3M)","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","PORTO LTDA","UY","3","0","und","1.5","9","OK","6"
+"564009000000","ANTIPARRAS (LENTES)","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1.29","2","OK","1.6"
+"661000000000","GUANTES DE TELA","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","ELECTROPLAST S.A.","UY","10","0","par","11.51","20","OK","1.7"
+"661001000000","DEDILES IND.N 1 LARGOS(U)","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","ELECTROPLAST S.A.","UY","10","0","und","2.5","20","OK","8"
+"661012000000","GUANTES DE NITRILO (NO DESCARTABLE)","matpri","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","PORTO LTDA","UY","2","0","par","1.81","3","OK","1.7"
+"661013000000","GUANTES DE NITRILO DESCARTABLES (Talle ""M"")","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","ELECTROPLAST S.A.","UY","500","0","cx100","674.24","4","PEDIR","0"
+"931012000000","FILTROS MAS. VAP. INOR. 6002","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","PORTO LTDA","UY","2","0","par","1.35","2","OK","1.5"
+"931013000000","FILTROS P/VAPORES ORGANICOS 6001","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","PORTO LTDA","UY","2","0","par","1.33","1","Atencion","0.8"
+"931014001000","MASCARA P/VAPORES ORGANICOS 8577","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","PORTO LTDA","UY","10","0","und","4.41","16","OK","3.6"
+"931014002000","FILTROS MASC. AMONIACO 6004","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","PORTO LTDA","UY","1","0","par","1","2","OK","2"
+"931014005000","SEMI MASCARA 6200","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","PORTO LTDA","UY","1","0","und","1.17",,"PEDIR",
+"931014008576","MASCARA P/VAPORES ORGANICOS Y GASES ACIDOS 8576","matpri","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","ELECTROPLAST S.A.","UY","2","0","und","2.25","7","OK","3.1"
+"931018000000","PROTECTOR AUDITIVO REUTILIZABLE","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","PORTO LTDA","UY","1","0","und","1.55","5","OK","3.2"
+"931019000000","PROTECTOR AUDITIVO (EXTERNO)","consu","UNIFORMES/CALZADOS /PROTEC. PERSONAL/MEDICAM.","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1.43","1","Atencion","0.7"
+"270912000000","SUCCIDARES ALPINGOMMA EPN","matpri","VALVULA DE LATEX","Obligatorio","ALPINGOMMA S.R.L.","IT","10000","0","und","2932.38","23265","OK","7.9"
+"226002000000","VALVULA BESPAK BK333308S TRANSP.","matpri","VÁLVULA DE RETENCIÓN","Obligatorio","BESPAK PLC","GB","80000","0","und","17175.31","109178","OK","6.4"
+"266060000000","VALVULA BESPAK BK333303S BLANCA","matpri","VÁLVULA DE RETENCIÓN","Obligatorio","BESPAK PLC","GB","3000","0","und","1590.2","7774","OK","4.9"
+"125030000000","TELA ACROCEL BLANCO","matpri","VARIOS PRODUCCION - INDIRECTOS","No Obligatorio","CHIC PARISIEN S.A.","UY","2","0","m","2.28","8","OK","3.5"
+"159001000000","ROZYLIT               (KG)","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","ELECTROPLAST S.A.","UY","5","0","Kg","37.5","445.2","OK","11.9"
+"500900000000","FILM STRETCH (rollo)","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","LATINO PACK de Nivelzac S.A.","UY","24","0","rol","17.3","71","OK","4.1"
+"560002000000","PAPEL AZUL 50CM       (R)","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","MERCADO PAPELERO","UY","2","0","rol","1.25","9","OK","7.2"
+"560004000000","PAPEL AZUL  25CM      (R)","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","MERCADO PAPELERO","UY","4","0","rol","3.6","11","OK","3.1"
+"635001310300","TAMPON (PRINTING PAD Nº009 6 SHORE A / RED)","matpri","VARIOS PRODUCCION - INDIRECTOS","No es Componente","KENT","DE","5","0","und",,"9","PEDIR",
+"636004000000","LAMINA MAG. P/FOTO. TROMAFLEX 928 - 1x350x10000 mm","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","GIESSER","DE","1","0","m","0.16","7.34","OK","45.2"
+"636005100000","PLANCHA DE GOMA P/CLISSE 6 mm","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","GIESSER","DE","2","0","m2","2.98","25.2","OK","8.5"
+"636070035000","PLACA P/CLISE 70 X  350","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","TAMPONCOLOR","DE","40","0","und","14.81","70","OK","4.7"
+"636100052000","PLACA P/CLISE 100X520  KS 52","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","ELECTROPLAST S.A.","UY","20","0","und","5.75","10","Atencion","1.7"
+"653015000000","MEDIAS DE NYLON","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","NO ASIGNADO","UY","4","0","und","5.96","5","Atencion","0.8"
+"800000001044","CUCHILLA P/MAQ DE SOPLAR BALON GM 251","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","GIESSER","DE","3","0","und","1","21","OK","21"
+"919092200000","TELA ESMERIL GR 220 (und)","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","NO ASIGNADO","UY","1","0","und","5.17","1","Atencion","0.2"
+"919099120000","TELA ESMERIL GR.120 (und)","matpri","VARIOS PRODUCCION - INDIRECTOS","No Obligatorio","HERRACOR SA","UY","2","0","und","2.3","25","OK","10.9"
+"919099130000","TELA ESMERIL GR.150 (und)","matpri","VARIOS PRODUCCION - INDIRECTOS","No es Componente","ELECTROPLAST S.A.","UY","10","0","und","3.71",,"PEDIR",
+"931016000000","PREFILTRO 5N11","consu","VARIOS PRODUCCION - INDIRECTOS","No es Componente","PORTO LTDA","UY","1","0","und","3","8","OK","2.7"
+"651008100000","LUSTRA MUEBLES BLEM","consu","VARIOS(AGUA,CERA,LUSTRAMUEBLES)","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1.27","1","Atencion","0.8"
+"651008200000","CERA BLEM ROBLE","consu","VARIOS(AGUA,CERA,LUSTRAMUEBLES)","No es Componente","ELECTROPLAST S.A.","UY","1","0","und","1.06","1","Atencion","0.9"

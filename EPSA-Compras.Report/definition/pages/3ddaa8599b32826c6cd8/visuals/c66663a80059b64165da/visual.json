@@ -1,0 +1,167 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "c66663a80059b64165da",
+  "position": {
+    "x": 1173.3333333333333,
+    "y": 1116.7777777777774,
+    "z": 10000,
+    "height": 253.33333333333331,
+    "width": 1226.6666666666667,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factComprasEnProceso"
+                    }
+                  },
+                  "Property": "CompraEP Documento"
+                }
+              },
+              "queryRef": "factComprasEnProceso.CompraEP Documento",
+              "nativeQueryRef": "Documento",
+              "displayName": "Documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factComprasEnProceso"
+                    }
+                  },
+                  "Property": "CompraEP Ultima Fecha Entrega"
+                }
+              },
+              "queryRef": "factComprasEnProceso.CompraEP Ultima Fecha Entrega",
+              "nativeQueryRef": "Entrega",
+              "displayName": "Entrega"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "factComprasEnProceso"
+                        }
+                      },
+                      "Property": "CompraEP Cantidad"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(factComprasEnProceso.CompraEP Cantidad)",
+              "nativeQueryRef": "Cantidad",
+              "displayName": "Cantidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factComprasEnProceso"
+                    }
+                  },
+                  "Property": "CompraEP Proveedor"
+                }
+              },
+              "queryRef": "factComprasEnProceso.CompraEP Proveedor",
+              "nativeQueryRef": "Proveedor",
+              "displayName": "Proveedor"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factComprasEnProceso"
+                    }
+                  },
+                  "Property": "CompraEP Articulo Codigo"
+                }
+              },
+              "queryRef": "factComprasEnProceso.CompraEP Articulo Codigo",
+              "nativeQueryRef": "Artículo",
+              "displayName": "Artículo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factComprasEnProceso"
+                    }
+                  },
+                  "Property": "CompraEP Fecha Ultima Modificacion"
+                }
+              },
+              "queryRef": "factComprasEnProceso.CompraEP Fecha Ultima Modificacion",
+              "nativeQueryRef": "Ultima Modificación",
+              "displayName": "Ultima Modificación"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'STOCK - DETALLE MOVIMIENTOS DE COMPRAS'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

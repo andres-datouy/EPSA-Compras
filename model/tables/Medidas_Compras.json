@@ -1,0 +1,171 @@
+﻿{
+  "name": "Medidas_Compras",
+  "lineageTag": "583fa848-0c0c-4ade-9214-754ad7f8dc7f",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2026-05-18T11:07:30.123333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      }
+    }
+  ],
+  "partitions": [
+    {
+      "name": "Medidas_Compras",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(Origen,{{\"Columna1\", type text}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Columna1\"})\nin\n    #\"Columnas quitadas\""
+      }
+    }
+  ],
+  "measures": [
+    {
+      "name": "Cobertura Meses sobre Existencia",
+      "expression": "\nDIVIDE ( [Stock Existencia], [Consumo Promedio por Mes Activo])",
+      "lineageTag": "adcec97a-34c4-427e-9be1-2ff745d26616",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Lead Time Promedio Dias",
+      "expression": "\nAVERAGE ( factRecepcionesHistoria[Lead Time Dias] )\n",
+      "formatString": "0",
+      "lineageTag": "4f7767d7-ccf1-48b5-a86e-a66e9007ce4e",
+      "dataType": "double",
+      "modifiedTime": "2026-05-13T12:38:21.936667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDecimal\":true}",
+          "modifiedTime": "2026-05-13T12:38:21.936667"
+        }
+      ]
+    },
+    {
+      "name": "Ultima Recepcion Fecha",
+      "expression": "max(factRecepcionesHistoria[RecepcionFecha])",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "dce1ab30-1110-41df-9df5-e5a403296a40",
+      "dataType": "dateTime",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Cantidad Recepciones",
+      "expression": "count(factRecepcionesHistoria[RecepcionArticulo])",
+      "formatString": "0",
+      "lineageTag": "f8fa2a64-cc98-4eb2-a1a3-c948ef5332cc",
+      "dataType": "int64",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "Cantidad Artículos Distintos",
+      "expression": "DISTINCTCOUNT(factRecepcionesHistoria[OC Articulo Codigo])",
+      "formatString": "0",
+      "lineageTag": "9e533af3-7fff-4309-a6b4-846dd79bcd7a",
+      "dataType": "int64",
+      "modifiedTime": "2026-05-13T12:18:51.3",
+      "structureModifiedTime": "2026-05-13T12:17:20.903333"
+    },
+    {
+      "name": "Lead Time Promedio Meses",
+      "expression": "\ndivide(AVERAGE ( factRecepcionesHistoria[Lead Time Dias] ),30)",
+      "formatString": "0",
+      "lineageTag": "3545cc3a-a204-461d-ae2c-ffb2df1bc347",
+      "dataType": "double",
+      "modifiedTime": "2026-05-13T12:39:07.046667",
+      "structureModifiedTime": "2026-05-13T12:38:35.45",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDecimal\":true}",
+          "modifiedTime": "2026-05-13T12:39:07.046667"
+        }
+      ]
+    },
+    {
+      "name": "Cobertura Meses sobre Existencia + Proyectado",
+      "expression": "\nDIVIDE ( [Stock Existencia] + [Stock Proyectado], [Consumo Promedio por Mes Activo])",
+      "lineageTag": "d523d76a-c689-4c63-b235-de038b423e39",
+      "dataType": "double",
+      "modifiedTime": "2026-05-13T12:47:04.366667",
+      "structureModifiedTime": "2026-05-13T12:46:42.226667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2026-05-13T12:47:04.366667"
+        }
+      ]
+    },
+    {
+      "name": "Diferencia Cobertura Lead Time",
+      "expression": "\nVAR CoberturaMeses = [Cobertura Meses sobre Existencia]\nVAR LeadTimeMeses = DIVIDE([Lead Time Promedio Dias], 30)\nRETURN\n    CoberturaMeses - LeadTimeMeses",
+      "lineageTag": "2e565d96-1f95-4541-86db-f2b00edb5179",
+      "dataType": "double",
+      "modifiedTime": "2026-05-18T11:06:41.15",
+      "structureModifiedTime": "2026-05-18T11:06:33.956667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2026-05-18T11:06:41.146667"
+        }
+      ]
+    },
+    {
+      "name": "Alerta Cobertura",
+      "expression": "\nVAR Diferencia = [Diferencia Cobertura Lead Time]\nRETURN\n    SWITCH(\n        TRUE(),\n        Diferencia < 0, \"PEDIR\",\n        Diferencia < 1, \"Atencion\",\n        \"OK\"\n    )",
+      "lineageTag": "dca0a8b6-8a4f-4eed-ab03-87f86e0c75f1",
+      "dataType": "string",
+      "modifiedTime": "2026-05-18T11:07:24.996667",
+      "structureModifiedTime": "2026-05-18T11:07:19.946667"
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    }
+  ]
+}

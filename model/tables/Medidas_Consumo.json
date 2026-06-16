@@ -1,0 +1,231 @@
+﻿{
+  "name": "Medidas_Consumo",
+  "lineageTag": "c86c1e9d-7845-4d64-be0e-9858204e3064",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2026-05-13T15:17:33.303333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      }
+    }
+  ],
+  "partitions": [
+    {
+      "name": "Medidas_Consumo",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(Origen,{{\"Columna1\", type text}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Columna1\"})\nin\n    #\"Columnas quitadas\""
+      }
+    }
+  ],
+  "measures": [
+    {
+      "name": "Consumo Cantidad",
+      "expression": "SUM(factConsumoHistoria[Consumo Cantidad])",
+      "lineageTag": "8354f5a8-d4a0-49f4-ae24-bb4abb1378fb",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "_RangoFechas_Debug",
+      "expression": "\nVAR MinFact = MIN ( factConsumoHistoria[Consumo Fecha] )\nVAR MaxFact = MAX ( factConsumoHistoria[Consumo Fecha] )\nVAR MinCal  = MIN ( Calendario[Fecha] )\nVAR MaxCal  = MAX ( Calendario[Fecha] )\nRETURN\n\"Fact: \" & FORMAT ( MinFact, \"dd/MM/yyyy\" ) & \" - \" & FORMAT ( MaxFact, \"dd/MM/yyyy\" )\n& \" | Cal: \" & FORMAT ( MinCal, \"dd/MM/yyyy\" ) & \" - \" & FORMAT ( MaxCal, \"dd/MM/yyyy\" )\n",
+      "lineageTag": "ad5703d6-d6ba-4248-aa7e-d7b91cb2b1a1",
+      "dataType": "string",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "Promedio Consumo",
+      "expression": "AVERAGE(factConsumoHistoria[Consumo Cantidad])",
+      "lineageTag": "674bd14b-c939-4389-b917-47bee1db4b2c",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Mensual Promedio",
+      "expression": "/*Rotación promedio mensual*/\nAVERAGEX (\n    VALUES ( Calendario[Fiscal Month] ),\n    [Consumo Cantidad]\n)\n",
+      "lineageTag": "e7c290a0-21ac-46f7-b1a9-b7d7501114d6",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Promedio Anual Consumo",
+      "expression": "\nAVERAGEX (\n    VALUES ( Calendario[Año Fiscal] ),\n    [Consumo Cantidad]\n)\n",
+      "lineageTag": "dff331f0-fee0-4646-8311-59f3b0cfb649",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumos",
+      "expression": "COUNTROWS(factConsumoHistoria)",
+      "formatString": "0",
+      "lineageTag": "4eaa4a27-837b-4618-bd49-ae2c563c6a7f",
+      "dataType": "int64",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "Consumo Cantidad Absoluta",
+      "expression": "\nSUMX ( factConsumoHistoria, ABS ( factConsumoHistoria[Consumo Cantidad] ) )",
+      "lineageTag": "355c6c29-d6d5-4064-b440-1a52b0975121",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Promedio Consumo por Movimiento",
+      "expression": "\nDIVIDE ( abs([Sumatoria Movs Consumo Sin Recepciones]), [Consumos] )\n",
+      "formatString": "#,0",
+      "lineageTag": "a70aef43-0d61-4d43-912c-f4e6978e9c67",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDecimal\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Medio por Artículo",
+      "expression": "\nVAR MovimientosArticulo =\n    CALCULATE ( [Consumos], ALLEXCEPT ( factConsumoHistoria, factConsumoHistoria[Consumo Artículo Código] ) )\nRETURN\nDIVIDE ( [Consumo Cantidad], MovimientosArticulo )\n",
+      "lineageTag": "beb895a3-9b4d-4d93-95c4-d409de30de29",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Sumatoria Movs Consumo Sin Recepciones",
+      "expression": "\nabs(CALCULATE(\n    SUM( factConsumoHistoria[Consumo Cantidad] ),\n    factConsumoHistoria[Consumo Documento] <> \"recstktr\"\n))\n",
+      "formatString": "#,0",
+      "lineageTag": "646a64a6-3ae7-4440-b4df-89113be52c31",
+      "dataType": "double",
+      "modifiedTime": "2025-11-26T11:32:14.103333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDecimal\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Meses con Consumo",
+      "expression": "\nCOUNTROWS(\n    FILTER(\n        VALUES(Calendario[Año Mes]),\n        [Sumatoria Movs Consumo Sin Recepciones] <> 0\n    )\n)\n/*\nVAR MesesConConsumo =\n    SUMMARIZE(\n        ADDCOLUMNS(\n            factConsumoHistoria,\n            -- Columna calculada solo para agrupar por mes\n            \"Mes\",\n                EOMONTH ( factConsumoHistoria[Consumo Fecha], 0 )\n        ),\n        [Mes],  -- <-- acá sí es una columna\n        \"ConsumoMes\",\n            [Sumatoria Movs Consumo Sin Recepciones]\n    )\nRETURN\n    COUNTROWS (\n        FILTER (\n            MesesConConsumo,\n            [ConsumoMes] <> 0\n        )\n    )\n*/",
+      "formatString": "0",
+      "lineageTag": "e95f2bc5-22f5-48aa-8c38-79f6a4f100d2",
+      "dataType": "int64",
+      "modifiedTime": "2026-05-13T13:46:12.07",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "Consumo Promedio por Mes Activo",
+      "expression": "\nVAR Numerador = [Sumatoria Movs Consumo Sin Recepciones]\nVAR Denominador = [Meses con Consumo]\nVAR Resultado = DIVIDE(Numerador, Denominador)\nRETURN\n    COALESCE(Resultado, 0)\n\n",
+      "formatString": "#,0",
+      "lineageTag": "4edc80d2-103b-4f74-855f-b62e236955eb",
+      "dataType": "double",
+      "modifiedTime": "2026-05-13T15:05:04.16",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDecimal\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Promedio por Mes Activo C.Ext.",
+      "expression": "\nVAR ArticulosVisibles = VALUES(dimArticulo[Artículo Código])\nRETURN\n    CALCULATE(\n        [Consumo Promedio por Mes Activo],\n        REMOVEFILTERS(dimArticulo),\n        TREATAS(ArticulosVisibles, factConsumoHistoria[Consumo Artículo Código])\n    )",
+      "lineageTag": "73b2013a-9374-4108-b5f8-511d80cc9182",
+      "dataType": "double",
+      "modifiedTime": "2026-05-13T15:17:38.436667",
+      "structureModifiedTime": "2026-05-13T15:17:33.303333",
+      "annotations": [
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2026-05-13T15:17:38.436667"
+        }
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    }
+  ]
+}

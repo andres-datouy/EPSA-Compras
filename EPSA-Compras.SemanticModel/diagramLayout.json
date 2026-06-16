@@ -1,0 +1,204 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1449.6091455499977,
+            "y": 50.041182864135635
+          },
+          "nodeIndex": "Calendario",
+          "nodeLineageTag": "99eb1cde-035f-4362-b7a3-754fa3132dd0",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 828.78326926020077,
+            "y": 898.28861361697545
+          },
+          "nodeIndex": "dimArticulo",
+          "nodeLineageTag": "1292757b-bf07-48fd-9d3b-5eeba313799c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "dimProveedor",
+          "nodeLineageTag": "53c66c41-efae-40b4-9aac-3ded45355d55",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1258.0074563107355,
+            "y": 898.28221162431078
+          },
+          "nodeIndex": "factComprasEnProceso",
+          "nodeLineageTag": "268aff51-5245-40fc-8777-3f4afdd29ceb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 249.09284295618488,
+            "y": 898.20203981859629
+          },
+          "nodeIndex": "factConsumoHistoria",
+          "nodeLineageTag": "59654f8c-40c0-4675-b51c-959b90bed013",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 538.91818805358412,
+            "y": 1203.268593211088
+          },
+          "nodeIndex": "factConsumoPlanificado",
+          "nodeLineageTag": "aa61ec4e-fa46-4a2b-97fd-80b07436dd0e",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1052.320451815732,
+            "y": 1255.5513483299533
+          },
+          "nodeIndex": "factDemandaPendientePlanificacion",
+          "nodeLineageTag": "3386f286-34c1-4574-a2fb-183c044c1d82",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 205.91718496217447,
+            "y": 307.28800713253679
+          },
+          "nodeIndex": "factRecepcionesHistoria",
+          "nodeLineageTag": "a1e9a8ea-96fc-4884-ac56-275fba380ba0",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 833.73656641808,
+            "y": 0
+          },
+          "nodeIndex": "factStockEPSA",
+          "nodeLineageTag": "d34c0d80-cdde-4762-acac-055b63c2379c",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1492.0074563107355,
+            "y": 702.77567416497664
+          },
+          "nodeIndex": "Medidas_Compras",
+          "nodeLineageTag": "6273934b-92b0-40cc-ad60-2031fd99570f",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1776.0074563107355,
+            "y": 652.77567416497664
+          },
+          "nodeIndex": "Medidas_Consumo",
+          "nodeLineageTag": "79c4a964-6a7b-42e4-b8f9-8b11c8b2c46b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2060.0074563107355,
+            "y": 738.77567416497664
+          },
+          "nodeIndex": "Medidas_Consumo_Planificado",
+          "nodeLineageTag": "f4b837f6-1086-41bf-adb5-335002615983",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2344.0074563107355,
+            "y": 738.77567416497664
+          },
+          "nodeIndex": "Medidas_DemandaPendiente",
+          "nodeLineageTag": "79e4e88f-7493-4e13-9a75-88933b0f6b12",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2628.0074563107355,
+            "y": 666.77567416497664
+          },
+          "nodeIndex": "Medidas_Stock",
+          "nodeLineageTag": "37da1efc-1220-4077-a6f8-3198c7bdf6b0",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

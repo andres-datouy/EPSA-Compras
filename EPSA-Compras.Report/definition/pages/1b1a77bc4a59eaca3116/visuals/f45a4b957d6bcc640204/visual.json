@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "f45a4b957d6bcc640204",
+  "position": {
+    "x": 1881.4285714285716,
+    "y": 45.714285714285715,
+    "z": 3000,
+    "height": 290,
+    "width": 982.85714285714289,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "_RangoFechas_Debug"
+                }
+              },
+              "queryRef": "Medidas_Consumo.RangoFechas_Debug",
+              "nativeQueryRef": "_RangoFechas_Debug"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

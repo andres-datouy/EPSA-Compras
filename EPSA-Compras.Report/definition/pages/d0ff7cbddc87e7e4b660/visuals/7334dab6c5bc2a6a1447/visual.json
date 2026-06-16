@@ -1,0 +1,337 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "7334dab6c5bc2a6a1447",
+  "position": {
+    "x": 17.777777777777779,
+    "y": 1574.5555555555609,
+    "z": 1000,
+    "height": 393.33333333333331,
+    "width": 957.77777777777771,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Formulario"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Formulario",
+              "nativeQueryRef": "Consumo Formulario"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Transacción"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Transacción",
+              "nativeQueryRef": "Consumo Transacción"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Documento"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Documento",
+              "nativeQueryRef": "Consumo Documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Nº Documento"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Nº Documento",
+              "nativeQueryRef": "Consumo Nº Documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Fecha"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Fecha",
+              "nativeQueryRef": "Consumo Fecha"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Artículo Código"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Artículo",
+              "nativeQueryRef": "Consumo Artículo Código"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Sumatoria Movs Consumo Sin Recepciones"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Sumatoria Movs Consumo Sin Recepciones",
+              "nativeQueryRef": "Consumo",
+              "displayName": "Consumo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Depósito"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Depósito",
+              "nativeQueryRef": "Consumo Depósito"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factConsumoHistoria"
+                    }
+                  },
+                  "Property": "Consumo Estado"
+                }
+              },
+              "queryRef": "factConsumo.Consumo Estado",
+              "nativeQueryRef": "Consumo Estado"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "factConsumoHistoria"
+                  }
+                },
+                "Property": "Consumo Fecha"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "102D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumo.Consumo Transacción"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumo.Consumo Formulario"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "113D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumo.Consumo Documento"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "92D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumo.Consumo Nº Documento"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "92D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumo.Consumo Fecha"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumo.Consumo Artículo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "85D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Sumatoria Movs Consumo Sin Recepciones"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "105D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumo.Consumo Depósito"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "96D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factConsumo.Consumo Estado"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'MOVIMIENTOS DE STOCK '"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

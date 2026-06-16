@@ -1,0 +1,288 @@
+﻿{
+  "name": "factConsumoHistoria",
+  "lineageTag": "59654f8c-40c0-4675-b51c-959b90bed013",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2025-11-26T11:32:13.733333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.72",
+        "refreshedTime": "2026-05-28T17:26:57.72"
+      }
+    },
+    {
+      "name": "Consumo Artículo Código",
+      "dataType": "string",
+      "sourceColumn": "Consumo Artículo Código",
+      "lineageTag": "bf10e443-162a-4733-9d82-4f771e76f44b",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.733333",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Formulario",
+      "dataType": "string",
+      "sourceColumn": "Consumo Formulario",
+      "lineageTag": "42669205-3203-48d6-b8c5-1f6c5b69eb25",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.65",
+        "refreshedTime": "2026-05-28T17:26:57.65"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Transacción",
+      "dataType": "int64",
+      "sourceColumn": "Consumo Transacción",
+      "formatString": "0",
+      "lineageTag": "82931657-0b09-4204-a1be-b73b212538fc",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Documento",
+      "dataType": "string",
+      "sourceColumn": "Consumo Documento",
+      "lineageTag": "7607d2a5-dbb2-413f-b55f-c2a18f4f7bb2",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.65",
+        "refreshedTime": "2026-05-28T17:26:57.65"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Nº Documento",
+      "dataType": "int64",
+      "sourceColumn": "Consumo Nº Documento",
+      "formatString": "0",
+      "lineageTag": "e85b2cbf-f56f-4e6d-aa45-df674e02e91b",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.73",
+        "refreshedTime": "2026-05-28T17:26:57.73"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Fecha",
+      "dataType": "dateTime",
+      "sourceColumn": "Consumo Fecha",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "3bfd3280-fe54-4592-a169-9d2c1070b202",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "UnderlyingDateTimeDataType",
+          "value": "Date",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Depósito",
+      "dataType": "string",
+      "sourceColumn": "Consumo Depósito",
+      "lineageTag": "018b55d5-7622-41e6-ab81-83533ec80e76",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Estado",
+      "dataType": "string",
+      "sourceColumn": "Consumo Estado",
+      "lineageTag": "e319e737-0608-46f7-b1ad-20ad996b2f4f",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.65",
+        "refreshedTime": "2026-05-28T17:26:57.65"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Cantidad",
+      "dataType": "double",
+      "sourceColumn": "Consumo Cantidad",
+      "lineageTag": "232fcdc1-cb00-46f3-a52e-aa9446b78b9b",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.653333",
+        "refreshedTime": "2026-05-28T17:26:57.653333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Consumo Obligatorio",
+      "dataType": "string",
+      "sourceColumn": "Consumo Obligatorio",
+      "lineageTag": "c9be2c54-dabe-4b4c-b7e9-0d2dff9a3b56",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.65",
+        "refreshedTime": "2026-05-28T17:26:57.65"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "factConsumoHistoria",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "2026-05-28T17:26:25.033333",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"Nodum\", [Query=\"select s.formulario, s.nro_trans, s.cod_docum, s.nro_docum, s.fec_doc, s.cod_tit, s.cod_estado, s.cod_articulo, a.nom_articulo, (s.cantidad*s.signo) as cantidad, a.cod_tipoart,#(lf)Obligatorio = isnull((select case when (select count(*) from ct_prdcomponente where cod_articulo = s.cod_articulo and es_obligatorio = 'S') > 0 then 'S' else 'N' end),'N')#(lf)from cpf_stockaux s #(lf)join ct_articulos a on s.cod_articulo = a.cod_articulo#(lf)where s.cod_emp = 'EPSA' #(lf)and cod_estado in ('existencia')#(lf)and s.fec_doc between DATEFROMPARTS(YEAR(GETDATE()) - 5, 2, 1) and getdate()#(lf)and s.cod_docum not in ('recepi')#(lf)and a.cod_tipoart not in ('prvta', 'pt', 'semi', 'tubos')\"]),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(Origen,{{\"nro_docum\", \"Consumo Nº Documento\"}, {\"fec_doc\", \"Consumo Fecha\"}, {\"cod_tit\", \"Consumo Depósito\"}, {\"cod_docum\", \"Consumo Documento\"}, {\"nro_trans\", \"Consumo Transacción\"}, {\"formulario\", \"Consumo Formulario\"}, {\"cod_estado\", \"Consumo Estado\"}, {\"cod_articulo\", \"Consumo Artículo\"}, {\"cantidad\", \"Consumo Cantidad\"}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Columnas con nombre cambiado\",{\"nom_articulo\", \"cod_tipoart\"}),\n    #\"Fecha extraída\" = Table.TransformColumns(#\"Columnas quitadas\",{{\"Consumo Fecha\", DateTime.Date, type date}}),\n    #\"Columnas con nombre cambiado1\" = Table.RenameColumns(#\"Fecha extraída\",{{\"Consumo Artículo\", \"Consumo Artículo Código\"}, {\"Obligatorio\", \"Consumo Obligatorio\"}})\nin\n    #\"Columnas con nombre cambiado1\""
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    }
+  ]
+}

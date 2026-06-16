@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "74dfbd485eef016d35f9",
+  "position": {
+    "x": 41.428571428571431,
+    "y": 60.000000000000007,
+    "z": 0,
+    "height": 264.28571428571428,
+    "width": 1440,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Código"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Código",
+              "nativeQueryRef": "Artículo Código1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Nombre"
+                }
+              },
+              "queryRef": "dimArticulo.nom_articulo",
+              "nativeQueryRef": "nom_articulo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Tipo Artículo Código"
+                }
+              },
+              "queryRef": "dimArticulo.cod_tipoart",
+              "nativeQueryRef": "cod_tipoart"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Clase Nombre"
+                }
+              },
+              "queryRef": "dimArticulo.nom_clasifart",
+              "nativeQueryRef": "nom_clasifart"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Consumo Cantidad"
+                }
+              },
+              "queryRef": "Medidas_Consumo._Sumatoria Cantidad Consumo",
+              "nativeQueryRef": "Consumo Cantidad"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "name": "7f8acdd9-df41-0d6d-a7e5-fdf1d36b604b",
+  "fromTable": "factComprasEnProceso",
+  "fromColumn": "CompraEP Articulo Codigo",
+  "toTable": "dimArticulo",
+  "toColumn": "Artículo Código",
+  "state": "ready",
+  "modifiedTime": "2026-05-28T17:26:57.676667",
+  "refreshedTime": "2026-05-28T17:26:57.676667"
+}

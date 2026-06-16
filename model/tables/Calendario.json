@@ -1,0 +1,449 @@
+﻿{
+  "name": "Calendario",
+  "lineageTag": "4626cab3-ce38-4c3e-b6b1-06219e4bcd75",
+  "dataCategory": "Time",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2025-11-26T11:32:13.733333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isNullable": false,
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.736667",
+        "refreshedTime": "2026-05-28T17:26:57.736667"
+      }
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Fecha",
+      "dataType": "dateTime",
+      "isNameInferred": false,
+      "isDataTypeInferred": true,
+      "isKey": true,
+      "sourceColumn": "DateAutoTemplate[Date]",
+      "formatString": "d/m/yyyy",
+      "lineageTag": "4f7285d8-6406-47ea-b43a-3da9a490f9c3",
+      "dataCategory": "PaddedDateTableDates",
+      "summarizeBy": "none",
+      "columnOriginColumn": "Date",
+      "columnOriginTable": "DateAutoTemplate",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      },
+      "annotations": [
+        {
+          "name": "SQLBI_AttributeTypes",
+          "value": "Date, FiscalDate",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Year Month Key",
+      "dataType": "int64",
+      "isNameInferred": true,
+      "isDataTypeInferred": true,
+      "isHidden": true,
+      "sourceColumn": "DateAutoTemplate[Year Month Key]",
+      "lineageTag": "8d04194d-0645-41e1-a662-563ccbc2bc75",
+      "summarizeBy": "count",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Year Month Key",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Año Mes",
+      "dataType": "string",
+      "isNameInferred": false,
+      "isDataTypeInferred": true,
+      "sourceColumn": "DateAutoTemplate[Year Month]",
+      "sortByColumn": "Año Mes Número",
+      "lineageTag": "8dac9dec-5649-46e7-a394-7853ed391813",
+      "dataCategory": "Months",
+      "summarizeBy": "none",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Year Month",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.736667",
+        "refreshedTime": "2026-05-28T17:26:57.736667"
+      }
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Año Mes Número",
+      "dataType": "int64",
+      "isNameInferred": false,
+      "isDataTypeInferred": true,
+      "isHidden": true,
+      "sourceColumn": "DateAutoTemplate[Year Month Number]",
+      "lineageTag": "9d921839-cc77-4ef3-a2e4-1b4fa6f5798c",
+      "dataCategory": "Months",
+      "summarizeBy": "sum",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Year Month Number",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      },
+      "annotations": [
+        {
+          "name": "SQLBI_AttributeTypes",
+          "value": "Months, FiscalMonths",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Fiscal Month",
+      "dataType": "string",
+      "isNameInferred": true,
+      "isDataTypeInferred": true,
+      "sourceColumn": "DateAutoTemplate[Fiscal Month]",
+      "sortByColumn": "Fiscal Month Number",
+      "lineageTag": "1db21190-7da3-47c1-bb65-dbe437a7005c",
+      "dataCategory": "MonthOfYear",
+      "summarizeBy": "none",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Fiscal Month",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      }
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Fiscal Month Number",
+      "dataType": "int64",
+      "isNameInferred": true,
+      "isDataTypeInferred": true,
+      "isHidden": true,
+      "sourceColumn": "DateAutoTemplate[Fiscal Month Number]",
+      "lineageTag": "e423dd02-eb66-4d63-a2d6-95c892971961",
+      "dataCategory": "MonthOfYear",
+      "summarizeBy": "sum",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Fiscal Month Number",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      },
+      "annotations": [
+        {
+          "name": "SQLBI_AttributeTypes",
+          "value": "FiscalMonthOfYear",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Fiscal Month in Quarter Number",
+      "dataType": "int64",
+      "isNameInferred": true,
+      "isDataTypeInferred": true,
+      "isHidden": true,
+      "sourceColumn": "DateAutoTemplate[Fiscal Month in Quarter Number]",
+      "lineageTag": "e1b8f92d-bd58-4d93-846b-83912e4cfa3e",
+      "dataCategory": "MonthOfQuarter",
+      "summarizeBy": "sum",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Fiscal Month in Quarter Number",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      },
+      "annotations": [
+        {
+          "name": "SQLBI_AttributeTypes",
+          "value": "FiscalMonthOfQuarter",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Trimestre Fiscal",
+      "dataType": "string",
+      "isNameInferred": false,
+      "isDataTypeInferred": true,
+      "sourceColumn": "DateAutoTemplate[Fiscal Quarter]",
+      "lineageTag": "2fff5288-eebd-4b5f-9163-f1741d4a09f1",
+      "dataCategory": "QuarterOfYear",
+      "summarizeBy": "none",
+      "columnOriginColumn": "Fiscal Quarter",
+      "columnOriginTable": "DateAutoTemplate",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      }
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Trimestre del año fiscal",
+      "dataType": "string",
+      "isNameInferred": false,
+      "isDataTypeInferred": true,
+      "sourceColumn": "DateAutoTemplate[Fiscal Year Quarter]",
+      "sortByColumn": "Trimestre del Año Fiscal Número",
+      "lineageTag": "64ee17b9-6b89-4cc8-a904-748997b8632b",
+      "dataCategory": "Quarters",
+      "summarizeBy": "none",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Fiscal Year Quarter",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.736667",
+        "refreshedTime": "2026-05-28T17:26:57.736667"
+      }
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Trimestre del Año Fiscal Número",
+      "dataType": "double",
+      "isNameInferred": false,
+      "isDataTypeInferred": true,
+      "isHidden": true,
+      "sourceColumn": "DateAutoTemplate[Fiscal Year Quarter Number]",
+      "lineageTag": "096e2af8-3d1f-4070-9b51-d997bb4df00d",
+      "dataCategory": "Quarters",
+      "summarizeBy": "sum",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Fiscal Year Quarter Number",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      },
+      "annotations": [
+        {
+          "name": "SQLBI_AttributeTypes",
+          "value": "FiscalQuarters",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Año Fiscal",
+      "dataType": "string",
+      "isNameInferred": false,
+      "isDataTypeInferred": true,
+      "sourceColumn": "DateAutoTemplate[Fiscal Year]",
+      "sortByColumn": "Año Fiscal Número",
+      "lineageTag": "2276e00c-9dbe-4009-8181-d5e6de45bc8e",
+      "dataCategory": "Years",
+      "summarizeBy": "none",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Fiscal Year",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.736667",
+        "refreshedTime": "2026-05-28T17:26:57.736667"
+      }
+    },
+    {
+      "type": "calculatedTableColumn",
+      "name": "Año Fiscal Número",
+      "dataType": "int64",
+      "isNameInferred": false,
+      "isDataTypeInferred": true,
+      "isHidden": true,
+      "sourceColumn": "DateAutoTemplate[Fiscal Year Number]",
+      "lineageTag": "5c1be2c7-aec2-43e1-a64d-7293d8ee6db1",
+      "dataCategory": "Years",
+      "summarizeBy": "sum",
+      "columnOriginTable": "DateAutoTemplate",
+      "columnOriginColumn": "Fiscal Year Number",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.726667",
+        "refreshedTime": "2026-05-28T17:26:57.726667"
+      },
+      "annotations": [
+        {
+          "name": "SQLBI_AttributeTypes",
+          "value": "FiscalYears",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "Calendario",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-28T17:26:57.723333",
+      "refreshedTime": "2026-05-28T17:26:57.723333",
+      "source": {
+        "type": "calculated",
+        "expression": "DateAutoTemplate"
+      }
+    }
+  ],
+  "hierarchies": [
+    {
+      "name": "Fiscal Year-Quarter",
+      "lineageTag": "341d0287-a327-43cd-b5f0-2dd5fe7ea909",
+      "state": "ready",
+      "modifiedTime": "2026-05-28T17:26:57.74",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.74",
+      "levels": [
+        {
+          "name": "Year",
+          "ordinal": 0,
+          "column": "Año Fiscal",
+          "lineageTag": "b9c6f918-b314-41b5-982a-2def3e7ca53c",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "Quarter",
+          "ordinal": 1,
+          "column": "Trimestre del año fiscal",
+          "lineageTag": "059b1491-f6bc-46fa-ba03-8595b327b3c8",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "Month",
+          "ordinal": 2,
+          "column": "Año Mes",
+          "lineageTag": "99eff332-375a-489c-9325-d618bf3cfb0f",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Fiscal Year-Month",
+      "lineageTag": "f8e0ff0a-c243-44c3-b64a-e4f395f2f600",
+      "state": "ready",
+      "modifiedTime": "2026-05-28T17:26:57.74",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.74",
+      "levels": [
+        {
+          "name": "Year",
+          "ordinal": 0,
+          "column": "Año Fiscal",
+          "lineageTag": "2a5001cb-bc65-43c3-b4ba-4488af4e6d61",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "Month",
+          "ordinal": 1,
+          "column": "Año Mes",
+          "lineageTag": "11854dbf-d57a-43b9-8575-8cca3df5b66b",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "name": "SQLBI_Template",
+      "value": "Dates",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "SQLBI_TemplateTable",
+      "value": "Date",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "SQLBI_CalendarType",
+      "value": "Fiscal",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    }
+  ]
+}

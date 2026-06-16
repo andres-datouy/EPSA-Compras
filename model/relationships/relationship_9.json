@@ -1,0 +1,10 @@
+﻿{
+  "name": "4c4247b6-1901-1ec7-0c15-aae4602eb006",
+  "fromTable": "factRecepcionesHistoria",
+  "fromColumn": "OC Proveedor",
+  "toTable": "dimProveedor",
+  "toColumn": "Proveedor Id",
+  "state": "ready",
+  "modifiedTime": "2026-05-28T17:26:57.676667",
+  "refreshedTime": "2026-05-28T17:26:57.676667"
+}

@@ -59,34 +59,99 @@ Se extrajo y documento el esquema completo del modelo Power BI `Compras EPSA - S
 
 ## Issue #3: Integracion GitHub
 
-**Status:** Pendiente
+**Status:** Completo
 **Labels:** `setup`
 
 ### Descripcion
-El repositorio Git local esta inicializado. Falta crear el repositorio remoto en GitHub y configurar el push.
+Repositorio Git configurado y sincronizado con GitHub (epsa-acunarro/EPSA-Compras).
 
-### Proximos pasos
-- [ ] Crear repo remoto `EPSA-Compras` en GitHub (epsa-acunarro)
-- [ ] Configurar remote origin
-- [ ] Push de la rama master
-- [ ] Opcional: configurar GitHub Projects para seguimiento
+### Entregables
+- [x] Repo remoto en GitHub (epsa-acunarro)
+- [x] Remote origin configurado
+- [x] Push de la rama master
+- [x] GitHub Projects para seguimiento
 
 ---
 
 ## Issue #4: Arquitectura de Despliegue y Refresh Automatizado
 
-**Status:** En evaluacion
+**Status:** Completo ✅
 **Labels:** `architecture`, `ssas`, `deployment`
 
 ### Descripcion
-Se evaluo alternativas para automatizar la actualizacion de datos y distribuir el reporte sin requerir que cada usuario actualice manualmente.
+Se implementó la arquitectura SSAS Tabular + Live Connection con capa de staging intermedia y refresh automatizado via SQL Agent.
 
-### Evaluacion realizada
-- [x] Power BI Service ($50/month para 5 usuarios) — opcion recomendada cuando haya presupuesto
-- [x] SSAS Tabular + Live Connection ($0 con SQL Server Standard 2019) — opcion tecnica ideal a largo plazo
-- [x] Power Automate Desktop ($0) — opcion RPA para refresh automatico del PBIX
-- [x] Open source (Cube.dev, Metabase, Superset) — ninguno iguala el valor de SSAS+Power BI
+### Implementado
+- [x] SSAS Tabular deployed en 192.168.2.47:2383 (Compras_EPSA)
+- [x] Staging layer creada en staging_compras (192.168.2.47:1435)
+- [x] 8 stored procedures de refresco (FULL/INCREMENTAL)
+- [x] SQL Agent jobs configurados (2x dia)
+- [x] Power BI report migrado a formato PBIR con Live Connection
+- [x] Modelo semantico sincronizado entre staging y SSAS
+- [x] Validacion end-to-end: Fuentes → Staging → SSAS → Report
 
-### Decision pendiente
-- [ ] Decidir si se migra modelo a SSAS Tabular o se mantiene en PBIX
-- [ ] Decidir mecanismo de refresh automatizado (RPA vs SSAS vs PBI Service)
+### Arquitectura final
+```
+192.168.2.7 (Nodum/EPSA_BI)
+       ↓ (linked server [192.168.2.7])
+192.168.2.47:1435 (staging_compras)
+       ↓ (SQL queries)
+192.168.2.47:2383 (SSAS Compras_EPSA)
+       ↓ (Live Connection)
+Power BI Desktop (EPSA-Compras.pbip)
+```
+
+### Pendiente
+- [ ] Configurar gateway para refresh desde Power BI Service (futuro)
+- [ ] Evaluar Power BI Service ($50/month) para distribucion web
+
+---
+
+## Issue #15: Herramientas de Mantenimiento del Perfil PrdImport
+
+**Status:** Backlog
+**Labels:** `enhancement`, `data-management`, `compras-exterior`
+**Prioridad:** Media
+
+### Descripcion
+Scripts y herramientas para gestionar el ciclo de vida de los articulos asignados al perfil de compra `PrdImport` (Produccion Importacion). El perfil se inicializo con 1.275 articulos combinando 6 criterios.
+
+### Sub-issues
+
+#### 15.1 Depuracion por inactividad de consumo
+**Objetivo:** Quitar componentes de formulas y otros insumos que no se consumen por un periodo prudente.
+
+**Criterios propuestos:**
+- Articulos sin consumo en los ultimos 12 meses
+- Que no tengan stock existente ni compras en proceso
+- Que no esten en formulas de produccion activas (factConsumoPlanificado reciente)
+- Excepcion: articulos marcados como "critico" o con observacion manual
+
+**Entregable:** Script SQL/PowerShell que identifique candidatos a baja, genere reporte y permita confirmar la exclusion.
+
+#### 15.2 Depuracion por baja de equipos/herramientas
+**Objetivo:** Quitar repuestos o insumos de maquinas o herramientas que se dieron de baja.
+
+**Criterios propuestos:**
+- Repuestos (clase REPUESTOS BOMBAS, REP MOTORES&MAQUINAS, etc.) cuyo equipo asociado fue dado de baja
+- Herramientas de produccion (tubos de vidrio, cuchillas, etc.) sin consumo >18 meses
+- Cruce con registro de activos/equipos del ERP si existe
+
+**Entregable:** Script que cruce datos de consumo historico con el perfil activo y sugiera bajas.
+
+#### 15.3 Mantenimiento proactivo y sugerencias de alta
+**Objetivo:** Detectar y sugerir articulos que deberian estar en el perfil pero no estan, y alertar sobre inconsistencias.
+
+**Deteccion automatica:**
+- Articulos nuevos en dimArticulo con proveedor exterior + consumo reciente que no estan en el perfil
+- Articulos en formulas de produccion nuevas que no estan dados de alta
+- Articulos con Stock Minimo > 0 recientemente configurados
+- Alertas de inconsistencia: articulo en perfil pero con proveedor local, sin consumo y sin stock
+
+**Entregable:** Pagina de dashboard "Gestion de Lista" y/o script periodico con reporte de sugerencias.
+
+### Notas tecnicas
+- Los scripts deben generar reportes de candidatos (no ejecutar bajas automaticas)
+- Toda baja debe registrarse en la bitacora (`articulo_bitacora_compra`)
+- La frecuencia sugerida de ejecucion es mensual
+- Considerar integracion con el campo `MonitoreoComprasExterior` propuesto en ERP

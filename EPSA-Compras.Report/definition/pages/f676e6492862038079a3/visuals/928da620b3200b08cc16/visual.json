@@ -1,0 +1,360 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "928da620b3200b08cc16",
+  "position": {
+    "x": 1725.7142857142858,
+    "y": 474.28571428571433,
+    "z": 5000,
+    "height": 2262.8571428571431,
+    "width": 1610,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factDemandaPendientePlanificacion"
+                    }
+                  },
+                  "Property": "Pedido"
+                }
+              },
+              "queryRef": "factDemandaPendientePlanificacion.Pedido",
+              "nativeQueryRef": "Pedido"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factDemandaPendientePlanificacion"
+                    }
+                  },
+                  "Property": "Demanda Pendiente Articulo Pedido x Cliente"
+                }
+              },
+              "queryRef": "factDemandaPendientePlanificacion.Demanda Pendiente Articulo Pedido x Cliente",
+              "nativeQueryRef": "Demanda Pendiente Articulo Pedido x Cliente"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factDemandaPendientePlanificacion"
+                    }
+                  },
+                  "Property": "Demanda Pendiente Componente Código"
+                }
+              },
+              "queryRef": "factDemandaPendientePlanificacion.Demanda Pendiente Componente Código",
+              "nativeQueryRef": "Demanda Pendiente Componente Código"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "factDemandaPendientePlanificacion"
+                        }
+                      },
+                      "Property": "Demanda Pendiente Componente Cantidad Requerida"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(factDemandaPendientePlanificacion.Demanda Pendiente Componente Cantidad Requerida)",
+              "nativeQueryRef": "Suma de Demanda Pendiente Componente Cantidad Requerida"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factDemandaPendientePlanificacion"
+                    }
+                  },
+                  "Property": "Demanda Pendiente Componente Nivel"
+                }
+              },
+              "queryRef": "factDemandaPendientePlanificacion.Demanda Pendiente Componente Nivel",
+              "nativeQueryRef": "Demanda Pendiente Componente Nivel"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factDemandaPendientePlanificacion"
+                    }
+                  },
+                  "Property": "TrazaComposicion"
+                }
+              },
+              "queryRef": "factDemandaPendientePlanificacion.TrazaComposicion",
+              "nativeQueryRef": "TrazaComposicion"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "factDemandaPendientePlanificacion"
+                      }
+                    },
+                    "Property": "Demanda Pendiente Componente Cantidad Requerida"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "98D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factDemandaPendientePlanificacion.Pedido"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factDemandaPendientePlanificacion.Demanda Pendiente Articulo Pedido x Cliente"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "124D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factDemandaPendientePlanificacion.Demanda Pendiente Componente Código"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "134D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(factDemandaPendientePlanificacion.Demanda Pendiente Componente Cantidad Requerida)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factDemandaPendientePlanificacion.Demanda Pendiente Componente Nivel"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CONSUMO REQUERIDO PARA FABRICAR DEMANDA PENDIENTE'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a67b54af69abd2c10c38",
+        "type": "Exclude",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "factDemandaPendientePlanificacion",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "Pedido"
+                          }
+                        },
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "Demanda Pendiente Articulo Pedido x Cliente"
+                          }
+                        },
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "Demanda Pendiente Componente Código"
+                          }
+                        },
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "Demanda Pendiente Componente Nivel"
+                          }
+                        },
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "TrazaComposicion"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'E | 267238'"
+                            }
+                          },
+                          {
+                            "Literal": {
+                              "Value": "'097311253'"
+                            }
+                          },
+                          {
+                            "Literal": {
+                              "Value": "'595006000000'"
+                            }
+                          },
+                          {
+                            "Literal": {
+                              "Value": "1L"
+                            }
+                          },
+                          {
+                            "Literal": {
+                              "Value": "'Ped=E|267238 | ArtPed=097311253 | N:0-097311253(F:2609) -> N:1-595006000000(F:0)'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Exclude"
+      }
+    ]
+  }
+}

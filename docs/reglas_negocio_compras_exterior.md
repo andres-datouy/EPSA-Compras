@@ -58,6 +58,12 @@ La lista de ~365 articulos proviene del Excel de Rosana (`Pedidos a exterior 202
 
 > **Ejemplo:** Un proveedor uruguayo que importa componentes de China debe tener el mismo nivel de seguimiento que un proveedor directo de China.
 
+### 2.5 Propuesta: Atributo explicito en ERP (pendiente aprobacion)
+
+**Regla R5-propuesta:** Se propone agregar un campo `MonitoreoComprasExterior` en ct_articulos (o tabla auxiliar `ComprasExteriores_Monitoreo`) para explicitar la asignacion de responsabilidad por area.
+
+> Ver documento completo: `docs/propuesta_alcance_monitoreo.md`
+
 ---
 
 ## 3. Criterios de exclusion de la lista

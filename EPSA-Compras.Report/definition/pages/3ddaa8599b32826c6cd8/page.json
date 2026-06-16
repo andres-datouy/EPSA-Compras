@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "3ddaa8599b32826c6cd8",
+  "displayName": "Stock Mínimo - Deficit",
+  "displayOption": "ActualSize",
+  "height": 4000,
+  "width": 3500
+}

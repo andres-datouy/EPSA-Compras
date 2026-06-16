@@ -1,0 +1,10 @@
+﻿{
+  "name": "6c56bdd9-d24a-ad0d-3316-df1bb948f8d6",
+  "fromTable": "factRecepcionesHistoria",
+  "fromColumn": "RecepcionArticulo",
+  "toTable": "dimArticulo",
+  "toColumn": "Artículo Código",
+  "state": "ready",
+  "modifiedTime": "2026-05-28T17:26:57.723333",
+  "refreshedTime": "2026-05-28T17:26:57.723333"
+}

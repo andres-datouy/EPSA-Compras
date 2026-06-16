@@ -1,0 +1,10 @@
+﻿{
+  "name": "e6457601-8ea0-956b-3ef8-5c19c8ff1c4b",
+  "fromTable": "factRecepcionesHistoria",
+  "fromColumn": "RecepcionFecha",
+  "toTable": "Calendario",
+  "toColumn": "Fecha",
+  "state": "ready",
+  "modifiedTime": "2026-05-28T17:26:57.753333",
+  "refreshedTime": "2026-05-28T17:26:57.753333"
+}

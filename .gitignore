@@ -1,6 +1,8 @@
-# Excel temporary files
+# Excel / Word temporary files
 ~$*.xlsx
 ~$*.xls
+~$*.docx
+~$*.doc
 
 # Power BI temporary files
 *.pbix.tmp
@@ -19,3 +21,14 @@ Thumbs.db
 
 # Qoder
 .qoder/
+
+# Secrets / local environment
+.env
+.env.local
+.env.*
+
+# Power BI cache
+*.pbi/.local
+
+# PBIX binary (tracked via LFS or extraction)
+# pbix/*.pbix

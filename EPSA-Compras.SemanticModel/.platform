@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "EPSA-Compras"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0c747fd8-4500-412c-957b-aa5b2c1f46e0"
+  }
+}

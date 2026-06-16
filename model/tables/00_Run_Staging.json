@@ -1,0 +1,73 @@
+﻿{
+  "name": "00_Run_Staging",
+  "lineageTag": "bb61e29c-f8b2-4ca5-b014-771bbafac7c1",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2025-11-26T11:32:13.733333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      }
+    },
+    {
+      "name": "Done",
+      "dataType": "int64",
+      "sourceColumn": "Done",
+      "formatString": "0",
+      "lineageTag": "37044c99-09a0-43de-b3ef-e4affede8a47",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "00_Run_Staging",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "2026-05-28T17:26:21.186667",
+      "source": {
+        "type": "m",
+        "expression": "let\n    SqlCn    = Sql.Database(\"192.168.2.7\",\"Nodum\"),\n    _run     = Value.NativeQuery(\n                 SqlCn,\n                 \"EXEC dbo.Staging_RequerimientosSobreDemandaPendientePlanificacion;SELECT 1 AS Done;\"\n               ),\n    // Deja una tabla de 1 fila para poder referenciarla\n    Output   = _run\nin\n    Output"
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2026-05-28T17:25:54.276667"
+    }
+  ]
+}

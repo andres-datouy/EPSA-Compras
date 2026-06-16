@@ -1,0 +1,392 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "d239b5cfe00bce14e159",
+  "position": {
+    "x": 17.142857142857142,
+    "y": 1994.2857142857144,
+    "z": 6000,
+    "height": 654.28571428571433,
+    "width": 1877.1428571428573,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factRecepcionesHistoria"
+                    }
+                  },
+                  "Property": "RecepcionFecha"
+                }
+              },
+              "queryRef": "factRecepcionesHistoria.RecepcionFecha",
+              "nativeQueryRef": "RecepcionFecha"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo",
+              "nativeQueryRef": "Artículo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factRecepcionesHistoria"
+                    }
+                  },
+                  "Property": "Compra Empresa"
+                }
+              },
+              "queryRef": "factRecepcionesHistoria.Compra Empresa",
+              "nativeQueryRef": "Compra Empresa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factRecepcionesHistoria"
+                    }
+                  },
+                  "Property": "Compra Documento"
+                }
+              },
+              "queryRef": "factRecepcionesHistoria.Compra Documento",
+              "nativeQueryRef": "Compra Documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factRecepcionesHistoria"
+                    }
+                  },
+                  "Property": "Compra Numero"
+                }
+              },
+              "queryRef": "factRecepcionesHistoria.Compra Numero",
+              "nativeQueryRef": "Compra Numero"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factRecepcionesHistoria"
+                    }
+                  },
+                  "Property": "Compra Fecha"
+                }
+              },
+              "queryRef": "factRecepcionesHistoria.Compra Fecha",
+              "nativeQueryRef": "Compra Fecha"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "factRecepcionesHistoria"
+                        }
+                      },
+                      "Property": "OC PrecioUSD"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(factRecepcionesHistoria.OC PrecioUSD)",
+              "nativeQueryRef": "Promedio de OC PrecioUSD"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "factRecepcionesHistoria"
+                        }
+                      },
+                      "Property": "RecepcionCantidad"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(factRecepcionesHistoria.RecepcionCantidad)",
+              "nativeQueryRef": "Suma de RecepcionCantidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factRecepcionesHistoria"
+                    }
+                  },
+                  "Property": "OC Proveedor"
+                }
+              },
+              "queryRef": "factRecepcionesHistoria.OC Proveedor",
+              "nativeQueryRef": "OC Proveedor"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimProveedor"
+                    }
+                  },
+                  "Property": "Proveedor Nombre"
+                }
+              },
+              "queryRef": "dimProveedor.Proveedor Nombre",
+              "nativeQueryRef": "Proveedor Nombre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factRecepcionesHistoria"
+                    }
+                  },
+                  "Property": "Compra OC Numero"
+                }
+              },
+              "queryRef": "factRecepcionesHistoria.Compra OC Numero",
+              "nativeQueryRef": "Compra OC Numero"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "factRecepcionesHistoria"
+                        }
+                      },
+                      "Property": "RecepcionOCNumero"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(factRecepcionesHistoria.RecepcionOCNumero)",
+              "nativeQueryRef": "Suma de RecepcionOCNumero"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "factRecepcionesHistoria"
+                  }
+                },
+                "Property": "RecepcionFecha"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "105D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factRecepcionesHistoria.Compra Documento"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "91D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factRecepcionesHistoria.Compra Numero"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82.99999283345059D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factRecepcionesHistoria.Compra Fecha"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(factRecepcionesHistoria.OC PrecioUSD)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factRecepcionesHistoria.Compra Empresa"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(factRecepcionesHistoria.RecepcionCantidad)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factRecepcionesHistoria.RecepcionFecha"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "361D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dimArticulo.Artículo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "227D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "factRecepcionesHistoria.Compra OC Numero"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'HISTORIA DE COMPRA'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#BF7C00'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

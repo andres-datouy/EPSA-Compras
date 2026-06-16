@@ -1,0 +1,10 @@
+﻿{
+  "name": "b1cc484c-045e-b6f1-6eb6-4431669d9ec1",
+  "fromTable": "factConsumoPlanificado",
+  "fromColumn": "Consumo Planificado Artículo",
+  "toTable": "dimArticulo",
+  "toColumn": "Artículo Código",
+  "state": "ready",
+  "modifiedTime": "2026-05-28T17:26:57.723333",
+  "refreshedTime": "2026-05-28T17:26:57.723333"
+}

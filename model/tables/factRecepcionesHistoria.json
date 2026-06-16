@@ -1,0 +1,719 @@
+﻿{
+  "name": "factRecepcionesHistoria",
+  "lineageTag": "a1e9a8ea-96fc-4884-ac56-275fba380ba0",
+  "modifiedTime": "2025-11-26T11:32:13.733333",
+  "structureModifiedTime": "2025-11-26T11:32:13.733333",
+  "columns": [
+    {
+      "type": "rowNumber",
+      "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+      "dataType": "int64",
+      "isHidden": true,
+      "isUnique": true,
+      "isKey": true,
+      "isNullable": false,
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.733333",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      }
+    },
+    {
+      "name": "Compra Empresa",
+      "dataType": "string",
+      "sourceColumn": "Compra Empresa",
+      "lineageTag": "001d34e4-6b1e-463e-b55a-7f4e1d379aa4",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.656667",
+        "refreshedTime": "2026-05-28T17:26:57.656667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "RecepcionFecha",
+      "dataType": "dateTime",
+      "sourceColumn": "RecepcionFecha",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "8a5ef946-cef3-4340-9194-3ad4d3e5e797",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "UnderlyingDateTimeDataType",
+          "value": "Date",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "RecepcionArticulo",
+      "dataType": "string",
+      "sourceColumn": "RecepcionArticulo",
+      "lineageTag": "54a4a8b0-f501-4819-9377-5214e07bf5ab",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "RecepcionCantidad",
+      "dataType": "double",
+      "sourceColumn": "RecepcionCantidad",
+      "lineageTag": "f7889774-0fb7-41c5-b9df-a356763cba49",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "RecepcionOCDocumento",
+      "dataType": "string",
+      "sourceColumn": "RecepcionOCDocumento",
+      "lineageTag": "b5cb4a79-f3d6-4ebc-897d-5b0b70ca292f",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "RecepcionOCNumero",
+      "dataType": "int64",
+      "sourceColumn": "RecepcionOCNumero",
+      "formatString": "0",
+      "lineageTag": "0ec1c5a8-fffe-4595-8039-c45b376f2e33",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-03-03T13:16:27.236667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2026-03-03T13:16:27.236667"
+        }
+      ]
+    },
+    {
+      "name": "RecepcionArticuloTipo",
+      "dataType": "string",
+      "sourceColumn": "RecepcionArticuloTipo",
+      "lineageTag": "de95b91b-920a-4298-88df-59552bb933e7",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC Documento",
+      "dataType": "string",
+      "sourceColumn": "OC Documento",
+      "lineageTag": "42665b4b-563a-403a-b62f-ea6b19616cb5",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.66",
+        "refreshedTime": "2026-05-28T17:26:57.66"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC Numero",
+      "dataType": "int64",
+      "sourceColumn": "OC Numero",
+      "formatString": "0",
+      "lineageTag": "76a76548-025c-43c7-b6e6-1281d7edfd50",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.663333",
+        "refreshedTime": "2026-05-28T17:26:57.663333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC Proveedor",
+      "dataType": "string",
+      "sourceColumn": "OC Proveedor",
+      "lineageTag": "dadfcd3e-74e3-4a1a-946d-3dc7d6a55b02",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC Fecha",
+      "dataType": "dateTime",
+      "sourceColumn": "OC Fecha",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "1eb0d098-7f54-4303-982d-ee62b23bf7a1",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "UnderlyingDateTimeDataType",
+          "value": "Date",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC Total MO",
+      "dataType": "double",
+      "sourceColumn": "OC Total MO",
+      "lineageTag": "89fcefcd-3a29-4cb2-a057-0cd3c426723c",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC Total TR",
+      "dataType": "double",
+      "sourceColumn": "OC Total TR",
+      "lineageTag": "d98f09c3-f284-4b77-9a27-77500ac47cd2",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC Moneda",
+      "dataType": "string",
+      "sourceColumn": "OC Moneda",
+      "lineageTag": "8d5df9ff-9eef-430f-83ff-8c1a545e0821",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.706667",
+        "refreshedTime": "2026-05-28T17:26:57.706667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC Articulo Codigo",
+      "dataType": "string",
+      "sourceColumn": "OC Articulo Codigo",
+      "lineageTag": "0999e316-f853-4060-ac1f-fae36dbb6dec",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.696667",
+        "refreshedTime": "2026-05-28T17:26:57.696667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC PrecioMO",
+      "dataType": "double",
+      "sourceColumn": "OC PrecioMO",
+      "lineageTag": "570837e8-247c-4a1b-9a3d-1af6014e4cf7",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.68",
+        "refreshedTime": "2026-05-28T17:26:57.68"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isGeneralNumber\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "OC PrecioUSD",
+      "dataType": "double",
+      "sourceColumn": "OC PrecioUSD",
+      "formatString": "0.0000",
+      "lineageTag": "ff07257e-2e31-4d0d-a158-68867633ef1f",
+      "summarizeBy": "average",
+      "modifiedTime": "2026-03-03T13:20:02.07",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.67",
+        "refreshedTime": "2026-05-28T17:26:57.67"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2026-03-03T13:18:15.806667"
+        }
+      ]
+    },
+    {
+      "name": "SolicitudDocumento",
+      "dataType": "string",
+      "sourceColumn": "SolicitudDocumento",
+      "lineageTag": "25275bb7-c3dc-4773-8ad7-dbb2a8503cdc",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "SolicitudNumero",
+      "dataType": "int64",
+      "sourceColumn": "SolicitudNumero",
+      "formatString": "0",
+      "lineageTag": "fa53db4a-7fb1-43c1-83db-6ea0cf3299b1",
+      "summarizeBy": "sum",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.71",
+        "refreshedTime": "2026-05-28T17:26:57.71"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "SolicitudFecha",
+      "dataType": "dateTime",
+      "sourceColumn": "SolicitudFecha",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "e10e9e7b-56b1-4a15-8d8b-85f19a027354",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Compra Documento",
+      "dataType": "string",
+      "sourceColumn": "Compra Documento",
+      "lineageTag": "593ec647-9b7e-468c-9bfb-725bea3e81f4",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.676667",
+        "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Compra Numero",
+      "dataType": "string",
+      "sourceColumn": "Compra Numero",
+      "lineageTag": "a213ca01-f266-4f94-a604-46e50706b5f0",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.716667",
+        "refreshedTime": "2026-05-28T17:26:57.716667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Compra Fecha",
+      "dataType": "dateTime",
+      "sourceColumn": "Compra Fecha",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "bd2bdfef-5312-459e-a075-093f5650eb32",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.67",
+        "refreshedTime": "2026-05-28T17:26:57.67"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "UnderlyingDateTimeDataType",
+          "value": "Date",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Compra OC Doc",
+      "dataType": "string",
+      "sourceColumn": "Compra OC Doc",
+      "lineageTag": "907a4202-29e6-43e1-8654-7bf3b045d673",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.723333",
+        "refreshedTime": "2026-05-28T17:26:57.723333"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "name": "Compra OC Numero",
+      "dataType": "int64",
+      "sourceColumn": "Compra OC Numero",
+      "formatString": "0",
+      "lineageTag": "4a9ed5be-d754-4e72-92b0-36a1398af893",
+      "summarizeBy": "none",
+      "modifiedTime": "2025-11-26T11:32:13.736667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.666667",
+        "refreshedTime": "2026-05-28T17:26:57.666667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "User",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "Compra Fecha Inicio Proceso",
+      "dataType": "dateTime",
+      "isDataTypeInferred": true,
+      "expression": "\nVAR FechaMin =\n    MINX(\n        {\n            factRecepcionesHistoria[SolicitudFecha],\n            factRecepcionesHistoria[OC Fecha],\n            factRecepcionesHistoria[Compra Fecha]\n        },\n        [Value]\n    )\nRETURN\n    FechaMin\n",
+      "formatString": "dd/mm/yyyy",
+      "lineageTag": "5a769a30-f807-4187-adbd-837ae57ff3ec",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-28T17:26:57.696667",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.696667",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.7",
+        "refreshedTime": "2026-05-28T17:26:57.7"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        },
+        {
+          "name": "PBI_FormatHint",
+          "value": "{\"isDateTimeCustom\":true}",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    },
+    {
+      "type": "calculated",
+      "name": "Lead Time Dias",
+      "dataType": "int64",
+      "isDataTypeInferred": true,
+      "expression": "\nVAR FechaInicio = factRecepcionesHistoria[Compra Fecha Inicio Proceso]\nVAR FechaRecepcion = factRecepcionesHistoria[RecepcionFecha]\nRETURN\nIF(\n    NOT ISBLANK ( FechaInicio ) && NOT ISBLANK ( FechaRecepcion ),\n    DATEDIFF ( FechaInicio, FechaRecepcion, DAY )\n)\n",
+      "formatString": "0",
+      "lineageTag": "d554e8bc-6bd3-4f6b-be09-002627e32b2a",
+      "summarizeBy": "sum",
+      "modifiedTime": "2026-05-28T17:26:57.713333",
+      "structureModifiedTime": "2025-11-26T11:32:13.736667",
+      "refreshedTime": "2026-05-28T17:26:57.713333",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-28T17:26:57.716667",
+        "refreshedTime": "2026-05-28T17:26:57.716667"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2025-11-26T11:32:13.736667"
+        }
+      ]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "factRecepcionesHistoria",
+      "mode": "import",
+      "state": "ready",
+      "modifiedTime": "2026-05-13T19:39:44.5",
+      "refreshedTime": "2026-05-28T17:26:57.533333",
+      "source": {
+        "type": "m",
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"EPSA_BI\"),\n    dbo_vw_ComprasBI_RecepcionesHistoria = Origen{[Schema=\"dbo\",Item=\"vw_ComprasBI_HistoriaRecepciones\"]}[Data],\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(dbo_vw_ComprasBI_RecepcionesHistoria,{{\"CompraDocumento\", \"Compra Documento\"}, {\"CompraFecha\", \"Compra Fecha\"}, {\"CompraNumero\", \"Compra Numero\"}, {\"CompraOCDoc\", \"Compra OC Doc\"}, {\"CompraOCNumero\", \"Compra OC Numero\"}, {\"Empresa\", \"Compra Empresa\"}, {\"OCArticuloCodigo\", \"OC Articulo Codigo\"}, {\"OCDocumento\", \"OC Documento\"}, {\"OCFecha\", \"OC Fecha\"}, {\"OCMoneda\", \"OC Moneda\"}, {\"OCNumero\", \"OC Numero\"}, {\"OCPrecioMO\", \"OC PrecioMO\"}, {\"OCPrecioUSD\", \"OC PrecioUSD\"}, {\"OCProveedor\", \"OC Proveedor\"}, {\"OCTotalMO\", \"OC Total MO\"}, {\"OCTotalTR\", \"OC Total TR\"}}),\n    #\"Fecha extraída\" = Table.TransformColumns(#\"Columnas con nombre cambiado\",{{\"RecepcionFecha\", DateTime.Date, type date}, {\"OC Fecha\", DateTime.Date, type date}, {\"Compra Fecha\", DateTime.Date, type date}})\nin\n    #\"Fecha extraída\""
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navegación",
+      "modifiedTime": "2025-11-26T11:32:13.736667"
+    },
+    {
+      "name": "PBI_ResultType",
+      "value": "Table",
+      "modifiedTime": "2026-05-28T17:25:54.276667"
+    }
+  ]
+}
