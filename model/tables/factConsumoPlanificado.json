@@ -47,7 +47,7 @@
       "name": "Consumo Planificado Fecha Planificacion",
       "dataType": "dateTime",
       "sourceColumn": "Consumo Planificado Fecha Planificacion",
-      "formatString": "dd/mm/yyyy",
+      "formatString": "dd/MM/yyyy",
       "lineageTag": "822dc68b-9b77-4de5-9f3a-c6b58d467459",
       "summarizeBy": "none",
       "modifiedTime": "2025-11-26T11:32:13.736667",

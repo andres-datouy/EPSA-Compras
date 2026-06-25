@@ -155,3 +155,179 @@ Scripts y herramientas para gestionar el ciclo de vida de los articulos asignado
 - Toda baja debe registrarse en la bitacora (`articulo_bitacora_compra`)
 - La frecuencia sugerida de ejecucion es mensual
 - Considerar integracion con el campo `MonitoreoComprasExterior` propuesto en ERP
+
+---
+
+## Issue #16: Estrategia de Deploy PBIP → PBIX
+
+**Status:** Backlog
+**Labels:** `deployment`, `power-bi`, `documentation`
+**Prioridad:** Alta
+
+### Descripcion
+Definir y documentar una estrategia para generar un archivo PBIX distribuible a partir del proyecto PBIP (PBIR + SemanticModel Live Connection a SSAS).
+
+### Pendiente
+- [ ] Evaluar opciones: `pbixray`, `pbi-tools`, `tabular-editor`, export manual
+- [ ] Documentar flujo de generacion del PBIX
+- [ ] Automatizar el proceso con script
+- [ ] Validar que el PBIX resultante funcione standalone (sin SSAS)
+- [ ] Definir cadencia de generacion (manual vs CI/CD)
+
+---
+
+## Issue #17: Documentacion de Medidas DAX del Modelo
+
+**Status:** Backlog
+**Labels:** `documentation`, `dax`, `semantic-model`
+**Prioridad:** Alta
+
+### Descripcion
+Generar documentacion completa para cada medida del modelo semantico, incluyendo formula, descripcion, uso, dependencias y ejemplos.
+
+### Pendiente
+- [ ] Listar todas las medidas del modelo (Medidas_Compras, Medidas_Stock, Medidas_Consumo, etc.)
+- [ ] Documentar formula DAX y descripcion en espanol
+- [ ] Indicar tablas/facts de las que depende cada medida
+- [ ] Agregar ejemplos de uso en contexto de negocio
+- [ ] Publicar como anexo al manual de usuario
+
+---
+
+## Issue #18: Manual de Usuario
+
+**Status:** Backlog
+**Labels:** `documentation`, `user-guide`
+**Prioridad:** Media
+
+### Descripcion
+Crear un manual de usuario completo para los distintos roles que usan el reporte (Compras, Produccion, Logistica, Calidad, Gerencia).
+
+### Pendiente
+- [ ] Definir estructura por rol/perfil
+- [ ] Capturas de pantalla de cada pagina
+- [ ] Descripcion de funcionalidades por pagina
+- [ ] Guia de interpretacion de alertas e indicadores
+- [ ] FAQ y troubleshooting basico
+- [ ] Formato final: PDF + version online
+
+---
+
+## Issue #19: Relevamiento con Areas de Negocio
+
+**Status:** Backlog
+**Labels:** `requirements`, `stakeholder-engagement`
+**Prioridad:** Alta
+
+### Descripcion
+Iniciar etapas de trabajo en conjunto con: Comercio Exterior, Produccion, Logistica, Calidad y Gerencia para relevar que todos sus requerimientos y consultas sobre los datos se resuelven.
+
+### Sub-tareas por area
+| Area | Responsable | Estado |
+|------|-------------|--------|
+| Comercio Exterior | Rosana | En progreso (Issue #1) |
+| Produccion | TBD | Pendiente |
+| Logistica | TBD | Pendiente |
+| Calidad | TBD | Pendiente |
+| Gerencia | TBD | Pendiente |
+
+### Pendiente
+- [ ] Agendar reunion por area
+- [ ] Preparar demo del modelo actual para cada area
+- [ ] Documentar requerimientos por area
+- [ ] Priorizar backlog por area
+- [ ] Validar que datos actuales resuelven consultas clave
+
+---
+
+## Issue #20: Mejoras en Indicadores y Machine Learning
+
+**Status:** Backlog
+**Labels:** `ml`, `analytics`, `enhancement`
+**Prioridad:** Media
+
+### Descripcion
+Trabajar sobre mejoras en indicadores existentes e implementar modelos de machine learning para prediccion de demanda, deteccion de anomalias, optimizacion de stock.
+
+### Ideas a evaluar
+- [ ] Prediccion de demanda por articulo (series de tiempo)
+- [ ] Deteccion de anomalias en consumo (outliers)
+- [ ] Optimizacion de stock minimo basada en ML
+- [ ] Clasificacion ABC de articulos automatizada
+- [ ] Lead time prediction por proveedor
+- [ ] Prototipos iniciales en `scripts/ml/`
+
+---
+
+## Issue #21: Integraciones con Otras Tecnologias
+
+**Status:** Backlog
+**Labels:** `integration`, `api`, `mobile`
+**Prioridad:** Baja
+
+### Descripcion
+Crear integraciones con otras tecnologias para obtener insights desde el ERP o cualquier otra app que lo requiera (incluyendo app movil).
+
+### Opciones a evaluar
+- [ ] API REST sobre SSAS (Tabular query endpoint)
+- [ ] Power BI Embedded para integracion web
+- [ ] App movil (React Native / MAUI) para consulta de indicadores
+- [ ] Alertas via Teams/Email basadas en umbrales
+- [ ] Integration con ERP via webhooks o polling
+- [ ] Chatbot interno con acceso a datos del modelo
+
+---
+
+## Issue #22: Historias de Datos para Finanzas y Direccion
+
+**Status:** Backlog
+**Labels:** `storytelling`, `finance`, `executive`
+**Prioridad:** Media
+
+### Descripcion
+Crear historias de datos orientadas a finanzas, direccion y flujos de caja/gasto para presentacion ejecutiva.
+
+### Pendiente
+- [ ] Definir metricas clave de finanzas (flujo de caja, gastos por area, proyecciones)
+- [ ] Disenar paginas de narrativa ejecutiva
+- [ ] Integrar datos contables del ERP
+- [ ] Crear tablero de direccion con KPIs consolidados
+- [ ] Comparativa YoY y budget vs actual
+
+---
+
+## Issue #23: Proceso de Validacion de Datos (Cierre)
+
+**Status:** Backlog
+**Labels:** `data-quality`, `validation`, `governance`
+**Prioridad:** Alta
+
+### Descripcion
+Implementar un proceso de validacion de datos (Cierre) para mantener la confianza en los datos y que el modelo sea fuente de verdad.
+
+### Pendiente
+- [ ] Definir reglas de validacion por tabla (rangos, completitud, consistencia)
+- [ ] Crear script de validacion automatica post-refresh
+- [ ] Dashboard de calidad de datos (completitud, anomalias, drift)
+- [ ] Alertas automaticas cuando se detectan inconsistencias
+- [ ] Proceso de cierre mensual con firma de responsable
+- [ ] Integrar con stg_refresh_log existente
+
+---
+
+## Issue #24: Registro de Cambios de Fechas de Entrega (Roberta - Importaciones)
+
+**Status:** Backlog
+**Labels:** `data-source`, `importaciones`, `integration`
+**Prioridad:** Media
+
+### Descripcion
+Relevar con Roberta de Importaciones como lleva el registro de cambios de fechas de entrega para integrarlo al sistema.
+
+### Pendiente
+- [ ] Reunion con Roberta para entender el proceso actual
+- [ ] Documentar como registra cambios de fecha de entrega (Excel, ERP, manual?)
+- [ ] Evaluar fuente de datos: Excel importado, tabla en ERP, o nueva tabla
+- [ ] Disenar tabla `factEntregaCambios` en el modelo
+- [ ] Implementar ETL y relacion con factComprasEnProceso
+- [ ] Crear visualizacion de historial de cambios de fecha por OC

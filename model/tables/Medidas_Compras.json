@@ -70,7 +70,7 @@
     {
       "name": "Ultima Recepcion Fecha",
       "expression": "max(factRecepcionesHistoria[RecepcionFecha])",
-      "formatString": "dd/mm/yyyy",
+      "formatString": "dd/MM/yyyy",
       "lineageTag": "dce1ab30-1110-41df-9df5-e5a403296a40",
       "dataType": "dateTime",
       "modifiedTime": "2025-11-26T11:32:14.103333",

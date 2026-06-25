@@ -31,7 +31,7 @@
       "isHidden": true,
       "isKey": true,
       "sourceColumn": "[Date]",
-      "formatString": "d/m/yyyy",
+      "formatString": "dd/MM/yyyy",
       "lineageTag": "9d75e661-fef0-4748-aa7b-3a520da458d5",
       "dataCategory": "PaddedDateTableDates",
       "summarizeBy": "none",

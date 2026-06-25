@@ -137,7 +137,7 @@
       "name": "Consumo Fecha",
       "dataType": "dateTime",
       "sourceColumn": "Consumo Fecha",
-      "formatString": "dd/mm/yyyy",
+      "formatString": "dd/MM/yyyy",
       "lineageTag": "3bfd3280-fe54-4592-a169-9d2c1070b202",
       "summarizeBy": "none",
       "modifiedTime": "2025-11-26T11:32:13.736667",

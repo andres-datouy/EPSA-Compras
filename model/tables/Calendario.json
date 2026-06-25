@@ -29,7 +29,7 @@
       "isDataTypeInferred": true,
       "isKey": true,
       "sourceColumn": "DateAutoTemplate[Date]",
-      "formatString": "d/m/yyyy",
+      "formatString": "dd/MM/yyyy",
       "lineageTag": "4f7285d8-6406-47ea-b43a-3da9a490f9c3",
       "dataCategory": "PaddedDateTableDates",
       "summarizeBy": "none",

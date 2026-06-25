@@ -71,44 +71,7 @@
                 }
               }
             },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d1",
-                    "Entity": "dimArticulo",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d1"
-                              }
-                            },
-                            "Property": "Artículo"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'hipocl'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
-              }
-            },
+            "selfFilter": {},
             "filter": {
               "filter": {
                 "Version": 2,
