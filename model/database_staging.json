@@ -3885,7 +3885,7 @@
           {
             "name": "Cantidad Recepciones",
             "expression": "count(factRecepcionesHistoria[RecepcionArticulo])",
-            "formatString": "#,0.00",
+            "formatString": "0",
             "lineageTag": "de79a728-9ed1-4c25-87d7-9a3d939f4941"
           },
           {
@@ -3897,13 +3897,13 @@
           {
             "name": "Lead Time Promedio Dias",
             "expression": "\nAVERAGE ( factRecepcionesHistoria[Lead Time Dias] )\n",
-            "formatString": "#,0.00",
+            "formatString": "0",
             "lineageTag": "6086b32f-bdd2-4607-8786-a276621f0421"
           },
           {
             "name": "Ultima Recepcion Fecha",
             "expression": "max(factRecepcionesHistoria[RecepcionFecha])",
-            "formatString": "#,0.00",
+            "formatString": "dd/MM/yyyy",
             "lineageTag": "e7287ee6-508c-4036-8236-888fc857ac8d"
           }
         ]
