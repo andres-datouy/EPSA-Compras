@@ -1,4 +1,4 @@
-# Add Calendario hierarchies and relationships via AMO after deployment
+# Add Calendario hierarchies + relationships via AMO, then process affected tables
 $pass = "Saas 244050@"
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", (ConvertTo-SecureString $pass -AsPlainText -Force))
 
@@ -13,71 +13,79 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
     $model = $db.Model
     $calTable = $model.Tables["Calendario"]
 
-    # Add Fiscal Year-Quarter hierarchy
+    $hasChanges = $false
+
+    # Add hierarchies if missing
     if (-not ($calTable.Hierarchies | Where-Object { $_.Name -eq "Fiscal Year-Quarter" })) {
         $h1 = New-Object Microsoft.AnalysisServices.Tabular.Hierarchy
         $h1.Name = "Fiscal Year-Quarter"
-        $l1 = New-Object Microsoft.AnalysisServices.Tabular.Level
-        $l1.Name = "Year"
-        $l1.Ordinal = 0
-        $l1.Column = $calTable.Columns["Año Fiscal"]
-        $h1.Levels.Add($l1)
-        $l2 = New-Object Microsoft.AnalysisServices.Tabular.Level
-        $l2.Name = "Quarter"
-        $l2.Ordinal = 1
-        $l2.Column = $calTable.Columns["Trimestre del año fiscal"]
-        $h1.Levels.Add($l2)
-        $l3 = New-Object Microsoft.AnalysisServices.Tabular.Level
-        $l3.Name = "Month"
-        $l3.Ordinal = 2
-        $l3.Column = $calTable.Columns["Año Mes"]
-        $h1.Levels.Add($l3)
+        foreach ($lvl in @(
+            @{ Name="Year"; Ordinal=0; Col="Año Fiscal" },
+            @{ Name="Quarter"; Ordinal=1; Col="Trimestre del año fiscal" },
+            @{ Name="Month"; Ordinal=2; Col="Año Mes" }
+        )) {
+            $l = New-Object Microsoft.AnalysisServices.Tabular.Level
+            $l.Name = $lvl.Name; $l.Ordinal = $lvl.Ordinal
+            $l.Column = $calTable.Columns[$lvl.Col]
+            $h1.Levels.Add($l)
+        }
         $calTable.Hierarchies.Add($h1)
-        $output += "Added hierarchy: Fiscal Year-Quarter"
-    }
+        $output += "Added: Fiscal Year-Quarter"
+        $hasChanges = $true
+    } else { $output += "Exists: Fiscal Year-Quarter" }
 
-    # Add Fiscal Year-Month hierarchy
     if (-not ($calTable.Hierarchies | Where-Object { $_.Name -eq "Fiscal Year-Month" })) {
         $h2 = New-Object Microsoft.AnalysisServices.Tabular.Hierarchy
         $h2.Name = "Fiscal Year-Month"
-        $l4 = New-Object Microsoft.AnalysisServices.Tabular.Level
-        $l4.Name = "Year"
-        $l4.Ordinal = 0
-        $l4.Column = $calTable.Columns["Año Fiscal"]
-        $h2.Levels.Add($l4)
-        $l5 = New-Object Microsoft.AnalysisServices.Tabular.Level
-        $l5.Name = "Month"
-        $l5.Ordinal = 1
-        $l5.Column = $calTable.Columns["Año Mes"]
-        $h2.Levels.Add($l5)
+        foreach ($lvl in @(
+            @{ Name="Year"; Ordinal=0; Col="Año Fiscal" },
+            @{ Name="Month"; Ordinal=1; Col="Año Mes" }
+        )) {
+            $l = New-Object Microsoft.AnalysisServices.Tabular.Level
+            $l.Name = $lvl.Name; $l.Ordinal = $lvl.Ordinal
+            $l.Column = $calTable.Columns[$lvl.Col]
+            $h2.Levels.Add($l)
+        }
         $calTable.Hierarchies.Add($h2)
-        $output += "Added hierarchy: Fiscal Year-Month"
-    }
+        $output += "Added: Fiscal Year-Month"
+        $hasChanges = $true
+    } else { $output += "Exists: Fiscal Year-Month" }
 
-    # Add relationships
+    # Add relationships if missing
     $relDefs = @(
-        @{ Name="factConsumoHistoria-Calendario"; From="factConsumoHistoria"; FromCol="Consumo Fecha"; To="Calendario"; ToCol="Fecha" },
-        @{ Name="factStockEPSA-Calendario"; From="factStockEPSA"; FromCol="Stock Fecha_Corte"; To="Calendario"; ToCol="Fecha" },
-        @{ Name="factConsumoPlanificado-Calendario"; From="factConsumoPlanificado"; FromCol="Consumo Planificado Fecha Planificacion"; To="Calendario"; ToCol="Fecha" },
-        @{ Name="factRecepcionesHistoria-Calendario"; From="factRecepcionesHistoria"; FromCol="RecepcionFecha"; To="Calendario"; ToCol="Fecha" }
+        @{ Name="factConsumoHistoria-Calendario"; From="factConsumoHistoria"; FromCol="Consumo Fecha" },
+        @{ Name="factStockEPSA-Calendario"; From="factStockEPSA"; FromCol="Stock Fecha_Corte" },
+        @{ Name="factConsumoPlanificado-Calendario"; From="factConsumoPlanificado"; FromCol="Consumo Planificado Fecha Planificacion" },
+        @{ Name="factRecepcionesHistoria-Calendario"; From="factRecepcionesHistoria"; FromCol="RecepcionFecha" }
     )
-
+    # Always refresh these tables to ensure relationship indexes are built
+    $affectedTables = @("Calendario", "factConsumoHistoria", "factStockEPSA", "factConsumoPlanificado", "factRecepcionesHistoria")
     foreach ($rd in $relDefs) {
         if (-not ($model.Relationships | Where-Object { $_.Name -eq $rd.Name })) {
             $rel = New-Object Microsoft.AnalysisServices.Tabular.SingleColumnRelationship
             $rel.Name = $rd.Name
             $rel.FromColumn = $model.Tables[$rd.From].Columns[$rd.FromCol]
-            $rel.ToColumn = $model.Tables[$rd.To].Columns[$rd.ToCol]
+            $rel.ToColumn = $calTable.Columns["Fecha"]
             $model.Relationships.Add($rel)
-            $output += "Added relationship: $($rd.Name)"
-        } else {
-            $output += "Relationship already exists: $($rd.Name)"
-        }
+            $output += "Added rel: $($rd.Name)"
+            $hasChanges = $true
+        } else { $output += "Exists rel: $($rd.Name)" }
     }
 
-    # Save
+    if ($hasChanges) {
+        # Save metadata changes
+        $model.SaveChanges()
+        $output += "Saved metadata changes."
+    }
+
+    # Always refresh affected tables to ensure relationship indexes are built
+    foreach ($tName in ($affectedTables | Select-Object -Unique)) {
+        $t = $model.Tables[$tName]
+        $t.RequestRefresh([Microsoft.AnalysisServices.Tabular.RefreshType]::Full, $null)
+        $output += "Queued refresh: $tName"
+    }
     $model.SaveChanges()
-    $output += "Changes saved."
+    $output += "Processing complete."
 
     # Verify
     $ssas.Refresh()
@@ -88,6 +96,11 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
         $output += "  $($h.Name): $($h.Levels.Count) levels"
     }
     $output += "Total relationships: $($db2.Model.Relationships.Count)"
+
+    foreach ($table in $db2.Model.Tables) {
+        $p = $table.Partitions[0]
+        if ($p) { $output += "  $($table.Name): $($p.State)" }
+    }
 
     $ssas.Disconnect()
     return $output
