@@ -179,7 +179,7 @@
       "refreshedTime": "2026-05-28T17:26:16.02",
       "source": {
         "type": "m",
-        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"EPSA_BI\"),\n    dbo_vw_ComprasBI_factStockEPSA = Origen{[Schema=\"dbo\",Item=\"vw_ComprasBI_factStockEPSA\"]}[Data],\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(dbo_vw_ComprasBI_factStockEPSA,{{\"Cantidad\", \"Stock Cantidad\"}, {\"cod_articulo\", \"Stock Artículo Código\"}, {\"Deposito\", \"Stock Depósito\"}, {\"Estado\", \"Stock Estado\"}, {\"EstadoTipo\", \"Stock Estado Tipo\"}, {\"Fecha_Corte\", \"Stock Fecha_Corte\"}})\nin\n    #\"Columnas con nombre cambiado\""
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.47\", \"staging_compras\", 1435),\n    dbo_stg = Origen{[Schema=\"dbo\",Item=\"stg_factStockEPSA\"]}[Data],\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(dbo_stg,{{\"Cantidad\", \"Stock Cantidad\"}, {\"cod_articulo\", \"Stock Artículo Código\"}, {\"Deposito\", \"Stock Depósito\"}, {\"Estado\", \"Stock Estado\"}, {\"EstadoTipo\", \"Stock Estado Tipo\"}, {\"Fecha_Corte\", \"Stock Fecha_Corte\"}})\nin\n    #\"Columnas con nombre cambiado\""
       }
     }
   ],

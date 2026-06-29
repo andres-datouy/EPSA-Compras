@@ -180,7 +180,7 @@
       "refreshedTime": "2026-05-28T17:25:58.803333",
       "source": {
         "type": "m",
-        "expression": "let\n    Origen = Sql.Database(\"192.168.2.7\", \"EPSA_BI\"),\n    dbo_vw_ComprasBI_factConsumoPlanificadoEPSA = Origen{[Schema=\"dbo\",Item=\"vw_ComprasBI_factConsumoPlanificadoEPSA\"]}[Data],\n    #\"Fecha extraída\" = Table.TransformColumns(dbo_vw_ComprasBI_factConsumoPlanificadoEPSA,{{\"Fecha_Planificacion\", DateTime.Date, type date}}),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(#\"Fecha extraída\",{{\"Cantidad_Requerida\", \"Consumo Planificado Cantidad\"}, {\"cod_articulo\", \"Consumo Planificado Artículo\"}, {\"Fecha_Planificacion\", \"Consumo Planificado Fecha Planificacion\"}, {\"nro_orden\", \"Consumo Planificado Orden\"}, {\"nro_pasoprod\", \"Consumo Planificado Nº Paso Orden\"}, {\"OrdenTipo\", \"Consumo Planificado Tipo Orden\"}})\nin\n    #\"Columnas con nombre cambiado\""
+        "expression": "let\n    Origen = Sql.Database(\"192.168.2.47\", \"staging_compras\", 1435),\n    dbo_stg = Origen{[Schema=\"dbo\",Item=\"stg_factConsumoPlanificado\"]}[Data],\n    #\"Fecha extraída\" = Table.TransformColumns(dbo_stg,{{\"Fecha_Planificacion\", DateTime.Date, type date}}),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(#\"Fecha extraída\",{{\"Cantidad_Requerida\", \"Consumo Planificado Cantidad\"}, {\"cod_articulo\", \"Consumo Planificado Artículo\"}, {\"Fecha_Planificacion\", \"Consumo Planificado Fecha Planificacion\"}, {\"nro_orden\", \"Consumo Planificado Orden\"}, {\"nro_pasoprod\", \"Consumo Planificado Nº Paso Orden\"}, {\"OrdenTipo\", \"Consumo Planificado Tipo Orden\"}})\nin\n    #\"Columnas con nombre cambiado\""
       }
     }
   ],
