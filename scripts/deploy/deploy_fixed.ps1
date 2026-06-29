@@ -6,20 +6,9 @@ $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", $pass)
 $raw = Get-Content "d:\Andres\Dev\EPSA-Compras\model\database_staging.json" -Raw -Encoding UTF8
 $json = $raw | ConvertFrom-Json
 
-# Remove dangling Calendario relationships
-if ($json.model.relationships) {
-    $before = $json.model.relationships.Count
-    $relsToKeep = @()
-    foreach ($rel in $json.model.relationships) {
-        if ($rel.fromTable -eq "Calendario" -or $rel.toTable -eq "Calendario") {
-            Write-Host "  REMOVED relationship: $($rel.name)" -ForegroundColor Red
-        } else {
-            $relsToKeep += $rel
-        }
-    }
-    $json.model.relationships = $relsToKeep
-    Write-Host "Relationships: $before -> $($relsToKeep.Count)" -ForegroundColor Yellow
-}
+# Calendario relationships are valid - DAX calculated table with proper Fecha key
+# (Previously stripped during migration - no longer needed)
+Write-Host "Relationships: $($json.model.relationships.Count) (keeping all)" -ForegroundColor Yellow
 
 # Serialize back
 $fixed = $json | ConvertTo-Json -Depth 100

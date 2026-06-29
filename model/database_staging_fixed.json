@@ -3543,7 +3543,9 @@
             "name": "Fecha",
             "dataType": "dateTime",
             "sourceColumn": "Fecha",
-            "formatString": "dd/MM/yyyy"
+            "formatString": "dd/MM/yyyy",
+            "isKey": true,
+            "summarizeBy": "none"
           },
           {
             "name": "Año Fiscal",
@@ -3615,6 +3617,45 @@
               "type": "calculated",
               "expression": "VAR BaseCalendar = CALENDARAUTO(1)\r\nRETURN\r\nGENERATE(\r\n    BaseCalendar,\r\n    VAR CurrentDate = [Date]\r\n    VAR FiscalMonthNum = IF(MONTH(CurrentDate) >= 2, MONTH(CurrentDate) - 1, MONTH(CurrentDate) + 11)\r\n    VAR FiscalYearNum = IF(MONTH(CurrentDate) >= 2, YEAR(CurrentDate), YEAR(CurrentDate) - 1)\r\n    VAR FiscalQuarterNum = INT((FiscalMonthNum - 1) / 3) + 1\r\n    VAR FiscalMonthInQ = FiscalMonthNum - (FiscalQuarterNum - 1) * 3\r\n    RETURN ROW(\r\n        \"Fecha\", CurrentDate,\r\n        \"Año Fiscal Número\", FiscalYearNum,\r\n        \"Año Fiscal\", \"FY \" & FiscalYearNum,\r\n        \"Fiscal Month Number\", FiscalMonthNum,\r\n        \"Fiscal Month\", FORMAT(DATE(2000, FiscalMonthNum, 1), \"MMMM\"),\r\n        \"Fiscal Month in Quarter Number\", FiscalMonthInQ,\r\n        \"Trimestre del Año Fiscal Número\", FiscalQuarterNum * 1.0,\r\n        \"Trimestre del año fiscal\", \"Q\" & FiscalQuarterNum,\r\n        \"Trimestre Fiscal\", \"FY\" & FiscalYearNum & \" Q\" & FiscalQuarterNum,\r\n        \"Año Mes Número\", YEAR(CurrentDate) * 100 + MONTH(CurrentDate),\r\n        \"Año Mes\", FORMAT(CurrentDate, \"YYYY-MMM\"),\r\n        \"Year Month Key\", YEAR(CurrentDate) * 100 + MONTH(CurrentDate)\r\n    )\r\n)"
             }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Fiscal Year-Quarter",
+            "state": "ready",
+            "levels": [
+              {
+                "name": "Year",
+                "ordinal": 0,
+                "column": "Año Fiscal"
+              },
+              {
+                "name": "Quarter",
+                "ordinal": 1,
+                "column": "Trimestre del año fiscal"
+              },
+              {
+                "name": "Month",
+                "ordinal": 2,
+                "column": "Año Mes"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Year-Month",
+            "state": "ready",
+            "levels": [
+              {
+                "name": "Year",
+                "ordinal": 0,
+                "column": "Año Fiscal"
+              },
+              {
+                "name": "Month",
+                "ordinal": 1,
+                "column": "Año Mes"
+              }
+            ]
           }
         ]
       },
@@ -3979,6 +4020,38 @@
         "state": "ready",
         "modifiedTime": "2026-05-28T17:26:57.676667",
         "refreshedTime": "2026-05-28T17:26:57.676667"
+      },
+      {
+        "name": "factConsumoHistoria-Calendario",
+        "fromTable": "factConsumoHistoria",
+        "fromColumn": "Consumo Fecha",
+        "toTable": "Calendario",
+        "toColumn": "Fecha",
+        "state": "ready"
+      },
+      {
+        "name": "factStockEPSA-Calendario",
+        "fromTable": "factStockEPSA",
+        "fromColumn": "Stock Fecha_Corte",
+        "toTable": "Calendario",
+        "toColumn": "Fecha",
+        "state": "ready"
+      },
+      {
+        "name": "factConsumoPlanificado-Calendario",
+        "fromTable": "factConsumoPlanificado",
+        "fromColumn": "Consumo Planificado Fecha Planificacion",
+        "toTable": "Calendario",
+        "toColumn": "Fecha",
+        "state": "ready"
+      },
+      {
+        "name": "factRecepcionesHistoria-Calendario",
+        "fromTable": "factRecepcionesHistoria",
+        "fromColumn": "RecepcionFecha",
+        "toTable": "Calendario",
+        "toColumn": "Fecha",
+        "state": "ready"
       }
     ],
     "cultures": [

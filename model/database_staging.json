@@ -3543,7 +3543,9 @@
             "name": "Fecha",
             "dataType": "dateTime",
             "sourceColumn": "Fecha",
-            "formatString": "dd/MM/yyyy"
+            "formatString": "dd/MM/yyyy",
+            "isKey": true,
+            "summarizeBy": "none"
           },
           {
             "name": "Año Fiscal",
@@ -3979,38 +3981,6 @@
         "state": "ready",
         "modifiedTime": "2026-05-28T17:26:57.676667",
         "refreshedTime": "2026-05-28T17:26:57.676667"
-      },
-      {
-        "name": "factConsumoHistoria-Calendario",
-        "fromTable": "factConsumoHistoria",
-        "fromColumn": "Consumo Fecha",
-        "toTable": "Calendario",
-        "toColumn": "Fecha",
-        "state": "ready"
-      },
-      {
-        "name": "factStockEPSA-Calendario",
-        "fromTable": "factStockEPSA",
-        "fromColumn": "Stock Fecha_Corte",
-        "toTable": "Calendario",
-        "toColumn": "Fecha",
-        "state": "ready"
-      },
-      {
-        "name": "factConsumoPlanificado-Calendario",
-        "fromTable": "factConsumoPlanificado",
-        "fromColumn": "Consumo Planificado Fecha Planificacion",
-        "toTable": "Calendario",
-        "toColumn": "Fecha",
-        "state": "ready"
-      },
-      {
-        "name": "factRecepcionesHistoria-Calendario",
-        "fromTable": "factRecepcionesHistoria",
-        "fromColumn": "RecepcionFecha",
-        "toTable": "Calendario",
-        "toColumn": "Fecha",
-        "state": "ready"
       }
     ],
     "cultures": [
