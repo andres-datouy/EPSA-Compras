@@ -43,7 +43,6 @@ BEGIN
     SET NOCOUNT ON;
     DECLARE @logId INT, @startTime DATETIME2 = SYSUTCDATETIME(), @rowCount INT;
     DECLARE @cutoffDate DATE = DATEFROMPARTS(YEAR(GETDATE()) - 5, 2, 1);
-    DECLARE @frozenCutoff DATE = DATEFROMPARTS(YEAR(GETDATE()) - 2, 1, 1);
 
     INSERT INTO dbo.stg_refresh_log (table_name, refresh_type, start_time)
     VALUES ('stg_factConsumo', @mode, @startTime);
@@ -53,7 +52,8 @@ BEGIN
         IF @mode = 'FULL'
             TRUNCATE TABLE dbo.stg_factConsumo;
         ELSE
-            DELETE FROM dbo.stg_factConsumo WHERE fec_doc >= @frozenCutoff;
+            -- INCREMENTAL: delete the entire rolling window to prevent duplicates
+            DELETE FROM dbo.stg_factConsumo WHERE fec_doc >= @cutoffDate;
 
         -- =============================================
         -- A) OBLIGATORY: consumption from production parts
