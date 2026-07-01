@@ -101,12 +101,50 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'507026000000- INSTR.USO TRAQ.CC C/B (1 CAN.INT.FEN. Y 1 CAN.INT.S/FEN)  DI120173'"
+                                "Value": "'164050040004- EXT.CALC.4H(75CM) M.BLANCO CH4'"
                               }
                             }
                           ]
                         ]
                       }
+                    }
+                  }
+                ]
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "dimArticulo",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "Artículo"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'164050040004'"
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
                     }
                   }
                 ]

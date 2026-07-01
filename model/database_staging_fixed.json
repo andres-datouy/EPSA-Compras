@@ -3822,8 +3822,15 @@
             "lineageTag": "a63f782e-171d-474e-bee2-3a5e073f0d25"
           },
           {
+            "name": "A Pedir Sugerido",
+            "expression": "VAR ConsumoMensual = [Consumo Promedio por Mes Activo]\nVAR LT_Meses = DIVIDE ( [Lead Time Promedio Dias], 30, 0 )\nVAR MesesSeguridad = 1\nVAR Necesidad = ConsumoMensual * ( LT_Meses + MesesSeguridad )\nVAR Proyectado = [Stock Proyectado]\nRETURN\nMAX ( 0, Necesidad - Proyectado )\n",
+            "formatString": "#,0.00",
+            "description": "Cantidad sugerida a pedir = Consumo Mensual * (LT meses + 1 mes seguridad) - Stock Proyectado",
+            "lineageTag": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+          },
+          {
             "name": "Sumatoria Movs Consumo Sin Recepciones",
-            "expression": "\nabs(CALCULATE(\n    SUM( factConsumoHistoria[Consumo Cantidad] ),\n    factConsumoHistoria[Consumo Documento] <> \"recstktr\"\n))\n",
+            "expression": "\nABS(CALCULATE(\n    SUM( factConsumoHistoria[Consumo Cantidad] ),\n    factConsumoHistoria[Consumo Documento] <> \"recstktr\"\n)) + 0\n",
             "formatString": "#,0.00",
             "lineageTag": "a2a8569c-de50-4218-b3a8-0a0b2288b88e"
           }
@@ -4022,15 +4029,7 @@
         "refreshedTime": "2026-05-28T17:26:57.676667"
       },
       {
-        "name": "factConsumoHistoria-Calendario",
-        "fromTable": "factConsumoHistoria",
-        "fromColumn": "Consumo Fecha",
-        "toTable": "Calendario",
-        "toColumn": "Fecha",
-        "state": "ready"
-      },
-      {
-        "name": "factStockEPSA-Calendario",
+        "name": "8f9305fe-00ff-f130-e165-ce88400d9f45",
         "fromTable": "factStockEPSA",
         "fromColumn": "Stock Fecha_Corte",
         "toTable": "Calendario",
@@ -4038,7 +4037,7 @@
         "state": "ready"
       },
       {
-        "name": "factConsumoPlanificado-Calendario",
+        "name": "f530b4dc-054b-8457-c795-56f3702ca228",
         "fromTable": "factConsumoPlanificado",
         "fromColumn": "Consumo Planificado Fecha Planificacion",
         "toTable": "Calendario",
@@ -4046,9 +4045,17 @@
         "state": "ready"
       },
       {
-        "name": "factRecepcionesHistoria-Calendario",
+        "name": "e6457601-8ea0-956b-3ef8-5c19c8ff1c4b",
         "fromTable": "factRecepcionesHistoria",
         "fromColumn": "RecepcionFecha",
+        "toTable": "Calendario",
+        "toColumn": "Fecha",
+        "state": "ready"
+      },
+      {
+        "name": "factConsumoHistoria-Calendario",
+        "fromTable": "factConsumoHistoria",
+        "fromColumn": "Consumo Fecha",
         "toTable": "Calendario",
         "toColumn": "Fecha",
         "state": "ready"

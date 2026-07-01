@@ -46,9 +46,12 @@ Power BI Report (EPSA-Compras.pbip / Live Connection)
 ### Dimensiones (2 + Calendario)
 
 #### Calendario
-- **Tipo:** Calculada (basada en DateAutoTemplate)
-- **Descripcion:** Dimension de tiempo con ano fiscal
+- **Tipo:** Calculada (basada en CALENDARAUTO)
+- **Descripcion:** Dimension de tiempo con ano fiscal (inicio en febrero)
 - **Columnas:** Fecha, Ano Fiscal, Ano Fiscal Numero, Ano Mes, Ano Mes Numero, Fiscal Month, Fiscal Month in Quarter Number, Fiscal Month Number, Trimestre del ano fiscal, Trimestre del Ano Fiscal Numero, Trimestre Fiscal, Year Month Key
+- **Jerarquias:**
+  - **Fiscal Year-Quarter** (oculta): Año Fiscal → Trimestre del año fiscal → Año Mes
+  - **Fiscal Year-Month** (oculta): Año Fiscal → Año Mes
 
 #### DateAutoTemplate
 - **Tipo:** Calculada (tabla de fechas automatica)
@@ -196,7 +199,7 @@ Power BI Report (EPSA-Compras.pbip / Live Connection)
 | Promedio Anual Consumo | `AVERAGEX(VALUES(Calendario[Ano Fiscal]), ...)` |
 | Promedio Consumo | `AVERAGE(factConsumoHistoria[Consumo Cantidad])` |
 | Promedio Consumo por Movimiento | `DIVIDE(ABS([Sumatoria Movs...]), [Consumos])` |
-| Sumatoria Movs Consumo Sin Recepciones | `ABS(CALCULATE(SUM(...), Documento <> "recstktr"))` |
+| Sumatoria Movs Consumo Sin Recepciones | `ABS(CALCULATE(SUM(...), Documento <> "recstktr")) + 0` |
 | _RangoFechas_Debug | Debug de rangos de fecha |
 
 #### Medidas_Stock
@@ -306,3 +309,27 @@ graph LR
 **Linked Server:** `[192.168.2.7]` (SQL Agent service account tiene acceso)
 
 **SQL Agent Jobs:** Corren 2 veces por d\u00eda (ma\u00f1ana y tarde) para tablas de alta volatilidad (ComprasEnProceso, Consumo)
+
+## Workflow de Deploy a SSAS
+
+### Archivos del modelo
+| Archivo | Proposito |
+|---------|----------|
+| `model/database.json` | Export original desde Power BI (solo referencia, no modificar) |
+| `model/database_staging.json` | Modelo deployable via TMSL (SIN relaciones a Calendario) |
+| `model/database_staging_fixed.json` | Referencia completa (CON jerarquias + relaciones Calendario) |
+| `scripts/deploy/add_calendario_metadata.ps1` | Script AMO post-deploy (inyecta jerarquias + relaciones) |
+
+### Limitacion SSAS 2017 - Relaciones a Calendario
+Las relaciones entre tablas de hechos y la tabla calculada `Calendario` **NO se pueden deployar via TMSL** (error: "invalid column ID"). Deben inyectarse post-deploy usando el script AMO:
+```
+scripts/deploy/add_calendario_metadata.ps1
+```
+Este script agrega:
+- 2 jerarquias en Calendario (Fiscal Year-Quarter, Fiscal Year-Month)
+- 4 relaciones: factConsumoHistoria, factStockEPSA, factConsumoPlanificado, factRecepcionesHistoria → Calendario[Fecha]
+
+### Secuencia de deploy
+1. Deploy `database_staging.json` via TMSL (createOrReplace)
+2. Ejecutar `add_calendario_metadata.ps1` (inyecta jerarquias + relaciones via AMO)
+3. Process Full de todas las tablas

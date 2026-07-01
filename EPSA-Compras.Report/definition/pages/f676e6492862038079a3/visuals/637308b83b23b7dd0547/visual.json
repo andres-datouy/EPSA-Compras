@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "637308b83b23b7dd0547",
   "position": {
-    "x": 1873.3333333333333,
-    "y": 128.88888888888889,
+    "x": 850,
+    "y": 605,
     "z": 7000,
-    "height": 337.77777777777777,
-    "width": 1024.4444444444443,
+    "height": 335,
+    "width": 1025,
     "tabOrder": 7000
   },
   "visual": {
@@ -25,14 +25,14 @@
                           "Entity": "Calendario"
                         }
                       },
-                      "Hierarchy": "Jerarquía Calendario"
+                      "Hierarchy": "Fiscal Year-Month"
                     }
                   },
-                  "Level": "Año Fiscal"
+                  "Level": "Year"
                 }
               },
-              "queryRef": "Calendario.Jerarquía Calendario.Año Fiscal",
-              "nativeQueryRef": "Jerarquía Calendario Año Fiscal",
+              "queryRef": "Calendario.Fiscal Year-Month.Year",
+              "nativeQueryRef": "Fiscal Year-Month Year",
               "active": true
             },
             {
@@ -45,14 +45,14 @@
                           "Entity": "Calendario"
                         }
                       },
-                      "Hierarchy": "Jerarquía Calendario"
+                      "Hierarchy": "Fiscal Year-Month"
                     }
                   },
-                  "Level": "Fiscal Month"
+                  "Level": "Month"
                 }
               },
-              "queryRef": "Calendario.Jerarquía Calendario.Fiscal Month",
-              "nativeQueryRef": "Jerarquía Calendario Fiscal Month",
+              "queryRef": "Calendario.Fiscal Year-Month.Month",
+              "nativeQueryRef": "Fiscal Year-Month Month",
               "active": true
             }
           ]
@@ -106,10 +106,10 @@
                         "Entity": "Calendario"
                       }
                     },
-                    "Hierarchy": "Jerarquía Calendario"
+                    "Hierarchy": "Fiscal Year-Month"
                   }
                 },
-                "Level": "Año Fiscal"
+                "Level": "Year"
               }
             },
             "direction": "Ascending"
@@ -124,10 +124,10 @@
                         "Entity": "Calendario"
                       }
                     },
-                    "Hierarchy": "Jerarquía Calendario"
+                    "Hierarchy": "Fiscal Year-Month"
                   }
                 },
-                "Level": "Fiscal Month"
+                "Level": "Month"
               }
             },
             "direction": "Ascending"
@@ -207,44 +207,6 @@
               }
             },
             "Property": "Artículo"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "61a9c17b9b5e32404436",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Calendario"
-                  }
-                },
-                "Hierarchy": "Jerarquía Calendario"
-              }
-            },
-            "Level": "Año Fiscal"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "234dd8c0126a21a39e7d",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Calendario"
-                  }
-                },
-                "Hierarchy": "Jerarquía Calendario"
-              }
-            },
-            "Level": "Fiscal Month"
           }
         },
         "type": "Categorical"
