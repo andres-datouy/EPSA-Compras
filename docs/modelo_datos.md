@@ -330,6 +330,17 @@ Este script agrega:
 - 4 relaciones: factConsumoHistoria, factStockEPSA, factConsumoPlanificado, factRecepcionesHistoria → Calendario[Fecha]
 
 ### Secuencia de deploy
-1. Deploy `database_staging.json` via TMSL (createOrReplace)
-2. Ejecutar `add_calendario_metadata.ps1` (inyecta jerarquias + relaciones via AMO)
-3. Process Full de todas las tablas
+1. Validar: `scripts/deploy/validate_model.ps1` (verifica tablas, jerarquias, relaciones y medidas criticas)
+2. Deploy `database_staging.json` via TMSL (createOrReplace)
+3. Ejecutar `add_calendario_metadata.ps1` (inyecta jerarquias + relaciones via AMO)
+4. Process Full de todas las tablas
+5. Verificar: `scripts/deploy/verify_model.ps1` (confirma estado final en servidor)
+
+> **Nota:** `deploy_tmsl_remote.ps1` ejecuta la validacion automaticamente antes del deploy.
+
+### Politica de proteccion del modelo
+- **Nunca modificar `database.json`** (es el export original de Power BI, solo referencia)
+- **Antes de cada deploy**, ejecutar `validate_model.ps1` para verificar que no se perdieron elementos criticos
+- **`database_staging_fixed.json`** es la referencia completa del modelo esperado (incluye relaciones Calendario)
+- **Todo cambio al modelo** debe actualizarse en `modelo_datos.md` y commitearse inmediatamente
+- Los scripts de deploy incluyen validacion automatica que aborta si faltan tablas, jerarquias o relaciones requeridas
