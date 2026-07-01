@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "Compras_EPSA",
   "compatibilityLevel": 1600,
   "model": {
@@ -3781,6 +3781,13 @@
             "expression": "\nDIVIDE ( abs([Sumatoria Movs Consumo Sin Recepciones]), [Consumos] )\n",
             "formatString": "#,0.00",
             "lineageTag": "a63f782e-171d-474e-bee2-3a5e073f0d25"
+          },
+          {
+            "name": "A Pedir Sugerido",
+            "expression": "VAR ConsumoMensual = [Consumo Promedio por Mes Activo]\nVAR LT_Meses = DIVIDE ( [Lead Time Promedio Dias], 30, 0 )\nVAR MesesSeguridad = 1\nVAR Necesidad = ConsumoMensual * ( LT_Meses + MesesSeguridad )\nVAR Proyectado = [Stock Proyectado]\nRETURN\nMAX ( 0, Necesidad - Proyectado )\n",
+            "formatString": "#,0.00",
+            "description": "Cantidad sugerida a pedir = Consumo Mensual * (LT meses + 1 mes seguridad) - Stock Proyectado",
+            "lineageTag": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
           },
           {
             "name": "Sumatoria Movs Consumo Sin Recepciones",
