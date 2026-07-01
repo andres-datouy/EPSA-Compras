@@ -3823,9 +3823,9 @@
           },
           {
             "name": "A Pedir Sugerido",
-            "expression": "VAR ConsumoMensual = [Consumo Promedio por Mes Activo]\nVAR LT_Meses = DIVIDE ( [Lead Time Promedio Dias], 30, 0 )\nVAR MesesSeguridad = 1\nVAR Necesidad = ConsumoMensual * ( LT_Meses + MesesSeguridad )\nVAR Proyectado = [Stock Proyectado]\nRETURN\nMAX ( 0, Necesidad - Proyectado )\n",
+            "expression": "VAR ConsumoMensual = [Consumo Promedio por Mes Activo]\nVAR LT_Meses = DIVIDE ( [Lead Time Promedio Dias], 30, 0 )\nVAR MesesSeguridad = 1\nVAR Necesidad = ConsumoMensual * ( LT_Meses + MesesSeguridad )\nVAR StockNeto = [Stock Proyectado] - [Consumo Planificado Cantidad] - [Cantidad Requerida por Demanda Pendiente]\nRETURN\nMAX ( 0, Necesidad - StockNeto )\n",
             "formatString": "#,0.00",
-            "description": "Cantidad sugerida a pedir = Consumo Mensual * (LT meses + 1 mes seguridad) - Stock Proyectado",
+            "description": "Cantidad sugerida a pedir = Necesidad (consumo mensual x LT + seguridad) - Stock Neto (proyectado - comprometido)",
             "lineageTag": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
           },
           {

@@ -200,6 +200,7 @@ Power BI Report (EPSA-Compras.pbip / Live Connection)
 | Promedio Consumo | `AVERAGE(factConsumoHistoria[Consumo Cantidad])` |
 | Promedio Consumo por Movimiento | `DIVIDE(ABS([Sumatoria Movs...]), [Consumos])` |
 | Sumatoria Movs Consumo Sin Recepciones | `ABS(CALCULATE(SUM(...), Documento <> "recstktr")) + 0` |
+| A Pedir Sugerido | Necesidad (ConsumoMensual x (LT+1)) - StockNeto (Proyectado - Planificado - DemandaPendiente) |
 | _RangoFechas_Debug | Debug de rangos de fecha |
 
 #### Medidas_Stock
