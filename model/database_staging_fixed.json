@@ -3689,42 +3689,49 @@
             "name": "E + C - CP - CD - SM",
             "expression": "Medidas_Stock[Stock Existencia]+ Medidas_Stock[Stock Compras] - Medidas_Consumo_Planificado[Consumo Planificado Cantidad] - [Cantidad Requerida por Demanda Pendiente] - Medidas_Stock[Stock Mínimo]",
             "formatString": "#,0.00",
+            "description": "Stock neto disponible después de descontar consumos comprometidos y stock mínimo. Fórmula: Existencia + Compras - Consumo Planificado - Demanda Pendiente - Stock Mínimo",
             "lineageTag": "b7c01b0c-fce0-4245-82e8-70a292dabb10"
           },
           {
             "name": "Gap Stock",
             "expression": "[Stock Existencia] - [Stock Mínimo]\n",
             "formatString": "#,0.00",
+            "description": "Diferencia entre stock de existencia actual y stock mínimo definido. Valores negativos indican stock por debajo del umbral",
             "lineageTag": "346ceb34-15b4-4934-bf98-08110fd18fd3"
           },
           {
             "name": "Stock Compras",
             "expression": "\n\n    SUM ( factComprasEnProceso[CompraEP Cantidad])\n",
             "formatString": "#,0.00",
+            "description": "Cantidad total en proceso de compra (solicitudes + órdenes de compra + carpetas de importación) proveniente de factComprasEnProceso",
             "lineageTag": "e46d7dea-3aa2-4080-9842-9e4b629d6df0"
           },
           {
             "name": "Stock Debajo Mínimo",
             "expression": "\nIF ( [Gap Stock] < 0, \"CRÍTICO\", \"OK\" )\n",
             "formatString": "#,0.00",
+            "description": "Indicador de estado: CRÍTICO si el gap de stock es negativo (por debajo del mínimo), OK si está por encima",
             "lineageTag": "474add14-0ce5-4c45-9eef-5af0257187e8"
           },
           {
             "name": "Stock Existencia",
             "expression": "\nCALCULATE(\n    SUM ( factStockEPSA[Stock Cantidad] ),\n    factStockEPSA[Stock Estado] in { \"existencia\", \"stkaf\"}\n)\n",
             "formatString": "#,0.00",
+            "description": "Suma de cantidades en depósito con estado existencia o stkaf (stock de uso operativo, excluye cuarentena y otros estados)",
             "lineageTag": "84a806f4-c14a-4b37-8e94-4e0eabfe1b38"
           },
           {
             "name": "Stock Mínimo",
             "expression": "SUM ( dimArticulo[Artículo Stock Mínimo] )",
             "formatString": "#,0.00",
+            "description": "Stock mínimo definido por artículo según dimArticulo. Umbral de alerta para reposición",
             "lineageTag": "824c4f7a-760a-4a8d-ba76-72ee09301539"
           },
           {
             "name": "Stock Proyectado",
             "expression": "\n[Stock Existencia] + [Stock Compras]\n",
             "formatString": "#,0.00",
+            "description": "Stock proyectado = Existencia actual + Compras en proceso. No descuenta consumos comprometidos (ver A Pedir Sugerido para el cálculo neto)",
             "lineageTag": "14865a1e-3c59-4fdf-a4ab-bc3e2d3d3823"
           }
         ]
@@ -3759,66 +3766,77 @@
             "name": "_RangoFechas_Debug",
             "expression": "\nVAR MinFact = MIN ( factConsumoHistoria[Consumo Fecha] )\nVAR MaxFact = MAX ( factConsumoHistoria[Consumo Fecha] )\nVAR MinCal  = MIN ( Calendario[Fecha] )\nVAR MaxCal  = MAX ( Calendario[Fecha] )\nRETURN\n\"Fact: \" & FORMAT ( MinFact, \"dd/MM/yyyy\" ) & \" - \" & FORMAT ( MaxFact, \"dd/MM/yyyy\" )\n& \" | Cal: \" & FORMAT ( MinCal, \"dd/MM/yyyy\" ) & \" - \" & FORMAT ( MaxCal, \"dd/MM/yyyy\" )\n",
             "formatString": "#,0.00",
+            "description": "Debug: muestra los rangos de fecha mínimos y máximos de las tablas factConsumoHistoria y Calendario para verificar cobertura temporal",
             "lineageTag": "743f60be-cf13-43ff-8eba-4e1819bef3dd"
           },
           {
             "name": "Consumo Cantidad",
             "expression": "SUM(factConsumoHistoria[Consumo Cantidad])",
             "formatString": "#,0.00",
+            "description": "Suma simple de todas las cantidades de consumo histórico (incluye valores negativos por devoluciones)",
             "lineageTag": "863d693a-8e85-4c56-9337-ec0f9f6125b7"
           },
           {
             "name": "Consumo Cantidad Absoluta",
             "expression": "\nSUMX ( factConsumoHistoria, ABS ( factConsumoHistoria[Consumo Cantidad] ) )",
             "formatString": "#,0.00",
+            "description": "Suma de valores absolutos de consumo (todas las cantidades como positivas, útil para cálculos de volumen total)",
             "lineageTag": "6d224f73-10b7-4733-a7d5-fcff681f9c42"
           },
           {
             "name": "Consumo Medio por Artículo",
             "expression": "\nVAR MovimientosArticulo =\n    CALCULATE ( [Consumos], ALLEXCEPT ( factConsumoHistoria, factConsumoHistoria[Consumo Artículo Código] ) )\nRETURN\nDIVIDE ( [Consumo Cantidad], MovimientosArticulo )\n",
             "formatString": "#,0.00",
+            "description": "Cantidad total de consumo dividida por el número de movimientos del artículo. Promedio por transacción individual",
             "lineageTag": "5f927407-8822-4fa6-bb8c-8d3a1452c655"
           },
           {
             "name": "Consumo Mensual Promedio",
             "expression": "/*Rotación promedio mensual*/\nAVERAGEX (\n    VALUES ( Calendario[Fiscal Month] ),\n    [Consumo Cantidad]\n)\n",
             "formatString": "#,0.00",
+            "description": "Rotación promedio mensual: promedio del consumo por cada mes fiscal presente en los datos (AVERAGEX sobre meses del calendario)",
             "lineageTag": "296786a3-4109-4d39-8074-e8b8134b43cc"
           },
           {
             "name": "Consumo Promedio por Mes Activo",
             "expression": "\nDIVIDE(\n    [Sumatoria Movs Consumo Sin Recepciones],\n    [Meses con Consumo]\n)\n",
             "formatString": "#,0.00",
+            "description": "Consumo promedio por mes activo: divide la sumatoria de consumos (sin recepciones) por la cantidad de meses con consumo real. Indica consumo típico mensual",
             "lineageTag": "5d419d20-e7cc-42de-b2c2-b77bed927638"
           },
           {
             "name": "Consumos",
             "expression": "COUNTROWS(factConsumoHistoria)",
             "formatString": "#,0.00",
+            "description": "Cantidad total de transacciones/movimientos de consumo registrados en factConsumoHistoria",
             "lineageTag": "a06257f6-2908-418c-8046-1af6727aceb1"
           },
           {
             "name": "Meses con Consumo",
             "expression": "\nVAR MesesConConsumo =\n    SUMMARIZE(\n        ADDCOLUMNS(\n            factConsumoHistoria,\n            -- Columna calculada solo para agrupar por mes\n            \"Mes\",\n                EOMONTH ( factConsumoHistoria[Consumo Fecha], 0 )\n        ),\n        [Mes],  -- <-- acá sí es una columna\n        \"ConsumoMes\",\n            [Sumatoria Movs Consumo Sin Recepciones]\n    )\nRETURN\n    COUNTROWS (\n        FILTER (\n            MesesConConsumo,\n            [ConsumoMes] <> 0\n        )\n    )\n",
             "formatString": "#,0.00",
+            "description": "Cantidad de meses distintos con consumo distinto de cero. Denominador para calcular consumo promedio mensual activo",
             "lineageTag": "eecb5271-975a-448b-a2aa-e093afc100f3"
           },
           {
             "name": "Promedio Anual Consumo",
             "expression": "\nAVERAGEX (\n    VALUES ( Calendario[Año Fiscal] ),\n    [Consumo Cantidad]\n)\n",
             "formatString": "#,0.00",
+            "description": "Promedio del consumo anual agrupado por año fiscal. Útil para identificar tendencias interanuales",
             "lineageTag": "b441174a-9ce5-46a9-a330-ea122eee07f5"
           },
           {
             "name": "Promedio Consumo",
             "expression": "AVERAGE(factConsumoHistoria[Consumo Cantidad])",
             "formatString": "#,0.00",
+            "description": "Promedio aritmético simple de todas las cantidades de consumo por transacción (AVERAGE directo sobre la columna)",
             "lineageTag": "e71a62fb-6a76-4835-ae83-1872cd2757ef"
           },
           {
             "name": "Promedio Consumo por Movimiento",
             "expression": "\nDIVIDE ( abs([Sumatoria Movs Consumo Sin Recepciones]), [Consumos] )\n",
             "formatString": "#,0.00",
+            "description": "Sumatoria absoluta de consumos (sin recepciones/devoluciones) dividida por el total de movimientos. Promedio por movimiento excluyendo ingresos",
             "lineageTag": "a63f782e-171d-474e-bee2-3a5e073f0d25"
           },
           {
@@ -3832,6 +3850,7 @@
             "name": "Sumatoria Movs Consumo Sin Recepciones",
             "expression": "\nABS(CALCULATE(\n    SUM( factConsumoHistoria[Consumo Cantidad] ),\n    factConsumoHistoria[Consumo Documento] <> \"recstktr\"\n)) + 0\n",
             "formatString": "#,0.00",
+            "description": "Suma absoluta de consumos excluyendo recepciones de stock (documento <> 'recstktr'). Representa la salida neta de inventario. Devuelve 0 en vez de BLANK",
             "lineageTag": "a2a8569c-de50-4218-b3a8-0a0b2288b88e"
           }
         ]
@@ -3866,6 +3885,7 @@
             "name": "Consumo Planificado Cantidad",
             "expression": "\nSUMX ( factConsumoPlanificado, ABS ( factConsumoPlanificado[Consumo Planificado Cantidad] ) )",
             "formatString": "#,0.00",
+            "description": "Cantidad total planificada en órdenes de trabajo (factConsumoPlanificado). Representa consumo futuro comprometido",
             "lineageTag": "6846ab3e-d36f-479a-82e7-c729b8b05849"
           }
         ]
@@ -3900,6 +3920,7 @@
             "name": "Cantidad Requerida por Demanda Pendiente",
             "expression": "\nSUMX ( factDemandaPendientePlanificacion, ABS ( factDemandaPendientePlanificacion[Demanda Pendiente Componente Cantidad Requerida] ) )",
             "formatString": "#,0.00",
+            "description": "Cantidad total requerida por pedidos pendientes de planificación (descomposición de demanda). Consumo futuro no yet planificado",
             "lineageTag": "207b4635-3fe5-4792-8f83-361e6abafc20"
           }
         ]
@@ -3934,24 +3955,28 @@
             "name": "Cantidad Recepciones",
             "expression": "count(factRecepcionesHistoria[RecepcionArticulo])",
             "formatString": "0",
+            "description": "Cantidad total de recepciones registradas en factRecepcionesHistoria. Indicador de actividad de compras",
             "lineageTag": "de79a728-9ed1-4c25-87d7-9a3d939f4941"
           },
           {
             "name": "Cobertura Meses sobre Existencia",
             "expression": "\nDIVIDE ( [Stock Existencia], [Consumo Promedio por Mes Activo])",
             "formatString": "#,0.00",
+            "description": "Meses de stock que cubre la existencia actual al ritmo de consumo promedio mensual. Stock Existencia / Consumo Promedio por Mes Activo",
             "lineageTag": "1ebaedf7-7181-4416-8ad1-fc7bffa58628"
           },
           {
             "name": "Lead Time Promedio Dias",
             "expression": "\nAVERAGE ( factRecepcionesHistoria[Lead Time Dias] )\n",
             "formatString": "0",
+            "description": "Promedio de días entre la fecha de orden de compra y la fecha de recepción. Indicador de velocidad de abastecimiento",
             "lineageTag": "6086b32f-bdd2-4607-8786-a276621f0421"
           },
           {
             "name": "Ultima Recepcion Fecha",
             "expression": "max(factRecepcionesHistoria[RecepcionFecha])",
             "formatString": "dd/MM/yyyy",
+            "description": "Fecha de la última recepción registrada en el historial. Indica cuándo fue el último ingreso de mercadería",
             "lineageTag": "e7287ee6-508c-4036-8236-888fc857ac8d"
           }
         ]
