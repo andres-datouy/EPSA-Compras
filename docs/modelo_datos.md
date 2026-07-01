@@ -340,7 +340,8 @@ Este script agrega:
 
 ### Politica de proteccion del modelo
 - **Nunca modificar `database.json`** (es el export original de Power BI, solo referencia)
-- **Antes de cada deploy**, ejecutar `validate_model.ps1` para verificar que no se perdieron elementos criticos
-- **`database_staging_fixed.json`** es la referencia completa del modelo esperado (incluye relaciones Calendario)
-- **Todo cambio al modelo** debe actualizarse en `modelo_datos.md` y commitearse inmediatamente
-- Los scripts de deploy incluyen validacion automatica que aborta si faltan tablas, jerarquias o relaciones requeridas
+- **`database_staging_fixed.json` es la baseline aprobada** - el deploy se valida contra este archivo
+- **Validacion generica**: `validate_model.ps1` compara deploy vs baseline y detecta cualquier perdida estructructural (tablas, columnas, medidas, jerarquias, relaciones)
+- **Regla de oro**: todo cambio estructural al modelo debe actualizarse en AMBOS archivos (`database_staging.json` y `database_staging_fixed.json`) y en `modelo_datos.md`
+- **Unica diferencia esperada**: las relaciones a Calendario existen en baseline pero no en deploy (se inyectan via AMO post-deploy)
+- El deploy se aborta automaticamente si se detectan elementos removidos no intencionales
