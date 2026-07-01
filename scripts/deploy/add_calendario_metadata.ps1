@@ -54,12 +54,14 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
     # Add relationships if missing
     $relDefs = @(
         @{ Name="factConsumoHistoria-Calendario"; From="factConsumoHistoria"; FromCol="Consumo Fecha" },
-        @{ Name="factStockEPSA-Calendario"; From="factStockEPSA"; FromCol="Stock Fecha_Corte" },
+        # factStockEPSA-Calendario intentionally excluded: stock is a snapshot table,
+        # filtering by date slicer would blank out stock measures incorrectly.
+
         @{ Name="factConsumoPlanificado-Calendario"; From="factConsumoPlanificado"; FromCol="Consumo Planificado Fecha Planificacion" },
         @{ Name="factRecepcionesHistoria-Calendario"; From="factRecepcionesHistoria"; FromCol="RecepcionFecha" }
     )
     # Always refresh these tables to ensure relationship indexes are built
-    $affectedTables = @("Calendario", "factConsumoHistoria", "factStockEPSA", "factConsumoPlanificado", "factRecepcionesHistoria")
+    $affectedTables = @("Calendario", "factConsumoHistoria", "factConsumoPlanificado", "factRecepcionesHistoria")
     foreach ($rd in $relDefs) {
         if (-not ($model.Relationships | Where-Object { $_.Name -eq $rd.Name })) {
             $rel = New-Object Microsoft.AnalysisServices.Tabular.SingleColumnRelationship

@@ -244,7 +244,6 @@ Power BI Report (EPSA-Compras.pbip / Live Connection)
 | factStockEPSA | Stock Articulo Codigo | dimArticulo | Articulo Codigo | OneDirection |
 | factConsumoPlanificado | Consumo Planificado Articulo | dimArticulo | Articulo Codigo | OneDirection |
 | factDemandaPendientePlanificacion | Demanda Pendiente Componente Codigo | dimArticulo | Articulo Codigo | OneDirection |
-| factStockEPSA | Stock Fecha_Corte | Calendario | Fecha | OneDirection |
 | factConsumoPlanificado | Consumo Planificado Fecha Planificacion | Calendario | Fecha | OneDirection |
 | factRecepcionesHistoria | RecepcionArticulo | dimArticulo | Articulo Codigo | OneDirection |
 | factRecepcionesHistoria | RecepcionFecha | Calendario | Fecha | OneDirection |
@@ -266,7 +265,6 @@ graph LR
     factComprasEnProceso[factComprasEnProceso]
 
     factStockEPSA --> dimArticulo
-    factStockEPSA --> Calendario
     factConsumoHistoria --> dimArticulo
     factConsumoHistoria --> Calendario
     factConsumoPlanificado --> dimArticulo
@@ -328,7 +326,8 @@ scripts/deploy/add_calendario_metadata.ps1
 ```
 Este script agrega:
 - 2 jerarquias en Calendario (Fiscal Year-Quarter, Fiscal Year-Month)
-- 4 relaciones: factConsumoHistoria, factStockEPSA, factConsumoPlanificado, factRecepcionesHistoria → Calendario[Fecha]
+- 3 relaciones: factConsumoHistoria, factConsumoPlanificado, factRecepcionesHistoria → Calendario[Fecha]
+- factStockEPSA NO tiene relacion con Calendario (es una tabla snapshot — siempre muestra el stock del ultimo corte)
 
 ### Secuencia de deploy
 1. Validar: `scripts/deploy/validate_model.ps1` (verifica tablas, jerarquias, relaciones y medidas criticas)

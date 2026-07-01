@@ -178,19 +178,19 @@ Definir y documentar una estrategia para generar un archivo PBIX distribuible a 
 
 ## Issue #17: Documentacion de Medidas DAX del Modelo
 
-**Status:** Backlog
+**Status:** Completo ✅
 **Labels:** `documentation`, `dax`, `semantic-model`
-**Prioridad:** Alta
 
 ### Descripcion
 Generar documentacion completa para cada medida del modelo semantico, incluyendo formula, descripcion, uso, dependencias y ejemplos.
 
-### Pendiente
-- [ ] Listar todas las medidas del modelo (Medidas_Compras, Medidas_Stock, Medidas_Consumo, etc.)
-- [ ] Documentar formula DAX y descripcion en espanol
-- [ ] Indicar tablas/facts de las que depende cada medida
-- [ ] Agregar ejemplos de uso en contexto de negocio
-- [ ] Publicar como anexo al manual de usuario
+### Implementado
+- [x] Descripcion agregada a las 25 medidas DAX del modelo (JSON + SSAS via AMO)
+- [x] Workaround SSAS 2017: inyeccion post-deploy via `inject_descriptions.ps1` (TMSL no persiste campo description)
+- [x] `deploy_tmsl_remote.ps1` ejecuta automaticamente la inyeccion de descripciones
+
+### Notas
+- Las descripciones se inyectan via AMO (`$measure.Description`) porque SSAS 2017 TMSL ignora el campo description en createOrReplace.
 
 ---
 
@@ -331,3 +331,25 @@ Relevar con Roberta de Importaciones como lleva el registro de cambios de fechas
 - [ ] Disenar tabla `factEntregaCambios` en el modelo
 - [ ] Implementar ETL y relacion con factComprasEnProceso
 - [ ] Crear visualizacion de historial de cambios de fecha por OC
+
+---
+
+## Issue #25: Remocion de Relacion factStockEPSA-Calendario
+
+**Status:** Completo ✅
+**Labels:** `model-fix`, `dax`, `ssas`
+
+### Descripcion
+La relacion `factStockEPSA[Stock Fecha_Corte] → Calendario[Fecha]` causaba que las medidas de stock (Existencia, Compras, Proyectado, etc.) quedaran en blanco al cambiar el rango del slicer de fechas. El stock es una tabla snapshot (foto del ultimo corte) y no debe filtrarse por fecha.
+
+### Causa raiz
+El filtro de Calendario se propagaba a factStockEPSA a traves de la relacion, filtrando solo registros cuya Fecha_Corte caia dentro del rango seleccionado. Como el stock solo tiene datos del ultimo corte, cualquier rango que no lo incluya retornaba BLANK.
+
+### Implementado
+- [x] Rel eliminada del modelo SSAS en vivo (192.168.2.47:2383)
+- [x] Script `add_calendario_metadata.ps1` actualizado (rel removida de relDefs y affectedTables)
+- [x] Documentacion `modelo_datos.md` actualizada (rel removida de tabla y diagrama)
+- [x] Script one-shot: `remove_stock_calendario_rel.ps1`
+
+### Decision de diseno
+Las tablas snapshot (como factStockEPSA) NO deben tener relacion con Calendario. El filtro de fecha no tiene sentido sobre datos que representan un estado actual, no una serie historica.
