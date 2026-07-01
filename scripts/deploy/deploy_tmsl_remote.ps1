@@ -65,3 +65,7 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
 } -ArgumentList $json
 
 Write-Host ($result -join "`n") -ForegroundColor White
+
+# Post-deploy: inject measure descriptions (SSAS 2017 TMSL doesn't persist description field)
+Write-Host "`nInjecting measure descriptions..." -ForegroundColor Cyan
+& "$PSScriptRoot\inject_descriptions.ps1"
