@@ -63,6 +63,48 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Consumo Promedio por Mes Activo"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Consumo Promedio por Mes Activo",
+              "nativeQueryRef": "Consumo Promedio por Mes Activo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Meses Cobertura del Stock Minimo"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Meses Cobertura del Stock Minimo",
+              "nativeQueryRef": "Meses Cobertura del Stock Minimo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Cobertura sobre Stock Minimo vs Lead Time"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Cobertura sobre Stock Minimo vs Lead Time",
+              "nativeQueryRef": "Cobertura sobre Stock Minimo vs Lead Time"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "Medidas_Stock"
                     }
                   },
@@ -86,6 +128,20 @@
               },
               "queryRef": "Medidas_Stock.Stock Compras",
               "nativeQueryRef": "Stock Compras"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Stock Util E+C-CP-CD"
+                }
+              },
+              "queryRef": "Medidas_Stock.Stock Util E+C-CP-CD",
+              "nativeQueryRef": "Stock Util E+C-CP-CD"
             },
             {
               "field": {
@@ -129,20 +185,6 @@
               },
               "queryRef": "Medidas_Consumo.Meses con Consumo",
               "nativeQueryRef": "Meses con Consumo"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Consumo"
-                    }
-                  },
-                  "Property": "Consumo Promedio por Mes Activo"
-                }
-              },
-              "queryRef": "Medidas_Consumo.Consumo Promedio por Mes Activo",
-              "nativeQueryRef": "Consumo Promedio por Mes Activo"
             },
             {
               "field": {
@@ -214,10 +256,10 @@
                     "Entity": "dimArticulo"
                   }
                 },
-                "Property": "Proveedor Artículo Full"
+                "Property": "Artículo Stock Mínimo"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -377,11 +419,82 @@
           "selector": {
             "metadata": "dimArticulo.Tipo Artículo Código"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Cobertura sobre Stock Minimo vs Lead Time"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "112D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Meses Cobertura del Stock Minimo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "88D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Stock.Stock Util E+C-CP-CD"
+          }
         }
       ],
       "columnHeaders": [
         {
-          "properties": {}
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dimArticulo.Artículo Stock Mínimo"
+          }
         }
       ]
     },
@@ -601,20 +714,6 @@
               }
             },
             "Property": "Meses con Consumo"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7d58595075af417ca3a4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Consumo"
-              }
-            },
-            "Property": "Consumo Promedio por Mes Activo"
           }
         },
         "type": "Advanced"

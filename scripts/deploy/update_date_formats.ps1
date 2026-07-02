@@ -75,7 +75,8 @@ $dateFixes = @(
     @{ Table = "factRecepcionesHistoria";             Column = "OC Fecha";                                 Format = "dd/MM/yyyy" },
     @{ Table = "factRecepcionesHistoria";             Column = "SolicitudFecha";                           Format = "dd/MM/yyyy" },
     @{ Table = "factRecepcionesHistoria";             Column = "Compra Fecha";                             Format = "dd/MM/yyyy" },
-    @{ Table = "factRecepcionesHistoria";             Column = "Compra Fecha Inicio Proceso";              Format = "dd/MM/yyyy" },
+    @{ Table = "factRecepcionesHistoria";             Column = "Compra Fecha Inicio Proceso Interno Desde Solicitud"; Format = "dd/MM/yyyy" },
+        @{ Table = "factRecepcionesHistoria";             Column = "Compra Fecha Inicio Proceso Con Proveedor";        Format = "dd/MM/yyyy" },
     @{ Table = "factConsumoPlanificado";              Column = "Consumo Planificado Fecha Planificacion";  Format = "dd/MM/yyyy" },
     @{ Table = "factStockEPSA";                       Column = "Stock Fecha_Corte";                        Format = "dd/MM/yyyy" }
 )

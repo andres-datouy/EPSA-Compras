@@ -429,3 +429,35 @@ La formula actual puede variar segun necesidades:
 - Requiere datos de "Meses de Cobertura" (hoy solo en Excel, no en ERP)
 - Requiere validacion de stocks minimos actuales vs teoricos
 - Impacta directamente en Issue #1 (caso de uso Rosana)
+
+---
+
+## Issue #27: Dual Lead Time — Proceso Interno vs Proveedor
+
+**Status:** Completo ✅
+**Labels:** `model-fix`, `dax`, `ssas`, `lead-time`
+
+### Descripcion
+Diferenciar dos conceptos de fecha de inicio de compra para medir correctamente el lead time:
+
+1. **Compra Fecha Inicio Proceso Interno Desde Solicitud** — MIN(SolicitudFecha, OC Fecha, Compra Fecha). Incluye el tiempo del proceso interno (solicitud antes de emitir OC). Para Produccion.
+2. **Compra Fecha Inicio Proceso Con Proveedor** — MIN(OC Fecha, Compra Fecha). Solo desde que se emite la OC al proveedor. Para medir demora real del proveedor.
+
+### Implementado
+- [x] Columna renombrada: `Compra Fecha Inicio Proceso` → `Compra Fecha Inicio Proceso Interno Desde Solicitud`
+- [x] Nueva columna calculada: `Compra Fecha Inicio Proceso Con Proveedor` = MIN(OC Fecha, Compra Fecha)
+- [x] `Lead Time Dias` ahora usa `Con Proveedor` (antes usaba la de 3 fechas)
+- [x] Medida `[Lead Time Proceso Interno Dias]` — AVERAGEX desde Solicitud hasta Recepcion (para Produccion)
+- [x] Medida `[Dias Transcurridos En Proceso Promedio]` — dias promedio desde OC para compras en curso
+- [x] Medida `[Dias Hasta Fecha Entrega Promedio]` — dias restantes hasta entrega esperada (negativo = vencida)
+- [x] Medida `[Compras En Proceso Vencidas]` — cantidad de OC con fecha de entrega ya pasada
+- [x] JSON files sincronizados (database_staging.json + _fixed.json)
+- [x] Scripts actualizados (update_date_formats.ps1, crossref_validation.ps1)
+
+### Impacto
+- Todas las medidas basadas en `[Lead Time Promedio Dias]` ahora miden lead time del **proveedor** (no del proceso interno)
+- Afecta: `[Lead Time Meses]`, `[Cobertura sobre Stock Minimo vs Lead Time]`, `[A Pedir Sugerido]`
+- Para Produccion: usar `[Lead Time Proceso Interno Dias]` que incluye solicitud interna
+
+### Script
+`scripts/deploy/dual_lead_time.ps1`

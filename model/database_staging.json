@@ -2613,7 +2613,7 @@
           },
           {
             "type": "calculated",
-            "name": "Compra Fecha Inicio Proceso",
+            "name": "Compra Fecha Inicio Proceso Interno Desde Solicitud",
             "dataType": "dateTime",
             "isDataTypeInferred": true,
             "expression": "\nVAR FechaMin =\n    MINX(\n        {\n            factRecepcionesHistoria[SolicitudFecha],\n            factRecepcionesHistoria[OC Fecha],\n            factRecepcionesHistoria[Compra Fecha]\n        },\n        [Value]\n    )\nRETURN\n    FechaMin\n",
@@ -2643,10 +2643,20 @@
           },
           {
             "type": "calculated",
+            "name": "Compra Fecha Inicio Proceso Con Proveedor",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "expression": "\nVAR FechaMin =\n    MINX(\n        {\n            factRecepcionesHistoria[OC Fecha],\n            factRecepcionesHistoria[Compra Fecha]\n        },\n        [Value]\n    )\nRETURN\n    FechaMin\n",
+            "formatString": "dd/MM/yyyy",
+            "lineageTag": "e1f2a3b4-c5d6-7890-abcd-ef0123456789",
+            "summarizeBy": "none"
+          },
+          {
+            "type": "calculated",
             "name": "Lead Time Dias",
             "dataType": "int64",
             "isDataTypeInferred": true,
-            "expression": "\nVAR FechaInicio = factRecepcionesHistoria[Compra Fecha Inicio Proceso]\nVAR FechaRecepcion = factRecepcionesHistoria[RecepcionFecha]\nRETURN\nIF(\n    NOT ISBLANK ( FechaInicio ) && NOT ISBLANK ( FechaRecepcion ),\n    DATEDIFF ( FechaInicio, FechaRecepcion, DAY )\n)\n",
+            "expression": "\nVAR FechaInicio = factRecepcionesHistoria[Compra Fecha Inicio Proceso Con Proveedor]\nVAR FechaRecepcion = factRecepcionesHistoria[RecepcionFecha]\nRETURN\nIF(\n    NOT ISBLANK ( FechaInicio ) && NOT ISBLANK ( FechaRecepcion ),\n    DATEDIFF ( FechaInicio, FechaRecepcion, DAY )\n)\n",
             "formatString": "0",
             "lineageTag": "d554e8bc-6bd3-4f6b-be09-002627e32b2a",
             "summarizeBy": "sum",
@@ -4006,6 +4016,34 @@
             "formatString": "#,0.00",
             "description": "Lead time promedio del proveedor expresado en meses (días / 30)",
             "lineageTag": "a9b8c7d6-e5f4-3210-abcd-fedcba987654"
+          },
+          {
+            "name": "Lead Time Proceso Interno Dias",
+            "expression": "\nAVERAGEX(\n    factRecepcionesHistoria,\n    VAR FechaInicio = factRecepcionesHistoria[Compra Fecha Inicio Proceso Interno Desde Solicitud]\n    VAR FechaRecepcion = factRecepcionesHistoria[RecepcionFecha]\n    RETURN IF(NOT ISBLANK(FechaInicio) && NOT ISBLANK(FechaRecepcion), DATEDIFF(FechaInicio, FechaRecepcion, DAY))\n)\n",
+            "formatString": "0",
+            "description": "Promedio de dias desde solicitud interna hasta recepcion. Lead time total del proceso de compras interno.",
+            "lineageTag": "b1c2d3e4-f5a6-7890-bcde-f01234567890"
+          },
+          {
+            "name": "Dias Transcurridos En Proceso Promedio",
+            "expression": "\nAVERAGEX(\n    factComprasEnProceso,\n    VAR FechaOC = factComprasEnProceso[CompraEP Fecha Ultima Modificacion]\n    RETURN IF(NOT ISBLANK(FechaOC), DATEDIFF(FechaOC, TODAY(), DAY))\n)\n",
+            "formatString": "0",
+            "description": "Promedio de dias transcurridos desde la fecha de OC para compras aun en proceso sin recepcionar.",
+            "lineageTag": "c2d3e4f5-a6b7-8901-cdef-012345678901"
+          },
+          {
+            "name": "Dias Hasta Fecha Entrega Promedio",
+            "expression": "\nAVERAGEX(\n    factComprasEnProceso,\n    VAR FechaEntrega = factComprasEnProceso[CompraEP Ultima Fecha Entrega]\n    RETURN IF(NOT ISBLANK(FechaEntrega), DATEDIFF(TODAY(), FechaEntrega, DAY))\n)\n",
+            "formatString": "0",
+            "description": "Promedio de dias restantes hasta la fecha de entrega esperada. Positivo = aun no vencio. Negativo = vencida.",
+            "lineageTag": "d3e4f5a6-b7c8-9012-def0-123456789012"
+          },
+          {
+            "name": "Compras En Proceso Vencidas",
+            "expression": "\nCALCULATE(\n    COUNTROWS(factComprasEnProceso),\n    factComprasEnProceso[CompraEP Ultima Fecha Entrega] < TODAY()\n)\n",
+            "formatString": "0",
+            "description": "Cantidad de ordenes de compra en proceso cuya fecha de entrega esperada ya paso.",
+            "lineageTag": "e4f5a6b7-c8d9-0123-ef01-234567890123"
           },
           {
             "name": "Ultima Recepcion Fecha",
@@ -9977,7 +10015,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "factRecepcionesHistoria",
-                    "ConceptualProperty": "Compra Fecha Inicio Proceso"
+                    "ConceptualProperty": "Compra Fecha Inicio Proceso Interno Desde Solicitud"
                   }
                 },
                 "State": "Generated",
