@@ -1,0 +1,680 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "e203930244fdedc2f170",
+  "position": {
+    "x": 10,
+    "y": 173.33333333333334,
+    "z": 11000,
+    "height": 425.55555555555554,
+    "width": 2610,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Código"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Código",
+              "nativeQueryRef": "Artículo Código"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Nombre"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Nombre",
+              "nativeQueryRef": "Artículo Nombre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Stock Mínimo"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Stock Mínimo",
+              "nativeQueryRef": "Stock Mínimo",
+              "displayName": "Stock Mínimo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Stock Existencia"
+                }
+              },
+              "queryRef": "Medidas_Stock.Stock Existencia",
+              "nativeQueryRef": "Existencia",
+              "displayName": "Existencia"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Stock Compras"
+                }
+              },
+              "queryRef": "Medidas_Stock.Stock Compras",
+              "nativeQueryRef": "Stock Compras"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo_Planificado"
+                    }
+                  },
+                  "Property": "Consumo Planificado Cantidad"
+                }
+              },
+              "queryRef": "Medidas_Consumo_Planificado.Consumo Planificado Cantidad",
+              "nativeQueryRef": "Consumo Planificado Cantidad"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_DemandaPendiente"
+                    }
+                  },
+                  "Property": "Cantidad Requerida por Demanda Pendiente"
+                }
+              },
+              "queryRef": "Medidas_DemandaPendiente.Cantidad Requerida por Demanda Pendiente",
+              "nativeQueryRef": "Cantidad Requerida por Demanda Pendiente SIN Planidicar",
+              "displayName": "Cantidad Requerida por Demanda Pendiente SIN Planidicar"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Meses con Consumo"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Meses con Consumo",
+              "nativeQueryRef": "Meses con Consumo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Consumo Promedio por Mes Activo"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Consumo Promedio por Mes Activo",
+              "nativeQueryRef": "Consumo Promedio por Mes Activo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Compras"
+                    }
+                  },
+                  "Property": "Lead Time Promedio Dias"
+                }
+              },
+              "queryRef": "Medidas_Compras.Lead Time Promedio Dias",
+              "nativeQueryRef": "Lead Time Promedio Dias"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Tipo Artículo Código"
+                }
+              },
+              "queryRef": "dimArticulo.Tipo Artículo Código",
+              "nativeQueryRef": "Tipo Artículo Código"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Proveedor Artículo Full"
+                }
+              },
+              "queryRef": "dimArticulo.Proveedor Artículo Full",
+              "nativeQueryRef": "Proveedor Preferido",
+              "displayName": "Proveedor Preferido"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Proveedores"
+                }
+              },
+              "queryRef": "dimArticulo.Proveedores",
+              "nativeQueryRef": "Proveedores"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dimArticulo"
+                  }
+                },
+                "Property": "Proveedor Artículo Full"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Meses con Consumo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "96D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Consumo Promedio por Mes Activo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.77777442879709D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo_Planificado.Consumo Planificado Cantidad"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "116D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_DemandaPendiente.Cantidad Requerida por Demanda Pendiente"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.6666334841066D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Compras.Lead Time Promedio Dias"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "101.44443865468237D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Stock.Stock Existencia"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "91.5555288707296D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Stock.Stock Compras"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82.87351103920818D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dimArticulo.Artículo Stock Mínimo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "349.5555396637731D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dimArticulo.Artículo Nombre"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120.44440888079998D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dimArticulo.Artículo Código"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "157.66667740649723D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dimArticulo.Tipo Artículo Código"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'EPSA - ARTICULOS CON DEFICIT DE STOCK'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F72B2B'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7386a9c45d0548da8a2d",
+        "type": "Exclude",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dimArticulo",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "Artículo Stock Mínimo"
+                          }
+                        },
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "Artículo Código"
+                          }
+                        },
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "Artículo Nombre"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          },
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          },
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Exclude"
+      },
+      {
+        "name": "d3becfbbb7a035ecce58",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Artículo Código"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0cda4aa8096a1939993e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Artículo Nombre"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "def11f8ab7336fc37e14",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Stock"
+              }
+            },
+            "Property": "Stock Existencia"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7dcf2250803f6f7226f4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Stock"
+              }
+            },
+            "Property": "Stock Compras"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "88fce4032f3816945b7f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Consumo_Planificado"
+              }
+            },
+            "Property": "Consumo Planificado Cantidad"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "74841efe1bae12a835c3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_DemandaPendiente"
+              }
+            },
+            "Property": "Cantidad Requerida por Demanda Pendiente"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a6815aad8a02821ec845",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Consumo"
+              }
+            },
+            "Property": "Meses con Consumo"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7d58595075af417ca3a4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Consumo"
+              }
+            },
+            "Property": "Consumo Promedio por Mes Activo"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "870fe79abe34dac603d4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Compras"
+              }
+            },
+            "Property": "Lead Time Promedio Dias"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "91f84e552f14638a7cd0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Tipo Artículo Código"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bf4d470d34ec1c2bb415",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Proveedor Artículo Full"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "43607300fcf43ce13c3e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Proveedores"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
