@@ -3693,6 +3693,13 @@
             "lineageTag": "b7c01b0c-fce0-4245-82e8-70a292dabb10"
           },
           {
+            "name": "Stock Util E+C-CP-CD",
+            "expression": "\n[Stock Existencia] + [Stock Compras] - [Consumo Planificado Cantidad] - [Cantidad Requerida por Demanda Pendiente]\n",
+            "formatString": "#,0.00",
+            "description": "Stock disponible sin descontar stock mínimo. Existencia + Compras - Consumo Planificado - Demanda Pendiente",
+            "lineageTag": "c8d9e0f1-a2b3-4567-89ab-cdef01234567"
+          },
+          {
             "name": "Gap Stock",
             "expression": "[Stock Existencia] - [Stock Mínimo]\n",
             "formatString": "#,0.00",
