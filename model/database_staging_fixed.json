@@ -3980,7 +3980,7 @@
             "lineageTag": "e7f8a9b0-c1d2-3456-7890-abcdef123456"
           },
           {
-            "name": "Cobertura vs Lead Time",
+            "name": "Cobertura sobre Stock Minimo vs Lead Time",
             "expression": "\n[Meses Cobertura del Stock Minimo] - [Lead Time Meses]\n",
             "formatString": "#,0.00",
             "description": "Diferencia entre meses de cobertura del stock mínimo y el lead time del proveedor. Positivo = SM cubre LT. Negativo = déficit en meses. Usar con filtro Obligatorio=SI",
