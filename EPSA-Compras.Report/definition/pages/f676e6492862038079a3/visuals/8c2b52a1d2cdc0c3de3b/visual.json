@@ -52,21 +52,6 @@
                       "Entity": "dimArticulo"
                     }
                   },
-                  "Property": "Proveedor Nombre"
-                }
-              },
-              "queryRef": "dimArticulo.Proveedor Nombre",
-              "nativeQueryRef": "Proveedor",
-              "displayName": "Proveedor"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dimArticulo"
-                    }
-                  },
                   "Property": "Artículo Stock Mínimo"
                 }
               },
@@ -169,11 +154,12 @@
                       "Entity": "Medidas_Consumo"
                     }
                   },
-                  "Property": "Consumo Promedio por Mes Activo"
+                  "Property": "Sumatoria Movs Consumo Sin Recepciones"
                 }
               },
-              "queryRef": "Medidas_Consumo.Consumo Promedio por Mes Activo",
-              "nativeQueryRef": "Consumo Promedio/Mes"
+              "queryRef": "Medidas_Consumo.Sumatoria Movs Consumo Sin Recepciones",
+              "nativeQueryRef": "Consumo Período",
+              "displayName": "Consumo Período"
             },
             {
               "field": {
@@ -188,6 +174,20 @@
               },
               "queryRef": "Medidas_Consumo.Meses con Consumo",
               "nativeQueryRef": "Meses con Consumo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Consumo Promedio por Mes Activo"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Consumo Promedio por Mes Activo",
+              "nativeQueryRef": "Consumo Promedio/Mes"
             },
             {
               "field": {
@@ -269,359 +269,32 @@
       "columnWidth": [
         {
           "properties": {
-            "value": { "expr": { "Literal": { "Value": "80D" } } }
-          },
-          "selector": { "metadata": "dimArticulo.Artículo Código" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "220D" } } }
-          },
-          "selector": { "metadata": "dimArticulo.Artículo" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "120D" } } }
-          },
-          "selector": { "metadata": "dimArticulo.Proveedor Nombre" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "72D" } } }
-          },
-          "selector": { "metadata": "dimArticulo.Artículo Stock Mínimo" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "72D" } } }
-          },
-          "selector": { "metadata": "Medidas_Stock.Stock Existencia" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "65D" } } }
-          },
-          "selector": { "metadata": "Medidas_Stock.Stock Compras" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "72D" } } }
-          },
-          "selector": { "metadata": "Medidas_Stock.Stock Proyectado" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "75D" } } }
-          },
-          "selector": { "metadata": "Medidas_Consumo_Planificado.Consumo Planificado Cantidad" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "80D" } } }
-          },
-          "selector": { "metadata": "Medidas_DemandaPendiente.Cantidad Requerida por Demanda Pendiente" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "72D" } } }
-          },
-          "selector": { "metadata": "Medidas_Stock.E + C - CP - CD - SM" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "85D" } } }
-          },
-          "selector": { "metadata": "Medidas_Consumo.Consumo Promedio por Mes Activo" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "60D" } } }
-          },
-          "selector": { "metadata": "Medidas_Consumo.Meses con Consumo" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "72D" } } }
-          },
-          "selector": { "metadata": "Medidas_Compras.Lead Time Promedio Dias" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "72D" } } }
-          },
-          "selector": { "metadata": "Medidas_Compras.Cobertura Meses" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "85D" } } }
-          },
-          "selector": { "metadata": "Medidas_Consumo.A Pedir Sugerido" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "65D" } } }
-          },
-          "selector": { "metadata": "Medidas_Stock.Stock Debajo Mínimo" }
-        },
-        {
-          "properties": {
-            "value": { "expr": { "Literal": { "Value": "90D" } } }
-          },
-          "selector": { "metadata": "Medidas_Compras.Ultima Recepcion Fecha" }
-        }
-      ],
-      "columnHeaders": [
-        {
-          "properties": {}
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
+            "value": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'EPSA - CONTROL DE STOCK MINIMO'"
-                }
-              }
-            },
-            "background": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
-                    }
-                  }
+                  "Value": "80D"
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "dimArticulo.Artículo Código"
           }
-        }
-      ]
-    },
-    "drillFilterOtherVisuals": true
-  }
-}
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "8c2b52a1d2cdc0c3de3b",
-  "position": {
-    "x": 20,
-    "y": 285,
-    "z": 0,
-    "height": 255,
-    "width": 1855,
-    "tabOrder": 0
-  },
-  "visual": {
-    "visualType": "tableEx",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dimArticulo"
-                    }
-                  },
-                  "Property": "Artículo"
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "360.94393587723795D"
                 }
-              },
-              "queryRef": "dimArticulo.Artículo",
-              "nativeQueryRef": "Artículo"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dimArticulo"
-                    }
-                  },
-                  "Property": "Artículo Stock Mínimo"
-                }
-              },
-              "queryRef": "dimArticulo.Artículo Stock Mínimo",
-              "nativeQueryRef": "Stock Mínimo",
-              "displayName": "Stock Mínimo"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Stock"
-                    }
-                  },
-                  "Property": "Stock Existencia"
-                }
-              },
-              "queryRef": "Medidas_Stock.Stock Existencia",
-              "nativeQueryRef": "Existencia",
-              "displayName": "Existencia"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Stock"
-                    }
-                  },
-                  "Property": "Stock Compras"
-                }
-              },
-              "queryRef": "Medidas_Stock.Stock Compras",
-              "nativeQueryRef": "Stock Compras"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Consumo"
-                    }
-                  },
-                  "Property": "Sumatoria Movs Consumo Sin Recepciones"
-                }
-              },
-              "queryRef": "Medidas_Consumo.Sumatoria Movs Consumo Sin Recepciones",
-              "nativeQueryRef": "Consumo",
-              "displayName": "Consumo"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Consumo_Planificado"
-                    }
-                  },
-                  "Property": "Consumo Planificado Cantidad"
-                }
-              },
-              "queryRef": "Medidas_Consumo_Planificado.Consumo Planificado Cantidad",
-              "nativeQueryRef": "Consumo Planificado Cantidad"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_DemandaPendiente"
-                    }
-                  },
-                  "Property": "Cantidad Requerida por Demanda Pendiente"
-                }
-              },
-              "queryRef": "Medidas_DemandaPendiente.Cantidad Requerida por Demanda Pendiente",
-              "nativeQueryRef": "Cantidad Requerida por Demanda Pendiente SIN Planidicar",
-              "displayName": "Cantidad Requerida por Demanda Pendiente SIN Planidicar"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Consumo"
-                    }
-                  },
-                  "Property": "Meses con Consumo"
-                }
-              },
-              "queryRef": "Medidas_Consumo.Meses con Consumo",
-              "nativeQueryRef": "Meses con Consumo"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Consumo"
-                    }
-                  },
-                  "Property": "Consumo Promedio por Mes Activo"
-                }
-              },
-              "queryRef": "Medidas_Consumo.Consumo Promedio por Mes Activo",
-              "nativeQueryRef": "Consumo Promedio por Mes Activo"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Consumo"
-                    }
-                  },
-                  "Property": "Consumos"
-                }
-              },
-              "queryRef": "Medidas_Consumo.Consumos",
-              "nativeQueryRef": "Consumos"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Consumo"
-                    }
-                  },
-                  "Property": "Promedio Consumo por Movimiento"
-                }
-              },
-              "queryRef": "Medidas_Consumo.Promedio Consumo por Movimiento",
-              "nativeQueryRef": "Promedio Consumo por Movimiento"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Compras"
-                    }
-                  },
-                  "Property": "Cobertura Meses sobre Existencia"
-                }
-              },
-              "queryRef": "Medidas_Compras.Cobertura Meses",
-              "nativeQueryRef": "Cobertura Meses sobre Existencia"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Compras"
-                    }
-                  },
-                  "Property": "Lead Time Promedio Dias"
-                }
-              },
-              "queryRef": "Medidas_Compras.Lead Time Promedio Dias",
-              "nativeQueryRef": "Lead Time Promedio Dias"
+              }
             }
-          ]
-        }
-      }
-    },
-    "objects": {
-      "columnWidth": [
+          },
+          "selector": {
+            "metadata": "dimArticulo.Artículo"
+          }
+        },
         {
           "properties": {
             "value": {
@@ -633,7 +306,7 @@
             }
           },
           "selector": {
-            "metadata": "Medidas_Consumo.Meses con Consumo"
+            "metadata": "dimArticulo.Artículo Stock Mínimo"
           }
         },
         {
@@ -641,13 +314,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "103.66664686611759D"
+                  "Value": "72D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Medidas_Consumo.Promedio Consumo por Movimiento"
+            "metadata": "Medidas_Stock.Stock Existencia"
           }
         },
         {
@@ -655,13 +328,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "96D"
+                  "Value": "65D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Medidas_Consumo.Consumo Promedio por Mes Activo"
+            "metadata": "Medidas_Stock.Stock Compras"
           }
         },
         {
@@ -669,7 +342,21 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "99D"
+                  "Value": "83.26761209127197D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Stock.Stock Proyectado"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.38028169014085D"
                 }
               }
             }
@@ -683,7 +370,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "116D"
+                  "Value": "80D"
                 }
               }
             }
@@ -697,13 +384,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "90D"
+                  "Value": "72D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Medidas_Compras.Cobertura Meses"
+            "metadata": "Medidas_Stock.E + C - CP - CD - SM"
           }
         },
         {
@@ -711,7 +398,35 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "84.6666334841066D"
+                  "Value": "94.01408450704226D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Consumo Promedio por Mes Activo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "71.26760563380282D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Meses con Consumo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.5070491414948D"
                 }
               }
             }
@@ -725,13 +440,69 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "75.2222494289586D"
+                  "Value": "90.0281965659792D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Medidas_Consumo.Consumos"
+            "metadata": "Medidas_Compras.Cobertura Meses"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "85D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.A Pedir Sugerido"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Stock.Stock Debajo Mínimo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Compras.Ultima Recepcion Fecha"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99.04178685284666D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Sumatoria Movs Consumo Sin Recepciones"
           }
         }
       ],

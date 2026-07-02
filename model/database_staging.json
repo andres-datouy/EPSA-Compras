@@ -3981,7 +3981,7 @@
           },
           {
             "name": "Cobertura vs Lead Time",
-            "expression": "\nVAR LT_Meses = DIVIDE ( [Lead Time Promedio Dias], 30, 0 )\nRETURN\n[Meses Cobertura] - LT_Meses\n",
+            "expression": "\n[Meses Cobertura] - [Lead Time Meses]\n",
             "formatString": "#,0.00",
             "description": "Diferencia entre meses de cobertura del stock mínimo y el lead time del proveedor. Positivo = SM cubre LT. Negativo = déficit en meses. Usar con filtro Obligatorio=SI",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-123456789abc"
@@ -3992,6 +3992,13 @@
             "formatString": "0",
             "description": "Promedio de días entre la fecha de orden de compra y la fecha de recepción. Indicador de velocidad de abastecimiento",
             "lineageTag": "6086b32f-bdd2-4607-8786-a276621f0421"
+          },
+          {
+            "name": "Lead Time Meses",
+            "expression": "\nDIVIDE ( [Lead Time Promedio Dias], 30, 0 )\n",
+            "formatString": "#,0.00",
+            "description": "Lead time promedio del proveedor expresado en meses (días / 30)",
+            "lineageTag": "a9b8c7d6-e5f4-3210-abcd-fedcba987654"
           },
           {
             "name": "Ultima Recepcion Fecha",
