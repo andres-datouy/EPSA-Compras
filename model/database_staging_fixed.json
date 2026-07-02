@@ -3847,6 +3847,13 @@
             "lineageTag": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
           },
           {
+            "name": "A Pedir Txt",
+            "expression": "VAR E = [Stock Existencia]\nVAR SP = [Stock Compras]\nVAR CP = [Consumo Planificado Cantidad]\nVAR CDP = [Cantidad Requerida por Demanda Pendiente]\nVAR SM = [Stock Mínimo]\nRETURN\n\"AP = \" & FORMAT(E, \"#,0\") & \"e + \" & FORMAT(SP, \"#,0\") & \"sp - (\" & FORMAT(CP, \"#,0\") & \"cp + \" & FORMAT(CDP, \"#,0\") & \"cdp) - \" & FORMAT(SM, \"#,0\") & \"sm\"",
+            "dataType": "string",
+            "description": "Representación textual del cálculo de A Pedir: muestra cada operando con su sigla y valor para interpretación visual",
+            "lineageTag": "d4e5f6a7-b8c9-0123-def0-123456789abc"
+          },
+          {
             "name": "Sumatoria Movs Consumo Sin Recepciones",
             "expression": "\nABS(CALCULATE(\n    SUM( factConsumoHistoria[Consumo Cantidad] ),\n    factConsumoHistoria[Consumo Documento] <> \"recstktr\"\n)) + 0\n",
             "formatString": "#,0.00",

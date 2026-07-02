@@ -353,3 +353,77 @@ El filtro de Calendario se propagaba a factStockEPSA a traves de la relacion, fi
 
 ### Decision de diseno
 Las tablas snapshot (como factStockEPSA) NO deben tener relacion con Calendario. El filtro de fecha no tiene sentido sobre datos que representan un estado actual, no una serie historica.
+
+---
+
+## Issue #26: Meses de Cobertura, Stock Mínimo y Fórmula de "A Pedir"
+
+**Status:** Pendiente reunion con Compras
+**Labels:** `business-rule`, `compras-exterior`, `discussion`
+**Prioridad:** Alta
+
+### Contexto
+La medida `[A Pedir Txt]` muestra la formula actual de forma legible:
+```
+AP = {E}e + {SP}sp - ({CP}cp + {CDP}cdp) - {SM}sm
+```
+Donde:
+- **e** = Existencia (stock en deposito)
+- **sp** = Stock en proceso de compra
+- **cp** = Consumo Planificado (ordenes de produccion)
+- **cdp** = Cantidad demandada pendiente
+- **sm** = Stock Minimo
+
+Esta formula y sus operandos estan sujetos a revision con el departamento de Compras.
+
+### Temas a tratar
+
+#### 26.1 Meses de Cobertura como dato maestro
+Los Excel de Rosana tienen una columna "Meses de Cobertura" ingresada manualmente que no existe en el ERP. Esto representa cuantos meses de consumo deberia cubrir el stock disponible.
+
+**Relacion propuesta:**
+```
+Stock Minimo = Meses de Cobertura x Consumo Promedio por Mes
+```
+
+Esto permite:
+- Vigilar si los stocks minimos configurados en ERP son adecuados
+- Detectar articulos con stock minimo desactualizado
+- Sugerir ajustes basados en consumo real
+
+**Pendiente:**
+- [ ] Definir si "Meses de Cobertura" se ingresa como campo en dimArticulo o se calcula
+- [ ] Validar con Compras que valores son razonables por tipo de articulo
+- [ ] Evaluar alerta visual cuando StockMin real != StockMin teorico
+
+#### 26.2 Cobertura de Lead Time
+Los Meses de Cobertura deben cubrir el Lead Time del proveedor + un margen de seguridad (1-2 meses adicionales).
+
+**Formula propuesta:**
+```
+Meses Cobertura >= LT_Meses + Meses Seguridad
+```
+
+Esto asegura que:
+- No se quede sin stock mientras llega el pedido
+- Hay colchon para variaciones de demanda o demoras
+
+**Pendiente:**
+- [ ] Definir cuantos meses de seguridad por tipo de articulo/proveedor
+- [ ] Evaluar si el margen debe ser fijo (1 mes) o proporcional al LT
+
+#### 26.3 Revision de formula "A Pedir"
+La formula actual puede variar segun necesidades:
+- Opcion A: `AP = Necesidad(LT) - StockNeto` (basada en lead time)
+- Opcion B: `AP = StockMin - StockNeto` (basada en stock minimo configurado)
+- Opcion C: Híbrida que tome el maximo de ambas
+
+**Pendiente:**
+- [ ] Reunion con responsables de compras para definir formula final
+- [ ] Validar con casos reales (articulos con y sin stock minimo configurado)
+- [ ] Actualizar `[A Pedir Sugerido]` y `[A Pedir Txt]` segun decision
+
+### Dependencias
+- Requiere datos de "Meses de Cobertura" (hoy solo en Excel, no en ERP)
+- Requiere validacion de stocks minimos actuales vs teoricos
+- Impacta directamente en Issue #1 (caso de uso Rosana)
