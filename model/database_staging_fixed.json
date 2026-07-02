@@ -3973,7 +3973,7 @@
             "lineageTag": "1ebaedf7-7181-4416-8ad1-fc7bffa58628"
           },
           {
-            "name": "Meses Cobertura",
+            "name": "Meses Cobertura del Stock Minimo",
             "expression": "\nDIVIDE ( [Stock Mínimo], [Consumo Promedio por Mes Activo] )\n",
             "formatString": "#,0.00",
             "description": "Cuántos meses de consumo cubre el stock mínimo configurado. Stock Mínimo / Consumo Promedio por Mes Activo. Permite validar si el SM es adecuado respecto al Lead Time",
@@ -3981,7 +3981,7 @@
           },
           {
             "name": "Cobertura vs Lead Time",
-            "expression": "\n[Meses Cobertura] - [Lead Time Meses]\n",
+            "expression": "\n[Meses Cobertura del Stock Minimo] - [Lead Time Meses]\n",
             "formatString": "#,0.00",
             "description": "Diferencia entre meses de cobertura del stock mínimo y el lead time del proveedor. Positivo = SM cubre LT. Negativo = déficit en meses. Usar con filtro Obligatorio=SI",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-123456789abc"
