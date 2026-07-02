@@ -381,20 +381,22 @@ Esta formula y sus operandos estan sujetos a revision con el departamento de Com
 #### 26.1 Meses de Cobertura como dato maestro
 Los Excel de Rosana tienen una columna "Meses de Cobertura" ingresada manualmente que no existe en el ERP. Esto representa cuantos meses de consumo deberia cubrir el stock disponible.
 
-**Relacion propuesta:**
-```
-Stock Minimo = Meses de Cobertura x Consumo Promedio por Mes
-```
+**Decision pendiente — EPSA debe definir la direccion de la relacion:**
 
-Esto permite:
-- Vigilar si los stocks minimos configurados en ERP son adecuados
-- Detectar articulos con stock minimo desactualizado
-- Sugerir ajustes basados en consumo real
+Opcion A: Meses de Cobertura es un **calculo derivado**:
+```
+Meses Cobertura = Stock Mínimo / Consumo Promedio Mensual
+```
+→ El SM es el dato maestro (viene del ERP), Meses Cobertura se calcula para vigilancia.
 
-**Pendiente:**
-- [ ] Definir si "Meses de Cobertura" se ingresa como campo en dimArticulo o se calcula
-- [ ] Validar con Compras que valores son razonables por tipo de articulo
-- [ ] Evaluar alerta visual cuando StockMin real != StockMin teorico
+Opcion B: Stock Mínimo es un **calculo derivado**:
+```
+Stock Mínimo = Meses de Cobertura x Consumo Promedio Mensual
+```
+→ Meses Cobertura es el dato maestro (ingresado manualmente), el SM se calcula.
+
+**Medida implementada (Opcion A):** `[Meses Cobertura] = DIVIDE([Stock Mínimo], [Consumo Promedio por Mes Activo])`
+Esto permite visualizar si el SM configurado cubre al menos el Lead Time + margen.
 
 #### 26.2 Cobertura de Lead Time
 Los Meses de Cobertura deben cubrir el Lead Time del proveedor + un margen de seguridad (1-2 meses adicionales).

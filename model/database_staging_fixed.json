@@ -3973,6 +3973,13 @@
             "lineageTag": "1ebaedf7-7181-4416-8ad1-fc7bffa58628"
           },
           {
+            "name": "Meses Cobertura",
+            "expression": "\nDIVIDE ( [Stock Mínimo], [Consumo Promedio por Mes Activo] )\n",
+            "formatString": "#,0.00",
+            "description": "Cuántos meses de consumo cubre el stock mínimo configurado. Stock Mínimo / Consumo Promedio por Mes Activo. Permite validar si el SM es adecuado respecto al Lead Time",
+            "lineageTag": "e7f8a9b0-c1d2-3456-7890-abcdef123456"
+          },
+          {
             "name": "Lead Time Promedio Dias",
             "expression": "\nAVERAGE ( factRecepcionesHistoria[Lead Time Dias] )\n",
             "formatString": "0",
