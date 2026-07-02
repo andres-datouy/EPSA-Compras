@@ -3980,6 +3980,13 @@
             "lineageTag": "e7f8a9b0-c1d2-3456-7890-abcdef123456"
           },
           {
+            "name": "Cobertura vs Lead Time",
+            "expression": "\nVAR MesesCobertura = DIVIDE ( [Stock Mínimo], [Consumo Promedio por Mes Activo], 0 )\nVAR LT_Meses = DIVIDE ( [Lead Time Promedio Dias], 30, 0 )\nRETURN\nMesesCobertura - LT_Meses\n",
+            "formatString": "#,0.00",
+            "description": "Diferencia entre meses de cobertura del stock mínimo y el lead time del proveedor. Positivo = SM cubre LT. Negativo = déficit en meses. Usar con filtro Obligatorio=SI",
+            "lineageTag": "f1a2b3c4-d5e6-7890-abcd-123456789abc"
+          },
+          {
             "name": "Lead Time Promedio Dias",
             "expression": "\nAVERAGE ( factRecepcionesHistoria[Lead Time Dias] )\n",
             "formatString": "0",
