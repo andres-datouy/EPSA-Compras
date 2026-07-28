@@ -1,6 +1,6 @@
 # Fix cmdkey credentials for SSAS deployment
 $user = "EXLER-SERVER\schaaf_ssas"
-$pass = "Saas 244050@"
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $target = "EXLER-SERVER"
 
 # Remove old entry if exists

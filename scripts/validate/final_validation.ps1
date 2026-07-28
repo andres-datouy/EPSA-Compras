@@ -1,12 +1,13 @@
+$sqlPass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SQL_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 # Final validation: Source vs Staging vs SSAS for all tables
-$pass = "Saas 244050@"
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", (ConvertTo-SecureString $pass -AsPlainText -Force))
 
 $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentication Negotiate -ScriptBlock {
     $output = @()
     
     # === STAGING COUNTS ===
-    $stgConn = New-Object System.Data.SqlClient.SqlConnection("Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=Saas 244050@;Connect Timeout=10")
+    $stgConn = New-Object System.Data.SqlClient.SqlConnection("Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=$using:sqlPass;Connect Timeout=10")
     $stgConn.Open()
     
     $stagingTables = @(
@@ -87,7 +88,7 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
     
     # Recepciones date range
     $output += "`n=== factRecepcionesHistoria Date Range ==="
-    $stgConn2 = New-Object System.Data.SqlClient.SqlConnection("Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=Saas 244050@;Connect Timeout=10")
+    $stgConn2 = New-Object System.Data.SqlClient.SqlConnection("Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=$using:sqlPass;Connect Timeout=10")
     $stgConn2.Open()
     $cmd = $stgConn2.CreateCommand()
     $cmd.CommandText = "SELECT MIN(RecepcionFecha), MAX(RecepcionFecha) FROM dbo.stg_factRecepcionesHistoria"

@@ -1,5 +1,6 @@
 # Set credentials and process SSAS database
-$pass = ConvertTo-SecureString "Saas 244050@" -AsPlainText -Force
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
+$pass = ConvertTo-SecureString $pass -AsPlainText -Force
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", $pass)
 
 $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentication Negotiate -ScriptBlock {
@@ -29,7 +30,7 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
     "dataSource": {
       "name": "staging_compras",
       "type": "provider",
-      "connectionString": "Data Source=192.168.2.47,1435;Initial Catalog=staging_compras;Provider=MSOLEDBSQL;User ID=app_compras;Password=Saas 244050@;Persist Security Info=false",
+      "connectionString": "Data Source=192.168.2.47,1435;Initial Catalog=staging_compras;Provider=MSOLEDBSQL;User ID=app_compras;Password=__SQL_PASSWORD__;Persist Security Info=false",
       "impersonationMode": "impersonateServiceAccount"
     }
   }

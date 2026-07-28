@@ -1,5 +1,5 @@
 # Deploy model to SSAS - pass JSON via Invoke-Command with chunked writing
-$pass = "Saas 244050@"
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", (ConvertTo-SecureString $pass -AsPlainText -Force))
 
 $session = New-PSSession -ComputerName 192.168.2.47 -Credential $cred -Authentication Negotiate
@@ -10,9 +10,13 @@ Invoke-Command -Session $session -ScriptBlock {
     Remove-Item "C:\temp\model_deploy.json" -ErrorAction SilentlyContinue
 }
 
-# Read and encode model
+# Read and encode model (inyectando password del datasource desde .env.local)
 $modelPath = "d:\Andres\Dev\EPSA-Compras\model\database_staging.json"
-$modelBytes = [System.IO.File]::ReadAllBytes($modelPath)
+$sqlPass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SQL_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
+if (-not $sqlPass) { throw "SQL_PASSWORD no encontrado en .env.local" }
+$modelText = [System.IO.File]::ReadAllText($modelPath)
+$modelText = $modelText.Replace("__SQL_PASSWORD__", $sqlPass)
+$modelBytes = [System.Text.Encoding]::UTF8.GetBytes($modelText)
 $modelB64 = [Convert]::ToBase64String($modelBytes)
 Write-Host "Model encoded: $($modelB64.Length) chars" -ForegroundColor Cyan
 

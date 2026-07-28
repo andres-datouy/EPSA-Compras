@@ -106,7 +106,7 @@ $newDS = @'
       "connectionString": "Data Source=192.168.2.47,1435;Initial Catalog=staging_compras;Provider=SQLNCLI11;Integrated Security=SSPI;Persist Security Info=false",
       "impersonationMode": "impersonateServiceAccount",
       "account": "app_compras",
-      "password": "Saas 244050@"
+      "password": "__SQL_PASSWORD__"
     }
   ]
 '@

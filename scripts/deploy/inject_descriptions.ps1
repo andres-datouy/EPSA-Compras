@@ -2,7 +2,7 @@
 # Post-deploy: inject measure descriptions into SSAS via AMO
 # SSAS 2017 TMSL doesn't persist measure descriptions, so we set them via AMO after deploy
 
-$pass = "Saas 244050@"
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", (ConvertTo-SecureString $pass -AsPlainText -Force))
 
 # Read descriptions from the staging JSON

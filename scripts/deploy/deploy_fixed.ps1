@@ -1,9 +1,13 @@
+$sqlPass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SQL_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 # Fix database_staging.json and deploy
-$pass = ConvertTo-SecureString "Saas 244050@" -AsPlainText -Force
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
+$pass = ConvertTo-SecureString $pass -AsPlainText -Force
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", $pass)
 
-# Read and fix database_staging.json locally
+# Read and fix database_staging.json locally (inyectando password desde .env.local)
 $raw = Get-Content "d:\Andres\Dev\EPSA-Compras\model\database_staging.json" -Raw -Encoding UTF8
+if (-not $sqlPass) { throw "SQL_PASSWORD no encontrado en .env.local" }
+$raw = $raw.Replace("__SQL_PASSWORD__", $sqlPass)
 $json = $raw | ConvertFrom-Json
 
 # Calendario relationships are valid - DAX calculated table with proper Fecha key
@@ -58,7 +62,7 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
             $ds.Credential = New-Object Microsoft.AnalysisServices.Tabular.Credential
             $ds.Credential.AuthenticationKind = "UsernamePassword"
             $ds.Credential.Username = "app_compras"
-            $ds.Credential.Password = "Saas 244050@"
+            $ds.Credential.Password = $using:sqlPass
             Write-Output "  Set creds for: $($ds.Name)"
         }
         $db.Model.SaveChanges()

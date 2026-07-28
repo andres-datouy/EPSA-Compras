@@ -1,5 +1,5 @@
 # Verify schaaf_ssas credentials via SMB (fastest way to test Windows auth)
-$pass = "Saas 244050@"
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $user = "schaaf_ssas"
 
 # Test 1: SMB access to C$ share

@@ -1,5 +1,6 @@
+$sqlPass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SQL_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 # Test SQL connection as SSAS service account + check column sizes
-$pass = "Saas 244050@"
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", (ConvertTo-SecureString $pass -AsPlainText -Force))
 
 $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentication Negotiate -ScriptBlock {
@@ -38,7 +39,7 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
     Write-Output "=== Test 2: Check SSAS service account login ==="
     try {
         $conn2 = New-Object System.Data.SqlClient.SqlConnection
-        $conn2.ConnectionString = "Data Source=localhost,1435;Initial Catalog=master;User Id=sa;Password=Saas 244050@;TrustServerCertificate=True"
+        $conn2.ConnectionString = "Data Source=localhost,1435;Initial Catalog=master;User Id=sa;Password=$using:sqlPass;TrustServerCertificate=True"
         $conn2.Open()
         $cmd3 = $conn2.CreateCommand()
         $cmd3.CommandText = "SELECT name, type_desc FROM sys.server_principals WHERE name LIKE '%MSOLAP%' OR name LIKE '%SSAS%'"

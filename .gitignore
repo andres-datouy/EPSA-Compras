@@ -33,6 +33,8 @@ docs/ml_output/*.parquet
 
 # Power BI cache
 *.pbi/.local
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
 
 # PBIX binary (tracked via LFS or extraction)
 # pbix/*.pbix

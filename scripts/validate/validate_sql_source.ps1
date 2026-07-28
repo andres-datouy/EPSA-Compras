@@ -1,11 +1,12 @@
+$sqlPass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SQL_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 # List tables in staging_compras and get row counts
-$pass = "Saas 244050@"
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", (ConvertTo-SecureString $pass -AsPlainText -Force))
 
 $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentication Negotiate -ScriptBlock {
     $output = @()
     # Use the same credentials as SSAS data source (app_compras with schaaf_ssas password per model config)
-    $connStr = "Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=Saas 244050@;Connect Timeout=10"
+    $connStr = "Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=$using:sqlPass;Connect Timeout=10"
     $conn = New-Object System.Data.SqlClient.SqlConnection($connStr)
     try {
         $conn.Open()
@@ -19,7 +20,7 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
             $output += "Connected to staging_compras (app_compras with SQL password)"
         } catch {
             # Try schaaf_ssas as SQL login
-            $connStr3 = "Server=localhost,1435;Database=staging_compras;User Id=schaaf_ssas;Password=Saas 244050@;Connect Timeout=10"
+            $connStr3 = "Server=localhost,1435;Database=staging_compras;User Id=schaaf_ssas;Password=$using:sqlPass;Connect Timeout=10"
             $conn = New-Object System.Data.SqlClient.SqlConnection($connStr3)
             try {
                 $conn.Open()

@@ -1,4 +1,4 @@
-$pass = "Saas 244050@"
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", (ConvertTo-SecureString $pass -AsPlainText -Force))
 
 # --- Pre-deploy validation ---
@@ -11,6 +11,11 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host "" -ForegroundColor White
 
 $json = Get-Content "$PSScriptRoot\..\..\model\database_staging.json" -Raw -Encoding UTF8
+
+# Inyectar password del datasource desde .env.local (el JSON versionado usa placeholder)
+$sqlPass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SQL_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
+if (-not $sqlPass) { throw "SQL_PASSWORD no encontrado en .env.local" }
+$json = $json.Replace("__SQL_PASSWORD__", $sqlPass)
 
 $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentication Negotiate -ScriptBlock {
     param($jsonContent)

@@ -1,7 +1,7 @@
 # Deploy new DAX measures for Direction storytelling to SSAS Compras_EPSA
 # Measures cover: Spend Analysis, Risk, Efficiency, Opportunities
 
-$pass = "Saas 244050@"
+$pass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $cred = New-Object PSCredential("EXLER-SERVER\schaaf_ssas", (ConvertTo-SecureString $pass -AsPlainText -Force))
 
 Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -ScriptBlock {

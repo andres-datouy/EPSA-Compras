@@ -1,9 +1,10 @@
+$sqlPass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SQL_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 # Query staging data for a specific article
 param(
     [string]$ArticleCode = "%16405004%"
 )
 
-$connStr = "Server=192.168.2.47,1435;Database=staging_compras;User Id=app_compras;Password=Saas 244050@;TrustServerCertificate=True"
+$connStr = "Server=192.168.2.47,1435;Database=staging_compras;User Id=app_compras;Password=$sqlPass;TrustServerCertificate=True"
 $conn = New-Object System.Data.SqlClient.SqlConnection($connStr)
 $conn.Open()
 
@@ -58,7 +59,7 @@ param(
     [string]$ArticleCode = "%16405004%"
 )
 
-$connStr = "Server=192.168.2.47,1435;Database=staging_compras;User Id=app_compras;Password=Saas 244050@;TrustServerCertificate=True"
+$connStr = "Server=192.168.2.47,1435;Database=staging_compras;User Id=app_compras;Password=$sqlPass;TrustServerCertificate=True"
 $conn = New-Object System.Data.SqlClient.SqlConnection($connStr)
 $conn.Open()
 
@@ -113,7 +114,7 @@ param(
     [string]$ArticleCode = "16405004"
 )
 
-$connStr = "Server=192.168.2.47,1435;Database=staging_compras;User Id=app_compras;Password=Saas 244050@;TrustServerCertificate=True"
+$connStr = "Server=192.168.2.47,1435;Database=staging_compras;User Id=app_compras;Password=$sqlPass;TrustServerCertificate=True"
 $conn = New-Object System.Data.SqlClient.SqlConnection($connStr)
 $conn.Open()
 
@@ -168,7 +169,7 @@ param(
     [string]$ArticleCode = "16405004"
 )
 
-$connStr = "Server=192.168.2.47,1435;Database=staging_compras;User Id=app_compras;Password=Saas 244050@;TrustServerCertificate=True"
+$connStr = "Server=192.168.2.47,1435;Database=staging_compras;User Id=app_compras;Password=$sqlPass;TrustServerCertificate=True"
 $conn = New-Object System.Data.SqlClient.SqlConnection($connStr)
 $conn.Open()
 

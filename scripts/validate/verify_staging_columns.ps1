@@ -1,13 +1,14 @@
+$sqlPass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SQL_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 # Verify staging table columns match SSAS model column names
 $ssasUser = "EXLER-SERVER\schaaf_ssas"
-$ssasPass = "Saas 244050@"
+$ssasPass = Get-Content "d:\Andres\Dev\EPSA-Compras\.env.local" | Where-Object { $_ -match "^SSAS_PASSWORD=" } | ForEach-Object { ($_ -split "=", 2)[1] }
 $cred = New-Object PSCredential($ssasUser, (ConvertTo-SecureString $ssasPass -AsPlainText -Force))
 
 $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentication Negotiate -ScriptBlock {
     $output = @()
     
     # Staging connection
-    $stgConn = New-Object System.Data.SqlClient.SqlConnection("Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=Saas 244050@;Connect Timeout=10")
+    $stgConn = New-Object System.Data.SqlClient.SqlConnection("Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=$using:sqlPass;Connect Timeout=10")
     $stgConn.Open()
     
     $mapping = @(
@@ -53,7 +54,7 @@ $result = Invoke-Command -ComputerName 192.168.2.47 -Credential $cred -Authentic
             $output += "  SSAS columns ($($ssasCols.Count)): $($ssasCols -join ', ')"
             
             # Get staging columns again for comparison
-            $stgConn2 = New-Object System.Data.SqlClient.SqlConnection("Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=Saas 244050@;Connect Timeout=10")
+            $stgConn2 = New-Object System.Data.SqlClient.SqlConnection("Server=localhost,1435;Database=staging_compras;User Id=app_compras;Password=$using:sqlPass;Connect Timeout=10")
             $stgConn2.Open()
             $cmd2 = $stgConn2.CreateCommand()
             $cmd2.CommandText = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='dbo' AND TABLE_NAME='$($m.Staging.Split('.')[1])' ORDER BY ORDINAL_POSITION"
