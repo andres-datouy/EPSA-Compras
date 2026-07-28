@@ -1,8 +1,10 @@
 # Manual de Usuario: Reporte Compras al Exterior
 
-## Version: 1.0
+## Version: 2.1
 ## Fecha: 2026-05-18
-## Dirigido a: Area de Compras (Rosana y equipo)
+## Dirigido a: Area de Compras Exteriores (Rosana y equipo)
+## Cambio v2.0: Documentacion de A Pedir Sugerido, nuevas paginas (Fase 1-6), referencia DAX
+## Cambio v2.1: Pagina "Programacion Compras Exterior" (flujo de decision), export a Excel en vivo
 
 ---
 
@@ -49,6 +51,51 @@ La tabla muestra 19 columnas. Las mas importantes son:
 | **Lead Time Promedio Dias** | Dias promedio de demora del proveedor | Se calcula del historial de recepciones. |
 | **Cobertura Meses sobre Existencia** | Cuantos meses dura el stock actual | Si es menor al lead time = alerta. |
 
+### 2.2 Pagina: Programacion Compras Exterior (flujo de decision)
+
+Pagina dedicada al flujo de trabajo de programacion de compras. Sigue 4 pasos:
+
+#### Paso 1 - Elegir con que trabajar
+| Filtro | Cuando usarlo |
+|--------|---------------|
+| **Proveedor** | Camino normal: programar la compra de un proveedor |
+| **Clase** | Cuando el "proveedor" es la empresa consolidadora y no el fabricante real: filtrar por clase de articulo |
+| **Articulo** (multi-seleccion con busqueda) | Armar un conjunto arbitrario de articulos a analizar |
+| **Proveedores** (busqueda por texto) | Encontrar el proveedor real dentro de la lista de proveedores del articulo |
+
+#### Paso 2 - Tabla de decision
+La tabla central "PROGRAMACION DE COMPRAS - TABLA DE DECISION" responde las preguntas en orden:
+1. **Stock Minimo**: cual es el minimo definido
+2. **Lead Time Promedio Dias / Lead Time Meses**: cuanto tarda en llegar
+3. **Consumo Promedio por Mes Activo**: cuanto se consume
+4. **Existencia + Stock Compras = Stock Proyectado**: cuanto tengo y cuanto viene en camino
+5. **Consumo Planificado Cantidad**: cuanto esta comprometido en ordenes de produccion en curso
+6. **Cantidad Requerida por Demanda Pendiente**: cuanto exigen los pedidos que aun no tienen orden asociada
+7. **Stock Util E+C-CP-CD**: que queda neto despues de descontar compromisos
+8. **Coberturas**: tres miradas segun el caso:
+   - `Cobertura Meses sobre Stock Proyectado`: con lo que tengo + lo que viene, cuantos meses cubro (mirada optimista)
+   - `Cobertura Meses sobre Stock Util`: descontando OP en curso y demanda pendiente (mirada conservadora, es la que dispara la alerta)
+   - `Meses Cobertura del Stock Minimo`: valida si el stock minimo configurado es coherente con el lead time
+9. **Alerta**: PEDIR (cobertura util < lead time) / Atencion (< lead time + 1 mes) / OK
+10. **A Pedir Sugerido**: cantidad sugerida de compra
+11. **Comentarios**: notas del articulo cargadas en Nodum (ej. "proveedor no fabrica mas este item")
+
+#### Paso 3 - Verificar contra Nodum
+Al hacer clic en un articulo de la tabla de decision, los paneles inferiores muestran los registros fuente con su documento Nodum:
+- Movimientos de consumo (formulario, transaccion, nro. de documento)
+- Recepciones historicas (documento de compra, OC, proveedor)
+- Compras en proceso (documento, fecha de entrega)
+- Ordenes de produccion planificadas (orden, paso)
+- Demanda pendiente (pedido, cliente, componente)
+- Stock por deposito y por estado
+
+Cada cifra agregada se puede rastrear a su documento en Nodum antes de decidir.
+
+#### Paso 4 - Exportar
+Dos opciones:
+- **Excel en vivo**: abrir `export\Compras EPSA - Modelo SSAS.odc` (doble clic) crea una tabla dinamica conectada directo al modelo. Los datos se actualizan con "Actualizar" en Excel, sin copias estaticas. *(Requiere permiso de lectura sobre el modelo; solicitar al administrador.)*
+- **Export puntual**: en cualquier tabla del reporte, menu `...` -> "Exportar datos" genera un Excel/CSV con lo que se esta viendo (respeta los filtros aplicados).
+
 ---
 
 ## 3. Como interpretar las alertas
@@ -92,17 +139,27 @@ La tabla muestra 19 columnas. Las mas importantes son:
 
 ### 4.2 "Cuanto debo pedir de un articulo?"
 
-> Nota: Esta funcionalidad está en desarrollo. Consultar con Sistemas.
+La columna **"A Pedir Sugerido"** en la pagina "Stock Minimo Vs Lead Time" calcula automaticamente la cantidad a ordenar.
 
-Formula manual provisional:
+**Formula implementada:**
 ```
-Cantidad a Pedir = Consumo Mensual * (Lead Time en meses + 1) - Stock Proyectado
+A Pedir = MAX(0, Necesidad - StockNeto)
+
+Donde:
+  Necesidad = Consumo Mensual x (LT en meses + 1 mes de seguridad)
+  StockNeto = Stock Proyectado - Consumo Planificado - Demanda Pendiente
 ```
 
-Ajustar considerando:
-- Minimo de compra del proveedor
-- Presentacion (cajas, pallets)
-- Consolidacion con otros articulos
+**Interpretacion:**
+- Valor > 0: cantidad sugerida para cubrir el lead time con 1 mes de margen
+- Valor = 0: stock suficiente, no requiere pedido
+
+**Ajustes manuales a considerar:**
+- Minimo de compra (MOQ) del proveedor — si A Pedir < MOQ, ajustar al MOQ
+- Presentacion del producto (cajas, pallets, bobinas) — redondear a multiplo
+- Consolidacion con otros articulos del mismo proveedor
+- Oportunidades de flete compartido
+- Condiciones comerciales especiales (descuentos por volumen)
 
 ### 4.3 "Hay articulos de un proveedor que puedo consolidar?"
 
@@ -154,10 +211,51 @@ R: Si. Power BI Desktop permite guardar filtros con "Bookmarks" (Marcadores). Co
 | **Stock Proyectado** | Stock actual + lo que viene en camino |
 | **MOQ** | Minimo de compra |
 | **Consolidacion** | Juntar varios articulos en un solo envio |
+| **A Pedir Sugerido** | Cantidad calculada automaticamente |
+| **Alerta PEDIR** | Cobertura < LT — ordenar urgente |
+| **Stock Util** | Proyectado - compromisos - minimo |
 
 ---
 
-## 7. Soporte
+## 7. Nuevas Paginas del Reporte (Fase 1-6)
+
+Ademas de la pagina principal "Stock Minimo Vs Lead Time", el reporte incluye:
+
+| Pagina | Objetivo | Cuando usar |
+|--------|----------|-------------|
+| Suficiencia Stock Produccion | Vista general de suficiencia | Al inicio del dia |
+| Compras x Stock Minimo | Articulos bajo minimo | Semanal |
+| Stock Minimo - Deficit | Analisis de deficit | Para priorizar |
+| Rotacion y Stock Muerto | Articulos sin movimiento | Mensual |
+| Control Vencimientos | Lotes por vencer | Semanal |
+| Proveedor - Articulo | Detalle por proveedor | Investigar proveedor |
+| Direccion - Compras | Dashboard ejecutivo | Presentaciones |
+| Prevision de Gasto | Estimacion de gasto futuro | Planificacion |
+
+> Manual detallado para Administradora de Produccion: `docs/manual_produccion_compras.md`
+
+---
+
+## 8. Referencia de Formulas DAX
+
+Las formulas completas de todas las medidas estan documentadas en:
+**`docs/dax_formulas_reference.md`**
+
+Resumen de las medidas mas usadas:
+
+| Medida | Formula simplificada |
+|--------|---------------------|
+| Stock Existencia | SUM(factStockEPSA) donde Estado in {existencia, stkaf} |
+| Stock Proyectado | Existencia + Compras en proceso |
+| Consumo Promedio Mes Activo | Consumo sin recepciones / Meses con consumo |
+| Cobertura Meses | Existencia / Consumo Promedio Mensual |
+| Lead Time Dias | AVG(RecepcionFecha - OCFecha) |
+| A Pedir Sugerido | MAX(0, Consumo x (LT+1) - StockNeto) |
+| Alerta Cobertura | PEDIR si Cob < LT, Atencion si LT <= Cob < LT+1, OK si Cob >= LT+1 |
+
+---
+
+## 9. Soporte
 
 | Problema | Contacto |
 |----------|----------|

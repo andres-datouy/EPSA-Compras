@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "e244718f235796748fbf",
+  "displayName": "Programacion Compras Exterior",
+  "displayOption": "ActualSize",
+  "height": 4000,
+  "width": 3500,
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "259L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

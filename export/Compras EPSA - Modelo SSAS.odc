@@ -1,0 +1,26 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=Content-Type content="text/x-ms-odc; charset=utf-8">
+<meta name=ProgId content=ODC.Cube>
+<meta name=SourceType content=OLEDB>
+<meta name=Catalog content="Compras_EPSA">
+<meta name=Table content=Model>
+<title>Compras EPSA - Modelo SSAS (conexion en vivo)</title>
+<xml id=docprops><o:DocumentProperties
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns="http://www.w3.org/TR/REC-html40">
+  <o:Description>Conexion en vivo al modelo Compras_EPSA en SSAS. Tabla dinamica con todas las medidas y dimensiones del modelo. No genera copias estaticas de datos.</o:Description>
+  <o:Name>Compras EPSA - Modelo SSAS</o:Name>
+ </o:DocumentProperties>
+</xml><xml id=msodc><odc:OfficeDataConnection
+  xmlns:odc="urn:schemas-microsoft-com:office:odc"
+  xmlns="http://www.w3.org/TR/REC-html40">
+  <odc:Connection odc:Type="OLEDB">
+   <odc:ConnectionString>Provider=MSOLAP.8;Integrated Security=SSPI;Persist Security Info=True;Initial Catalog=Compras_EPSA;Data Source=192.168.2.47:2383;MDX Compatibility=1;Safety Options=2;MDX Missing Member Mode=Error;Update Isolation Level=2</odc:ConnectionString>
+   <odc:CommandType>Cube</odc:CommandType>
+   <odc:CommandText>Model</odc:CommandText>
+  </odc:Connection>
+ </odc:OfficeDataConnection>
+</xml>
+</head>
+</html>
