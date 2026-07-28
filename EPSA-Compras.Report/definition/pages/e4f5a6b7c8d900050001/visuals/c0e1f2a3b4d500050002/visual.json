@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "c0e1f2a3b4d500050002",
+  "position": {
+    "x": 330,
+    "y": 10,
+    "z": 1,
+    "height": 120,
+    "width": 300,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factVencimientos"
+                    }
+                  },
+                  "Property": "Stock Por Vencer 30d"
+                }
+              },
+              "queryRef": "factVencimientos.Stock Por Vencer 30d",
+              "nativeQueryRef": "Stock Por Vencer 30d"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

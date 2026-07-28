@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "1ed94661679c4bbd9aa7",
+  "displayName": "Direccion - Compras",
+  "displayOption": "ActualSize",
+  "height": 2000,
+  "width": 3500
+}

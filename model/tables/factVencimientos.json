@@ -1,0 +1,79 @@
+{
+  "name": "factVencimientos",
+  "columns": [
+    {
+      "name": "Vencimiento Articulo Codigo",
+      "dataType": "string",
+      "sourceColumn": "cod_articulo",
+      "summarizeBy": "none",
+      "annotations": [{ "name": "Format", "value": "" }]
+    },
+    {
+      "name": "Vencimiento Nro Lote",
+      "dataType": "string",
+      "sourceColumn": "nro_lote",
+      "summarizeBy": "none",
+      "annotations": [{ "name": "Format", "value": "" }]
+    },
+    {
+      "name": "Vencimiento Cantidad",
+      "dataType": "double",
+      "sourceColumn": "cantidad",
+      "formatString": "#,0",
+      "summarizeBy": "sum",
+      "annotations": [{ "name": "Format", "value": "" }]
+    },
+    {
+      "name": "Vencimiento Fecha",
+      "dataType": "dateTime",
+      "sourceColumn": "fec_venc",
+      "formatString": "dd/MM/yyyy",
+      "dataCategory": "",
+      "summarizeBy": "none",
+      "annotations": [{ "name": "Format", "value": "" }]
+    }
+  ],
+  "partitions": [
+    {
+      "name": "factVencimientos-Partition",
+      "mode": "import",
+      "source": {
+        "type": "query",
+        "query": "SELECT [cod_articulo], [nro_lote], [cantidad], [fec_venc] FROM [dbo].[stg_factVencimientos]",
+        "dataSource": "staging_compras"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "name": "Stock Por Vencer 30d",
+      "expression": "\nVAR FechaHoy = TODAY()\nVAR FechaLimite = FechaHoy + 30\nRETURN\nCALCULATE(\n    SUM(factVencimientos[Vencimiento Cantidad]),\n    factVencimientos[Vencimiento Fecha] >= FechaHoy,\n    factVencimientos[Vencimiento Fecha] <= FechaLimite\n)\n",
+      "formatString": "#,0",
+      "description": "Cantidad de stock con lotes que vencen en los próximos 30 días"
+    },
+    {
+      "name": "Stock Por Vencer 90d",
+      "expression": "\nVAR FechaHoy = TODAY()\nVAR FechaLimite = FechaHoy + 90\nRETURN\nCALCULATE(\n    SUM(factVencimientos[Vencimiento Cantidad]),\n    factVencimientos[Vencimiento Fecha] >= FechaHoy,\n    factVencimientos[Vencimiento Fecha] <= FechaLimite\n)\n",
+      "formatString": "#,0",
+      "description": "Cantidad de stock con lotes que vencen en los próximos 90 días"
+    },
+    {
+      "name": "Stock Vencido",
+      "expression": "\nCALCULATE(\n    SUM(factVencimientos[Vencimiento Cantidad]),\n    factVencimientos[Vencimiento Fecha] < TODAY()\n)\n",
+      "formatString": "#,0",
+      "description": "Cantidad de stock con lotes ya vencidos (fecha vencimiento < hoy)"
+    },
+    {
+      "name": "Stock Vencido USD",
+      "expression": "\nSUMX(\n    FILTER(\n        factVencimientos,\n        factVencimientos[Vencimiento Fecha] < TODAY()\n    ),\n    factVencimientos[Vencimiento Cantidad] * [Costo Unitario Promedio USD]\n)\n",
+      "formatString": "$#,0.00",
+      "description": "Valor en USD del stock vencido (cantidad x último precio de compra)"
+    },
+    {
+      "name": "% Stock Por Vencer",
+      "expression": "\nVAR StockPorVencer = [Stock Por Vencer 30d]\nVAR StockTotal = SUMX(ALL(factVencimientos), factVencimientos[Vencimiento Cantidad])\nRETURN\nDIVIDE(StockPorVencer, StockTotal, 0)\n",
+      "formatString": "0.00%",
+      "description": "Porcentaje del stock total que vence en los próximos 30 días"
+    }
+  ]
+}

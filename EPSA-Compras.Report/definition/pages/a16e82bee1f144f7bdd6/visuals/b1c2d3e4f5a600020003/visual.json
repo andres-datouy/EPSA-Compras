@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "b1c2d3e4f5a600020003",
+  "position": {
+    "x": 1740,
+    "y": 10,
+    "z": 2,
+    "height": 200,
+    "width": 840,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Stock Valor Total USD"
+                }
+              },
+              "queryRef": "Medidas_Stock.Stock Valor Total USD",
+              "nativeQueryRef": "Stock Valor Total USD"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

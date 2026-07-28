@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "a1b2c3d4e5f600010002",
+  "position": {
+    "x": 700,
+    "y": 2750,
+    "z": 14001,
+    "height": 200,
+    "width": 660,
+    "tabOrder": 14001
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "% Articulos Debajo Minimo"
+                }
+              },
+              "queryRef": "Medidas_Stock.% Articulos Debajo Minimo",
+              "nativeQueryRef": "% Articulos Debajo Minimo"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

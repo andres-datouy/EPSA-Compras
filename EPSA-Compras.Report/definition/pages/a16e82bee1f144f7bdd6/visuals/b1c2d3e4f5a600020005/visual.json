@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "b1c2d3e4f5a600020005",
+  "position": {
+    "x": 20,
+    "y": 230,
+    "z": 4,
+    "height": 800,
+    "width": 1700,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Código"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Código",
+              "nativeQueryRef": "Código",
+              "displayName": "Código"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Nombre"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Nombre",
+              "nativeQueryRef": "Nombre",
+              "displayName": "Nombre"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Dias Sin Consumo"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Dias Sin Consumo",
+              "nativeQueryRef": "Dias Sin Consumo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "Ultima Fecha Consumo"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Ultima Fecha Consumo",
+              "nativeQueryRef": "Ultima Fecha Consumo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Stock Existencia"
+                }
+              },
+              "queryRef": "Medidas_Stock.Stock Existencia",
+              "nativeQueryRef": "Existencia"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Rotacion Inventario"
+                }
+              },
+              "queryRef": "Medidas_Stock.Rotacion Inventario",
+              "nativeQueryRef": "Rotacion"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "c0e1f2a3b4d500050005",
+  "position": {
+    "x": 20,
+    "y": 145,
+    "z": 4,
+    "height": 550,
+    "width": 1240,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Código"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Código",
+              "nativeQueryRef": "Código",
+              "displayName": "Código"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Nombre"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Nombre",
+              "nativeQueryRef": "Nombre",
+              "displayName": "Nombre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factVencimientos"
+                    }
+                  },
+                  "Property": "Vencimiento Nro Lote"
+                }
+              },
+              "queryRef": "factVencimientos.Vencimiento Nro Lote",
+              "nativeQueryRef": "Lote",
+              "displayName": "Lote"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factVencimientos"
+                    }
+                  },
+                  "Property": "Vencimiento Fecha"
+                }
+              },
+              "queryRef": "factVencimientos.Vencimiento Fecha",
+              "nativeQueryRef": "Fecha Vencimiento",
+              "displayName": "Fecha Vencimiento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factVencimientos"
+                    }
+                  },
+                  "Property": "Vencimiento Cantidad"
+                }
+              },
+              "queryRef": "factVencimientos.Vencimiento Cantidad",
+              "nativeQueryRef": "Cantidad",
+              "displayName": "Cantidad"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Compras"
+                    }
+                  },
+                  "Property": "Costo Unitario Promedio USD"
+                }
+              },
+              "queryRef": "Medidas_Compras.Costo Unitario Promedio USD",
+              "nativeQueryRef": "Costo Unit USD"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

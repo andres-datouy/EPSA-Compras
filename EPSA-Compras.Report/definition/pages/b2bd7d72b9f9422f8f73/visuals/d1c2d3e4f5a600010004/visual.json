@@ -1,0 +1,150 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "d1c2d3e4f5a600010004",
+  "position": {
+    "x": 0,
+    "y": 120,
+    "z": 3000,
+    "height": 400,
+    "width": 960,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Código"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Código",
+              "nativeQueryRef": "Artículo Código"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Artículo Nombre"
+                }
+              },
+              "queryRef": "dimArticulo.Artículo Nombre",
+              "nativeQueryRef": "Artículo Nombre"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Stock Existencia"
+                }
+              },
+              "queryRef": "Medidas_Stock.Stock Existencia",
+              "nativeQueryRef": "Stock Existencia"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Stock Compras"
+                }
+              },
+              "queryRef": "Medidas_Stock.Stock Compras",
+              "nativeQueryRef": "Stock Compras"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo_Planificado"
+                    }
+                  },
+                  "Property": "Consumo Planificado Cantidad"
+                }
+              },
+              "queryRef": "Medidas_Consumo_Planificado.Consumo Planificado Cantidad",
+              "nativeQueryRef": "Consumo Planificado Cantidad"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_DemandaPendiente"
+                    }
+                  },
+                  "Property": "Cantidad Requerida por Demanda Pendiente"
+                }
+              },
+              "queryRef": "Medidas_DemandaPendiente.Cantidad Requerida por Demanda Pendiente",
+              "nativeQueryRef": "Cantidad Requerida por Demanda Pendiente"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Stock Util E+C-CP-CD"
+                }
+              },
+              "queryRef": "Medidas_Stock.Stock Util E+C-CP-CD",
+              "nativeQueryRef": "Stock Util"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Dias Cobertura Necesidad"
+                }
+              },
+              "queryRef": "Medidas_Stock.Dias Cobertura Necesidad",
+              "nativeQueryRef": "Dias Cobertura Necesidad"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
+                  "Property": "A Pedir Sugerido"
+                }
+              },
+              "queryRef": "Medidas_Consumo.A Pedir Sugerido",
+              "nativeQueryRef": "A Pedir Sugerido"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

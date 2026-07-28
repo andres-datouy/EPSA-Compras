@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "a1b2c3d4e5f600010003",
+  "position": {
+    "x": 1380,
+    "y": 2750,
+    "z": 14002,
+    "height": 200,
+    "width": 660,
+    "tabOrder": 14002
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Stock"
+                    }
+                  },
+                  "Property": "Brecha Stock Minimo USD"
+                }
+              },
+              "queryRef": "Medidas_Stock.Brecha Stock Minimo USD",
+              "nativeQueryRef": "Brecha Stock Minimo USD"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

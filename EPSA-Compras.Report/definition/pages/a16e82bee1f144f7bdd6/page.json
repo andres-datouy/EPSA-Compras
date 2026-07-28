@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "a16e82bee1f144f7bdd6",
+  "displayName": "Rotacion y Stock Muerto",
+  "displayOption": "ActualSize",
+  "height": 2000,
+  "width": 3500
+}

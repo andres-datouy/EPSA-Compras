@@ -67,11 +67,11 @@
                       "Entity": "Medidas_Consumo"
                     }
                   },
-                  "Property": "Meses Cobertura"
+                  "Property": "Meses Cobertura del Stock Minimo"
                 }
               },
-              "queryRef": "Medidas_Consumo.Meses Cobertura",
-              "nativeQueryRef": "Meses Cobertura"
+              "queryRef": "Medidas_Consumo.Meses Cobertura del Stock Minimo",
+              "nativeQueryRef": "Meses Cobertura del Stock Minimo"
             },
             {
               "field": {
@@ -81,11 +81,11 @@
                       "Entity": "Medidas_Consumo"
                     }
                   },
-                  "Property": "Cobertura vs Lead Time"
+                  "Property": "Cobertura sobre Stock Minimo vs Lead Time"
                 }
               },
-              "queryRef": "Medidas_Consumo.Cobertura vs Lead Time",
-              "nativeQueryRef": "Cobertura vs Lead Time"
+              "queryRef": "Medidas_Consumo.Cobertura sobre Stock Minimo vs Lead Time",
+              "nativeQueryRef": "Cobertura sobre Stock Minimo vs Lead Time"
             },
             {
               "field": {
@@ -530,7 +530,7 @@
             }
           },
           "selector": {
-            "metadata": "Medidas_Consumo.Meses Cobertura"
+            "metadata": "Medidas_Consumo.Meses Cobertura del Stock Minimo"
           }
         },
         {
@@ -544,7 +544,7 @@
             }
           },
           "selector": {
-            "metadata": "Medidas_Consumo.Cobertura vs Lead Time"
+            "metadata": "Medidas_Consumo.Cobertura sobre Stock Minimo vs Lead Time"
           }
         }
       ],
