@@ -1,53 +1,30 @@
 -- ============================================================
--- Task 3: Migrate dimArticulo (Full Replace)
+-- Migration: Add Comentarios column to stg_dimArticulo + update SP
 -- Server: 192.168.2.47\SSAS (port 1435)
 -- Source: [192.168.2.7].[EPSA_BI].[dbo].[vw_Compras_DimArticuloEPSA]
--- Refresh: FULL REPLACE (truncate + load)
--- Schedule: Daily 6:00 AM
+-- Run AFTER the view has been updated with the Comentarios field
+-- Column names verified against live server 2026-05-18
 -- ============================================================
 
 USE [staging_compras];
 GO
 
--- 1. Create staging table (verified against live server 2026-05-18)
-IF OBJECT_ID('dbo.stg_dimArticulo', 'U') IS NOT NULL DROP TABLE dbo.stg_dimArticulo;
+-- 1. Add column to staging table (idempotent)
+IF NOT EXISTS (
+    SELECT 1 FROM sys.columns 
+    WHERE object_id = OBJECT_ID('dbo.stg_dimArticulo') 
+      AND name = 'Comentarios'
+)
+BEGIN
+    ALTER TABLE dbo.stg_dimArticulo 
+    ADD Comentarios NVARCHAR(MAX) NULL;
+    PRINT 'Column [Comentarios] added to stg_dimArticulo';
+END
+ELSE
+    PRINT 'Column [Comentarios] already exists';
 GO
 
-CREATE TABLE dbo.stg_dimArticulo (
-    cod_articulo              CHAR(16)       NOT NULL PRIMARY KEY,
-    nom_articulo              CHAR(100)      NULL,
-    catalogo                  VARCHAR(25)    NULL,
-    cod_tipoart               CHAR(8)        NOT NULL,
-    nom_tipoart               CHAR(40)       NOT NULL,
-    [Tipo Artículo]           VARCHAR(9)     NOT NULL,
-    cod_marca                 VARCHAR(3)     NULL,
-    marca_dsc                 CHAR(50)       NULL,
-    cod_clasifart             CHAR(12)       NULL,
-    nom_clasifart             CHAR(50)       NULL,
-    cod_familia_art           CHAR(8)        NOT NULL,
-    nom_familia_art           CHAR(60)       NULL,
-    cod_subfam_art            CHAR(16)       NULL,
-    nom_subfam_art            CHAR(100)      NULL,
-    cod_uni_stk               CHAR(8)        NULL,
-    cod_grcontvta             CHAR(15)       NULL,
-    Grupo                     VARCHAR(5)     NULL,
-    nom_grupoart              CHAR(100)      NULL,
-    cod_uso                   CHAR(10)       NULL,
-    nom_usofinal              CHAR(40)       NULL,
-    stock_minimo              NUMERIC(15,5)  NULL,
-    plazo                     INT            NULL,
-    lote_min_cpra             NUMERIC(14,2)  NOT NULL,
-    ProveedorArticulo         VARCHAR(15)    NOT NULL,
-    ProveedorArticuloNombre   VARCHAR(100)   NOT NULL,
-    ProveedorPais             CHAR(4)        NULL,
-    ProveedorPaisNombre       CHAR(100)      NULL,
-    Proveedores               NVARCHAR(MAX)  NULL,
-    TipoComponente            VARCHAR(16)    NOT NULL,
-    Comentarios               NVARCHAR(MAX)  NULL
-);
-GO
-
--- 2. Create refresh stored procedure
+-- 2. Update the refresh SP (column names match live table exactly)
 CREATE OR ALTER PROC dbo.sp_refresh_dimArticulo
 AS
 BEGIN
@@ -113,17 +90,12 @@ BEGIN
 END
 GO
 
--- 3. Initial load
+-- 3. Execute refresh to load Comentarios data
 EXEC dbo.sp_refresh_dimArticulo;
 GO
 
--- 4. Validation
-SELECT 'stg_dimArticulo' AS TableName, COUNT(*) AS RowCount FROM dbo.stg_dimArticulo;
-SELECT TOP 5 cod_articulo, nom_articulo, [Tipo Artículo], 
-    ProveedorArticulo, ProveedorArticuloNombre, Proveedores, Comentarios
-FROM dbo.stg_dimArticulo;
-
--- Compare with source
-SELECT 'SOURCE' AS Location, COUNT(*) AS RowCount 
-FROM [192.168.2.7].[EPSA_BI].[dbo].[vw_Compras_DimArticuloEPSA];
+-- 4. Validate
+SELECT TOP 10 cod_articulo, nom_articulo, Comentarios
+FROM dbo.stg_dimArticulo
+WHERE Comentarios IS NOT NULL AND Comentarios <> '';
 GO

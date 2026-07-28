@@ -741,6 +741,28 @@
           "modifiedTime": "2026-05-25T15:53:52.896667"
         }
       ]
+    },
+    {
+      "name": "Comentarios",
+      "dataType": "string",
+      "sourceColumn": "Comentarios",
+      "lineageTag": "a3f7c2e1-9b4d-4e8a-b6f1-2d5c8a0e7f34",
+      "summarizeBy": "none",
+      "modifiedTime": "2026-05-18T00:00:00",
+      "structureModifiedTime": "2026-05-18T00:00:00",
+      "refreshedTime": "1699-12-31T00:00:00",
+      "attributeHierarchy": {
+        "state": "ready",
+        "modifiedTime": "2026-05-18T00:00:00",
+        "refreshedTime": "1699-12-31T00:00:00"
+      },
+      "annotations": [
+        {
+          "name": "SummarizationSetBy",
+          "value": "Automatic",
+          "modifiedTime": "2026-05-18T00:00:00"
+        }
+      ]
     }
   ],
   "partitions": [

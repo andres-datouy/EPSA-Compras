@@ -58,7 +58,7 @@ Power BI Report (EPSA-Compras.pbip / Live Connection)
 - **Columnas:** Date, Fiscal Month, Fiscal Month in Quarter Number, Fiscal Month Number, Fiscal Quarter, Fiscal Year, Fiscal Year Number, Fiscal Year Quarter, Fiscal Year Quarter Number, Year Month, Year Month Key, Year Month Number
 
 #### dimArticulo
-- **Fuente:** `Sql.Database("192.168.2.7", "EPSA_BI")` → `dbo.vw_Compras_DimArticuloEPSA`
+- **Fuente:** `Sql.Database("192.168.2.47", "staging_compras", 1435)` → `dbo.stg_dimArticulo` (staging cargado desde `[192.168.2.7].EPSA_BI.dbo.vw_Compras_DimArticuloEPSA` via `sp_refresh_dimArticulo`)
 - **Columnas clave:**
   - Articulo Codigo (PK, String)
   - Articulo Nombre (String)
@@ -74,8 +74,11 @@ Power BI Report (EPSA-Compras.pbip / Live Connection)
   - Unidad Stock (String)
   - Lote Minimo Compra (Double)
   - plazo (Int64)
-  - Proveedor Articulo (String)
+  - Proveedor Codigo / Proveedor Nombre (String)
+  - Proveedores (String, lista concatenada)
+  - ProveedorPais / ProveedorPaisNombre (String)
   - TipoComponente (String)
+  - Comentarios (String, texto libre desde vista ERP — agregado 2026-05, pasa sin renombrar por el M)
 
 #### dimProveedor
 - **Fuente:** `Sql.Database("192.168.2.7", "Nodum")` - Query SQL directo
