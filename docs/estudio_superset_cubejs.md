@@ -1,7 +1,7 @@
 # Estudio: Apache Superset y Cube.js como capa web sobre los datos de Compras
 
-## Version: 1.0 (estudio preliminar — a validar en laboratorio)
-## Fecha: 2026-05-18
+## Version: 1.1 (estudio preliminar — a validar en laboratorio)
+## Fecha: 2026-05-18 (v1.1: alternativas de capa semántica con lenguaje propio, combinación Cube+Superset, spike Saiku)
 ## Objetivo: Evaluar una capa de visualización en navegador, sin licencias Power BI, que no permita al usuario final editar la semántica. Alternativa de mediano plazo al PBIX publicado en SharePoint.
 
 ---
@@ -71,6 +71,32 @@ La VM web es producción. Las instancias de datos que la alimentan son **Develop
 5. Medir latencia de la tabla de decisión (~2.000 artículos × 20 columnas) contra staging.
 6. Recién entonces decidir: Superset, Cube.js, app web ASP.NET Core propia, o quedarse con el PBIX en SharePoint.
 
-## 8. Recomendación provisional
+## 8. Alternativas de capa semántica con lenguaje propio (actualización 2026-05-18)
+
+Pregunta: ¿se puede definir el modelo tabular con otra tecnología que permita definir medidas en su propio lenguaje? Sí — tres opciones:
+
+| Tecnología | Lenguaje del modelo/medidas | ¿Reutiliza SSAS+DAX? | Estado |
+|---|---|---|---|
+| **Apache Cube** | YAML/JS, medidas en SQL | ❌ Se posiciona como reemplazo de SSAS (blog oficial "Why SSAS no longer meets the needs…"); sin conector SSAS | Activo, core Apache 2.0 |
+| **Superset Dataset/Metrics** | Métricas = expresiones SQL | ❌ Solo fuentes relacionales | Activo |
+| **Saiku (rebuild 2026, Spicule)** | **MDX** sobre Mondrian fork + capa YAML | ⚠️ Parcial: históricamente se conectaba a SSAS por XMLA vía olap4j (las medidas DAX aparecen como MDX); el rebuild se documenta sobre su propio Mondrian — validar en laboratorio | Apache 2.0/EPL, rebuild activo |
+
+### Combinación estándar Superset + Cube
+Patrón de dos capas: Cube = capa semántica (modelo + medidas + pre-agregados) que expone una **SQL API (protocolo PostgreSQL wire)**; Superset se conecta a esa API como si fuera una base SQL y queda como front visual. Recomendada solo si se acepta migrar la semántica fuera de SSAS; para 3-6 usuarios Cube suele ser sobredimensionamiento.
+
+### El trade-off "conservar SSAS sin DAX" y sus salidas
+Usar Superset/Cube implica NO poder usar las medidas DAX. Salidas:
+
+| Salida | Costo | Conserva |
+|---|---|---|
+| a) Reimplementar medidas como vistas SQL en staging | Gratis, pero duplica la lógica de negocio (segunda capa semántica) | Datos; no DAX |
+| b) Driver comercial **CData ODBC/JDBC para SSAS**: expone cubo y medidas DAX como SQL a Superset | ~USD 1.000-2.000/año | Todo |
+| c) App web propia ASP.NET Core + ADOMD sobre el IIS existente | Horas de desarrollo | Todo (DAX nativo) |
+| d) **Saiku contra el XMLA de SSAS** (si el rebuild 2026 conserva la conexión olap4j externa) | Gratis | Todo, en navegador |
+
+### Spike propuesto (paso 0 del laboratorio)
+Antes de cualquier otra cosa: `docker run -d -p 8080:8080 -e SAIKU_DEMO=true ghcr.io/spiculedata/saiku`, intentar conectar a `http://192.168.2.47:2383` vía XMLA (requiere msmdpump o TCP directo) y verificar si las medidas DAX del modelo aparecen consultables. 2 horas de esfuerzo; responde si existe la vía open source "conservar DAX en navegador".
+
+## 9. Recomendación provisional
 
 Mantener el **PBIX Live Connection en SharePoint como solución vigente** (costo 0, semántica DAX intacta, ya documentado en `docs/publicacion_pbix_sharepoint.md`). Este estudio queda abierto para cuando aparezca alguna de estas necesidades: consumo desde navegador obligatorio, más de ~10 usuarios, o integración de los datos con otra aplicación (ahí Cube.js gana sentido).
