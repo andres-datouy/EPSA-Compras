@@ -29,10 +29,17 @@ Es un tablero interactivo conectado en tiempo real al sistema de datos de EPSA. 
 
 ### 1.3 Como acceder
 
-1. Abrir Power BI Desktop (gratuito, instalado en la PC)
-2. Abrir el archivo `EPSA-Compras.pbip`
-3. Los datos se actualizan automaticamente al abrir (Live Connection a SSAS)
-4. Si los datos parecen desactualizados: clic en "Actualizar" (pestaña Inicio)
+El modelo SSAS exige una cuenta de Windows del servidor, y el area usa una cuenta compartida de solo lectura: **`EXLER-SERVER\bi_compras`** (la clave la entrega IT). Como esa cuenta no existe en tu PC, Power BI se lanza pasandole esa identidad solo para la conexion:
+
+1. Menu Inicio → escribir `cmd` → Enter
+2. Pegar el comando y escribir la clave cuando la pida (no se ve al tipear):
+   ```
+   runas /netonly /user:EXLER-SERVER\bi_compras "C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe"
+   ```
+3. En el Power BI que se abre, abrir el archivo `EPSA-Compras.pbip`
+4. Los datos son Live Connection a SSAS: no hay que actualizar para traerlos del ERP. El modelo se recarga por proceso automatico nocturno
+
+Detalle util: `runas` no valida la clave contra el servidor, solo la guarda para la conexion. Si se tipeo mal, el error aparece despues como falla de conexion en Power BI; en ese caso cerrar y repetir el comando.
 
 ### 1.4 Rol de la Administradora de Produccion
 

@@ -4402,6 +4402,18 @@
         "state": "ready"
       }
     ],
+    "roles": [
+      {
+        "name": "Lectura_Compras",
+        "description": "Solo lectura del modelo de Compras. Cuenta generica del area (programacion de compras al exterior).",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "EXLER-SERVER\\bi_compras"
+          }
+        ]
+      }
+    ],
     "cultures": [
       {
         "name": "es-ES",

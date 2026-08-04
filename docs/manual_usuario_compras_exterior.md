@@ -1,10 +1,11 @@
 # Manual de Usuario: Reporte Compras al Exterior
 
-## Version: 2.1
+## Version: 2.2
 ## Fecha: 2026-05-18
 ## Dirigido a: Area de Compras Exteriores (Rosana y equipo)
 ## Cambio v2.0: Documentacion de A Pedir Sugerido, nuevas paginas (Fase 1-6), referencia DAX
 ## Cambio v2.1: Pagina "Programacion Compras Exterior" (flujo de decision), export a Excel en vivo
+## Cambio v2.2: Procedimiento de acceso con la cuenta compartida del area (bi_compras)
 
 ---
 
@@ -18,9 +19,32 @@ Este manual explica como usar el reporte **Compras al Exterior** en Power BI par
 - Los calculos manuales de cobertura
 
 ### 1.2 Acceso al reporte
-- El archivo PBIX se encuentra en SharePoint: `[ruta de SharePoint]`
-- Abrir con Power BI Desktop (gratuito)
-- Los datos se actualizan cuando se abre el archivo y se presiona "Actualizar"
+
+**Credencial.** El area usa una cuenta compartida de solo lectura: **`EXLER-SERVER\bi_compras`**. La clave la entrega IT (no se escribe en este manual). Esa cuenta solo puede *leer* el modelo: no puede modificarlo, ni procesarlo, ni acceder a otras bases del servidor.
+
+**Por que hay que lanzar los programas de una forma especial.** El servidor de analisis autentica unicamente con cuentas de Windows y no forma parte de un dominio, por lo que la cuenta de acceso vive en el propio servidor. Como esa cuenta no existe en tu PC, hay que indicarle a Windows que use esa identidad *solo para la conexion de red*: eso es lo que hace `runas /netonly`.
+
+**Power BI Desktop.** Abrir el menu Inicio, escribir `cmd`, y en la ventana negra pegar:
+
+```
+runas /netonly /user:EXLER-SERVER\bi_compras "C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe"
+```
+
+Pide la clave (no se ve nada al escribirla, es normal) y abre Power BI. Desde ahi se abre el reporte.
+
+**Excel (tabla dinamica en vivo).** Mismo procedimiento:
+
+```
+runas /netonly /user:EXLER-SERVER\bi_compras "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
+```
+
+Y desde ese Excel abrir `export\Compras EPSA - Modelo SSAS.odc`.
+
+**Los datos son una conexion en vivo.** No hay que "Actualizar" para traer datos del ERP: el reporte siempre muestra lo que hay en el modelo, y el modelo se recarga por un proceso automatico nocturno.
+
+**Si algo falla:**
+- *La ventana de `runas` acepto la clave pero Power BI dice que no puede conectarse*: `runas` no verifica la clave contra el servidor, solo la guarda para la conexion. Una clave mal tipeada recien se nota en ese momento. Cerrar Power BI y repetir el comando.
+- *El comando dice que no encuentra el archivo*: la ruta corresponde a la version de escritorio clasica de Power BI. Si esta instalada la version de la Microsoft Store, `runas` no funciona con ella; pedir a IT la instalacion clasica.
 
 ---
 
