@@ -38,3 +38,6 @@ docs/ml_output/*.parquet
 
 # PBIX binary (tracked via LFS or extraction)
 # pbix/*.pbix
+
+# Entregables binarios generados (se publican a SharePoint, no a git)
+export/*.pbix
