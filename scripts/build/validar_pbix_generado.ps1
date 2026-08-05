@@ -41,63 +41,79 @@ if ($size -lt 100KB) {
 }
 
 # --- 2. Estructura interna (el PBIX es un ZIP) ---
+# Dos formatos posibles segun version de Desktop:
+#   LEGACY : Report/Layout (monolitico) + DataModelSchema (ahi vive la conexion)
+#   NATIVO : Report/definition/pages/** (PBIR embebido) + Connections (Desktop >= 2.154, jul-2026+)
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $zip = [System.IO.Compression.ZipFile]::OpenRead($PbixPath)
 $entries = $zip.Entries | ForEach-Object { $_.FullName }
 
-$reportOk  = ($entries | Where-Object { $_ -match "^Report/Layout" }) -ne $null
-$modelOk   = ($entries | Where-Object { $_ -eq "DataModelSchema" }) -ne $null
-$contentOk = ($entries | Where-Object { $_ -eq "[Content_Types].xml" }) -ne $null
+$layoutNative = (@($entries | Where-Object { $_ -match "^Report/definition/pages/" })).Count -gt 0
+$layoutLegacy = (@($entries | Where-Object { $_ -match "^Report/Layout" })).Count -gt 0
+$modelLegacy  = (@($entries | Where-Object { $_ -eq "DataModelSchema" })).Count -gt 0
+$connections  = (@($entries | Where-Object { $_ -eq "Connections" })).Count -gt 0
+$contentOk    = (@($entries | Where-Object { $_ -eq "[Content_Types].xml" })).Count -gt 0
+
+if ($layoutNative) { $formato = "NATIVO (PBIR embebido)" } elseif ($layoutLegacy) { $formato = "LEGACY" } else { $formato = "DESCONOCIDO" }
 Write-Host ""
-Write-Host "2) Estructura ZIP: Report/Layout=$reportOk | DataModelSchema=$modelOk | Content_Types=$contentOk"
-if (-not ($reportOk -and $modelOk -and $contentOk)) {
+Write-Host "2) Estructura ZIP: formato=$formato | pages=$($layoutNative -or $layoutLegacy) | DataModelSchema=$modelLegacy | Connections=$connections | Content_Types=$contentOk"
+$estructuraOk = $contentOk -and (($layoutNative -and $connections) -or ($layoutLegacy -and $modelLegacy))
+if (-not $estructuraOk) {
     Write-Host "   FALLA: estructura incompleta"
     $fails++
 } else {
     Write-Host "   OK"
 }
 
-# --- 3. Conexion live al SSAS productivo ---
-$dm = $null
-$entry = $zip.Entries | Where-Object { $_.FullName -eq "DataModelSchema" }
-if ($entry) {
-    $sr = New-Object System.IO.StreamReader($entry.Open())
-    $dm = $sr.ReadToEnd()
-    $sr.Close()
+# --- 3. Conexion live al SSAS productivo (segun formato) ---
+$conn = $null
+if ($layoutNative) {
+    $entry = $zip.Entries | Where-Object { $_.FullName -eq "Connections" }
+    if ($entry) {
+        $sr = New-Object System.IO.StreamReader($entry.Open())
+        $conn = $sr.ReadToEnd()
+        $sr.Close()
+    }
+} else {
+    $entry = $zip.Entries | Where-Object { $_.FullName -eq "DataModelSchema" }
+    if ($entry) {
+        $sr = New-Object System.IO.StreamReader($entry.Open())
+        $conn = $sr.ReadToEnd()
+        $sr.Close()
+    }
 }
 Write-Host ""
 Write-Host "3) Conexion embebida:"
-if ($dm -match "192\.168\.2\.47" -and $dm -match "Compras_EPSA") {
-    Write-Host "   OK: apunta a 192.168.2.47 / Compras_EPSA (Live Connection)"
+if ($conn -match "192\.168\.2\.47" -and $conn -match "Compras_EPSA" -and $conn -match "analysisServicesDatabaseLive") {
+    Write-Host "   OK: Live Connection a 192.168.2.47 / Compras_EPSA"
+} elseif ($conn -match "192\.168\.2\.47" -and $conn -match "Compras_EPSA") {
+    Write-Host "   OK: apunta a 192.168.2.47 / Compras_EPSA (verificar tipo live manualmente)"
 } else {
-    Write-Host "   AVISO: no se encontro la cadena '192.168.2.47' + 'Compras_EPSA' en DataModelSchema."
+    Write-Host "   AVISO: no se encontro la cadena '192.168.2.47' + 'Compras_EPSA'."
     Write-Host "          Abrir el PBIX manualmente y verificar que diga 'Conectado en vivo'."
 }
 
 # --- 4. Sin credenciales embebidas ---
-if ($dm -and ($dm -match "Password=" -or $dm -match "pwd=")) {
-    Write-Host "   FALLA: hay una contrasena embebida en DataModelSchema. NO publicar este archivo."
+if ($conn -and ($conn -match "Password=" -or $conn -match "pwd=")) {
+    Write-Host "   FALLA: hay una contrasena embebida. NO publicar este archivo."
     $fails++
 } else {
     Write-Host "   OK: sin credenciales embebidas (la autenticacion es Windows integrada del usuario)"
 }
 $zip.Dispose()
 
-# --- 5. Paginas del reporte presentes en el Layout ---
+# --- 5. Pagina del flujo comprador presente ---
 $zip = [System.IO.Compression.ZipFile]::OpenRead($PbixPath)
-$layoutEntry = $zip.Entries | Where-Object { $_.FullName -eq "Report/Layout" }
-if ($layoutEntry) {
-    $sr = New-Object System.IO.StreamReader($layoutEntry.Open())
-    $layout = $sr.ReadToEnd()
-    $sr.Close()
-    $paginas = ([regex]::Matches($layout, '"name"\s*:\s*"[^"]*"')).Count
-    $decision = $layout -match "Programacion Compras Exterior"
-    Write-Host ""
-    Write-Host "5) Contenido del reporte: referencias de nombre=$paginas | pagina 'Programacion Compras Exterior'=$decision"
-    if (-not $decision) {
-        Write-Host "   AVISO: la pagina del flujo comprador no aparece en el Layout. Verificar antes de publicar."
-        $fails++
-    }
+$entries = $zip.Entries | ForEach-Object { $_.FullName }
+$paginaFlujo = (@($entries | Where-Object { $_ -match "e244718f235796748fbf" })).Count -gt 0
+$paginasTotal = (@($entries | Where-Object { $_ -match "/page\.json$" })).Count
+Write-Host ""
+Write-Host "5) Contenido del reporte: paginas=$paginasTotal | pagina 'Programacion Compras Exterior' (e244718f235796748fbf)=$paginaFlujo"
+if (-not $paginaFlujo) {
+    Write-Host "   FALLA: la pagina del flujo comprador no aparece en el PBIX. Verificar antes de publicar."
+    $fails++
+} else {
+    Write-Host "   OK"
 }
 $zip.Dispose()
 

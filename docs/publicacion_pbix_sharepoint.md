@@ -47,6 +47,8 @@ Decisiones tomadas:
 
 **Nota:** el PBIX generado NO se commitea a git (es un artefacto binario derivado); vive en `export/` y en SharePoint. Si se desea trazabilidad de binarios, usar GitHub Releases.
 
+**Nota formato nativo (Desktop >= 2.154, jul-2026+):** el PBIX ya no usa la estructura vieja (`Report/Layout` + `DataModelSchema`). Ahora el reporte va como PBIR embebido (`Report/definition/pages/**`) y la conexión live vive en la entrada `Connections`. El script de validación detecta ambos formatos automáticamente.
+
 ---
 
 ## 3. Prueba de humo antes de publicar (una vez por versión)
