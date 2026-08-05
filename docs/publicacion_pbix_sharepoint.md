@@ -59,6 +59,8 @@ En la propia PC:
 runas /netonly /user:EXLER-SERVER\bi_compras "C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe"
 ```
 
+Alternativa sin tipear la contrasena (toma la clave de `.env.local`): `pwsh -File scripts\check\humo_pbix_bi_compras.ps1` — lanza Desktop con la misma semantica netonly y reenvia la apertura del PBIX por shell si un dialogo de arranque se tragara el argumento.
+
 Abrir el PBIX recién generado desde Desktop. Debe mostrar datos sin pedir credenciales de SSAS (la credencial de red es la de `bi_compras`). Si pide autenticación o da error de conexión, NO publicar.
 
 ---
@@ -120,6 +122,7 @@ Si en el futuro se necesita "a prueba de edición total" en navegador, evaluar l
 | Pide credenciales de SSAS al abrir | Sesión runas cerrada o expirada | Cerrar Desktop y relanzar con runas |
 | Datos en blanco en medidas de stock | Refresh de staging caído | Verificar jobs SQL Agent / `stg_refresh_log` |
 | El PBIX abre pero dice "guardado con versión anterior" | Desktop del usuario viejo | Actualizar Power BI Desktop |
+| Diálogo "Failed to Decrypt Credentials" al arrancar | Credenciales cacheadas ilegibles tras un update de Desktop | Inofensivo: aceptar y abrir el PBIX igual (el script de humo lo compensa solo); no afecta la conexion live |
 
 ---
 
