@@ -41,3 +41,6 @@ docs/ml_output/*.parquet
 
 # Entregables binarios generados (se publican a SharePoint, no a git)
 export/*.pbix
+
+# Artefactos temporales de diagnostico (screenshots, helpers descartables)
+scripts/check/tmp_*
