@@ -34,7 +34,8 @@ Criterio de exito global: **Rosana puede tomar una decision de compra completa s
 
 **Pagina nueva dedicada: "Programacion Compras Exterior"** (decision: no evolucionar "Stock Minimo Vs Lead Time", que queda como esta).
 
-> Estado 2026-05-18: IMPLEMENTADO. Pagina clonada de "Stock Minimo Vs Lead Time" (id `e244718f235796748fbf`, script `scripts/deploy/clone_pagina_programacion_compras.ps1`) + slicer de Clase + tabla de decision ampliada (Alerta, Stock Proyectado, Coberturas nuevas, A Pedir Sugerido, Lead Time Meses, Comentarios). Medidas nuevas deployadas a SSAS (`scripts/deploy/add_cobertura_flujo_compradores.ps1`) y replicadas en ambos JSON: `Cobertura Meses sobre Stock Proyectado`, `Cobertura Meses sobre Stock Util`, `Alerta Cobertura` (smoke test: 645 PEDIR / 147 Atencion / 653 OK). Export: `export/Compras EPSA - Modelo SSAS.odc`. **Pendiente:** el modelo NO tiene roles de seguridad — para que Rosana conecte desde Excel hay que crear un rol Read con su cuenta de Windows.
+> Estado 2026-05-18: IMPLEMENTADO. Pagina clonada de "Stock Minimo Vs Lead Time" (id `e244718f235796748fbf`, script `scripts/deploy/clone_pagina_programacion_compras.ps1`) + slicer de Clase + tabla de decision ampliada (Alerta, Stock Proyectado, Coberturas nuevas, A Pedir Sugerido, Lead Time Meses, Comentarios). Medidas nuevas deployadas a SSAS (`scripts/deploy/add_cobertura_flujo_compradores.ps1`) y replicadas en ambos JSON: `Cobertura Meses sobre Stock Proyectado`, `Cobertura Meses sobre Stock Util`, `Alerta Cobertura` (smoke test: 645 PEDIR / 147 Atencion / 653 OK). Export: `export/Compras EPSA - Modelo SSAS.odc`.
+> Estado 2026-08-05: el "Pendiente rol Read" quedo ✅ RESUELTO: rol SSAS `Lectura_Compras` + cuenta `bi_compras` (commit 7bae92b), y la distribucion final es PBIX live connection publicado en SharePoint (no Excel), validado bajo bi_compras el 2026-08-05 (smoke test con datos reales). Inventario as-is completo de la pagina y medidas en `validacion_rosana_vs_modelo.md` §8.
 
 #### 1.1 Seleccion del universo de trabajo
 - Slicer **Proveedor** (`Proveedor Articulo Full`) — camino normal
@@ -64,6 +65,8 @@ Al seleccionar un articulo en la tabla de decision, paneles de detalle muestran 
 ### Fase 1b — Validacion de Correctitud de Datos (contra Nodum/fuente, no contra Excel)
 
 Para una muestra de articulos del flujo real, verificar cada medida contra su fuente en Nodum o reporte oficial (queries SQL a las vistas EPSA_BI / tablas Nodum). El Excel de Rosana se usa solo como referencia de razonabilidad, no como patron de igualdad.
+
+> Estado 2026-08-05: auditorias parciales HECHAS — MOQ en ERP vacio (0/3.371, `scripts/check/check_moq_coverage.ps1`) y ETAFPA cerrado por alcance. Pendiente: muestra de medidas (stock/consumo/cobertura) contra Nodum antes de la sesion.
 
 ### Fase 2 — Cierre de Gaps Funcionales
 
@@ -110,7 +113,8 @@ Orden de implementacion segun impacto en el flujo de decision:
 
 ## 4. Proximos Pasos Inmediatos
 
-1. Completar Fase 0 (deploy + refresh + verificacion en PBIP)
-2. Construir el script DAX de extraccion de muestra para Fase 1
-3. Ejecutar comparacion Fase 1 y registrar resultados en este documento (§5, a crear)
-4. Agendar sesion con Rosana (Fase 3) llevando resultados de Fase 1
+1. ~~Completar Fase 0 (deploy + refresh + verificacion en PBIP)~~ ✅ 2026-05
+2. ~~Construir el script DAX de extraccion de muestra para Fase 1~~ ✅ (pagina IMPLEMENTADA, ver §8 de validacion_rosana_vs_modelo.md)
+3. Auditorias tecnicas pre-sesion: ✅ MOQ y ETAFPA (2026-08-05); ⏳ muestra de medidas contra Nodum
+4. Preparar kit de sesion (`docs/sesion_validacion_rosana_2026-08.md`) y agendar con Rosana (Fase 3)
+5. Post-sesion: implementar gaps aprobados (Cobertura Post Pedido / a la Llegada / MOQ) y sign-off (Fase 4)

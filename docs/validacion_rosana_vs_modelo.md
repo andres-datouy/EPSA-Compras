@@ -1,7 +1,8 @@
 # Validacion Cruzada: Excel de Rosana vs Modelo Semantico SSAS
 
-## Version: 1.1
-## Fecha: 2026-05-18 (act. columna Comentarios en dimArticulo)
+## Version: 2.0
+## Fecha: 2026-08-05 (actualizacion a realidad actual pre-sesion con Rosana; ver §8)
+## Historial: 1.0 2026-05-13 | 1.1 2026-05-18 (columna Comentarios en dimArticulo) | 2.0 2026-08-05 (inventario as-is de pagina y medidas + auditorias MOQ/ETAFPA)
 ## Objetivo: Certificar que el modelo SSAS representa todos los datos que Rosana necesita para decisiones de compra
 
 ---
@@ -100,9 +101,10 @@
 | # | Dato | Columna Excel | Impacto | Solucion Propuesta |
 |---|------|---------------|---------|-------------------|
 | 1 | **Comentarios de proveedor/articulo** | D, W | Rosana registra avisos de discontinuacion, cambios, problemas de calidad | ⚠️ **PARCIALMENTE RESUELTO (2026-05):** columna `Comentarios` agregada a `vw_Compras_DimArticuloEPSA` → `stg_dimArticulo` → `dimArticulo[Comentarios]`. Pendiente: formulario estructurado en Nodum (cod_proveedor, cod_articulo, comentario, fecha, es_vigente, prioridad) |
-| 2 | **Stock ETAFPA** | R | Stock en otra planta del grupo, usado en cobertura | Verificar si EPSA_BI tiene vista con stock ETAFPA; si no, crear vista o ampliar factStockEPSA |
-| 3 | **Cobertura proyectada post-pedido** | Y | "Si pido X unidades, cuantos meses de cobertura tendre?" | Medida DAX nueva: `[Cobertura Post Pedido]` (requiere parametro "A Pedir") |
-| 4 | **Cobertura a la llegada** | Z | "Cuando llegue la mercaderia, cuanta cobertura tendre?" | Medida DAX nueva: `[Cobertura a la Llegada]` (requiere ETA del CRM Nodum) |
+| 2 | **Stock ETAFPA** | R | Stock en otra planta del grupo, usado en cobertura | ❌ **CERRADO (2026-08):** fuera de alcance — deposito discontinuado (alcance aprobado issue #1, decision ratificada). No se modela ni se pregunta en sesion |
+| 3 | **Cobertura proyectada post-pedido** | Y | "Si pido X unidades, cuantos meses de cobertura tendre?" | Medida DAX nueva: `[Cobertura Post Pedido]` (requiere parametro "A Pedir") — **sigue pendiente** |
+| 4 | **Cobertura a la llegada** | Z | "Cuando llegue la mercaderia, cuanta cobertura tendre?" | Medida DAX nueva: `[Cobertura a la Llegada]` (requiere ETA del CRM Nodum) — **sigue pendiente** |
+| 5 | **MOQ / presentacion de compra** | F | Auditoria 2026-08-05: `lote_min_cpra` viene en 0 para el 100% de los 3.371 articulos (la vista EPSA_BI no lo informa; el ETL si lo carga). El unico MOQ existente vive en el Excel de Rosana | Fuente suplementaria: tabla staging con valores del Excel (o formulario Nodum v2). Medidas `[Cumple MOQ]` / `[A Pedir con MOQ]` pendientes de implementacion (ADR aprobado) |
 
 ### 3.2 Gaps de Metodologia (datos que SI estan pero se calculan diferente)
 
@@ -152,18 +154,19 @@
 4. Genera la orden de compra en Nodum
 ```
 
-### 4.2 Proceso Objetivo (con Power BI + Nodum)
+### 4.2 Proceso Objetivo (con Power BI + Nodum) — realidad 2026-08
 
 ```
-1. Rosana abre Power BI → pagina "Stock Minimo Vs Lead Time"
-2. Filtra por proveedor o ve articulos con Alerta="PEDIR"
-3. Para cada articulo:
-   a. Ve [Cobertura Meses] vs [Lead Time Meses] → semaforo visual
-   b. Ve `dimArticulo[Comentarios]` (cargado desde vista ERP) → avisos vigentes
-   c. Ve [Lote Minimo Compra] → restriccion de cantidad
-   d. Ve [Stock Existencia] + [Stock Compras] → disponibilidad
-   e. Ve [A Pedir Sugerido] → sugerencia del modelo
+1. Rosana abre Power BI → pagina "Programacion Compras Exterior" (PBIX live connection, lanzado con runas /netonly bi_compras)
+2. Filtra por Proveedor Preferido / Clase / Articulo / texto en Proveedores, o ve articulos con Alerta="PEDIR"
+3. Para cada articulo, en la tabla de decision (24 columnas):
+   a. Ve [Alerta Cobertura] (PEDIR/Atencion/OK) y coberturas: sobre Stock Minimo vs LT, sobre Stock Proyectado y sobre Stock Util
+   b. Ve dimArticulo[Comentarios] (cargado desde vista ERP) → avisos vigentes
+   c. MOQ: HOY NO HAY DATO ERP (lote_min_cpra=0 en 100%) → la restriccion sigue viviendo en su Excel (gap §3.1 #5)
+   d. Ve [Stock Existencia] + [Stock Compras] + [Stock Proyectado] + [Stock Util E+C-CP-CD] → disponibilidad neta
+   e. Ve [A Pedir Sugerido] → sugerencia del modelo (sin MOQ, sin override de consumo)
    f. Decide cantidad final (puede diferir de la sugerencia)
+   g. Auditoria: tablas de detalle con documento Nodum (consumos, recepciones, compras en proceso, OP planificadas, demanda pendiente, stock por deposito)
 4. Genera la OC en Nodum
 5. (Futuro) Registra comentario si hay novedad del proveedor
 ```
@@ -199,18 +202,19 @@
 
 ### 5.3 Medidas que Rosana NECESITA y el modelo NO tiene
 
-| Necesidad | Formula Excel | Propuesta de medida DAX | Prioridad |
-|-----------|--------------|------------------------|-----------|
-| Cobertura post-pedido | Y = (Q+S+X)/N | `[Cobertura Post Pedido]` = (Stock Proyectado + Parametro APedir) / Consumo | ALTA |
-| Cobertura a la llegada | Z = Y - G + U | `[Cobertura a la Llegada]` = Cobertura + (EnCamino/Consumo) - LT | ALTA |
-| Comentarios concatenados | D (texto libre) | ⚠️ Resuelto parcialmente: columna `dimArticulo[Comentarios]` ya disponible; `[Comentarios Activos]` CONCATENATEX solo si se pasa a formulario estructurado en Nodum | MEDIA (columna lista; formulario Nodum pendiente) |
-| Stock ETAFPA | R (VLOOKUP) | `[Stock ETAFPA]` = SUM(stock ETAFPA) | MEDIA (verificar fuente) |
+| Necesidad | Formula Excel | Propuesta de medida DAX | Estado 2026-08 |
+|-----------|--------------|------------------------|--------------|
+| Cobertura post-pedido | Y = (Q+S+X)/N | `[Cobertura Post Pedido]` = (Stock Proyectado + Parametro APedir) / Consumo | PENDIENTE (prioridad ALTA) |
+| Cobertura a la llegada | Z = Y - G + U | `[Cobertura a la Llegada]` = Cobertura + (EnCamino/Consumo) - LT | PENDIENTE (ALTA, depende ETA Nodum) |
+| Comentarios concatenados | D (texto libre) | ✅ RESUELTO: columna `dimArticulo[Comentarios]` deployada y visible en la tabla de decision; formulario estructurado Nodum queda como v2 | ✅ |
+| Stock ETAFPA | R (VLOOKUP) | ❌ DESCARTADO: deposito discontinuado, fuera de alcance aprobado | CERRADO |
+| MOQ / presentacion | F (manual) | `[Cumple MOQ]` + `[A Pedir con MOQ]` sobre fuente suplementaria (ERP viene vacio, ver §3.1 #5) | PENDIENTE (ADR aprobado, sin implementar) |
 
 ---
 
 ## 6. Preguntas para Validacion con Rosana
 
-1. **Stock ETAFPA:** ¿El stock de ETAFPA es relevante para decisiones de compra al exterior? ¿Siempre se suma al stock EPSA para cobertura?
+1. **Stock ETAFPA:** ~~¿El stock de ETAFPA es relevante...?~~ **CERRADA (2026-08):** deposito discontinuado, fuera de alcance aprobado (issue #1). No se conversa en sesion.
 
 2. **Buffer de alerta:** Tu formula usa `Cobertura <= LT + 4` para disparar "PEDIR". ¿4 meses es el buffer correcto para todos los proveedores, o varia?
 
@@ -218,21 +222,59 @@
 
 4. **A Pedir manual:** ¿Siempre decidis la cantidad manualmente o a veces usas una formula? ¿Que factores consideras ademas de la cobertura? (MOQ, flete, presupuesto, consolidacion)
 
-5. **Comentarios:** ¿Que tipo de informacion registras en "comentarios" (col D) que necesitarias ver en el reporte? (discontinuaciones, cambios de proveedor, problemas de calidad, plazos especiales)
+5. **Comentarios:** ¿Que tipo de informacion registras en "comentarios" (col D) que necesitarias ver en el reporte? (discontinuaciones, cambios de proveedor, problemas de calidad, plazos especiales) — hoy la columna `dimArticulo[Comentarios]` ya muestra los comentarios de la vista ERP; validar si alcanzan.
 
 6. **Cobertura a la llegada:** ¿La columna Z (cobertura a la llegada) la usas para decidir? ¿Que significa exactamente para vos?
 
 7. **Lead Time:** ¿El lead time que pusiste (col G) es el tiempo total desde que pedis hasta que llega, o solo el tiempo del proveedor?
 
+8. **MOQ / presentacion (NUEVA 2026-08):** El ERP no informa lote minimo de compra (auditoria: 0/3.371 articulos). ¿Tus valores de "Presentacion y minimos de compra" (col F) son por articulo o por articulo+proveedor? ¿Quien y donde deberia mantenerse ese dato si lo sacamos de tu Excel?
+
+9. **Stock disponible para el calculo (NUEVA 2026-08):** La sugerencia del modelo descuenta el stock en deposito (`A Pedir Sugerido` = Necesidad - Existencia - Compras). En tu planilla a veces consideras solo lo que viene en camino. ¿Cuando el stock en deposito NO cuenta para tu decision (mercaderia reservada, calidad, ubicacion)?
+
 ---
 
 ## 7. Proximos Pasos
 
-| # | Accion | Responsable | Dependencia |
-|---|--------|-------------|-------------|
-| 1 | Validar este documento con Rosana | Andres + Rosana | Este documento |
-| 2 | Verificar si stock ETAFPA existe en EPSA_BI | Andres (query SQL) | Pregunta 1 |
-| 3 | Diseñar formulario de comentarios en Nodum | Andres + Rosana | Pregunta 5 |
-| 4 | Implementar medidas [Cobertura Post Pedido] y [Cobertura a la Llegada] | Andres | Validacion de formulas |
-| 5 | Ajustar buffer de alerta (4 vs 1 mes) segun validacion | Andres | Pregunta 2 |
-| 6 | Auditar campo Lote Minimo Compra en ERP | Andres (query SQL) | Pregunta 4 |
+| # | Accion | Responsable | Estado 2026-08 |
+|---|--------|-------------|----------------|
+| 1 | Validar este documento con Rosana (sesion §6 + walkthrough) | Andres + Rosana | EN PREPARACION (kit: `docs/sesion_validacion_rosana_2026-08.md`) |
+| 2 | ~~Verificar si stock ETAFPA existe en EPSA_BI~~ | — | CERRADO: fuera de alcance (deposito discontinuado) |
+| 3 | Diseñar formulario de comentarios en Nodum (v2) | Andres + Rosana | Pendiente (v1 con columna ERP ya operativa) |
+| 4 | Implementar medidas [Cobertura Post Pedido] y [Cobertura a la Llegada] | Andres | Pendiente de validar formulas en sesion |
+| 5 | Ajustar buffer de alerta (4 vs 1 mes) segun validacion | Andres | Pendiente (pregunta 2) |
+| 6 | ~~Auditar campo Lote Minimo Compra en ERP~~ | Andres | ✅ HECHO 2026-08-05: viene vacio (0/3.371) → requiere fuente suplementaria (pregunta 8) |
+| 7 | Implementar [Cumple MOQ] / [A Pedir con MOQ] sobre fuente suplementaria | Andres | Pendiente (ADR aprobado) |
+
+---
+
+## 8. Realidad Actual del Reporte — Inventario as-is (2026-08-05)
+
+### 8.1 Pagina "Programacion Compras Exterior" (id `e244718f235796748fbf`)
+
+**Slicers (5):** Calendario.Fecha (rango) | dimArticulo.Articulo (multiseleccion con busqueda) | dimArticulo.Clase | dimArticulo.Proveedor Articulo Full ("Proveedor Preferido") | textSlicer dimArticulo.Proveedores.
+
+**Tabla de decision (24 columnas):** Articulo Codigo/Nombre | Alerta Cobertura→"Alerta" | Articulo Stock Minimo→"Stock Minimo" | Consumo Promedio por Mes Activo | Meses Cobertura del Stock Minimo | Cobertura sobre Stock Minimo vs Lead Time | Stock Existencia→"Existencia" | Stock Compras | Stock Proyectado | Stock Util E+C-CP-CD | Cobertura Meses sobre Stock Proyectado | Cobertura Meses sobre Stock Util | Consumo Planificado Cantidad | Cantidad Requerida por Demanda Pendiente→"...SIN Planificar" | A Pedir Sugerido | Meses con Consumo | Lead Time Promedio Dias | Lead Time Meses | Tipo Articulo Codigo | Proveedor Articulo Full→"Proveedor Preferido" | Proveedores | Comentarios.
+
+**Tabla de control ancha:** codigo/nombre + Existencia, Stock Minimo, Stock Compras, Consumo, Consumo Planificado, Demanda Pendiente, Meses con Consumo, Consumo Promedio, Promedio por Movimiento, Cobertura Meses, Lead Time Dias, Proveedores.
+
+**Detalle de auditoria (7):** consumos (documento Nodum) | recepciones (OC, proveedor, USD) | compras en proceso | consumo planificado (OP) | demanda pendiente (composicion) | stock por deposito | stock por estado.
+
+**Card debug:** RangoFechas_Debug.
+
+### 8.2 Medidas del modelo (68 en 4 tablas de medidas)
+
+- **Medidas_Stock (22):** Stock Existencia/Compras/Proyectado/Minimo, Stock Util E+C-CP-CD, E+C-CP-CD-SM, Gap Stock, coberturas en dias, rotacion, stock muerto, valores USD, etc.
+- **Medidas_Consumo (22):** Consumo Promedio por Mes Activo, Meses con Consumo, A Pedir Sugerido, A Pedir Txt, Cobertura Meses sobre Stock Proyectado/Util, Alerta Cobertura, Lead Time Meses, consumos varios, debug.
+- **Medidas_Compras (22):** Cobertura Meses sobre Existencia, Meses Cobertura del Stock Minimo, Cobertura sobre Stock Minimo vs Lead Time, Lead Time Promedio Dias, lead times de proceso, OTD, gastos USD, etc.
+- **Medidas_Consumo_Planificado / Medidas_DemandaPendiente (1 c/u):** Consumo Planificado Cantidad | Cantidad Requerida por Demanda Pendiente.
+
+**NO existen aun:** [Cobertura Post Pedido], [Cobertura a la Llegada], [Cumple MOQ], [A Pedir con MOQ], [Stock ETAFPA] (descartada).
+
+### 8.3 Auditorias tecnicas 2026-08-05
+
+| Auditoria | Resultado |
+|-----------|-----------|
+| MOQ en ERP (`stg_dimArticulo.lote_min_cpra`) | 0/3.371 articulos con valor >0 (tambien 0/395 del universo exterior con StockMin>0). La vista `vw_Compras_DimArticuloEPSA` no lo informa; el ETL si lo carga. Script: `scripts/check/check_moq_coverage.ps1` |
+| ETAFPA | Fuera de alcance aprobado (deposito discontinuado) |
+| Seguridad de acceso | ✅ Rol SSAS `Lectura_Compras` + cuenta `bi_compras` creados (resuelve el "Pendiente rol Read" de v1.1); PBIX live connection publicado y validado bajo bi_compras (2026-08-05) |
