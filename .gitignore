@@ -44,3 +44,4 @@ export/*.pbix
 
 # Artefactos temporales de diagnostico (screenshots, helpers descartables)
 scripts/check/tmp_*
+/tmp_*

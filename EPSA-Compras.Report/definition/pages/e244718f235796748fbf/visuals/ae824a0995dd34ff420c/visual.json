@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "ae824a0995dd34ff420c",
   "position": {
     "x": 10,
-    "y": 173.33333333333334,
+    "y": 180,
     "z": 11000,
-    "height": 425.55555555555554,
+    "height": 405,
     "width": 2610,
     "tabOrder": 11000
   },
@@ -95,6 +95,20 @@
                       "Entity": "Medidas_Consumo"
                     }
                   },
+                  "Property": "Lead Time Meses"
+                }
+              },
+              "queryRef": "Medidas_Consumo.Lead Time Meses",
+              "nativeQueryRef": "Lead Time Meses"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas_Consumo"
+                    }
+                  },
                   "Property": "Meses Cobertura del Stock Minimo"
                 }
               },
@@ -123,10 +137,10 @@
                       "Entity": "Medidas_Stock"
                     }
                   },
-                  "Property": "Stock Existencia"
+                  "Property": "Stock Existencia c/ Unidad"
                 }
               },
-              "queryRef": "Medidas_Stock.Stock Existencia",
+              "queryRef": "Medidas_Stock.Stock Existencia c/ Unidad",
               "nativeQueryRef": "Existencia",
               "displayName": "Existencia"
             },
@@ -138,11 +152,12 @@
                       "Entity": "Medidas_Stock"
                     }
                   },
-                  "Property": "Stock Compras"
+                  "Property": "Stock Compras c/ Unidad"
                 }
               },
-              "queryRef": "Medidas_Stock.Stock Compras",
-              "nativeQueryRef": "Stock Compras"
+              "queryRef": "Medidas_Stock.Stock Compras c/ Unidad",
+              "nativeQueryRef": "Compras Proyectadas",
+              "displayName": "Compras Proyectadas"
             },
             {
               "field": {
@@ -270,20 +285,6 @@
               },
               "queryRef": "Medidas_Compras.Lead Time Promedio Dias",
               "nativeQueryRef": "Lead Time Promedio Dias"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas_Consumo"
-                    }
-                  },
-                  "Property": "Lead Time Meses"
-                }
-              },
-              "queryRef": "Medidas_Consumo.Lead Time Meses",
-              "nativeQueryRef": "Lead Time Meses"
             },
             {
               "field": {
@@ -440,34 +441,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "101.44443865468237D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas_Stock.Stock Existencia"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "91.5555288707296D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas_Stock.Stock Compras"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "82.87351103920818D"
                 }
               }
@@ -560,6 +533,62 @@
           "selector": {
             "metadata": "Medidas_Stock.Stock Util E+C-CP-CD"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "143D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Cobertura Meses sobre Stock Proyectado"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Cobertura Meses sobre Stock Util"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Consumo.Lead Time Meses"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Stock.Stock Compras c/ Unidad"
+          }
         }
       ],
       "columnHeaders": [
@@ -594,6 +623,162 @@
           "selector": {
             "metadata": "dimArticulo.Artículo Stock Mínimo"
           }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Stock.Stock Existencia c/ Unidad"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas_Stock.Stock Compras c/ Unidad"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Medidas_Consumo"
+                                    }
+                                  },
+                                  "Property": "Alerta Cobertura"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'OK'"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#00E676'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Medidas_Consumo"
+                                    }
+                                  },
+                                  "Property": "Alerta Cobertura"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'PEDIR'"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FF9800'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Medidas_Consumo"
+                                    }
+                                  },
+                                  "Property": "Alerta Cobertura"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'Atencion'"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FFEB3B'"
+                            }
+                          }
+                        }
+                      ],
+                      "DefaultValue": {
+                        "Literal": {
+                          "Value": "'#FFFFFF'"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medidas_Consumo.Alerta Cobertura"
+          }
         }
       ]
     },
@@ -627,6 +812,19 @@
               }
             },
             "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "true"
@@ -746,34 +944,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "def11f8ab7336fc37e14",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Stock"
-              }
-            },
-            "Property": "Stock Existencia"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7dcf2250803f6f7226f4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas_Stock"
-              }
-            },
-            "Property": "Stock Compras"
-          }
-        },
-        "type": "Advanced"
       },
       {
         "name": "88fce4032f3816945b7f",

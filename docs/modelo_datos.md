@@ -79,6 +79,7 @@ Power BI Report (EPSA-Compras.pbip / Live Connection)
   - ProveedorPais / ProveedorPaisNombre (String)
   - TipoComponente (String)
   - Comentarios (String, texto libre desde vista ERP — agregado 2026-05, pasa sin renombrar por el M)
+  - Activo Compras (String, S/N — articulo activo para compras segun Nodum ct_articulos.activo_cmp; agregado 2026-08, staging `activo_cmp`, slicer por defecto 'S' — Issue #35)
 
 #### dimProveedor
 - **Fuente:** `Sql.Database("192.168.2.7", "Nodum")` - Query SQL directo

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "8c1f4a2d6e9b30570115",
+  "position": {
+    "x": 1579,
+    "y": 0,
+    "z": 1400,
+    "height": 110,
+    "width": 415.55555555555554,
+    "tabOrder": 1400
+  },
+  "visual": {
+    "visualType": "textSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimArticulo"
+                    }
+                  },
+                  "Property": "Proveedores"
+                }
+              },
+              "queryRef": "dimArticulo.Proveedores",
+              "nativeQueryRef": "Proveedores"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

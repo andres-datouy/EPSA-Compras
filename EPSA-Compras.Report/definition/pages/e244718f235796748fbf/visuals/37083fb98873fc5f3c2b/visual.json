@@ -1,8 +1,8 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "37083fb98873fc5f3c2b",
   "position": {
-    "x": 762,
+    "x": 1112,
     "y": 0,
     "z": 9000,
     "height": 102,
@@ -59,21 +59,28 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Between'"
+                  "Value": "'Relative'"
                 }
               }
             },
-            "startDate": {
+            "relativeRange": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2020-07-01T00:00:00'"
+                  "Value": "'Last'"
                 }
               }
             },
-            "endDate": {
+            "relativeDuration": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2026-06-30T00:00:00'"
+                  "Value": "5D"
+                }
+              }
+            },
+            "relativePeriod": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Years'"
                 }
               }
             }
@@ -116,45 +123,43 @@
                 "Where": [
                   {
                     "Condition": {
-                      "And": {
-                        "Left": {
-                          "Comparison": {
-                            "ComparisonKind": 2,
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "c"
-                                  }
-                                },
-                                "Property": "Fecha"
+                      "Between": {
+                        "Expression": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
                               }
                             },
-                            "Right": {
-                              "Literal": {
-                                "Value": "datetime'2020-07-01T00:00:00'"
-                              }
-                            }
+                            "Property": "Fecha"
                           }
                         },
-                        "Right": {
-                          "Comparison": {
-                            "ComparisonKind": 3,
-                            "Left": {
-                              "Column": {
+                        "LowerBound": {
+                          "DateSpan": {
+                            "Expression": {
+                              "DateAdd": {
                                 "Expression": {
-                                  "SourceRef": {
-                                    "Source": "c"
+                                  "DateAdd": {
+                                    "Expression": {
+                                      "Now": {}
+                                    },
+                                    "Amount": 1,
+                                    "TimeUnit": 0
                                   }
                                 },
-                                "Property": "Fecha"
+                                "Amount": -5,
+                                "TimeUnit": 3
                               }
                             },
-                            "Right": {
-                              "Literal": {
-                                "Value": "datetime'2026-07-01T00:00:00'"
-                              }
-                            }
+                            "TimeUnit": 0
+                          }
+                        },
+                        "UpperBound": {
+                          "DateSpan": {
+                            "Expression": {
+                              "Now": {}
+                            },
+                            "TimeUnit": 0
                           }
                         }
                       }

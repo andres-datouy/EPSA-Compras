@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "8c1f4a2d6e9b30570125",
+  "position": {
+    "x": 1010,
+    "y": 130,
+    "z": 2500,
+    "height": 120,
+    "width": 1620,
+    "tabOrder": 2500
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "DETALLE DE RECEPCIONES — LEAD TIME",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12px",
+                      "fontWeight": "bold",
+                      "color": "#118DFF"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Lead Time Dias = RecepcionFecha − MIN(SolicitudFecha, OC Fecha, Compra Fecha), por recepcion individual (el reloj arranca en la mejor fecha entre solicitud, OC y compra). Promedio y P90 respetan los slicers de proveedor y fecha.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10px",
+                      "color": "#B8B8B8"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "El Lead Time de planificacion (peor caso) de la tabla de decision usa [Lead Time Proceso Interno Dias]: misma fecha de inicio, pero MAXX por articulo excluyendo OC EXLER y sin filtro de proveedor. No se ve afectado por estos slicers.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10px",
+                      "color": "#B8B8B8"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

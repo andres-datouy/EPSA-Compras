@@ -130,6 +130,7 @@
 | 9 | Stock minimo | (no visible en Excel pero usado) | [Stock Minimo] |
 | 10 | Consumo planificado | (no visible en Excel) | [Consumo Planificado Cantidad] |
 | 11 | Demanda pendiente | (no visible en Excel) | [Cantidad Requerida por Demanda Pendiente] |
+| 12 | Activo para compras | (no visible en Excel; ERP ct_articulos.activo_cmp) | dimArticulo[Activo Compras] + slicer por defecto 'S' (2026-08-18, Issue #35) |
 
 ---
 
@@ -252,7 +253,7 @@
 
 ### 8.1 Pagina "Programacion Compras Exterior" (id `e244718f235796748fbf`)
 
-**Slicers (5):** Calendario.Fecha (rango) | dimArticulo.Articulo (multiseleccion con busqueda) | dimArticulo.Clase | dimArticulo.Proveedor Articulo Full ("Proveedor Preferido") | textSlicer dimArticulo.Proveedores.
+**Slicers (6):** Calendario.Fecha (rango) | dimArticulo.Articulo (multiseleccion con busqueda) | dimArticulo.Clase | dimArticulo.Proveedor Articulo Full ("Proveedor Preferido") | textSlicer dimArticulo.Proveedores | dimArticulo[Activo Compras] (Dropdown inicializado en 'S', 2026-08-18, Issue #35).
 
 **Tabla de decision (24 columnas):** Articulo Codigo/Nombre | Alerta Cobertura→"Alerta" | Articulo Stock Minimo→"Stock Minimo" | Consumo Promedio por Mes Activo | Meses Cobertura del Stock Minimo | Cobertura sobre Stock Minimo vs Lead Time | Stock Existencia→"Existencia" | Stock Compras | Stock Proyectado | Stock Util E+C-CP-CD | Cobertura Meses sobre Stock Proyectado | Cobertura Meses sobre Stock Util | Consumo Planificado Cantidad | Cantidad Requerida por Demanda Pendiente→"...SIN Planificar" | A Pedir Sugerido | Meses con Consumo | Lead Time Promedio Dias | Lead Time Meses | Tipo Articulo Codigo | Proveedor Articulo Full→"Proveedor Preferido" | Proveedores | Comentarios.
 

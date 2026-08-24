@@ -1,0 +1,222 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "d7c3e8f2a1b945600031",
+  "displayName": "Detalle Lead Time Recepciones",
+  "displayOption": "ActualSize",
+  "height": 4000,
+  "width": 3500,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter5a6b7c8d9e0f1a2b3c4d5e11",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Artículo Código"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dimArticulo",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Artículo Código"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'140090003927'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "Filter5a6b7c8d9e0f1a2b3c4d5e12",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Artículo Nombre"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dimArticulo",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Artículo Nombre"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'PIG MASTERBATCH - ROT / ROJO  UN 3927'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "Filter5a6b7c8d9e0f1a2b3c4d5e13",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Proveedor Artículo Full"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dimArticulo",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Proveedor Artículo Full"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'P0067- COLOR SERVICE GMBH'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "Pod",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "Param_Filter5a6b7c8d9e0f1a2b3c4d5e11",
+        "boundFilter": "Filter5a6b7c8d9e0f1a2b3c4d5e11",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Artículo Código"
+          }
+        }
+      },
+      {
+        "name": "Param_Filter5a6b7c8d9e0f1a2b3c4d5e12",
+        "boundFilter": "Filter5a6b7c8d9e0f1a2b3c4d5e12",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Artículo Nombre"
+          }
+        }
+      },
+      {
+        "name": "Param_Filter5a6b7c8d9e0f1a2b3c4d5e13",
+        "boundFilter": "Filter5a6b7c8d9e0f1a2b3c4d5e13",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimArticulo"
+              }
+            },
+            "Property": "Proveedor Artículo Full"
+          }
+        }
+      }
+    ]
+  }
+}

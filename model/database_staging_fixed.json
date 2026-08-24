@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "Compras_EPSA",
   "compatibilityLevel": 1600,
   "model": {
@@ -283,7 +283,7 @@
             "source": {
               "type": "query",
               "dataSource": "staging_compras",
-              "query": "SELECT [cod_articulo] AS [Consumo Artículo Código], [formulario] AS [Consumo Formulario], [nro_trans] AS [Consumo Transacción], [nro_docum] AS [Consumo Documento], CAST(NULL AS INT) AS [Consumo Nº Documento], [fec_doc] AS [Consumo Fecha], [cod_tit] AS [Consumo Depósito], [cod_estado] AS [Consumo Estado], [cantidad] AS [Consumo Cantidad], [Obligatorio] AS [Consumo Obligatorio], [nom_articulo], [cod_tipoart], [FuenteConsumo], [Articulo_TipoComponente] FROM [dbo].[stg_factConsumo]"
+              "query": "SELECT [cod_articulo] AS [Consumo Artículo Código], [formulario] AS [Consumo Formulario], [nro_trans] AS [Consumo Transacción], [nro_docum] AS [Consumo Documento], CAST(NULL AS INT) AS [Consumo Nº Documento], [fec_doc] AS [Consumo Fecha], [cod_tit] AS [Consumo Depósito], [cod_estado] AS [Consumo Estado], [cantidad] AS [Consumo Cantidad], [Obligatorio] AS [Consumo Obligatorio], [nom_articulo], [cod_tipoart], [FuenteConsumo], [Articulo_TipoComponente] FROM [dbo].[stg_factConsumo] WHERE EXISTS (SELECT 1 FROM [dbo].[stg_dimArticulo] d WHERE d.[cod_articulo] COLLATE DATABASE_DEFAULT = [dbo].[stg_factConsumo].[cod_articulo] COLLATE DATABASE_DEFAULT)"
             }
           }
         ],
@@ -959,7 +959,7 @@
             "name": "Proveedor Artículo Full",
             "dataType": "string",
             "isDataTypeInferred": true,
-            "expression": "BLANK()",
+            "expression": "dimArticulo[Proveedor Codigo] & \"- \"& dimArticulo[Proveedor Nombre]",
             "lineageTag": "89228f0c-658c-4264-b4cc-1024f54b8e0c",
             "summarizeBy": "none",
             "modifiedTime": "2026-05-28T17:26:57.663333",
@@ -1056,6 +1056,20 @@
                 "value": "Automatic"
               }
             ]
+          },
+          {
+            "name": "Activo Compras",
+            "dataType": "string",
+            "sourceColumn": "Activo Compras",
+            "description": "Indicador de articulo activo para compras (activo_cmp de Nodum ct_articulos). S = activo, N = inactivo. El reporte filtra por defecto S para mostrar solo articulos vigentes de compra.",
+            "lineageTag": "7f2b9c4e-1d6a-4a8f-b3e5-9c0d2f4a6b81",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           }
         ],
         "partitions": [
@@ -1068,7 +1082,7 @@
             "source": {
               "type": "query",
               "dataSource": "staging_compras",
-              "query": "SELECT RTRIM([cod_articulo]) AS [Artículo Código], RTRIM([nom_articulo]) AS [Artículo Nombre], RTRIM([catalogo]) AS [Artículo Catalogo], RTRIM([cod_tipoart]) AS [Tipo Artículo Código], RTRIM([nom_tipoart]) AS [Tipo de Artículo Nombre], RTRIM([Tipo Artículo]) AS [Tipo Artículo], RTRIM([cod_marca]) AS [Marca Código], RTRIM([marca_dsc]) AS [Marca Descripción], RTRIM([cod_clasifart]) AS [Clase Código], RTRIM([nom_clasifart]) AS [Clase Nombre], RTRIM([cod_familia_art]) AS [Familia Código], RTRIM([nom_familia_art]) AS [Familia Nombre], RTRIM([cod_subfam_art]) AS [Subfamilia Código], RTRIM([nom_subfam_art]) AS [SubFamilia Nombre], RTRIM([cod_uni_stk]) AS [Unidad Stock], RTRIM([cod_grcontvta]) AS [Grupo Contable de Venta Código], RTRIM([Grupo]) AS [Grupo], RTRIM([nom_grupoart]) AS [Grupo Artículo Nombre], RTRIM([cod_uso]) AS [Uso Código], RTRIM([nom_usofinal]) AS [Uso Nombre], [stock_minimo] AS [Artículo Stock Mínimo], [plazo], [lote_min_cpra] AS [Lote Mínimo Compra], RTRIM([ProveedorArticulo]) AS [Proveedor Codigo], RTRIM([ProveedorArticuloNombre]) AS [Proveedor Nombre], RTRIM([ProveedorPais]) AS [ProveedorPais], RTRIM([ProveedorPaisNombre]) AS [ProveedorPaisNombre], CAST([Proveedores] AS NVARCHAR(4000)) AS [Proveedores], RTRIM([TipoComponente]) AS [TipoComponente], CAST([Comentarios] AS NVARCHAR(4000)) AS [Comentarios] FROM [dbo].[stg_dimArticulo]"
+              "query": "SELECT RTRIM([cod_articulo]) AS [Artículo Código], RTRIM([nom_articulo]) AS [Artículo Nombre], RTRIM([catalogo]) AS [Artículo Catalogo], RTRIM([cod_tipoart]) AS [Tipo Artículo Código], RTRIM([nom_tipoart]) AS [Tipo de Artículo Nombre], RTRIM([Tipo Artículo]) AS [Tipo Artículo], RTRIM([cod_marca]) AS [Marca Código], RTRIM([marca_dsc]) AS [Marca Descripción], RTRIM([cod_clasifart]) AS [Clase Código], RTRIM([nom_clasifart]) AS [Clase Nombre], RTRIM([cod_familia_art]) AS [Familia Código], RTRIM([nom_familia_art]) AS [Familia Nombre], RTRIM([cod_subfam_art]) AS [Subfamilia Código], RTRIM([nom_subfam_art]) AS [SubFamilia Nombre], RTRIM([cod_uni_stk]) AS [Unidad Stock], RTRIM([cod_grcontvta]) AS [Grupo Contable de Venta Código], RTRIM([Grupo]) AS [Grupo], RTRIM([nom_grupoart]) AS [Grupo Artículo Nombre], RTRIM([cod_uso]) AS [Uso Código], RTRIM([nom_usofinal]) AS [Uso Nombre], [stock_minimo] AS [Artículo Stock Mínimo], [plazo], [lote_min_cpra] AS [Lote Mínimo Compra], RTRIM([ProveedorArticulo]) AS [Proveedor Codigo], RTRIM([ProveedorArticuloNombre]) AS [Proveedor Nombre], RTRIM([ProveedorPais]) AS [ProveedorPais], RTRIM([ProveedorPaisNombre]) AS [ProveedorPaisNombre], CAST([Proveedores] AS NVARCHAR(4000)) AS [Proveedores], RTRIM([TipoComponente]) AS [TipoComponente], CAST([Comentarios] AS NVARCHAR(4000)) AS [Comentarios], RTRIM([activo_cmp]) AS [Activo Compras] FROM [dbo].[stg_dimArticulo]"
             }
           }
         ],
@@ -1992,7 +2006,7 @@
             "source": {
               "type": "query",
               "dataSource": "staging_compras",
-              "query": "SELECT [Formula] AS [Demanda Pendiente Formula], [Producto], [NomProducto] AS [Demanda Pendiente Artículo Nombre], [FormulaComp] AS [Demanda Pendiente Componente Formula], [Componente] AS [Demanda Pendiente Componente Código], [NomComponente], [TipoComp] AS [Demanda Pendiente Componente Tipo], [Componente_TipoFicha] AS [Demanda Pendiente Componente Tipo Ficha], [LoteMinFabricacion], [Level] AS [Demanda Pendiente Componente Nivel], [Obligatorio], [Cantidad_Requerida] AS [Demanda Pendiente Componente Cantidad Requerida], [PedOrigen_documento], [PedOrigen_serie], [PedOrigen_numero], [FormulaOrigen] AS [Demanda Pendiente Artículo Formula Origen], [ArticuloPedido] AS [Demanda Pendiente Articulo Pedido x Cliente], [TrazaComposicion], [NodoID_Hex], [NodoPadreID_Hex] FROM [dbo].[stg_factDemandaPendiente]"
+              "query": "SELECT [Formula] AS [Demanda Pendiente Formula], [Producto], [NomProducto] AS [Demanda Pendiente Artículo Nombre], [FormulaComp] AS [Demanda Pendiente Componente Formula], [Componente] AS [Demanda Pendiente Componente Código], [NomComponente], [TipoComp] AS [Demanda Pendiente Componente Tipo], [Componente_TipoFicha] AS [Demanda Pendiente Componente Tipo Ficha], [LoteMinFabricacion], [Level] AS [Demanda Pendiente Componente Nivel], [Obligatorio], [Cantidad_Requerida] AS [Demanda Pendiente Componente Cantidad Requerida], [PedOrigen_documento], [PedOrigen_serie], [PedOrigen_numero], [FormulaOrigen] AS [Demanda Pendiente Artículo Formula Origen], [ArticuloPedido] AS [Demanda Pendiente Articulo Pedido x Cliente], [TrazaComposicion], [NodoID_Hex], [NodoPadreID_Hex] FROM [dbo].[stg_factDemandaPendiente] WHERE EXISTS (SELECT 1 FROM [dbo].[stg_dimArticulo] d WHERE d.[cod_articulo] COLLATE DATABASE_DEFAULT = [dbo].[stg_factDemandaPendiente].[Componente] COLLATE DATABASE_DEFAULT)"
             }
           }
         ],
@@ -2669,7 +2683,7 @@
             "name": "Lead Time Dias",
             "dataType": "int64",
             "isDataTypeInferred": true,
-            "expression": "\nVAR FechaInicio = factRecepcionesHistoria[Compra Fecha Inicio Proceso Con Proveedor]\nVAR FechaRecepcion = factRecepcionesHistoria[RecepcionFecha]\nRETURN\nIF(\n    NOT ISBLANK ( FechaInicio ) && NOT ISBLANK ( FechaRecepcion ),\n    DATEDIFF ( FechaInicio, FechaRecepcion, DAY )\n)\n",
+            "expression": "\nVAR FechaInicio = factRecepcionesHistoria[Compra Fecha Inicio Proceso Interno Desde Solicitud]\nVAR FechaRecepcion = factRecepcionesHistoria[RecepcionFecha]\nRETURN\nIF(\n    NOT ISBLANK ( FechaInicio ) && NOT ISBLANK ( FechaRecepcion ),\n    DATEDIFF ( FechaInicio, FechaRecepcion, DAY )\n)\n",
             "formatString": "0",
             "lineageTag": "d554e8bc-6bd3-4f6b-be09-002627e32b2a",
             "summarizeBy": "sum",
@@ -2700,7 +2714,7 @@
             "source": {
               "type": "query",
               "dataSource": "staging_compras",
-              "query": "SELECT [Empresa] AS [Compra Empresa], [RecepcionFecha], [RecepcionArticulo], [RecepcionCantidad], [RecepcionOCDocumento], [RecepcionOCNumero], [OCDocumento] AS [OC Documento], [OCNumero] AS [OC Numero], [OCProveedor] AS [OC Proveedor], [OCFecha] AS [OC Fecha], [OCTotalMO] AS [OC Total MO], [OCTotalTR] AS [OC Total TR], [OCMoneda] AS [OC Moneda], [OCArticuloCodigo] AS [OC Articulo Codigo], [OCPrecioMO] AS [OC PrecioMO], [OCPrecioUSD] AS [OC PrecioUSD], [SolicitudDocumento], [SolicitudNumero], [SolicitudFecha], [CompraDocumento] AS [Compra Documento], [CompraNumero] AS [Compra Numero], [CompraFecha] AS [Compra Fecha], [CompraOCDoc] AS [Compra OC Doc], [CompraOCNumero] AS [Compra OC Numero] FROM [dbo].[stg_factRecepcionesHistoria]"
+              "query": "SELECT [Empresa] AS [Compra Empresa], [RecepcionFecha], [RecepcionArticulo], [RecepcionCantidad], [RecepcionOCDocumento], [RecepcionOCNumero], [OCDocumento] AS [OC Documento], [OCNumero] AS [OC Numero], [OCProveedor] AS [OC Proveedor], [OCFecha] AS [OC Fecha], [OCTotalMO] AS [OC Total MO], [OCTotalTR] AS [OC Total TR], [OCMoneda] AS [OC Moneda], [OCArticuloCodigo] AS [OC Articulo Codigo], [OCPrecioMO] AS [OC PrecioMO], [OCPrecioUSD] AS [OC PrecioUSD], [SolicitudDocumento], [SolicitudNumero], [SolicitudFecha], [CompraDocumento] AS [Compra Documento], [CompraNumero] AS [Compra Numero], [CompraFecha] AS [Compra Fecha], [CompraOCDoc] AS [Compra OC Doc], [CompraOCNumero] AS [Compra OC Numero] FROM [dbo].[stg_factRecepcionesHistoria] WHERE EXISTS (SELECT 1 FROM [dbo].[stg_dimArticulo] d WHERE d.[cod_articulo] COLLATE DATABASE_DEFAULT = [dbo].[stg_factRecepcionesHistoria].[RecepcionArticulo] COLLATE DATABASE_DEFAULT)"
             }
           }
         ],
@@ -3550,6 +3564,146 @@
         ]
       },
       {
+        "name": "factVencimientos",
+        "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a01",
+        "modifiedTime": "2026-08-07T12:00:00",
+        "structureModifiedTime": "2026-08-07T12:00:00",
+        "columns": [
+          {
+            "type": "rowNumber",
+            "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61",
+            "dataType": "int64",
+            "isHidden": true,
+            "isUnique": true,
+            "isKey": true,
+            "isNullable": false
+          },
+          {
+            "name": "Vencimiento Articulo Codigo",
+            "dataType": "string",
+            "sourceColumn": "cod_articulo",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a02",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Vencimiento Nro Lote",
+            "dataType": "string",
+            "sourceColumn": "nro_lote",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a03",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Vencimiento Cantidad",
+            "dataType": "double",
+            "sourceColumn": "cantidad",
+            "formatString": "#,0",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a04",
+            "summarizeBy": "sum",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Vencimiento Fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fec_venc",
+            "formatString": "dd/MM/yyyy",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a05",
+            "summarizeBy": "none",
+            "attributeHierarchy": {
+              "state": "ready"
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "factVencimientos-Partition",
+            "mode": "import",
+            "state": "ready",
+            "source": {
+              "type": "query",
+              "dataSource": "staging_compras",
+              "query": "SELECT [cod_articulo], [nro_lote], [cantidad], [fec_venc] FROM [dbo].[stg_factVencimientos]"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Stock Por Vencer 30d",
+            "expression": "VAR FechaHoy = TODAY()\nVAR FechaLimite = FechaHoy + 30\nRETURN\nCALCULATE(\n    SUM(factVencimientos[Vencimiento Cantidad]),\n    factVencimientos[Vencimiento Fecha] >= FechaHoy,\n    factVencimientos[Vencimiento Fecha] <= FechaLimite\n) + 0\n",
+            "formatString": "#,0",
+            "description": "Cantidad de stock cuya fecha de vencimiento cae en los proximos 30 dias.",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a06"
+          },
+          {
+            "name": "Stock Por Vencer 90d",
+            "expression": "VAR FechaHoy = TODAY()\nVAR FechaLimite = FechaHoy + 90\nRETURN\nCALCULATE(\n    SUM(factVencimientos[Vencimiento Cantidad]),\n    factVencimientos[Vencimiento Fecha] >= FechaHoy,\n    factVencimientos[Vencimiento Fecha] <= FechaLimite\n) + 0\n",
+            "formatString": "#,0",
+            "description": "Cantidad de stock cuya fecha de vencimiento cae en los proximos 90 dias.",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a07"
+          },
+          {
+            "name": "Stock Vencido",
+            "expression": "CALCULATE(\n    SUM(factVencimientos[Vencimiento Cantidad]),\n    factVencimientos[Vencimiento Fecha] < TODAY()\n) + 0\n",
+            "formatString": "#,0",
+            "description": "Cantidad de stock cuya fecha de vencimiento ya paso.",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a08"
+          },
+          {
+            "name": "Stock Vencido USD",
+            "expression": "SUMX(\n    FILTER(\n        factVencimientos,\n        factVencimientos[Vencimiento Fecha] < TODAY()\n    ),\n    factVencimientos[Vencimiento Cantidad] * [Costo Unitario Promedio USD]\n) + 0\n",
+            "formatString": "$#,0.00",
+            "description": "Valor en USD del stock vencido usando costo unitario promedio.",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a09"
+          },
+          {
+            "name": "% Stock Por Vencer",
+            "expression": "VAR StockPorVencer = [Stock Por Vencer 30d]\nVAR StockTotal = SUMX(ALL(factVencimientos), factVencimientos[Vencimiento Cantidad])\nRETURN\nDIVIDE(StockPorVencer, StockTotal, 0) + 0\n",
+            "formatString": "0.00%",
+            "description": "Porcentaje del stock monitoreado que vence en los proximos 30 dias.",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a0a"
+          }
+        ]
+      },
+      {
         "name": "Calendario",
         "lineageTag": "99eb1cde-035f-4362-b7a3-754fa3132dd0",
         "columns": [
@@ -3591,6 +3745,11 @@
             "dataType": "int64",
             "sourceColumn": "Año Mes Número",
             "formatString": "0"
+          },
+          {
+            "name": "Año Mes AM",
+            "dataType": "string",
+            "sourceColumn": "Año Mes AM"
           },
           {
             "name": "Fiscal Month",
@@ -3638,7 +3797,7 @@
             "state": "ready",
             "source": {
               "type": "calculated",
-              "expression": "VAR BaseCalendar = CALENDARAUTO(1)\r\nRETURN\r\nGENERATE(\r\n    BaseCalendar,\r\n    VAR CurrentDate = [Date]\r\n    VAR FiscalMonthNum = IF(MONTH(CurrentDate) >= 2, MONTH(CurrentDate) - 1, MONTH(CurrentDate) + 11)\r\n    VAR FiscalYearNum = IF(MONTH(CurrentDate) >= 2, YEAR(CurrentDate), YEAR(CurrentDate) - 1)\r\n    VAR FiscalQuarterNum = INT((FiscalMonthNum - 1) / 3) + 1\r\n    VAR FiscalMonthInQ = FiscalMonthNum - (FiscalQuarterNum - 1) * 3\r\n    RETURN ROW(\r\n        \"Fecha\", CurrentDate,\r\n        \"Año Fiscal Número\", FiscalYearNum,\r\n        \"Año Fiscal\", \"FY \" & FiscalYearNum,\r\n        \"Fiscal Month Number\", FiscalMonthNum,\r\n        \"Fiscal Month\", FORMAT(DATE(2000, FiscalMonthNum, 1), \"MMMM\"),\r\n        \"Fiscal Month in Quarter Number\", FiscalMonthInQ,\r\n        \"Trimestre del Año Fiscal Número\", FiscalQuarterNum * 1.0,\r\n        \"Trimestre del año fiscal\", \"Q\" & FiscalQuarterNum,\r\n        \"Trimestre Fiscal\", \"FY\" & FiscalYearNum & \" Q\" & FiscalQuarterNum,\r\n        \"Año Mes Número\", YEAR(CurrentDate) * 100 + MONTH(CurrentDate),\r\n        \"Año Mes\", FORMAT(CurrentDate, \"YYYY-MMM\"),\r\n        \"Year Month Key\", YEAR(CurrentDate) * 100 + MONTH(CurrentDate)\r\n    )\r\n)"
+              "expression": "VAR BaseCalendar = CALENDAR(DATE(2009,1,1), DATE(2028,12,31))\r\nRETURN\r\nGENERATE(\r\n    BaseCalendar,\r\n    VAR CurrentDate = [Date]\r\n    VAR FiscalMonthNum = IF(MONTH(CurrentDate) >= 2, MONTH(CurrentDate) - 1, MONTH(CurrentDate) + 11)\r\n    VAR FiscalYearNum = IF(MONTH(CurrentDate) >= 2, YEAR(CurrentDate), YEAR(CurrentDate) - 1)\r\n    VAR FiscalQuarterNum = INT((FiscalMonthNum - 1) / 3) + 1\r\n    VAR FiscalMonthInQ = FiscalMonthNum - (FiscalQuarterNum - 1) * 3\r\n    RETURN ROW(\r\n        \"Fecha\", CurrentDate,\r\n        \"Año Fiscal Número\", FiscalYearNum,\r\n        \"Año Fiscal\", \"FY \" & FiscalYearNum,\r\n        \"Fiscal Month Number\", FiscalMonthNum,\r\n        \"Fiscal Month\", FORMAT(DATE(2000, FiscalMonthNum, 1), \"MMMM\"),\r\n        \"Fiscal Month in Quarter Number\", FiscalMonthInQ,\r\n        \"Trimestre del Año Fiscal Número\", FiscalQuarterNum * 1.0,\r\n        \"Trimestre del año fiscal\", \"Q\" & FiscalQuarterNum,\r\n        \"Trimestre Fiscal\", \"FY\" & FiscalYearNum & \" Q\" & FiscalQuarterNum,\r\n        \"Año Mes Número\", YEAR(CurrentDate) * 100 + MONTH(CurrentDate),\r\n        \"Año Mes\", FORMAT(CurrentDate, \"YYYY-MMM\"),\r\n        \"Año Mes AM\", FORMAT(CurrentDate, \"yyMM\"),\r\n        \"Year Month Key\", YEAR(CurrentDate) * 100 + MONTH(CurrentDate)\r\n    )\r\n)"
             }
           }
         ],
@@ -3731,10 +3890,24 @@
           },
           {
             "name": "Stock Compras",
-            "expression": "\n\n    SUM ( factComprasEnProceso[CompraEP Cantidad])\n",
+            "expression": "\n\n    SUM ( factComprasEnProceso[CompraEP Cantidad]) + 0\n",
             "formatString": "#,0.00",
             "description": "Cantidad total en proceso de compra (solicitudes + órdenes de compra + carpetas de importación) proveniente de factComprasEnProceso",
             "lineageTag": "e46d7dea-3aa2-4080-9842-9e4b629d6df0"
+          },
+          {
+            "name": "Stock Existencia c/ Unidad",
+            "expression": "VAR v = [Stock Existencia]\nVAR u = SELECTEDVALUE ( dimArticulo[Unidad Stock] )\nRETURN FORMAT ( v, \"#,0.00\" ) & IF ( ISBLANK ( u ), \"\", \" \" & u )",
+            "dataType": "string",
+            "description": "Stock de existencia formateado junto al símbolo de la unidad de stock del artículo (ej. 9.294,00 KG). Pedido usuario 2026-08-24",
+            "lineageTag": "7c1a4e8b-2f6d-4a9c-b3e5-8d0f1a2b3c41"
+          },
+          {
+            "name": "Stock Compras c/ Unidad",
+            "expression": "VAR v = [Stock Compras]\nVAR u = SELECTEDVALUE ( dimArticulo[Unidad Stock] )\nRETURN FORMAT ( v, \"#,0.00\" ) & IF ( ISBLANK ( u ), \"\", \" \" & u )",
+            "dataType": "string",
+            "description": "Stock en proceso de compra formateado junto al símbolo de la unidad de stock del artículo (ej. 10.000,00 KG). Pedido usuario 2026-08-24",
+            "lineageTag": "7c1a4e8b-2f6d-4a9c-b3e5-8d0f1a2b3c42"
           },
           {
             "name": "Stock Debajo Mínimo",
@@ -3745,14 +3918,14 @@
           },
           {
             "name": "Stock Existencia",
-            "expression": "\nCALCULATE(\n    SUM ( factStockEPSA[Stock Cantidad] ),\n    factStockEPSA[Stock Estado] in { \"existencia\", \"stkaf\"}\n)\n",
+            "expression": "\nCALCULATE(\n    SUM ( factStockEPSA[Stock Cantidad] ),\n    factStockEPSA[Stock Estado] in { \"existencia\", \"stkaf\"}\n) + 0\n",
             "formatString": "#,0.00",
             "description": "Suma de cantidades en depósito con estado existencia o stkaf (stock de uso operativo, excluye cuarentena y otros estados)",
             "lineageTag": "84a806f4-c14a-4b37-8e94-4e0eabfe1b38"
           },
           {
             "name": "Stock Mínimo",
-            "expression": "SUM ( dimArticulo[Artículo Stock Mínimo] )",
+            "expression": "SUM ( dimArticulo[Artículo Stock Mínimo] ) + 0",
             "formatString": "#,0.00",
             "description": "Stock mínimo definido por artículo según dimArticulo. Umbral de alerta para reposición",
             "lineageTag": "824c4f7a-760a-4a8d-ba76-72ee09301539"
@@ -3766,14 +3939,14 @@
           },
           {
             "name": "Dias Cobertura Stock Actual",
-            "expression": "\nDIVIDE([Stock Existencia], [Consumo Promedio Diario])\n",
+            "expression": "\nDIVIDE([Stock Existencia], [Consumo Promedio Diario]) + 0\n",
             "formatString": "#,0",
             "description": "Dias que dura el stock actual al ritmo de consumo promedio diario.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456704"
           },
           {
             "name": "Dias Cobertura Necesidad",
-            "expression": "\nDIVIDE(\n    [Stock Existencia] + [Stock Compras] - [Consumo Planificado Cantidad] - [Cantidad Requerida por Demanda Pendiente],\n    [Consumo Promedio Diario]\n)\n",
+            "expression": "\nDIVIDE(\n    [Stock Existencia] + [Stock Compras] - [Consumo Planificado Cantidad] - [Cantidad Requerida por Demanda Pendiente],\n    [Consumo Promedio Diario]\n) + 0\n",
             "formatString": "#,0",
             "description": "Dias de cobertura despues de descontar consumos comprometidos (planificado + demanda pendiente).",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456705"
@@ -3787,77 +3960,84 @@
           },
           {
             "name": "Compras En Proceso USD",
-            "expression": "\nSUMX(\n    factComprasEnProceso,\n    VAR Articulo = factComprasEnProceso[CompraEP Articulo Codigo]\n    VAR LastPrice =\n        CALCULATE(\n            AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n            factRecepcionesHistoria[RecepcionArticulo] = Articulo\n        )\n    RETURN factComprasEnProceso[CompraEP Cantidad] * LastPrice\n)\n",
+            "expression": "\nSUMX(\n    factComprasEnProceso,\n    VAR Articulo = factComprasEnProceso[CompraEP Articulo Codigo]\n    VAR LastPrice =\n        CALCULATE(\n            AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n            factRecepcionesHistoria[RecepcionArticulo] = Articulo\n        )\n    RETURN factComprasEnProceso[CompraEP Cantidad] * LastPrice\n) + 0\n",
             "formatString": "$#,0.00",
             "description": "Valor estimado en USD de las compras en proceso. Usa ultimo precio USD conocido del articulo.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456707"
           },
           {
             "name": "Articulos Debajo Minimo",
-            "expression": "\nCOUNTX(\n    FILTER(VALUES(dimArticulo[Artículo Código]), [Gap Stock] < 0),\n    dimArticulo[Artículo Código]\n)\n",
+            "expression": "\nCOUNTX(\n    FILTER(VALUES(dimArticulo[Artículo Código]), [Gap Stock] < 0),\n    dimArticulo[Artículo Código]\n) + 0\n",
             "formatString": "0",
             "description": "Cantidad de articulos cuyo stock actual esta por debajo del stock minimo definido.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456708"
           },
           {
             "name": "Total Articulos Activos",
-            "expression": "\nCALCULATE(\n    DISTINCTCOUNT(factConsumoHistoria[Consumo Artículo Código]),\n    DATESINPERIOD(Calendario[Fecha], MAX(Calendario[Fecha]), -12, MONTH)\n)\n",
+            "expression": "\nCALCULATE(\n    DISTINCTCOUNT(factConsumoHistoria[Consumo Artículo Código]),\n    DATESINPERIOD(Calendario[Fecha], MAX(Calendario[Fecha]), -12, MONTH)\n) + 0\n",
             "formatString": "0",
             "description": "Cantidad de articulos distintos con consumo en los ultimos 12 meses. Catalogo activo.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456709"
           },
           {
             "name": "% Articulos Debajo Minimo",
-            "expression": "\nDIVIDE([Articulos Debajo Minimo], [Total Articulos Activos])\n",
+            "expression": "\nDIVIDE([Articulos Debajo Minimo], [Total Articulos Activos]) + 0\n",
             "formatString": "0.0%",
             "description": "Porcentaje del catalogo activo que se encuentra por debajo del stock minimo.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef012345670a"
           },
           {
             "name": "Brecha Stock Minimo USD",
-            "expression": "\nSUMX(\n    FILTER(VALUES(dimArticulo[Artículo Código]), [Gap Stock] < 0),\n    ABS([Gap Stock]) *\n    CALCULATE(\n        AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n        TOPN(1, factRecepcionesHistoria, factRecepcionesHistoria[RecepcionFecha], DESC)\n    )\n)\n",
+            "expression": "\nSUMX(\n    FILTER(VALUES(dimArticulo[Artículo Código]), [Gap Stock] < 0),\n    ABS([Gap Stock]) *\n    CALCULATE(\n        AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n        TOPN(1, factRecepcionesHistoria, factRecepcionesHistoria[RecepcionFecha], DESC)\n    )\n) + 0\n",
             "formatString": "$#,0.00",
             "description": "Inversion estimada en USD necesaria para llevar todos los articulos por debajo del minimo hasta su nivel de stock minimo. Usa ultimo precio USD.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef012345670b"
           },
           {
             "name": "Rotacion Inventario",
-            "expression": "\nDIVIDE([Consumo Anual Cantidad], [Stock Existencia])\n",
+            "expression": "\nDIVIDE([Consumo Anual Cantidad], [Stock Existencia]) + 0\n",
             "formatString": "0.00",
             "description": "Indice de rotacion = consumo anual / stock actual. Mayor = mas rapida rotacion.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef012345670d"
           },
           {
             "name": "Stock Valor Total USD",
-            "expression": "\nSUMX(\n    factStockEPSA,\n    factStockEPSA[Stock Cantidad] *\n    CALCULATE(\n        AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n        TOPN(1, factRecepcionesHistoria, factRecepcionesHistoria[RecepcionFecha], DESC)\n    )\n)\n",
+            "expression": "\nSUMX(\n    factStockEPSA,\n    factStockEPSA[Stock Cantidad] *\n    CALCULATE(\n        AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n        TOPN(1, factRecepcionesHistoria, factRecepcionesHistoria[RecepcionFecha], DESC)\n    )\n) + 0\n",
             "formatString": "$#,0.00",
             "description": "Valor total del stock en USD usando el ultimo precio de compra conocido por articulo.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef012345670e"
           },
           {
             "name": "Articulos Stock Muerto",
-            "expression": "\nVAR DiasLimite = 180\nRETURN\nCOUNTX(\n    FILTER(\n        VALUES(dimArticulo[Artículo Código]),\n        [Stock Existencia] > 0 && (ISBLANK([Ultima Fecha Consumo]) || [Dias Sin Consumo] > DiasLimite)\n    ),\n    dimArticulo[Artículo Código]\n)\n",
+            "expression": "\nVAR DiasLimite = 180\nRETURN\nCOUNTX(\n    FILTER(\n        VALUES(dimArticulo[Artículo Código]),\n        [Stock Existencia] > 0 && (ISBLANK([Ultima Fecha Consumo]) || [Dias Sin Consumo] > DiasLimite)\n    ),\n    dimArticulo[Artículo Código]\n) + 0\n",
             "formatString": "0",
             "description": "Cantidad de articulos con stock pero sin consumo en mas de 180 dias. Stock muerto potencial.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef012345670f"
           },
           {
             "name": "Stock Muerto USD",
-            "expression": "\nVAR DiasLimite = 180\nRETURN\nSUMX(\n    FILTER(\n        VALUES(dimArticulo[Artículo Código]),\n        [Stock Existencia] > 0 && (ISBLANK([Ultima Fecha Consumo]) || [Dias Sin Consumo] > DiasLimite)\n    ),\n    [Stock Existencia] *\n    CALCULATE(\n        AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n        TOPN(1, factRecepcionesHistoria, factRecepcionesHistoria[RecepcionFecha], DESC)\n    )\n)\n",
+            "expression": "\nVAR DiasLimite = 180\nRETURN\nSUMX(\n    FILTER(\n        VALUES(dimArticulo[Artículo Código]),\n        [Stock Existencia] > 0 && (ISBLANK([Ultima Fecha Consumo]) || [Dias Sin Consumo] > DiasLimite)\n    ),\n    [Stock Existencia] *\n    CALCULATE(\n        AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n        TOPN(1, factRecepcionesHistoria, factRecepcionesHistoria[RecepcionFecha], DESC)\n    )\n) + 0\n",
             "formatString": "$#,0.00",
             "description": "Valor en USD del stock muerto (articulos con stock pero sin consumo > 180 dias).",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456710"
           },
           {
             "name": "% Stock Muerto",
-            "expression": "\nDIVIDE([Stock Muerto USD], [Stock Valor Total USD])\n",
+            "expression": "\nDIVIDE([Stock Muerto USD], [Stock Valor Total USD]) + 0\n",
             "formatString": "0.0%",
             "description": "Porcentaje del valor total del inventario que corresponde a stock muerto.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456711"
           },
           {
+            "name": "% Stock Muerto sobre Total",
+            "expression": "DIVIDE([Stock Muerto USD], [Stock Valor Total USD]) + 0\n",
+            "formatString": "0.0%",
+            "description": "Porcentaje del valor total del inventario que corresponde a stock muerto.",
+            "lineageTag": "f5a6b7c8-d9e0-4123-8456-789012345a0c"
+          },
+          {
             "name": "Valor Stock Existencia USD",
-            "expression": "\nSUMX(\n    factStockEPSA,\n    factStockEPSA[Stock Cantidad] *\n    CALCULATE(\n        AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n        TOPN(1, factRecepcionesHistoria, factRecepcionesHistoria[RecepcionFecha], DESC)\n    )\n)\n",
+            "expression": "\nSUMX(\n    factStockEPSA,\n    factStockEPSA[Stock Cantidad] *\n    CALCULATE(\n        AVERAGE(factRecepcionesHistoria[OC PrecioUSD]),\n        TOPN(1, factRecepcionesHistoria, factRecepcionesHistoria[RecepcionFecha], DESC)\n    )\n) + 0\n",
             "formatString": "$#,0.00",
             "description": "Valor estimado en USD del stock actual. Usa la cantidad en stock x ultimo precio USD conocido.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456712"
@@ -3899,70 +4079,70 @@
           },
           {
             "name": "Consumo Cantidad",
-            "expression": "SUM(factConsumoHistoria[Consumo Cantidad])",
+            "expression": "SUM(factConsumoHistoria[Consumo Cantidad]) + 0",
             "formatString": "#,0.00",
             "description": "Suma simple de todas las cantidades de consumo histórico (incluye valores negativos por devoluciones)",
             "lineageTag": "863d693a-8e85-4c56-9337-ec0f9f6125b7"
           },
           {
             "name": "Consumo Cantidad Absoluta",
-            "expression": "\nSUMX ( factConsumoHistoria, ABS ( factConsumoHistoria[Consumo Cantidad] ) )",
+            "expression": "\nSUMX ( factConsumoHistoria, ABS ( factConsumoHistoria[Consumo Cantidad] ) ) + 0",
             "formatString": "#,0.00",
             "description": "Suma de valores absolutos de consumo (todas las cantidades como positivas, útil para cálculos de volumen total)",
             "lineageTag": "6d224f73-10b7-4733-a7d5-fcff681f9c42"
           },
           {
             "name": "Consumo Medio por Artículo",
-            "expression": "\nVAR MovimientosArticulo =\n    CALCULATE ( [Consumos], ALLEXCEPT ( factConsumoHistoria, factConsumoHistoria[Consumo Artículo Código] ) )\nRETURN\nDIVIDE ( [Consumo Cantidad], MovimientosArticulo )\n",
+            "expression": "\nVAR MovimientosArticulo =\n    CALCULATE ( [Consumos], ALLEXCEPT ( factConsumoHistoria, factConsumoHistoria[Consumo Artículo Código] ) )\nRETURN\nDIVIDE ( [Consumo Cantidad], MovimientosArticulo ) + 0\n",
             "formatString": "#,0.00",
             "description": "Cantidad total de consumo dividida por el número de movimientos del artículo. Promedio por transacción individual",
             "lineageTag": "5f927407-8822-4fa6-bb8c-8d3a1452c655"
           },
           {
             "name": "Consumo Mensual Promedio",
-            "expression": "/*Rotación promedio mensual*/\nAVERAGEX (\n    VALUES ( Calendario[Fiscal Month] ),\n    [Consumo Cantidad]\n)\n",
+            "expression": "/*Rotación promedio mensual*/\nAVERAGEX (\n    VALUES ( Calendario[Fiscal Month] ),\n    [Consumo Cantidad]\n) + 0\n",
             "formatString": "#,0.00",
             "description": "Rotación promedio mensual: promedio del consumo por cada mes fiscal presente en los datos (AVERAGEX sobre meses del calendario)",
             "lineageTag": "296786a3-4109-4d39-8074-e8b8134b43cc"
           },
           {
             "name": "Consumo Promedio por Mes Activo",
-            "expression": "\nDIVIDE(\n    [Sumatoria Movs Consumo Sin Recepciones],\n    [Meses con Consumo]\n)\n",
+            "expression": "\nDIVIDE(\n    [Sumatoria Movs Consumo Sin Recepciones],\n    [Meses con Consumo]\n) + 0\n",
             "formatString": "#,0.00",
             "description": "Consumo promedio por mes activo: divide la sumatoria de consumos (sin recepciones) por la cantidad de meses con consumo real. Indica consumo típico mensual",
             "lineageTag": "5d419d20-e7cc-42de-b2c2-b77bed927638"
           },
           {
             "name": "Consumos",
-            "expression": "COUNTROWS(factConsumoHistoria)",
+            "expression": "COUNTROWS(factConsumoHistoria) + 0",
             "formatString": "#,0.00",
             "description": "Cantidad total de transacciones/movimientos de consumo registrados en factConsumoHistoria",
             "lineageTag": "a06257f6-2908-418c-8046-1af6727aceb1"
           },
           {
             "name": "Meses con Consumo",
-            "expression": "\nVAR MesesConConsumo =\n    SUMMARIZE(\n        ADDCOLUMNS(\n            factConsumoHistoria,\n            -- Columna calculada solo para agrupar por mes\n            \"Mes\",\n                EOMONTH ( factConsumoHistoria[Consumo Fecha], 0 )\n        ),\n        [Mes],  -- <-- acá sí es una columna\n        \"ConsumoMes\",\n            [Sumatoria Movs Consumo Sin Recepciones]\n    )\nRETURN\n    COUNTROWS (\n        FILTER (\n            MesesConConsumo,\n            [ConsumoMes] <> 0\n        )\n    )\n",
+            "expression": "\nVAR MesesConConsumo =\n    SUMMARIZE(\n        ADDCOLUMNS(\n            factConsumoHistoria,\n            -- Columna calculada solo para agrupar por mes\n            \"Mes\",\n                EOMONTH ( factConsumoHistoria[Consumo Fecha], 0 )\n        ),\n        [Mes],  -- <-- acá sí es una columna\n        \"ConsumoMes\",\n            [Sumatoria Movs Consumo Sin Recepciones]\n    )\nRETURN\n    COUNTROWS (\n        FILTER (\n            MesesConConsumo,\n            [ConsumoMes] <> 0\n        )\n    ) + 0\n",
             "formatString": "#,0.00",
             "description": "Cantidad de meses distintos con consumo distinto de cero. Denominador para calcular consumo promedio mensual activo",
             "lineageTag": "eecb5271-975a-448b-a2aa-e093afc100f3"
           },
           {
             "name": "Promedio Anual Consumo",
-            "expression": "\nAVERAGEX (\n    VALUES ( Calendario[Año Fiscal] ),\n    [Consumo Cantidad]\n)\n",
+            "expression": "\nAVERAGEX (\n    VALUES ( Calendario[Año Fiscal] ),\n    [Consumo Cantidad]\n) + 0\n",
             "formatString": "#,0.00",
             "description": "Promedio del consumo anual agrupado por año fiscal. Útil para identificar tendencias interanuales",
             "lineageTag": "b441174a-9ce5-46a9-a330-ea122eee07f5"
           },
           {
             "name": "Promedio Consumo",
-            "expression": "AVERAGE(factConsumoHistoria[Consumo Cantidad])",
+            "expression": "AVERAGE(factConsumoHistoria[Consumo Cantidad]) + 0",
             "formatString": "#,0.00",
             "description": "Promedio aritmético simple de todas las cantidades de consumo por transacción (AVERAGE directo sobre la columna)",
             "lineageTag": "e71a62fb-6a76-4835-ae83-1872cd2757ef"
           },
           {
             "name": "Promedio Consumo por Movimiento",
-            "expression": "\nDIVIDE ( abs([Sumatoria Movs Consumo Sin Recepciones]), [Consumos] )\n",
+            "expression": "\nDIVIDE ( abs([Sumatoria Movs Consumo Sin Recepciones]), [Consumos] ) + 0\n",
             "formatString": "#,0.00",
             "description": "Sumatoria absoluta de consumos (sin recepciones/devoluciones) dividida por el total de movimientos. Promedio por movimiento excluyendo ingresos",
             "lineageTag": "a63f782e-171d-474e-bee2-3a5e073f0d25"
@@ -3989,8 +4169,15 @@
             "lineageTag": "a2a8569c-de50-4218-b3a8-0a0b2288b88e"
           },
           {
+            "name": "Sumatoria Movs Consumo c/ Unidad",
+            "expression": "VAR v = [Sumatoria Movs Consumo Sin Recepciones]\nVAR u = SELECTEDVALUE ( dimArticulo[Unidad Stock] )\nRETURN FORMAT ( v, \"#,0.00\" ) & IF ( ISBLANK ( u ), \"\", \" \" & u )",
+            "dataType": "string",
+            "description": "Consumo del período formateado junto al símbolo de la unidad de stock del artículo (ej. 13,07 KG). Pedido usuario 2026-08-24",
+            "lineageTag": "7c1a4e8b-2f6d-4a9c-b3e5-8d0f1a2b3c43"
+          },
+          {
             "name": "Consumo Promedio Diario",
-            "expression": "\nDIVIDE([Consumo Promedio por Mes Activo], 30)\n",
+            "expression": "\nDIVIDE([Consumo Promedio por Mes Activo], 30) + 0\n",
             "formatString": "#,0.00",
             "description": "Consumo promedio diario estimado a partir del consumo mensual activo. Base para calculos de cobertura.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456701"
@@ -4011,37 +4198,58 @@
           },
           {
             "name": "Articulos Sin SM Configurado",
-            "expression": "\nCOUNTX(\n    FILTER(\n        VALUES(dimArticulo[Artículo Código]),\n        (ISBLANK([Stock Mínimo]) || [Stock Mínimo] = 0) && [Consumo Cantidad] > 0\n    ),\n    dimArticulo[Artículo Código]\n)\n",
+            "expression": "\nCOUNTX(\n    FILTER(\n        VALUES(dimArticulo[Artículo Código]),\n        (ISBLANK([Stock Mínimo]) || [Stock Mínimo] = 0) && [Consumo Cantidad] > 0\n    ),\n    dimArticulo[Artículo Código]\n) + 0\n",
             "formatString": "0",
             "description": "Articulos con consumo pero sin stock minimo configurado. Requieren definicion de SM.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef012345670c"
           },
           {
             "name": "Dias Sin Consumo",
-            "expression": "\nDATEDIFF([Ultima Fecha Consumo], TODAY(), DAY)\n",
+            "expression": "\nDATEDIFF([Ultima Fecha Consumo], TODAY(), DAY) + 0\n",
             "formatString": "0",
             "description": "Dias transcurridos desde la ultima fecha de consumo hasta hoy. Util para detectar stock muerto.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456712"
           },
           {
             "name": "Cobertura Meses sobre Stock Proyectado",
-            "expression": "DIVIDE ( [Stock Proyectado], [Consumo Promedio por Mes Activo] )",
+            "expression": "DIVIDE ( [Stock Proyectado], [Consumo Promedio por Mes Activo] ) + 0",
             "formatString": "#,0.00",
             "description": "Meses de cobertura considerando existencia mas compras en camino (Stock Proyectado / Consumo Promedio por Mes Activo). Responde: con lo que tengo y lo que viene, cuantos meses cubro.",
             "lineageTag": "b7e2f9a1-3c4d-5e6f-7a8b-9c0d1e2f3a45"
           },
           {
             "name": "Cobertura Meses sobre Stock Util",
-            "expression": "DIVIDE ( [Stock Util E+C-CP-CD], [Consumo Promedio por Mes Activo] )",
+            "expression": "DIVIDE ( [Stock Util E+C-CP-CD], [Consumo Promedio por Mes Activo] ) + 0",
             "formatString": "#,0.00",
             "description": "Meses de cobertura sobre el stock util neto de compromisos: existencia + compras en camino - consumo planificado en OP - demanda pendiente, dividido el consumo promedio mensual. Es la cobertura mas conservadora para decidir compras.",
             "lineageTag": "c8f3a0b2-4d5e-6f7a-8b9c-0d1e2f3a4b56"
           },
           {
             "name": "Alerta Cobertura",
-            "expression": "\nVAR Cob = [Cobertura Meses sobre Stock Util]\nVAR LT = [Lead Time Meses]\nVAR MesesSeguridad = 1\nRETURN\nSWITCH (\n    TRUE (),\n    ISBLANK ( Cob ) || ISBLANK ( LT ), BLANK (),\n    Cob < LT, \"PEDIR\",\n    Cob < LT + MesesSeguridad, \"Atencion\",\n    \"OK\"\n)\n",
-            "description": "Semaforo de decision de compra: PEDIR si la cobertura util es menor al lead time; Atencion si es menor a lead time + 1 mes de seguridad; OK en el resto. Buffer de seguridad pendiente de validacion con Compradores.",
+            "expression": "\nVAR Cob = [Cobertura Meses sobre Stock Util]\nVAR LT = [Lead Time Meses]\nVAR MesesSeguridad = 1\nRETURN\nIF (\n    NOT ( ISINSCOPE ( dimArticulo[Artículo Código] ) ),\n    BLANK (),\n    SWITCH (\n        TRUE (),\n        [Meses con Consumo] = 0, BLANK (),\n        Cob < LT, \"PEDIR\",\n        Cob < LT + MesesSeguridad, \"Atencion\",\n        \"OK\"\n    )\n)\n",
+            "description": "Semaforo de decision de compra: PEDIR si la cobertura util es menor al lead time; Atencion si es menor a lead time + 1 mes de seguridad; OK en el resto. En filas de total devuelve blanco (ISINSCOPE). Buffer de seguridad pendiente de validacion con Compradores.",
             "lineageTag": "d9a4b1c3-5e6f-7a8b-9c0d-1e2f3a4b5c67"
+          },
+          {
+            "name": "Meses Cobertura del Stock Minimo",
+            "expression": "\nDIVIDE ( [Stock Mínimo], [Consumo Promedio por Mes Activo] ) + 0\n",
+            "formatString": "#,0.00",
+            "description": "Cuántos meses de consumo cubre el stock mínimo configurado. Stock Mínimo / Consumo Promedio por Mes Activo. Permite validar si el SM es adecuado respecto al Lead Time",
+            "lineageTag": "e7f8a9b0-c1d2-3456-7890-abcdef123456"
+          },
+          {
+            "name": "Cobertura sobre Stock Minimo vs Lead Time",
+            "expression": "\n[Meses Cobertura del Stock Minimo] - [Lead Time Meses]\n",
+            "formatString": "#,0.00",
+            "description": "Diferencia entre meses de cobertura del stock mínimo y el lead time del proveedor. Positivo = SM cubre LT. Negativo = déficit en meses. Usar con filtro Obligatorio=SI",
+            "lineageTag": "f1a2b3c4-d5e6-7890-abcd-123456789abc"
+          },
+          {
+            "name": "Lead Time Meses",
+            "expression": "\nDIVIDE ( [Lead Time Promedio Dias], 30, 0 )\n",
+            "formatString": "#,0.00",
+            "description": "Lead time promedio del proveedor expresado en meses (días / 30)",
+            "lineageTag": "a9b8c7d6-e5f4-3210-abcd-fedcba987654"
           }
         ]
       },
@@ -4073,7 +4281,7 @@
         "measures": [
           {
             "name": "Consumo Planificado Cantidad",
-            "expression": "\nSUMX ( factConsumoPlanificado, ABS ( factConsumoPlanificado[Consumo Planificado Cantidad] ) )",
+            "expression": "\nSUMX ( factConsumoPlanificado, ABS ( factConsumoPlanificado[Consumo Planificado Cantidad] ) ) + 0",
             "formatString": "#,0.00",
             "description": "Cantidad total planificada en órdenes de trabajo (factConsumoPlanificado). Representa consumo futuro comprometido",
             "lineageTag": "6846ab3e-d36f-479a-82e7-c729b8b05849"
@@ -4108,7 +4316,7 @@
         "measures": [
           {
             "name": "Cantidad Requerida por Demanda Pendiente",
-            "expression": "\nSUMX ( factDemandaPendientePlanificacion, ABS ( factDemandaPendientePlanificacion[Demanda Pendiente Componente Cantidad Requerida] ) )",
+            "expression": "\nSUMX ( factDemandaPendientePlanificacion, ABS ( factDemandaPendientePlanificacion[Demanda Pendiente Componente Cantidad Requerida] ) ) + 0",
             "formatString": "#,0.00",
             "description": "Cantidad total requerida por pedidos pendientes de planificación (descomposición de demanda). Consumo futuro no yet planificado",
             "lineageTag": "207b4635-3fe5-4792-8f83-361e6abafc20"
@@ -4143,70 +4351,70 @@
         "measures": [
           {
             "name": "Cantidad Recepciones",
-            "expression": "count(factRecepcionesHistoria[RecepcionArticulo])",
+            "expression": "count(factRecepcionesHistoria[RecepcionArticulo]) + 0",
             "formatString": "0",
             "description": "Cantidad total de recepciones registradas en factRecepcionesHistoria. Indicador de actividad de compras",
             "lineageTag": "de79a728-9ed1-4c25-87d7-9a3d939f4941"
           },
           {
             "name": "Cobertura Meses sobre Existencia",
-            "expression": "\nDIVIDE ( [Stock Existencia], [Consumo Promedio por Mes Activo])",
+            "expression": "\nDIVIDE ( [Stock Existencia], [Consumo Promedio por Mes Activo]) + 0",
             "formatString": "#,0.00",
             "description": "Meses de stock que cubre la existencia actual al ritmo de consumo promedio mensual. Stock Existencia / Consumo Promedio por Mes Activo",
             "lineageTag": "1ebaedf7-7181-4416-8ad1-fc7bffa58628"
           },
           {
-            "name": "Meses Cobertura del Stock Minimo",
-            "expression": "\nDIVIDE ( [Stock Mínimo], [Consumo Promedio por Mes Activo] )\n",
-            "formatString": "#,0.00",
-            "description": "Cuántos meses de consumo cubre el stock mínimo configurado. Stock Mínimo / Consumo Promedio por Mes Activo. Permite validar si el SM es adecuado respecto al Lead Time",
-            "lineageTag": "e7f8a9b0-c1d2-3456-7890-abcdef123456"
-          },
-          {
-            "name": "Cobertura sobre Stock Minimo vs Lead Time",
-            "expression": "\n[Meses Cobertura del Stock Minimo] - [Lead Time Meses]\n",
-            "formatString": "#,0.00",
-            "description": "Diferencia entre meses de cobertura del stock mínimo y el lead time del proveedor. Positivo = SM cubre LT. Negativo = déficit en meses. Usar con filtro Obligatorio=SI",
-            "lineageTag": "f1a2b3c4-d5e6-7890-abcd-123456789abc"
-          },
-          {
             "name": "Lead Time Promedio Dias",
-            "expression": "\nAVERAGE ( factRecepcionesHistoria[Lead Time Dias] )\n",
+            "expression": "\nAVERAGE ( factRecepcionesHistoria[Lead Time Dias] ) + 0\n",
             "formatString": "0",
             "description": "Promedio de días entre la fecha de orden de compra y la fecha de recepción. Indicador de velocidad de abastecimiento",
             "lineageTag": "6086b32f-bdd2-4607-8786-a276621f0421"
           },
           {
-            "name": "Lead Time Meses",
-            "expression": "\nDIVIDE ( [Lead Time Promedio Dias], 30, 0 )\n",
+            "name": "Lead Time Promedio Dias Recepciones",
+            "expression": "\nAVERAGEX ( factRecepcionesHistoria, factRecepcionesHistoria[Lead Time Dias] ) + 0\n",
+            "formatString": "0",
+            "description": "Promedio real de dias de lead time de las recepciones en contexto (columna [Lead Time Dias] = RecepcionFecha - MIN(SolicitudFecha, OC Fecha, Compra Fecha)). Respeta filtros de proveedor y fecha. Pagina Detalle Lead Time Recepciones. Pedido usuario 2026-08-24. Regla de fecha de inicio cambiada 2026-08-24: antes MIN(OC Fecha, Compra Fecha)",
+            "lineageTag": "5f8e2a1b-9c3d-4e7f-a1b2-c3d4e5f60741"
+          },
+          {
+            "name": "Lead Time Promedio Dias Recepciones P90",
+            "expression": "\nVAR p = PERCENTILEX.INC ( factRecepcionesHistoria, factRecepcionesHistoria[Lead Time Dias], 0.9 )\nRETURN IF ( ISBLANK ( p ), 0, CONVERT ( p, DOUBLE ) )\n",
+            "formatString": "0",
+            "description": "Percentil 90 de los dias de lead time de las recepciones en contexto. Lectura de la cola (casos lentos) sin el extremo maximo. CONVERT a DOUBLE para evitar DataType Variant en visuales. Pagina Detalle Lead Time Recepciones. Pedido usuario 2026-08-24",
+            "lineageTag": "5f8e2a1b-9c3d-4e7f-a1b2-c3d4e5f60742"
+          },
+          {
+            "name": "Lead Time Meses Recepciones",
+            "expression": "\nDIVIDE ( [Lead Time Promedio Dias Recepciones], 30, 0 )\n",
             "formatString": "#,0.00",
-            "description": "Lead time promedio del proveedor expresado en meses (días / 30)",
-            "lineageTag": "a9b8c7d6-e5f4-3210-abcd-fedcba987654"
+            "description": "Promedio real de lead time de las recepciones expresado en meses (dias / 30). Pagina Detalle Lead Time Recepciones. Pedido usuario 2026-08-24",
+            "lineageTag": "5f8e2a1b-9c3d-4e7f-a1b2-c3d4e5f60743"
           },
           {
             "name": "Lead Time Proceso Interno Dias",
-            "expression": "\nAVERAGEX(\n    factRecepcionesHistoria,\n    VAR FechaInicio = factRecepcionesHistoria[Compra Fecha Inicio Proceso Interno Desde Solicitud]\n    VAR FechaRecepcion = factRecepcionesHistoria[RecepcionFecha]\n    RETURN IF(NOT ISBLANK(FechaInicio) && NOT ISBLANK(FechaRecepcion), DATEDIFF(FechaInicio, FechaRecepcion, DAY))\n)\n",
+            "expression": "\nAVERAGEX(\n    factRecepcionesHistoria,\n    VAR FechaInicio = factRecepcionesHistoria[Compra Fecha Inicio Proceso Interno Desde Solicitud]\n    VAR FechaRecepcion = factRecepcionesHistoria[RecepcionFecha]\n    RETURN IF(NOT ISBLANK(FechaInicio) && NOT ISBLANK(FechaRecepcion), DATEDIFF(FechaInicio, FechaRecepcion, DAY))\n) + 0\n",
             "formatString": "0",
             "description": "Promedio de dias desde solicitud interna hasta recepcion. Lead time total del proceso de compras interno.",
             "lineageTag": "b1c2d3e4-f5a6-7890-bcde-f01234567890"
           },
           {
             "name": "Dias Transcurridos En Proceso Promedio",
-            "expression": "\nAVERAGEX(\n    factComprasEnProceso,\n    VAR FechaOC = factComprasEnProceso[CompraEP Fecha Ultima Modificacion]\n    RETURN IF(NOT ISBLANK(FechaOC), DATEDIFF(FechaOC, TODAY(), DAY))\n)\n",
+            "expression": "\nAVERAGEX(\n    factComprasEnProceso,\n    VAR FechaOC = factComprasEnProceso[CompraEP Fecha Ultima Modificacion]\n    RETURN IF(NOT ISBLANK(FechaOC), DATEDIFF(FechaOC, TODAY(), DAY))\n) + 0\n",
             "formatString": "0",
             "description": "Promedio de dias transcurridos desde la fecha de OC para compras aun en proceso sin recepcionar.",
             "lineageTag": "c2d3e4f5-a6b7-8901-cdef-012345678901"
           },
           {
             "name": "Dias Hasta Fecha Entrega Promedio",
-            "expression": "\nAVERAGEX(\n    factComprasEnProceso,\n    VAR FechaEntrega = factComprasEnProceso[CompraEP Ultima Fecha Entrega]\n    RETURN IF(NOT ISBLANK(FechaEntrega), DATEDIFF(TODAY(), FechaEntrega, DAY))\n)\n",
+            "expression": "\nAVERAGEX(\n    factComprasEnProceso,\n    VAR FechaEntrega = factComprasEnProceso[CompraEP Ultima Fecha Entrega]\n    RETURN IF(NOT ISBLANK(FechaEntrega), DATEDIFF(TODAY(), FechaEntrega, DAY))\n) + 0\n",
             "formatString": "0",
             "description": "Promedio de dias restantes hasta la fecha de entrega esperada. Positivo = aun no vencio. Negativo = vencida.",
             "lineageTag": "d3e4f5a6-b7c8-9012-def0-123456789012"
           },
           {
             "name": "Compras En Proceso Vencidas",
-            "expression": "\nCALCULATE(\n    COUNTROWS(factComprasEnProceso),\n    factComprasEnProceso[CompraEP Ultima Fecha Entrega] < TODAY()\n)\n",
+            "expression": "\nCALCULATE(\n    COUNTROWS(factComprasEnProceso),\n    factComprasEnProceso[CompraEP Ultima Fecha Entrega] < TODAY()\n) + 0\n",
             "formatString": "0",
             "description": "Cantidad de ordenes de compra en proceso cuya fecha de entrega esperada ya paso.",
             "lineageTag": "e4f5a6b7-c8d9-0123-ef01-234567890123"
@@ -4220,7 +4428,7 @@
           },
           {
             "name": "Gasto Recepciones USD",
-            "expression": "\nSUMX(\n    factRecepcionesHistoria,\n    factRecepcionesHistoria[RecepcionCantidad] * factRecepcionesHistoria[OC PrecioUSD]\n)\n",
+            "expression": "\nSUMX(\n    factRecepcionesHistoria,\n    factRecepcionesHistoria[RecepcionCantidad] * factRecepcionesHistoria[OC PrecioUSD]\n) + 0\n",
             "formatString": "$#,0.00",
             "description": "Gasto total en USD de las recepciones. Cantidad recibida x Precio unitario USD.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456713"
@@ -4241,35 +4449,35 @@
           },
           {
             "name": "Variacion Compras %",
-            "expression": "\nDIVIDE([Compras Totales USD YTD] - [Compras Totales USD LY], [Compras Totales USD LY])\n",
+            "expression": "\nDIVIDE([Compras Totales USD YTD] - [Compras Totales USD LY], [Compras Totales USD LY]) + 0\n",
             "formatString": "0.0%",
             "description": "Variacion porcentual de compras YTD vs mismo periodo año anterior.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456716"
           },
           {
             "name": "Proveedor Concentracion %",
-            "expression": "\nVAR TopProveedor =\n    MAXX(\n        VALUES(dimProveedor[Proveedor Nombre]),\n        [Gasto Recepciones USD]\n    )\nVAR TotalGasto = [Gasto Recepciones USD]\nRETURN\nDIVIDE(TopProveedor, TotalGasto)\n",
+            "expression": "\nVAR TopProveedor =\n    MAXX(\n        VALUES(dimProveedor[Proveedor Nombre]),\n        [Gasto Recepciones USD]\n    )\nVAR TotalGasto = [Gasto Recepciones USD]\nRETURN\nDIVIDE(TopProveedor, TotalGasto) + 0\n",
             "formatString": "0.0%",
             "description": "Porcentaje de concentracion del proveedor principal sobre el total. Riesgo de dependencia.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456717"
           },
           {
             "name": "On Time Delivery %",
-            "expression": "\nVAR TotalRecep = COUNTROWS(factRecepcionesHistoria)\nVAR OnTime =\n    COUNTROWS(\n        FILTER(\n            factRecepcionesHistoria,\n            NOT ISBLANK(factRecepcionesHistoria[Lead Time Dias]) &&\n            NOT ISBLANK(RELATED(dimArticulo[plazo])) &&\n            factRecepcionesHistoria[Lead Time Dias] <= RELATED(dimArticulo[plazo])\n        )\n    )\nRETURN\nDIVIDE(OnTime, TotalRecep)\n",
+            "expression": "\nVAR TotalRecep = COUNTROWS(factRecepcionesHistoria)\nVAR OnTime =\n    COUNTROWS(\n        FILTER(\n            factRecepcionesHistoria,\n            NOT ISBLANK(factRecepcionesHistoria[Lead Time Dias]) &&\n            NOT ISBLANK(RELATED(dimArticulo[plazo])) &&\n            factRecepcionesHistoria[Lead Time Dias] <= RELATED(dimArticulo[plazo])\n        )\n    )\nRETURN\nDIVIDE(OnTime, TotalRecep) + 0\n",
             "formatString": "0.0%",
             "description": "Porcentaje de recepciones entregadas dentro del plazo acordado. Indicador de confiabilidad del proveedor.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456718"
           },
           {
             "name": "Gasto Promedio Mensual USD",
-            "expression": "\nAVERAGEX(\n    VALUES(Calendario[Fiscal Month]),\n    [Gasto Recepciones USD]\n)\n",
+            "expression": "\nAVERAGEX(\n    VALUES(Calendario[Fiscal Month]),\n    [Gasto Recepciones USD]\n) + 0\n",
             "formatString": "$#,0.00",
             "description": "Promedio de gasto mensual en USD sobre los meses fiscales presentes en los datos.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef0123456719"
           },
           {
             "name": "Costo Unitario Promedio USD",
-            "expression": "\nDIVIDE(\n    [Gasto Recepciones USD],\n    SUM(factRecepcionesHistoria[RecepcionCantidad])\n)\n",
+            "expression": "\nDIVIDE(\n    [Gasto Recepciones USD],\n    SUM(factRecepcionesHistoria[RecepcionCantidad])\n) + 0\n",
             "formatString": "$#,0.0000",
             "description": "Costo unitario promedio ponderado en USD. Gasto total / cantidad total recibida.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef012345671a"
@@ -4283,14 +4491,14 @@
           },
           {
             "name": "Recepcion Cantidad Total",
-            "expression": "\nSUM(factRecepcionesHistoria[RecepcionCantidad])\n",
+            "expression": "\nSUM(factRecepcionesHistoria[RecepcionCantidad]) + 0\n",
             "formatString": "#,0.00",
             "description": "Cantidad total recibida en recepciones. Base para calculo de costo unitario.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef012345671c"
           },
           {
             "name": "Ticket Promedio USD",
-            "expression": "\nDIVIDE([Gasto Recepciones USD], [Cantidad Recepciones])\n",
+            "expression": "\nDIVIDE([Gasto Recepciones USD], [Cantidad Recepciones]) + 0\n",
             "formatString": "$#,0.00",
             "description": "Valor promedio por recepcion en USD. Indicador de eficiencia de compras.",
             "lineageTag": "f1a2b3c4-d5e6-7890-abcd-ef012345671d"

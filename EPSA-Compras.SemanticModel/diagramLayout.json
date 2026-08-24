@@ -189,6 +189,18 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2912.0074563107355,
+            "y": 629.77567416497664
+          },
+          "nodeIndex": "factVencimientos",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",

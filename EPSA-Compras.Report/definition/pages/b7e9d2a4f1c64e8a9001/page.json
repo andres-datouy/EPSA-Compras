@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "b7e9d2a4f1c64e8a9001",
+  "displayName": "TT Detalle Articulo",
+  "displayOption": "ActualSize",
+  "height": 445,
+  "width": 825,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6f987c17f04798f029fa",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Consumo"
+              }
+            },
+            "Property": "Consumo Promedio por Mes Activo"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "TooltipFields",
+    "type": "Tooltip",
+    "parameters": [
+      {
+        "name": "0a6988d4c6c48766af42",
+        "boundFilter": "6f987c17f04798f029fa",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas_Consumo"
+              }
+            },
+            "Property": "Consumo Promedio por Mes Activo"
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

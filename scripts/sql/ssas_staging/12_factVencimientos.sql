@@ -3,7 +3,7 @@
 -- Server: 192.168.2.47\SSAS (port 1435)
 -- Source: [192.168.2.7].[Nodum].[dbo].{sa_stocklote, ct_articulos, cpt_lote}
 -- Refresh: FULL REPLACE (truncate + load)
--- Schedule: Daily
+-- Schedule: SQL Agent job Staging_Refresh_FactVencimientos (daily 06:00, 14_vencimientos_job.sql)
 -- ============================================================
 
 USE [staging_compras];

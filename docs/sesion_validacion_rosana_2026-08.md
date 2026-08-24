@@ -69,3 +69,4 @@ Criterio de exito (Fase 4): walkthrough completo con un caso real + prueba ciega
 2. Actualizar `validacion_rosana_vs_modelo.md` §6/§7 con respuestas y decisiones.
 3. Implementar en orden: `[Cobertura Post Pedido]` (parametro A Pedir) → `[Cumple MOQ]`/`[A Pedir con MOQ]` (fuente suplementaria) → `[Cobertura a la Llegada]` (ETA Nodum).
 4. Segunda sesion corta de sign-off (Fase 4) con los gaps implementados.
+5. ✅ 2026-08-18: hallazgo de articulos inactivos para compras implementado como Opcion B (Issue #35): atributo `dimArticulo[Activo Compras]` (activo_cmp del ERP) en toda la cadena + slicer inicializado en 'S' en "Programacion Compras Exterior".
